@@ -1,0 +1,64 @@
+PODS:
+  - AFNetworking (2.5.4):
+    - AFNetworking/NSURLConnection (= 2.5.4)
+    - AFNetworking/NSURLSession (= 2.5.4)
+    - AFNetworking/Reachability (= 2.5.4)
+    - AFNetworking/Security (= 2.5.4)
+    - AFNetworking/Serialization (= 2.5.4)
+    - AFNetworking/UIKit (= 2.5.4)
+  - AFNetworking/NSURLConnection (2.5.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.5.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.5.4)
+  - AFNetworking/Security (2.5.4)
+  - AFNetworking/Serialization (2.5.4)
+  - AFNetworking/UIKit (2.5.4):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
+  - iToast (0.0.1)
+  - JSONModel (1.1.2)
+  - LKDBHelper (HEAD based on 2.3.1):
+    - FMDB
+  - MBProgressHUD (0.9.2)
+  - NYXImagesKit (2.3)
+  - Reachability (3.2)
+  - RESideMenu (4.0.7)
+  - SDWebImage (3.7.6):
+    - SDWebImage/Core (= 3.7.6)
+  - SDWebImage/Core (3.7.6)
+  - UICKeyChainStore (1.1.1)
+
+DEPENDENCIES:
+  - AFNetworking (~> 2.5.0)
+  - iToast (~> 0.0.1)
+  - JSONModel (~> 1.1.0)
+  - LKDBHelper (HEAD)
+  - MBProgressHUD (~> 0.9)
+  - NYXImagesKit (~> 2.3)
+  - Reachability (~> 3.2)
+  - RESideMenu (~> 4.0.7)
+  - SDWebImage (~> 3.7.1)
+  - UICKeyChainStore (~> 1.1.0)
+
+SPEC CHECKSUMS:
+  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  iToast: df147188215cc3293bd4366822833f2862fec451
+  JSONModel: 216584d0311b053ff714f1d6cb700dbf890847bc
+  LKDBHelper: 8d140170652a1ceef59247af4fb55e0a0dcd91dc
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  NYXImagesKit: 8163e3335a40eaa173ca5bbbf81fafb57d3947eb
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  RESideMenu: f24c508404b49c667344c54aba7e590883533958
+  SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
+  UICKeyChainStore: 891bcd2fe687c92db8e648cba035c4e662ffa43e
+
+COCOAPODS: 0.37.2
