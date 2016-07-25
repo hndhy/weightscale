@@ -60,6 +60,7 @@
 @property (nonatomic, strong) UILabel *mbiStatLabel;
 @property (nonatomic, strong) UILabel *ageNumLabel;
 @property (nonatomic, strong) UILabel *ageStatLabel;
+@property (nonatomic, strong) UILabel *dateLabel;
 
 @property (nonatomic, strong) UILabel *boneMassNumLabel;
 @property (nonatomic, strong) UILabel *boneMassStatLabel;
@@ -147,47 +148,59 @@
     titleView.layer.borderColor = UIColorFromRGB(210.0f, 210.0f, 210.0f).CGColor;
     titleView.layer.borderWidth = 0.5f;
     [self.view addSubview:titleView];
+    
     self.itemArray = [NSMutableArray arrayWithCapacity:5];
     self.dateArray = [NSMutableArray arrayWithCapacity:5];
-    CGFloat timeWidth = self.view.width / 5.0f;
-    for (int i = 0; i < 5; i++)
-    {
-        HTTimeItem *item = [[HTTimeItem alloc] initWithFrame:CGRectMake(i * timeWidth, titleView.top, timeWidth, 50.0f)];
-        item.tag = i;
-        if (2 == i)
-        {
-            [item setHight];
-        }
-        [item addTapCallBack:self sel:@selector(onTimeItemClick:)];
-        [self.view addSubview:item];
-        [self.itemArray addObject:item];
-    }
+//    CGFloat timeWidth = self.view.width / 5.0f;
+//    for (int i = 0; i < 5; i++)
+//    {
+//        HTTimeItem *item = [[HTTimeItem alloc] initWithFrame:CGRectMake(i * timeWidth, titleView.top, timeWidth, 50.0f)];
+//        item.tag = i;
+//        if (2 == i)
+//        {
+//            [item setHight];
+//        }
+//        [item addTapCallBack:self sel:@selector(onTimeItemClick:)];
+//        [self.view addSubview:item];
+//        [self.itemArray addObject:item];
+//    }
     
-    UIView *timeLine = [[UIView alloc] initWithFrame:CGRectMake(0, titleView.top + 46.0f, 48.0f, 4.0f)];
-    timeLine.backgroundColor = UIColorFromRGB(105.0f, 142.0f, 166.0f);
-    timeLine.centerX = titleView.centerX;
-    [self.view addSubview:timeLine];
-    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, titleView.top + 51.0f, self.view.width, 0.5f)];
-    lineView.backgroundColor = UIColorFromRGB(210.0f, 210.0f, 210.0f);
-    [self.view addSubview:lineView];
-    self.timeLabel = [UILabel createLabelWithFrame:CGRectMake(0, lineView.bottom, 71.0f, 33.0f)
+    self.dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, titleView.top, 150, 50)];
+    [self.dateLabel setFont:[UIFont systemFontOfSize:13]];
+    [self.dateLabel setTextColor:[UIColor blackColor]];
+    [self.dateLabel setTextAlignment:NSTextAlignmentCenter];
+    [self.view addSubview:self.dateLabel];
+    
+//    UIView *timeLine = [[UIView alloc] initWithFrame:CGRectMake(0, titleView.top + 46.0f, 48.0f, 4.0f)];
+//    timeLine.backgroundColor = UIColorFromRGB(105.0f, 142.0f, 166.0f);
+//    timeLine.centerX = titleView.centerX;
+//    [self.view addSubview:timeLine];
+//    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, titleView.top + 51.0f, self.view.width, 0.5f)];
+//    lineView.backgroundColor = UIColorFromRGB(210.0f, 210.0f, 210.0f);
+//    [self.view addSubview:lineView];
+    
+    
+    self.timeLabel = [UILabel createLabelWithFrame:CGRectMake(200, titleView.top, 100, 50)
                                         withSize:18.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
-    self.timeLabel.centerX = lineView.centerX;
+//    self.timeLabel.centerX = lineView.centerX;
     self.timeLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:self.timeLabel];
+    
     self.leftButton = [[UIButton alloc] initWithFrame:CGRectMake(self.timeLabel.left - 33.0f, self.timeLabel.top, 33.0f, 33.0f)];
     [self.leftButton setImage:[UIImage imageNamed:@"arrow_left_icon.png"] forState:UIControlStateNormal];
     [self.leftButton addTarget:self action:@selector(onLeftButton:) forControlEvents:UIControlEventTouchUpInside];
     self.leftButton.hidden = YES;
     [self.view addSubview:self.leftButton];
+    
     self.rightButton = [[UIButton alloc] initWithFrame:CGRectMake(self.timeLabel.right, self.timeLabel.top, 33.0f, 33.0f)];
     [self.rightButton setImage:[UIImage imageNamed:@"arrow_right_icon.png"] forState:UIControlStateNormal];
     [self.rightButton addTarget:self action:@selector(onRightButton:) forControlEvents:UIControlEventTouchUpInside];
     self.rightButton.hidden = YES;
     [self.view addSubview:self.rightButton];
-    self.testLabel = [UILabel createLabelWithFrame:CGRectMake(0, lineView.bottom, self.view.width, 33.0f)
-                                        withSize:12.0f withColor:[UIColor blackColor]];
-    self.testLabel.numberOfLines = 4;
+    
+//    self.testLabel = [UILabel createLabelWithFrame:CGRectMake(0, lineView.bottom, self.view.width, 33.0f)
+//                                        withSize:12.0f withColor:[UIColor blackColor]];
+//    self.testLabel.numberOfLines = 4;
   //  [self.view addSubview:self.testLabel];
     
     UIImageView *shake = [[UIImageView alloc] initWithFrame:CGRectMake(10,  titleView.top + 55.0f, 68, 26)];
@@ -579,30 +592,33 @@
 - (void)setDateInfoItem:(NSDate *)date
 {
   [self.dateArray removeAllObjects];
-  NSDate *tmpDate = [date dateBySubtractingDays:2];
-  [self.dateArray addObject:tmpDate];
-  HTTimeItem *tmpTmp = [self.itemArray objectAtIndex:0];
-  [tmpTmp setMonth:(int)tmpDate.month day:(int)tmpDate.day];
+    
+//  NSDate *tmpDate = [date dateBySubtractingDays:2];
+//  [self.dateArray addObject:tmpDate];
+//  HTTimeItem *tmpTmp = [self.itemArray objectAtIndex:0];
+//  [tmpTmp setMonth:(int)tmpDate.month day:(int)tmpDate.day];
+//  //
+//  tmpDate = [date dateBySubtractingDays:1];
+//  [self.dateArray addObject:tmpDate];
+//  tmpTmp = [self.itemArray objectAtIndex:1];
+//  [tmpTmp setMonth:(int)tmpDate.month day:(int)tmpDate.day];
+//  //
+//  tmpDate = [date copy];
+//  [self.dateArray addObject:tmpDate];
+//  tmpTmp = [self.itemArray objectAtIndex:2];
+//  [tmpTmp setMonth:(int)tmpDate.month day:(int)tmpDate.day];
+    
+    [self.dateLabel setText:[date stringWithFormat:@"yyyy年MM月dd日"]];
   //
-  tmpDate = [date dateBySubtractingDays:1];
-  [self.dateArray addObject:tmpDate];
-  tmpTmp = [self.itemArray objectAtIndex:1];
-  [tmpTmp setMonth:(int)tmpDate.month day:(int)tmpDate.day];
-  //
-  tmpDate = [date copy];
-  [self.dateArray addObject:tmpDate];
-  tmpTmp = [self.itemArray objectAtIndex:2];
-  [tmpTmp setMonth:(int)tmpDate.month day:(int)tmpDate.day];
-  //
-  tmpDate = [date dateByAddingDays:1];
-  [self.dateArray addObject:tmpDate];
-  tmpTmp = [self.itemArray objectAtIndex:3];
-  [tmpTmp setMonth:(int)tmpDate.month day:(int)tmpDate.day];
-  //
-  tmpDate = [date dateByAddingDays:2];
-  [self.dateArray addObject:tmpDate];
-  tmpTmp = [self.itemArray objectAtIndex:4];
-  [tmpTmp setMonth:(int)tmpDate.month day:(int)tmpDate.day];
+//  tmpDate = [date dateByAddingDays:1];
+//  [self.dateArray addObject:tmpDate];
+//  tmpTmp = [self.itemArray objectAtIndex:3];
+//  [tmpTmp setMonth:(int)tmpDate.month day:(int)tmpDate.day];
+//  //
+//  tmpDate = [date dateByAddingDays:2];
+//  [self.dateArray addObject:tmpDate];
+//  tmpTmp = [self.itemArray objectAtIndex:4];
+//  [tmpTmp setMonth:(int)tmpDate.month day:(int)tmpDate.day];
 }
 
 - (void)setDateInfo:(NSDate *)date
