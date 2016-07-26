@@ -42,6 +42,9 @@
 
 #import "HLoadingView.h"
 
+#import "HTMultiLabel.h"
+
+
 @interface HomeViewController ()<SharePlatDelegate, SyncModelProtocol, MFMessageComposeViewControllerDelegate,JTCalendarDelegate,RESideMenuDelegate>
 
 @property (nonatomic, strong) UILabel *weightNumLabel;
@@ -143,7 +146,7 @@
     UIImageView *titleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 45.0f)];
     titleImageView.image = [UIImage imageNamed:@"home_title.png"];
   //  [self.view addSubview:titleImageView];
-    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(-0.5f, 0, self.view.width + 1.0f, 84.0f)];
+    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(-0.5f, 0, self.view.width + 1.0f, 44.0f)];
     titleView.backgroundColor = [UIColor whiteColor];
     titleView.layer.borderColor = UIColorFromRGB(210.0f, 210.0f, 210.0f).CGColor;
     titleView.layer.borderWidth = 0.5f;
@@ -203,19 +206,20 @@
 //    self.testLabel.numberOfLines = 4;
   //  [self.view addSubview:self.testLabel];
     
-    UIImageView *shake = [[UIImageView alloc] initWithFrame:CGRectMake(10,  titleView.top + 55.0f, 68, 26)];
-    shake.image = [UIImage imageNamed:@"shake2.0"];
-    [self.view addSubview:shake];
+//    UIImageView *shake = [[UIImageView alloc] initWithFrame:CGRectMake(10,  titleView.top + 55.0f, 68, 26)];
+//    shake.image = [UIImage imageNamed:@"shake2.0"];
+//    [self.view addSubview:shake];
     
-    UIImageView *refresh = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.width - 40,  titleView.top + 55.0f, 25, 25)];
-    refresh.image = [UIImage imageNamed:@"refresh_nav_bar_w"];
-    refresh.userInteractionEnabled = YES;
-    [refresh addTapCallBack:self sel:@selector(refreshHome)];
-    [self.view addSubview:refresh];
+//    UIImageView *refresh = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.width - 40,  titleView.top + 55.0f, 25, 25)];
+//    refresh.image = [UIImage imageNamed:@"refresh_nav_bar_w"];
+//    refresh.userInteractionEnabled = YES;
+//    [refresh addTapCallBack:self sel:@selector(refreshHome)];
+//    [self.view addSubview:refresh];
     
     // 指标第一个View
-    CGFloat contentHeight = SCREEN_HEIGHT_EXCEPTNAV - titleView.bottom;
+    CGFloat contentHeight = SCREEN_HEIGHT_EXCEPTNAV - titleView.bottom -49;
     CGFloat margin = contentHeight * 0.025f;
+    
     UIView *firstView = [[UIView alloc] initWithFrame:CGRectMake(9.0f, titleView.bottom + margin, self.view.width - 18.0f, contentHeight * 0.30f)];
     firstView.backgroundColor = [UIColor whiteColor];
     firstView.layer.cornerRadius = 4.0f;
@@ -227,19 +231,22 @@
                                                    withSize:17.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
     weightTitleLabel.textAlignment = NSTextAlignmentCenter;
     weightTitleLabel.text = @"体重";
-    [self.view addSubview:weightTitleLabel];
+//    [self.view addSubview:weightTitleLabel];
+    
     self.weightNumLabel = [UILabel createLabelWithFrame:CGRectMake(firstView.left, 0, /*weightTitleLabel.width / 2.0f*/65.0, 36.0f)
                                              withSize:25.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
     self.weightNumLabel.centerY = firstView.centerY;
     self.weightNumLabel.text = @"0";
     self.weightNumLabel.textAlignment = NSTextAlignmentRight;
     [self.weightNumLabel addTapCallBack:self sel:@selector(onWeightClick:)];
-    [self.view addSubview:self.weightNumLabel];
+//    [self.view addSubview:self.weightNumLabel];
+    
     UILabel *weightTagLabel = [UILabel createLabelWithFrame:CGRectMake(self.weightNumLabel.right, self.weightNumLabel.top + 18.0f, 24.0f, 15.0f)
                                                  withSize:12.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
     weightTagLabel.text = @"公斤";
     [weightTagLabel addTapCallBack:self sel:@selector(onWeightClick:)];
-    [self.view addSubview:weightTagLabel];
+//    [self.view addSubview:weightTagLabel];
+    
     self.weightStatLabel = [UILabel createLabelWithFrame:CGRectMake(0, firstView.bottom - 32.0f, 51.0f, 25.0f) withSize:14.0f withColor:[UIColor whiteColor]];
     self.weightStatLabel.centerX = weightTitleLabel.centerX;
     self.weightStatLabel.textAlignment = NSTextAlignmentCenter;
@@ -250,7 +257,16 @@
 //    self.weightStatLabel.backgroundColor = UIColorFromRGB(180, 180, 180);
     self.weightStatLabel.backgroundColor = APP_BLUE;
     [self.weightStatLabel addTapCallBack:self sel:@selector(onWeightClick:)];
-    [self.view addSubview:self.weightStatLabel];
+//    [self.view addSubview:self.weightStatLabel];
+    
+    
+    
+    
+    
+    
+    
+    HTMultiLabel *weightLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.left, firstView.top, firstView.width/3.0f, firstView.height)];
+    [self.view addSubview:weightLabel];
     
     // 体脂率
     UILabel *fatTitleLabel = [UILabel createLabelWithFrame:CGRectMake(weightTitleLabel.right, weightTitleLabel.top, weightTitleLabel.width, 21.0f)
@@ -316,7 +332,7 @@
     secondView.backgroundColor = [UIColor whiteColor];
     secondView.layer.cornerRadius = 4.0f;
     secondView.layer.masksToBounds = YES;
-    [self.view addSubview:secondView];
+//    [self.view addSubview:secondView];
     
     // 骨骼率
     UILabel *boneMassLabel = [UILabel createLabelWithFrame:CGRectMake(secondView.left, secondView.top + 16.0f, weightTitleLabel.width, 21.0f)
@@ -413,7 +429,7 @@
     thirdView.backgroundColor = [UIColor whiteColor];
     thirdView.layer.cornerRadius = 4.0f;
     thirdView.layer.masksToBounds = YES;
-    [self.view addSubview:thirdView];
+//    [self.view addSubview:thirdView];
     
     // BMI
     UILabel *mbiTitleLabel = [UILabel createLabelWithFrame:CGRectMake(thirdView.left, thirdView.top + 16.0f, thirdView.width / 3.0f, 21.0f)
