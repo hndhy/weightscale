@@ -91,6 +91,38 @@
 
 @implementation HomeViewController
 
+- (void)initNavbar
+{
+    UIButton *menuButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44.0f, 44.0f)];
+    [menuButton setImage:[UIImage imageNamed:@"menu_nav_bar.png"] forState:UIControlStateNormal];
+    [menuButton addTarget:self action:@selector(presentLeftMenuViewController:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:menuButton];
+    self.navigationItem.leftBarButtonItem = leftItem;
+    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 145.0f, 44.0f)];
+    self.navigationItem.titleView = titleView;
+    UIImageView *iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_nav_bar.png"]];
+    iconImageView.centerY = titleView.centerY;
+    //    iconImageView.hidden = YES;
+    [titleView addSubview:iconImageView];
+    self.titleLabel = [UILabel createLabelWithFrame:CGRectMake(iconImageView.right, 0, titleView.width - iconImageView.right, 44.0f)
+                                           withSize:18.0f withColor:UIColorFromRGB(51.0f, 51.0f, 51.0f)];
+    self.titleLabel.textColor = [UIColor whiteColor];
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    [titleView addSubview:self.titleLabel];
+    UIView *rightView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 88.0f, 44.0f)];
+    rightView.backgroundColor = [UIColor clearColor];
+    UIButton *calendaButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44.0f, 44.0f)];
+    [calendaButton setImage:[UIImage imageNamed:@"carlender_nav_bar.png"] forState:UIControlStateNormal];
+    [calendaButton addTarget:self action:@selector(oncalendaClick:) forControlEvents:UIControlEventTouchUpInside];
+    [rightView addSubview:calendaButton];
+    UIButton *forwardButton = [[UIButton alloc] initWithFrame:CGRectMake(rightView.width-54.0f, 0, 44.0f, 44.0f)];
+    [forwardButton setImage:[UIImage imageNamed:@"home_forward_icon.png"] forState:UIControlStateNormal];
+    [forwardButton addTarget:self action:@selector(onForwardClick:) forControlEvents:UIControlEventTouchUpInside];
+    [rightView addSubview:forwardButton];
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:rightView];
+    self.navigationItem.rightBarButtonItem = rightItem;
+}
+
 -(void)initModel
 {
   self.syncHandler = [[SyncDataModelHander alloc]initWithController:self];
@@ -98,54 +130,11 @@
   self.infoMArray = [NSMutableArray arrayWithCapacity:8];
 }
 
-- (void)initNavbar
-{
-  UIButton *menuButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44.0f, 44.0f)];
-  [menuButton setImage:[UIImage imageNamed:@"menu_nav_bar.png"] forState:UIControlStateNormal];
-  [menuButton addTarget:self action:@selector(presentLeftMenuViewController:) forControlEvents:UIControlEventTouchUpInside];
-  UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:menuButton];
-  self.navigationItem.leftBarButtonItem = leftItem;
-  UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 145.0f, 44.0f)];
-  self.navigationItem.titleView = titleView;
-  UIImageView *iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_nav_bar.png"]];
-    iconImageView.centerY = titleView.centerY;
-//    iconImageView.hidden = YES;
-  [titleView addSubview:iconImageView];
-  self.titleLabel = [UILabel createLabelWithFrame:CGRectMake(iconImageView.right, 0, titleView.width - iconImageView.right, 44.0f)
-                                        withSize:18.0f withColor:UIColorFromRGB(51.0f, 51.0f, 51.0f)];
-  self.titleLabel.textColor = [UIColor whiteColor];
-  self.titleLabel.textAlignment = NSTextAlignmentCenter;
-  [titleView addSubview:self.titleLabel];
-  UIView *rightView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 88.0f, 44.0f)];
-  rightView.backgroundColor = [UIColor clearColor];
-  UIButton *calendaButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44.0f, 44.0f)];
-  [calendaButton setImage:[UIImage imageNamed:@"carlender_nav_bar.png"] forState:UIControlStateNormal];
-  [calendaButton addTarget:self action:@selector(oncalendaClick:) forControlEvents:UIControlEventTouchUpInside];
-  [rightView addSubview:calendaButton];
-  UIButton *forwardButton = [[UIButton alloc] initWithFrame:CGRectMake(rightView.width-54.0f, 0, 44.0f, 44.0f)];
-  [forwardButton setImage:[UIImage imageNamed:@"home_forward_icon.png"] forState:UIControlStateNormal];
-  [forwardButton addTarget:self action:@selector(onForwardClick:) forControlEvents:UIControlEventTouchUpInside];
-  [rightView addSubview:forwardButton];
-  UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:rightView];
-  self.navigationItem.rightBarButtonItem = rightItem;
-}
-
-- (BOOL)needRefreshView
-{
-  return YES;
-}
-
-- (void)refreshView
-{
-  HTUserData *userData = [HTUserData sharedInstance];
-  self.titleLabel.text = userData.nick;
-}
-
 - (void)initView
 {
     UIImageView *titleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 45.0f)];
     titleImageView.image = [UIImage imageNamed:@"home_title.png"];
-  //  [self.view addSubview:titleImageView];
+    //  [self.view addSubview:titleImageView];
     UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(-0.5f, 0, self.view.width + 1.0f, 44.0f)];
     titleView.backgroundColor = [UIColor whiteColor];
     titleView.layer.borderColor = UIColorFromRGB(210.0f, 210.0f, 210.0f).CGColor;
@@ -154,19 +143,19 @@
     
     self.itemArray = [NSMutableArray arrayWithCapacity:5];
     self.dateArray = [NSMutableArray arrayWithCapacity:5];
-//    CGFloat timeWidth = self.view.width / 5.0f;
-//    for (int i = 0; i < 5; i++)
-//    {
-//        HTTimeItem *item = [[HTTimeItem alloc] initWithFrame:CGRectMake(i * timeWidth, titleView.top, timeWidth, 50.0f)];
-//        item.tag = i;
-//        if (2 == i)
-//        {
-//            [item setHight];
-//        }
-//        [item addTapCallBack:self sel:@selector(onTimeItemClick:)];
-//        [self.view addSubview:item];
-//        [self.itemArray addObject:item];
-//    }
+    //    CGFloat timeWidth = self.view.width / 5.0f;
+    //    for (int i = 0; i < 5; i++)
+    //    {
+    //        HTTimeItem *item = [[HTTimeItem alloc] initWithFrame:CGRectMake(i * timeWidth, titleView.top, timeWidth, 50.0f)];
+    //        item.tag = i;
+    //        if (2 == i)
+    //        {
+    //            [item setHight];
+    //        }
+    //        [item addTapCallBack:self sel:@selector(onTimeItemClick:)];
+    //        [self.view addSubview:item];
+    //        [self.itemArray addObject:item];
+    //    }
     
     self.dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, titleView.top, 150, 50)];
     [self.dateLabel setFont:[UIFont systemFontOfSize:13]];
@@ -174,18 +163,18 @@
     [self.dateLabel setTextAlignment:NSTextAlignmentCenter];
     [self.view addSubview:self.dateLabel];
     
-//    UIView *timeLine = [[UIView alloc] initWithFrame:CGRectMake(0, titleView.top + 46.0f, 48.0f, 4.0f)];
-//    timeLine.backgroundColor = UIColorFromRGB(105.0f, 142.0f, 166.0f);
-//    timeLine.centerX = titleView.centerX;
-//    [self.view addSubview:timeLine];
-//    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, titleView.top + 51.0f, self.view.width, 0.5f)];
-//    lineView.backgroundColor = UIColorFromRGB(210.0f, 210.0f, 210.0f);
-//    [self.view addSubview:lineView];
+    //    UIView *timeLine = [[UIView alloc] initWithFrame:CGRectMake(0, titleView.top + 46.0f, 48.0f, 4.0f)];
+    //    timeLine.backgroundColor = UIColorFromRGB(105.0f, 142.0f, 166.0f);
+    //    timeLine.centerX = titleView.centerX;
+    //    [self.view addSubview:timeLine];
+    //    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, titleView.top + 51.0f, self.view.width, 0.5f)];
+    //    lineView.backgroundColor = UIColorFromRGB(210.0f, 210.0f, 210.0f);
+    //    [self.view addSubview:lineView];
     
     
     self.timeLabel = [UILabel createLabelWithFrame:CGRectMake(200, titleView.top, 100, 50)
-                                        withSize:18.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
-//    self.timeLabel.centerX = lineView.centerX;
+                                          withSize:18.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
+    //    self.timeLabel.centerX = lineView.centerX;
     self.timeLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:self.timeLabel];
     
@@ -201,20 +190,20 @@
     self.rightButton.hidden = YES;
     [self.view addSubview:self.rightButton];
     
-//    self.testLabel = [UILabel createLabelWithFrame:CGRectMake(0, lineView.bottom, self.view.width, 33.0f)
-//                                        withSize:12.0f withColor:[UIColor blackColor]];
-//    self.testLabel.numberOfLines = 4;
-  //  [self.view addSubview:self.testLabel];
+    //    self.testLabel = [UILabel createLabelWithFrame:CGRectMake(0, lineView.bottom, self.view.width, 33.0f)
+    //                                        withSize:12.0f withColor:[UIColor blackColor]];
+    //    self.testLabel.numberOfLines = 4;
+    //  [self.view addSubview:self.testLabel];
     
-//    UIImageView *shake = [[UIImageView alloc] initWithFrame:CGRectMake(10,  titleView.top + 55.0f, 68, 26)];
-//    shake.image = [UIImage imageNamed:@"shake2.0"];
-//    [self.view addSubview:shake];
+    //    UIImageView *shake = [[UIImageView alloc] initWithFrame:CGRectMake(10,  titleView.top + 55.0f, 68, 26)];
+    //    shake.image = [UIImage imageNamed:@"shake2.0"];
+    //    [self.view addSubview:shake];
     
-//    UIImageView *refresh = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.width - 40,  titleView.top + 55.0f, 25, 25)];
-//    refresh.image = [UIImage imageNamed:@"refresh_nav_bar_w"];
-//    refresh.userInteractionEnabled = YES;
-//    [refresh addTapCallBack:self sel:@selector(refreshHome)];
-//    [self.view addSubview:refresh];
+    //    UIImageView *refresh = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.width - 40,  titleView.top + 55.0f, 25, 25)];
+    //    refresh.image = [UIImage imageNamed:@"refresh_nav_bar_w"];
+    //    refresh.userInteractionEnabled = YES;
+    //    [refresh addTapCallBack:self sel:@selector(refreshHome)];
+    //    [self.view addSubview:refresh];
     
     // 指标第一个View
     CGFloat contentHeight = SCREEN_HEIGHT_EXCEPTNAV - titleView.bottom -49;
@@ -240,7 +229,7 @@
     thirdView.backgroundColor = [UIColor whiteColor];
     thirdView.layer.cornerRadius = 4.0f;
     thirdView.layer.masksToBounds = YES;
-        [self.view addSubview:thirdView];
+    [self.view addSubview:thirdView];
     
     
     
@@ -292,19 +281,19 @@
     [thirdView addSubview:ageLabel];
     
     
-
+    
     /*
-    // 首页感叹号View
-    UIImageView *targetImageView = [[UIImageView alloc] initWithFrame:CGRectMake(thirdView.right - 30.0f,
-                                                                               thirdView.top + 10.0f, 36.0f, 36.0f)];
-    targetImageView.image = [UIImage imageNamed:@"target_icon.png"];
-    [targetImageView addTapCallBack:self sel:@selector(onTargetClick:)];
-    [self.view addSubview:targetImageView];
-    */
+     // 首页感叹号View
+     UIImageView *targetImageView = [[UIImageView alloc] initWithFrame:CGRectMake(thirdView.right - 30.0f,
+     thirdView.top + 10.0f, 36.0f, 36.0f)];
+     targetImageView.image = [UIImage imageNamed:@"target_icon.png"];
+     [targetImageView addTapCallBack:self sel:@selector(onTargetClick:)];
+     [self.view addSubview:targetImageView];
+     */
     self.sharePlat = [SharePlat sharedInstance];
     self.sharePlat.delegate = self;
     
- 
+    
     if (self.infoModel)
     {
         BodyData *bodyData = [[BodyData alloc]init];
@@ -340,6 +329,19 @@
     }
     self.sideMenuViewController.delegate = self;
 }
+
+
+- (BOOL)needRefreshView
+{
+  return YES;
+}
+
+- (void)refreshView
+{
+  HTUserData *userData = [HTUserData sharedInstance];
+  self.titleLabel.text = userData.nick;
+}
+
 
 - (void)refreshData:(BOOL)isLoading
 {
