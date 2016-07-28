@@ -226,291 +226,72 @@
     firstView.layer.masksToBounds = YES;
     [self.view addSubview:firstView];
     
-    // 体重
-    UILabel *weightTitleLabel = [UILabel createLabelWithFrame:CGRectMake(firstView.left, firstView.top + 16.0f, firstView.width / 3.0f, 21.0f)
-                                                   withSize:17.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
-    weightTitleLabel.textAlignment = NSTextAlignmentCenter;
-    weightTitleLabel.text = @"体重";
-//    [self.view addSubview:weightTitleLabel];
-    
-    self.weightNumLabel = [UILabel createLabelWithFrame:CGRectMake(firstView.left, 0, /*weightTitleLabel.width / 2.0f*/65.0, 36.0f)
-                                             withSize:25.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
-    self.weightNumLabel.centerY = firstView.centerY;
-    self.weightNumLabel.text = @"0";
-    self.weightNumLabel.textAlignment = NSTextAlignmentRight;
-    [self.weightNumLabel addTapCallBack:self sel:@selector(onWeightClick:)];
-//    [self.view addSubview:self.weightNumLabel];
-    
-    UILabel *weightTagLabel = [UILabel createLabelWithFrame:CGRectMake(self.weightNumLabel.right, self.weightNumLabel.top + 18.0f, 24.0f, 15.0f)
-                                                 withSize:12.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
-    weightTagLabel.text = @"公斤";
-    [weightTagLabel addTapCallBack:self sel:@selector(onWeightClick:)];
-//    [self.view addSubview:weightTagLabel];
-    
-    self.weightStatLabel = [UILabel createLabelWithFrame:CGRectMake(0, firstView.bottom - 32.0f, 51.0f, 25.0f) withSize:14.0f withColor:[UIColor whiteColor]];
-    self.weightStatLabel.centerX = weightTitleLabel.centerX;
-    self.weightStatLabel.textAlignment = NSTextAlignmentCenter;
-    self.weightStatLabel.text = @"N/A";
-    self.weightStatLabel.text = @"不判断";
-    self.weightStatLabel.layer.cornerRadius = 4.0f;
-    self.weightStatLabel.layer.masksToBounds = YES;
-//    self.weightStatLabel.backgroundColor = UIColorFromRGB(180, 180, 180);
-    self.weightStatLabel.backgroundColor = APP_BLUE;
-    [self.weightStatLabel addTapCallBack:self sel:@selector(onWeightClick:)];
-//    [self.view addSubview:self.weightStatLabel];
-    
-    
-    
-    
-    
-    
-    
-    HTMultiLabel *weightLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.left, firstView.top, firstView.width/3.0f, firstView.height)];
-    [self.view addSubview:weightLabel];
-    
-    // 体脂率
-    UILabel *fatTitleLabel = [UILabel createLabelWithFrame:CGRectMake(weightTitleLabel.right, weightTitleLabel.top, weightTitleLabel.width, 21.0f)
-                                                withSize:17.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
-    fatTitleLabel.textAlignment = NSTextAlignmentCenter;
-    fatTitleLabel.text = @"体脂率";
-    [fatTitleLabel addTapCallBack:self sel:@selector(onFatClick:)];
-    [self.view addSubview:fatTitleLabel];
-    self.fatNumLabel = [UILabel createLabelWithFrame:CGRectMake(fatTitleLabel.left, 0, 65.0f, 36.0f)
-                                          withSize:25.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
-    self.fatNumLabel.centerY = firstView.centerY;
-    self.fatNumLabel.text = @"0";
-    self.fatNumLabel.textAlignment = NSTextAlignmentRight;
-    [self.fatNumLabel addTapCallBack:self sel:@selector(onFatClick:)];
-    [self.view addSubview:self.fatNumLabel];
-  
-    UILabel *fatTagLabel = [UILabel createLabelWithFrame:CGRectMake(self.fatNumLabel.right, self.fatNumLabel.top + 18.0f, 24.0f, 15.0f)
-                                              withSize:12.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
-    fatTagLabel.text = @"%";
-    [self.view addSubview:fatTagLabel];
-    [fatTagLabel addTapCallBack:self sel:@selector(onFatClick:)];
-    self.fatStatLabel = [UILabel createLabelWithFrame:CGRectMake(0, firstView.bottom - 32.0f, 51.0f, 25.0f) withSize:14.0f withColor:[UIColor whiteColor]];
-    self.fatStatLabel.centerX = fatTitleLabel.centerX;
-    self.fatStatLabel.textAlignment = NSTextAlignmentCenter;
-    self.fatStatLabel.text = @"正常";
-    self.fatStatLabel.layer.cornerRadius = 4.0f;
-    self.fatStatLabel.layer.masksToBounds = YES;
-    self.fatStatLabel.backgroundColor = UIColorFromRGB(153.0f, 209.0f, 234.0f);
-    [self.fatStatLabel addTapCallBack:self sel:@selector(onFatClick:)];
-    [self.view addSubview:self.fatStatLabel];
-  
-    // 内脂
-    UILabel *nFatTitleLabel = [UILabel createLabelWithFrame:CGRectMake(fatTitleLabel.right, fatTitleLabel.top, fatTitleLabel.width, 21.0f)
-                                                 withSize:17.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
-    nFatTitleLabel.textAlignment = NSTextAlignmentCenter;
-    nFatTitleLabel.text = @"内脂";
-    [nFatTitleLabel addTapCallBack:self sel:@selector(onVatClick:)];
-    [self.view addSubview:nFatTitleLabel];
-    self.nFatNumLabel = [UILabel createLabelWithFrame:CGRectMake(nFatTitleLabel.left, 0, 65.0f, 36.0f)
-                                           withSize:25.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
-    self.nFatNumLabel.centerY = firstView.centerY;
-    self.nFatNumLabel.text = @"0";
-    self.nFatNumLabel.textAlignment = NSTextAlignmentRight;
-    [self.nFatNumLabel addTapCallBack:self sel:@selector(onVatClick:)];
-    [self.view addSubview:self.nFatNumLabel];
-    UILabel *nFatTagLabel = [UILabel createLabelWithFrame:CGRectMake(self.nFatNumLabel.right, self.nFatNumLabel.top + 18.0f, 24.0f, 15.0f)
-                                               withSize:12.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
-    nFatTagLabel.text = @"级";
-    [nFatTagLabel addTapCallBack:self sel:@selector(onVatClick:)];
-    [self.view addSubview:nFatTagLabel];
-    self.nFatStatLabel = [UILabel createLabelWithFrame:CGRectMake(0, firstView.bottom - 32.0f, 51.0f, 25.0f) withSize:14.0f withColor:[UIColor whiteColor]];
-    self.nFatStatLabel.centerX = nFatTitleLabel.centerX;
-    self.nFatStatLabel.textAlignment = NSTextAlignmentCenter;
-    self.nFatStatLabel.text = @"警戒";
-    self.nFatStatLabel.layer.cornerRadius = 4.0f;
-    self.nFatStatLabel.layer.masksToBounds = YES;
-    self.nFatStatLabel.backgroundColor = UIColorFromRGB(249.0f, 150.0f, 21.0f);
-    [self.nFatStatLabel addTapCallBack:self sel:@selector(onVatClick:)];
-    [self.view addSubview:self.nFatStatLabel];
     
     // 指示第二个view
     UIView *secondView = [[UIView alloc] initWithFrame:CGRectMake(firstView.left, firstView.bottom + margin, firstView.width, firstView.height)];
     secondView.backgroundColor = [UIColor whiteColor];
     secondView.layer.cornerRadius = 4.0f;
     secondView.layer.masksToBounds = YES;
-//    [self.view addSubview:secondView];
+    [self.view addSubview:secondView];
     
-    // 骨骼率
-    UILabel *boneMassLabel = [UILabel createLabelWithFrame:CGRectMake(secondView.left, secondView.top + 16.0f, weightTitleLabel.width, 21.0f)
-                                                withSize:17.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
-    boneMassLabel.textAlignment = NSTextAlignmentCenter;
-    boneMassLabel.text = @"骨骼肌率";
-    [boneMassLabel addTapCallBack:self sel:@selector(onBoneMssClick:)];
-    [self.view addSubview:boneMassLabel];
-    
-    self.boneMassNumLabel = [UILabel createLabelWithFrame:CGRectMake(boneMassLabel.left, 0, 65.0f, 36.0f)
-                                          withSize:25.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
-    self.boneMassNumLabel.centerY = secondView.centerY;
-    self.boneMassNumLabel.text = @"0";
-    self.boneMassNumLabel.textAlignment = NSTextAlignmentRight;
-    [self.boneMassNumLabel addTapCallBack:self sel:@selector(onBoneMssClick:)];
-    [self.view addSubview:self.boneMassNumLabel];
-    UILabel *boneTagLabel = [UILabel createLabelWithFrame:CGRectMake(self.boneMassNumLabel.right, self.boneMassNumLabel.top + 18.0f, 24.0f, 15.0f)
-                                              withSize:12.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
-    boneTagLabel.text = @"%";
-    
-    [self.view addSubview:boneTagLabel];
-    self.boneMassStatLabel = [UILabel createLabelWithFrame:CGRectMake(0, secondView.bottom - 32.0f, 51.0f, 25.0f) withSize:14.0f withColor:[UIColor whiteColor]];
-    self.boneMassStatLabel.centerX = boneMassLabel.centerX;
-    self.boneMassStatLabel.textAlignment = NSTextAlignmentCenter;
-    self.boneMassStatLabel.text = @"正常";
-    self.boneMassStatLabel.layer.cornerRadius = 4.0f;
-    self.boneMassStatLabel.layer.masksToBounds = YES;
-    self.boneMassStatLabel.backgroundColor = UIColorFromRGB(153.0f, 209.0f, 234.0f);
-    [self.boneMassStatLabel addTapCallBack:self sel:@selector(onBoneMssClick:)];
-    [self.view addSubview:self.boneMassStatLabel];
-    
-    // 肌肉量
-    UILabel *muscleTitleLabel = [UILabel createLabelWithFrame:CGRectMake(weightTitleLabel.right, secondView.top + 16.0f, boneMassLabel.width, 21.0f)
-                                                   withSize:17.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
-    muscleTitleLabel.textAlignment = NSTextAlignmentCenter;
-    muscleTitleLabel.text = @"肌肉量";
-    [muscleTitleLabel addTapCallBack:self sel:@selector(onLBMClick:)];
-    [self.view addSubview:muscleTitleLabel];//(muscleTitleLabel.left, 0, 65.0f, 36.0f)
-    self.muscleNumLabel = [UILabel createLabelWithFrame:CGRectMake(muscleTitleLabel.left, 0, 65.0f, 36.0f)//
-                                             withSize:25.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
-    self.muscleNumLabel.centerY = secondView.centerY;
-    self.muscleNumLabel.text = @"0";
-    self.muscleNumLabel.textAlignment = NSTextAlignmentRight;
-    [self.muscleNumLabel addTapCallBack:self sel:@selector(onLBMClick:)];
-    [self.view addSubview:self.muscleNumLabel];
-    UILabel *muscleTagLabel = [UILabel createLabelWithFrame:CGRectMake(self.muscleNumLabel.right, self.muscleNumLabel.top + 18.0f, 24.0f, 15.0f)
-                                                 withSize:12.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
-    muscleTagLabel.text = @"公斤";
-    [muscleTagLabel addTapCallBack:self sel:@selector(onLBMClick:)];
-    [self.view addSubview:muscleTagLabel];
-    self.muscleStatLabel = [UILabel createLabelWithFrame:CGRectMake(0, secondView.bottom - 32.0f, 51.0f, 25.0f) withSize:14.0f withColor:[UIColor whiteColor]];
-    self.muscleStatLabel.centerX = muscleTitleLabel.centerX;
-    self.muscleStatLabel.textAlignment = NSTextAlignmentCenter;
-    self.muscleStatLabel.text = @"正常";
-    self.muscleStatLabel.layer.cornerRadius = 4.0f;
-    self.muscleStatLabel.layer.masksToBounds = YES;
-    self.muscleStatLabel.backgroundColor = UIColorFromRGB(153.0f, 209.0f, 234.0f);
-    [self.muscleStatLabel addTapCallBack:self sel:@selector(onLBMClick:)];
-    [self.view addSubview:self.muscleStatLabel];
-    
-    // 基础代谢
-    UILabel *metaTitleLabel = [UILabel createLabelWithFrame:CGRectMake(muscleTitleLabel.right, secondView.top + 16.0f, muscleTitleLabel.width, 21.0f)
-                                                 withSize:17.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
-    metaTitleLabel.textAlignment = NSTextAlignmentCenter;
-    metaTitleLabel.text = @"基础代谢";
-    [metaTitleLabel addTapCallBack:self sel:@selector(onKcalClick:)];
-    [self.view addSubview:metaTitleLabel];
-    self.metaNumLabel = [UILabel createLabelWithFrame:CGRectMake(metaTitleLabel.left - 6.0f, 0, 66.0f, 36.0f)
-                                           withSize:25.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
-    self.metaNumLabel.centerY = secondView.centerY;
-    self.metaNumLabel.text = @"0";
-    self.metaNumLabel.textAlignment = NSTextAlignmentRight;
-    [self.metaNumLabel addTapCallBack:self sel:@selector(onKcalClick:)];
-    [self.view addSubview:self.metaNumLabel];
-    UILabel *metaTagLabel = [UILabel createLabelWithFrame:CGRectMake(self.metaNumLabel.right, self.metaNumLabel.top + 18.0f, 39.0f, 15.0f)
-                                               withSize:12.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
-    metaTagLabel.text = @"kcal/天";
-    [metaTagLabel addTapCallBack:self sel:@selector(onKcalClick:)];
-    [self.view addSubview:metaTagLabel];
-    self.metaStatLabel = [UILabel createLabelWithFrame:CGRectMake(0, secondView.bottom - 32.0f, 51.0f, 25.0f) withSize:14.0f withColor:[UIColor whiteColor]];
-    self.metaStatLabel.centerX = metaTitleLabel.centerX;
-    self.metaStatLabel.textAlignment = NSTextAlignmentCenter;
-//    self.metaStatLabel.text = @"N/A";
-    self.metaStatLabel.text = @"不判断";
-    self.metaStatLabel.layer.cornerRadius = 4.0f;
-    self.metaStatLabel.layer.masksToBounds = YES;
-//    self.metaStatLabel.backgroundColor = UIColorFromRGB(180, 180, 180);
-    self.metaStatLabel.backgroundColor = APP_BLUE;
-    [self.metaStatLabel addTapCallBack:self sel:@selector(onKcalClick:)];
-    [self.view addSubview:self.metaStatLabel];
     
     // 指标第三个view
     UIView *thirdView = [[UIView alloc] initWithFrame:CGRectMake(secondView.left, secondView.bottom + margin, secondView.width, secondView.height)];//contentHeight * 0.22f
     thirdView.backgroundColor = [UIColor whiteColor];
     thirdView.layer.cornerRadius = 4.0f;
     thirdView.layer.masksToBounds = YES;
-//    [self.view addSubview:thirdView];
-    
-    // BMI
-    UILabel *mbiTitleLabel = [UILabel createLabelWithFrame:CGRectMake(thirdView.left, thirdView.top + 16.0f, thirdView.width / 3.0f, 21.0f)
-                                                withSize:17.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
-    mbiTitleLabel.text = @"BMI";
-    mbiTitleLabel.textAlignment = NSTextAlignmentCenter;
-    [mbiTitleLabel addTapCallBack:self sel:@selector(onMBIClick:)];
-    [self.view addSubview:mbiTitleLabel];
-    self.mbiNumLabel = [UILabel createLabelWithFrame:CGRectMake(mbiTitleLabel.left, 0, mbiTitleLabel.width, 36.0f)
-                                          withSize:25.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
-    self.mbiNumLabel.text = @"0";
-    self.mbiNumLabel.textAlignment = NSTextAlignmentCenter;
-    self.mbiNumLabel.centerY = thirdView.centerY;
-    [self.mbiNumLabel addTapCallBack:self sel:@selector(onMBIClick:)];
-    [self.view addSubview:self.mbiNumLabel];
-    self.mbiStatLabel = [UILabel createLabelWithFrame:CGRectMake(0, thirdView.bottom - 32.0f, 51.0f, 25.0f)
-                                           withSize:14.0f withColor:[UIColor whiteColor]];
-    self.mbiStatLabel.centerX = self.mbiNumLabel.centerX;
-    self.mbiStatLabel.textAlignment = NSTextAlignmentCenter;
-    self.mbiStatLabel.text = @"正常";
-    self.mbiStatLabel.layer.cornerRadius = 4.0f;
-    self.mbiStatLabel.layer.masksToBounds = YES;
-    self.mbiStatLabel.backgroundColor = UIColorFromRGB(153.0f, 209.0f, 234.0f);
-    [self.mbiStatLabel addTapCallBack:self sel:@selector(onMBIClick:)];
-    [self.view addSubview:self.mbiStatLabel];
+        [self.view addSubview:thirdView];
     
     
-    // 体水分
-    UILabel *wetTitleLabel = [UILabel createLabelWithFrame:CGRectMake(mbiTitleLabel.right, thirdView.top + 16.0f, mbiTitleLabel.width, 21.0f)
-                                                  withSize:17.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
-    wetTitleLabel.textAlignment = NSTextAlignmentCenter;
-    wetTitleLabel.text = @"体水分";
-    [self.view addSubview:wetTitleLabel];
-    [wetTitleLabel addTapCallBack:self sel:@selector(onWaterClick:)];
-    self.wetNumLabel = [UILabel createLabelWithFrame:CGRectMake(wetTitleLabel.left, 0, 65.0f, 36.0f)
-                                            withSize:25.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
-    self.wetNumLabel.centerY = thirdView.centerY;
-    self.wetNumLabel.text = @"0";
-    self.wetNumLabel.textAlignment = NSTextAlignmentRight;
-    [self.view addSubview:self.wetNumLabel];
-    UILabel *wetTagLabel = [UILabel createLabelWithFrame:CGRectMake(self.wetNumLabel.right, self.wetNumLabel.top + 18.0f, 24.0f, 15.0f)
-                                                withSize:12.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
-    wetTagLabel.text = @"%";
-    [self.view addSubview:wetTagLabel];
-    [wetTagLabel addTapCallBack:self sel:@selector(onWaterClick:)];
-    self.wetStatLabel = [UILabel createLabelWithFrame:CGRectMake(0, thirdView.bottom - 32.0f, 51.0f, 25.0f) withSize:14.0f withColor:[UIColor whiteColor]];
-    self.wetStatLabel.centerX = wetTitleLabel.centerX;
-    self.wetStatLabel.textAlignment = NSTextAlignmentCenter;
-    self.wetStatLabel.text = @"正常";
-    self.wetStatLabel.layer.cornerRadius = 4.0f;
-    self.wetStatLabel.layer.masksToBounds = YES;
-    self.wetStatLabel.backgroundColor = UIColorFromRGB(153.0f, 209.0f, 234.0f);
-    [self.wetStatLabel addTapCallBack:self sel:@selector(onWaterClick:)];
-    [self.view addSubview:self.wetStatLabel];
+    
+    HTMultiLabel *weightLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.left, 0, firstView.width/3.0f, firstView.height)];
+    [weightLabel setInfoForNumber:0 titleLabel:@"体重" tagLabel:@"公斤" stateLabel:@"不判断"];
+    [weightLabel addTapCallBack:self sel:@selector(onWeightClick:)];
+    [firstView addSubview:weightLabel];
+    
+    HTMultiLabel *fatLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.width/3.0f, 0, firstView.width/3.0f, firstView.height)];
+    [fatLabel setInfoForNumber:0 titleLabel:@"体脂率" tagLabel:@"％" stateLabel:@"正常"];
+    [fatLabel addTapCallBack:self sel:@selector(onFatClick:)];
+    [firstView addSubview:fatLabel];
+    
+    HTMultiLabel *nFatLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.width*2/3.0f, 0, firstView.width/3.0f, firstView.height)];
+    [nFatLabel setInfoForNumber:0 titleLabel:@"内脂" tagLabel:@"级" stateLabel:@"警戒"];
+    [nFatLabel addTapCallBack:self sel:@selector(onVatClick:)];
+    [firstView addSubview:nFatLabel];
     
     
-    // 身体年龄
-    UILabel *ageTitleLabel = [UILabel createLabelWithFrame:CGRectMake(wetTitleLabel.right, wetTitleLabel.top, wetTitleLabel.width, 21.0f)
-                                                withSize:17.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
-    ageTitleLabel.text = @"身体年龄";
-    ageTitleLabel.textAlignment = NSTextAlignmentCenter;
-    [ageTitleLabel addTapCallBack:self sel:@selector(onBodyAgeClick:)];
-    [self.view addSubview:ageTitleLabel];
-    self.ageNumLabel = [UILabel createLabelWithFrame:CGRectMake(ageTitleLabel.left, self.mbiNumLabel.top, ageTitleLabel.width, 36.0f)
-                                          withSize:25.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
-    self.ageNumLabel.text = @"0";
-    self.ageNumLabel.textAlignment = NSTextAlignmentCenter;
-    [self.ageNumLabel addTapCallBack:self sel:@selector(onBodyAgeClick:)];
-    [self.view addSubview:self.ageNumLabel];
-    self.ageStatLabel = [UILabel createLabelWithFrame:CGRectMake(self.ageNumLabel.right, self.mbiStatLabel.top, 51.0f, 25.0f)
-                                           withSize:14.0f withColor:[UIColor whiteColor]];
-    self.ageStatLabel.textAlignment = NSTextAlignmentCenter;
-//    self.ageStatLabel.text = @"N/A";
-    self.ageStatLabel.text = @"不判断";
-    self.ageStatLabel.centerX = self.ageNumLabel.centerX;
-    self.ageStatLabel.layer.cornerRadius = 4.0f;
-    self.ageStatLabel.layer.masksToBounds = YES;
-//    self.ageStatLabel.backgroundColor = UIColorFromRGB(180, 180, 180);
-    self.ageStatLabel.backgroundColor = APP_BLUE;
-    [self.ageStatLabel addTapCallBack:self sel:@selector(onBodyAgeClick:)];
-    [self.view addSubview:self.ageStatLabel];
+    HTMultiLabel *boneLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.left, 0, firstView.width/3.0f, firstView.height)];
+    [boneLabel setInfoForNumber:0 titleLabel:@"骨骼肌率" tagLabel:@"％" stateLabel:@"警报"];
+    [boneLabel addTapCallBack:self sel:@selector(onBoneMssClick:)];
+    [secondView addSubview:boneLabel];
+    
+    HTMultiLabel *muscleLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.width/3.0f, 0, firstView.width/3.0f, firstView.height)];
+    [muscleLabel setInfoForNumber:0 titleLabel:@"肌肉量" tagLabel:@"公斤" stateLabel:@"正常"];
+    [muscleLabel addTapCallBack:self sel:@selector(onLBMClick:)];
+    [secondView addSubview:muscleLabel];
+    
+    HTMultiLabel *metaLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.width*2/3.0f, 0, firstView.width/3.0f, firstView.height)];
+    [metaLabel setInfoForNumber:0 titleLabel:@"基础代谢" tagLabel:@"kcal" stateLabel:@"正常"];
+    [metaLabel addTapCallBack:self sel:@selector(onKcalClick:)];
+    [secondView addSubview:metaLabel];
+    
+    
+    HTMultiLabel *mbiLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.left, 0, firstView.width/3.0f, firstView.height)];
+    [mbiLabel setInfoForNumber:0 titleLabel:@"BMI" tagLabel:@"" stateLabel:@"正常"];
+    [mbiLabel addTapCallBack:self sel:@selector(onMBIClick:)];
+    [thirdView addSubview:mbiLabel];
+    
+    HTMultiLabel *wetLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.width/3.0f, 0, firstView.width/3.0f, firstView.height)];
+    [wetLabel setInfoForNumber:0 titleLabel:@"体水分" tagLabel:@"％" stateLabel:@"警报"];
+    [wetLabel addTapCallBack:self sel:@selector(onWaterClick:)];
+    [thirdView addSubview:wetLabel];
+    
+    HTMultiLabel *ageLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.width*2/3.0f, 0, firstView.width/3.0f, firstView.height)];
+    [ageLabel setInfoForNumber:0 titleLabel:@"身体年龄" tagLabel:@"％" stateLabel:@"危险"];
+    [ageLabel addTapCallBack:self sel:@selector(onBodyAgeClick:)];
+    [thirdView addSubview:ageLabel];
+    
+    
 
     /*
     // 首页感叹号View

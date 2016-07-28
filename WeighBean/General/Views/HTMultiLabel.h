@@ -15,4 +15,6 @@
 @property (nonatomic,strong) UILabel *weightTagLabel;
 @property (nonatomic,strong) UILabel *weightStatLabel;
 @property (nonatomic,strong) UIImageView * iconView;
+
+- (void)setInfoForNumber:(CGFloat)number titleLabel:(NSString *)title tagLabel:(NSString *)tag stateLabel:(NSString *)state;
 @end
