@@ -108,6 +108,10 @@
 		52D8298E1C312F4400EDF084 /* fat_explain_2.0_w@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D8298D1C312F4400EDF084 /* fat_explain_2.0_w@2x.png */; };
 		5C1C13301D4E459C009A238D /* NSDictionary+GetValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C132F1D4E459C009A238D /* NSDictionary+GetValue.m */; };
 		5C6562A41D47DEC4004CF31B /* HTMultiLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6562A31D47DEC4004CF31B /* HTMultiLabel.m */; };
+		5CE173111D4DFB930047E8B9 /* CoachModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173101D4DFB930047E8B9 /* CoachModelHandler.m */; };
+		5CE173141D4DFC860047E8B9 /* CoachListResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173131D4DFC860047E8B9 /* CoachListResponse.m */; };
+		5CE173171D4DFD130047E8B9 /* CoachObjModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173161D4DFD130047E8B9 /* CoachObjModel.m */; };
+		5CE1731A1D4E01470047E8B9 /* CoachListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173191D4E01470047E8B9 /* CoachListModel.m */; };
 		5F3A54081B770D4200F52C55 /* menu_nav_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A54071B770D4200F52C55 /* menu_nav_bar@2x.png */; };
 		5F3A540A1B771A2200F52C55 /* home_forward_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A54091B771A2200F52C55 /* home_forward_icon@2x.png */; };
 		5F3A540D1B771A5300F52C55 /* home_title@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A540C1B771A5300F52C55 /* home_title@2x.png */; };
@@ -511,6 +515,14 @@
 		5C1C132F1D4E459C009A238D /* NSDictionary+GetValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+GetValue.m"; sourceTree = "<group>"; };
 		5C6562A21D47DEC4004CF31B /* HTMultiLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMultiLabel.h; sourceTree = "<group>"; };
 		5C6562A31D47DEC4004CF31B /* HTMultiLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMultiLabel.m; sourceTree = "<group>"; };
+		5CE1730F1D4DFB930047E8B9 /* CoachModelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachModelHandler.h; sourceTree = "<group>"; };
+		5CE173101D4DFB930047E8B9 /* CoachModelHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachModelHandler.m; sourceTree = "<group>"; };
+		5CE173121D4DFC860047E8B9 /* CoachListResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachListResponse.h; sourceTree = "<group>"; };
+		5CE173131D4DFC860047E8B9 /* CoachListResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachListResponse.m; sourceTree = "<group>"; };
+		5CE173151D4DFD130047E8B9 /* CoachObjModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachObjModel.h; sourceTree = "<group>"; };
+		5CE173161D4DFD130047E8B9 /* CoachObjModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachObjModel.m; sourceTree = "<group>"; };
+		5CE173181D4E01470047E8B9 /* CoachListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachListModel.h; sourceTree = "<group>"; };
+		5CE173191D4E01470047E8B9 /* CoachListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachListModel.m; sourceTree = "<group>"; };
 		5F3A54071B770D4200F52C55 /* menu_nav_bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_nav_bar@2x.png"; sourceTree = "<group>"; };
 		5F3A54091B771A2200F52C55 /* home_forward_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_forward_icon@2x.png"; sourceTree = "<group>"; };
 		5F3A540C1B771A5300F52C55 /* home_title@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_title@2x.png"; sourceTree = "<group>"; };
@@ -986,6 +998,27 @@
 				5289FE911C0AAC400036FA6F /* MiPushServerSDK.h */,
 			);
 			path = MIPushSDK;
+			sourceTree = "<group>";
+		};
+		5CE1730C1D4DEF100047E8B9 /* Coach */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Coach;
+			sourceTree = "<group>";
+		};
+		5CE1730D1D4DEF240047E8B9 /* Coach */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Coach;
+			sourceTree = "<group>";
+		};
+		5CE1730E1D4DEF300047E8B9 /* Coach */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Coach;
 			sourceTree = "<group>";
 		};
 		5F3A540B1B771A5300F52C55 /* Home */ = {
@@ -1479,6 +1512,7 @@
 				5FA9F1731B66096C00997BA8 /* HTBaseModelHandler.m */,
 				5FA9F1741B66096C00997BA8 /* HTTableModelHandler.h */,
 				5FA9F1751B66096C00997BA8 /* HTTableModelHandler.m */,
+				5CE1730C1D4DEF100047E8B9 /* Coach */,
 				B01A8ED01B7EE6310049D86D /* Home */,
 				5FA9F15E1B66096C00997BA8 /* Common */,
 				5FA9F1791B66096C00997BA8 /* Login */,
@@ -1545,6 +1579,7 @@
 			children = (
 				5FA9F1A51B66096C00997BA8 /* BaseResponse.h */,
 				5FA9F1A61B66096C00997BA8 /* BaseResponse.m */,
+				5CE1730D1D4DEF240047E8B9 /* Coach */,
 				B01A8E8D1B7CD6110049D86D /* Home */,
 				5F7F82861B7641B700AC04B3 /* Measure */,
 				5FA9F1DF1B66096C00997BA8 /* Login */,
@@ -1584,6 +1619,7 @@
 			children = (
 				5FA9F2431B66096C00997BA8 /* HTAbstractDataSource.h */,
 				5FA9F2441B66096C00997BA8 /* HTAbstractDataSource.m */,
+				5CE1730E1D4DEF300047E8B9 /* Coach */,
 				B01A8EC91B7ED1C40049D86D /* Home */,
 				5FA9F2251B66096C00997BA8 /* Common */,
 				5FA9F24A1B66096C00997BA8 /* Login */,
@@ -1926,6 +1962,10 @@
 				524A91771BA1816400F36516 /* AddLookResponse.m */,
 				524A917C1BA1845D00F36516 /* AddLookModel.h */,
 				524A917D1BA1845D00F36516 /* AddLookModel.m */,
+				5CE173121D4DFC860047E8B9 /* CoachListResponse.h */,
+				5CE173131D4DFC860047E8B9 /* CoachListResponse.m */,
+				5CE173181D4E01470047E8B9 /* CoachListModel.h */,
+				5CE173191D4E01470047E8B9 /* CoachListModel.m */,
 				522123BB1BFCABCA006BCCC4 /* OnlineListResponse.h */,
 				522123BC1BFCABCA006BCCC4 /* OnlineListResponse.m */,
 				522123BE1BFCAD9C006BCCC4 /* OnlineListModel.h */,
@@ -1991,6 +2031,8 @@
 				5289FEA01C0ABAE80036FA6F /* ToolsObjModel.m */,
 				52C639101C0C53B900BB45D7 /* OLProductModel.h */,
 				52C639111C0C53B900BB45D7 /* OLProductModel.m */,
+				5CE173151D4DFD130047E8B9 /* CoachObjModel.h */,
+				5CE173161D4DFD130047E8B9 /* CoachObjModel.m */,
 				52964C581C19588E003FA17A /* TrendObjModel.h */,
 				52964C591C19588E003FA17A /* TrendObjModel.m */,
 			);
@@ -2008,6 +2050,8 @@
 				5FD514A11B80B5440088C7E9 /* ZouMaDengModelHandler.m */,
 				522123B81BFCAB03006BCCC4 /* OnlineModelHandler.h */,
 				522123B91BFCAB03006BCCC4 /* OnlineModelHandler.m */,
+				5CE1730F1D4DFB930047E8B9 /* CoachModelHandler.h */,
+				5CE173101D4DFB930047E8B9 /* CoachModelHandler.m */,
 				522123C71BFCB5A1006BCCC4 /* VerifyOrderHander.h */,
 				522123C81BFCB5A1006BCCC4 /* VerifyOrderHander.m */,
 				5289FE861C0756DA0036FA6F /* NotifNumberModelHandler.h */,
@@ -2325,6 +2369,7 @@
 				5FA9F28A1B66096C00997BA8 /* NSURL+Additions.m in Sources */,
 				5289FE881C0756DA0036FA6F /* NotifNumberModelHandler.m in Sources */,
 				5FA9F30E1B66096C00997BA8 /* HTAppContext.m in Sources */,
+				5CE173111D4DFB930047E8B9 /* CoachModelHandler.m in Sources */,
 				5FA9F2871B66096C00997BA8 /* NSDate+Utilities.m in Sources */,
 				5289FEA11C0ABAE80036FA6F /* ToolsObjModel.m in Sources */,
 				52C639151C0D4A8D00BB45D7 /* HLoadingView.m in Sources */,
@@ -2349,6 +2394,7 @@
 				5289FE9B1C0AB8940036FA6F /* ToolsResponse.m in Sources */,
 				5F88BE1B1B7CED5C008C4901 /* CheckTelAndNickModelHandler.m in Sources */,
 				5FE2554F1B7892D60029BD4D /* UpLoadAvatarModel.m in Sources */,
+				5CE1731A1D4E01470047E8B9 /* CoachListModel.m in Sources */,
 				5289FE8B1C0757AD0036FA6F /* NotifNumberResponse.m in Sources */,
 				5F88BE241B7DC355008C4901 /* ForgetPwdViewController.m in Sources */,
 				5FA9F31B1B66096C00997BA8 /* HTAbstractDataSource.m in Sources */,
@@ -2422,6 +2468,7 @@
 				5FA9F2BD1B66096C00997BA8 /* UncollectClickModelHandler.m in Sources */,
 				5FE255551B78BE550029BD4D /* UploadAvatarResponse.m in Sources */,
 				52964C571C195833003FA17A /* TrendResponse.m in Sources */,
+				5CE173171D4DFD130047E8B9 /* CoachObjModel.m in Sources */,
 				5F7F82701B75BA1200AC04B3 /* HomeViewController.m in Sources */,
 				B01A8ED91B7F5F9A0049D86D /* DelDatasModelHandler.m in Sources */,
 				5FA9F3371B66135C00997BA8 /* LoginViewController.m in Sources */,
@@ -2455,6 +2502,7 @@
 				524A91721BA175B400F36516 /* AddLookViewController.m in Sources */,
 				5FA9F2941B66096C00997BA8 /* HTScrollViewController.m in Sources */,
 				5FA9F2931B66096C00997BA8 /* HTNavigationController.m in Sources */,
+				5CE173141D4DFC860047E8B9 /* CoachListResponse.m in Sources */,
 				B01A8E981B7DCFEB0049D86D /* BDListCell.m in Sources */,
 				5FA9F2BA1B66096C00997BA8 /* CollectClickModelHandler.m in Sources */,
 				5FA9F2B41B66096C00997BA8 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
