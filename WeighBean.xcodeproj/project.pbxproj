@@ -106,6 +106,7 @@
 		52C639151C0D4A8D00BB45D7 /* HLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C639141C0D4A8D00BB45D7 /* HLoadingView.m */; };
 		52D829861C302EB400EDF084 /* nav_info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D829851C302EB400EDF084 /* nav_info@2x.png */; };
 		52D8298E1C312F4400EDF084 /* fat_explain_2.0_w@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D8298D1C312F4400EDF084 /* fat_explain_2.0_w@2x.png */; };
+		5C1C13301D4E459C009A238D /* NSDictionary+GetValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C132F1D4E459C009A238D /* NSDictionary+GetValue.m */; };
 		5C6562A41D47DEC4004CF31B /* HTMultiLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6562A31D47DEC4004CF31B /* HTMultiLabel.m */; };
 		5F3A54081B770D4200F52C55 /* menu_nav_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A54071B770D4200F52C55 /* menu_nav_bar@2x.png */; };
 		5F3A540A1B771A2200F52C55 /* home_forward_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A54091B771A2200F52C55 /* home_forward_icon@2x.png */; };
@@ -506,6 +507,8 @@
 		52D829851C302EB400EDF084 /* nav_info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_info@2x.png"; sourceTree = "<group>"; };
 		52D8298D1C312F4400EDF084 /* fat_explain_2.0_w@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fat_explain_2.0_w@2x.png"; sourceTree = "<group>"; };
 		55CA04406B8325DCD664A2AD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C1C132E1D4E459C009A238D /* NSDictionary+GetValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+GetValue.h"; sourceTree = "<group>"; };
+		5C1C132F1D4E459C009A238D /* NSDictionary+GetValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+GetValue.m"; sourceTree = "<group>"; };
 		5C6562A21D47DEC4004CF31B /* HTMultiLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMultiLabel.h; sourceTree = "<group>"; };
 		5C6562A31D47DEC4004CF31B /* HTMultiLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMultiLabel.m; sourceTree = "<group>"; };
 		5F3A54071B770D4200F52C55 /* menu_nav_bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_nav_bar@2x.png"; sourceTree = "<group>"; };
@@ -1335,6 +1338,8 @@
 				5FA9F0EE1B66096C00997BA8 /* UILabel+Ext.m */,
 				5FA9F0EF1B66096C00997BA8 /* UIView+Ext.h */,
 				5FA9F0F01B66096C00997BA8 /* UIView+Ext.m */,
+				5C1C132E1D4E459C009A238D /* NSDictionary+GetValue.h */,
+				5C1C132F1D4E459C009A238D /* NSDictionary+GetValue.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -2400,6 +2405,7 @@
 				B01A8E9B1B7DE0EA0049D86D /* TrendListDataSource.m in Sources */,
 				B01A8EBE1B7E408D0049D86D /* JTCalendarMenuView.m in Sources */,
 				5FD514A21B80B5440088C7E9 /* ZouMaDengModelHandler.m in Sources */,
+				5C1C13301D4E459C009A238D /* NSDictionary+GetValue.m in Sources */,
 				528D7BDB1C16C72100246E00 /* HideModelResponse.m in Sources */,
 				5FA9F3121B66096C00997BA8 /* HTUncollectClickModel.m in Sources */,
 				5FA9F2B61B66096C00997BA8 /* CommonHelper.m in Sources */,
