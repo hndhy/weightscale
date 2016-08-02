@@ -176,7 +176,7 @@ typedef  void (^FailureBlock)(AFHTTPRequestOperation *operation, NSError *error)
           [weakSelf.delegate parseError:weakSelf error:error];
         }
       } else {
-        if (1 == responseModel.status) {
+        if (200 == responseModel.status) {
           NSLog(@"response model:%@", responseModel);
           [weakSelf.delegate dataDidLoad:weakSelf data:responseModel];
         } else {

@@ -10,7 +10,9 @@
 #import "Reachability.h"
 
 //static NSString *const HTApiBaseURLString = @"http://123.57.20.86:80";
-static NSString *const HTApiBaseURLString = @"http://api.hao1da.com/";
+//static NSString *const HTApiBaseURLString = @"http://api.hao1da.com/";
+static NSString *const HTApiBaseURLString = @"http://api.57spa.com/";
+
 @implementation HTApiClient
 
 + (instancetype)sharedClient

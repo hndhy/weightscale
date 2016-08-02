@@ -15,7 +15,8 @@
   NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithCapacity:5];
   [parameters setValue:name forKey:@"nickOrTel"];
   [parameters setValue:pwd forKey:@"pwd"];
-  [self getPath:@"/login.htm" parameters:parameters];
+//  [self getPath:@"/login.htm" parameters:parameters];
+    [self getPath:@"api/user/login" parameters:parameters];
 }
 
 - (BaseResponse*)parseResponse:(NSDictionary*)responseDict error:(NSError**)error
