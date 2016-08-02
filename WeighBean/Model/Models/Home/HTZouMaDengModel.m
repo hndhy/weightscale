@@ -18,7 +18,7 @@
   [parameters setValue:@"ios" forKey:@"os"];
   HTAppContext *appContext = [HTAppContext sharedContext];
   [parameters setValue:appContext.uid forKey:@"uid"];
-  [self getPath:@"syncData_Zoumadeng.htm" parameters:parameters];
+  [self getPath:@"api/data/SyncData_Zoumadeng" parameters:parameters]; 
 }
 
 - (BaseResponse*)parseResponse:(NSDictionary*)responseDict error:(NSError**)error
