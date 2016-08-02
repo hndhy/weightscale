@@ -20,7 +20,7 @@
     [parameters setValue:@"ios" forKey:@"os"];
     HTUserData *userDate = [HTUserData sharedInstance];
     [parameters setValue:userDate.uid forKey:@"uid"];
-    [self uploadImage:@"/syncData.htm" parameters:parameters image:[UIImage imageNamed:@"upload_pic.png"] imageName:@"pic"];
+    [self uploadImage:@"api/data/SyncData" parameters:parameters image:[UIImage imageNamed:@"upload_pic.png"] imageName:@"pic"];
 }
 
 - (BaseResponse*)parseResponse:(NSDictionary*)responseDict error:(NSError**)error
