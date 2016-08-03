@@ -126,7 +126,7 @@
 - (void)myInfoFinished:(UserResponse *)response;
 {
     HTUserData *data = [HTUserData sharedInstance];
-//    data.isFresh = response.isFresh;
+    data.isFresh = [response isFresh];
     [data save];
 }
 

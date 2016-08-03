@@ -441,62 +441,122 @@
   self.isSave = NO;
   self.avatarUrl = nil;
   [self.editButton setTitle:@"编辑" forState:UIControlStateNormal];
-  HTAppContext *appContext = [HTAppContext sharedContext];
-  appContext.uid = response.uid;
-  [appContext save];
-  HTUserData *userData = [HTUserData sharedInstance];
-  userData.isFresh = response.isFresh;
-  userData.age = response.age;
-  userData.avatar = response.avatar;
-  userData.birthday = response.birthday;
-  userData.coachTel = response.coachTel;
-//  userData.device = response.device;
-  userData.height = response.height;
-  userData.isCoach = response.isCoach;
-  userData.nick = response.nick;
-  self.sex = response.sex;
-  userData.sex = response.sex;
-  userData.tel = response.tel;
-  userData.uid = response.uid;
-  [userData save];
+//  HTAppContext *appContext = [HTAppContext sharedContext];
+//  appContext.uid = response.uid;
+//  [appContext save];
+//  HTUserData *userData = [HTUserData sharedInstance];
+//  userData.isFresh = response.isFresh;
+//  userData.age = response.age;
+//  userData.avatar = response.avatar;
+//  userData.birthday = response.birthday;
+//  userData.coachTel = response.coachTel;
+////  userData.device = response.device;
+//  userData.height = response.height;
+//  userData.isCoach = response.isCoach;
+//  userData.nick = response.nick;
+//  self.sex = response.sex;
+//  userData.sex = response.sex;
+//  userData.tel = response.tel;
+//  userData.uid = response.uid;
+//  [userData save];
+    
+    
+    HTAppContext *appContext = [HTAppContext sharedContext];
+    appContext.uid = [response uid];
+    [appContext save];
+    HTUserData *userData = [HTUserData sharedInstance];
+    userData.isFresh = [response isFresh];
+    userData.age = [response age];
+    userData.avatar = [response avatar];
+    userData.birthday = [response birthday];
+    userData.coachTel = [response coachTel];
+    //  userData.device = response.device;
+    userData.height = [response height];
+    userData.isCoach = [response isCoach];
+    userData.nick = [response nick];
+    self.sex = [response sex];
+    userData.sex = [response sex];
+    userData.tel = [response tel];
+    userData.uid = [response uid];
+    [userData save];
+
+    
   [NotificationCenter postModifyInfoNotification];
 }
 
 #pragma mark - MyInfoModelProtocol
 - (void)myInfoFinished:(UserResponse *)response
 {
-  HTAppContext *appContext = [HTAppContext sharedContext];
-  appContext.uid = response.uid;
-  [appContext save];
-  HTUserData *userData = [HTUserData sharedInstance];
-  userData.isFresh = response.isFresh;
-  userData.age = response.age;
-  userData.avatar = response.avatar;
-  userData.birthday = response.birthday;
-  userData.coachTel = response.coachTel;
-//  userData.device = response.device;
-  userData.height = response.height;
-  userData.isCoach = response.isCoach;
-  userData.nick = response.nick;
-  userData.sex = response.sex;
-  userData.tel = response.tel;
-  userData.uid = response.uid;
-  [userData save];
-  [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:userData.avatar]];
-  self.nameLabel.text = userData.nick;
-  self.heightLabel.text = [NSString stringWithFormat:@"%d厘米", userData.height];
-  self.sex = userData.sex;
-  if (0 == self.sex) {
-    self.sexLabel.text = @"女";
-  } else {
-    self.sexLabel.text = @"男";
-  }
-  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-  [dateFormatter setDateFormat:@"yyyyMMdd"];
-  NSDate *date = [dateFormatter dateFromString:userData.birthday];
-  [self.birthdayLabel addTapCallBack:self sel:@selector(onBirthdayClick:)];
-  self.birthdayLabel.text = [NSString stringWithFormat:@"%@", [date stringWithFormat:@"yyyy-MM-dd"]];
-  self.phoneLabel.text = userData.coachTel;
+//  HTAppContext *appContext = [HTAppContext sharedContext];
+//  appContext.uid = response.uid;
+//  [appContext save];
+//  HTUserData *userData = [HTUserData sharedInstance];
+//  userData.isFresh = response.isFresh;
+//  userData.age = response.age;
+//  userData.avatar = response.avatar;
+//  userData.birthday = response.birthday;
+//  userData.coachTel = response.coachTel;
+////  userData.device = response.device;
+//  userData.height = response.height;
+//  userData.isCoach = response.isCoach;
+//  userData.nick = response.nick;
+//  userData.sex = response.sex;
+//  userData.tel = response.tel;
+//  userData.uid = response.uid;
+//  [userData save];
+//  [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:userData.avatar]];
+//  self.nameLabel.text = userData.nick;
+//  self.heightLabel.text = [NSString stringWithFormat:@"%d厘米", userData.height];
+//  self.sex = userData.sex;
+//  if (0 == self.sex) {
+//    self.sexLabel.text = @"女";
+//  } else {
+//    self.sexLabel.text = @"男";
+//  }
+//  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//  [dateFormatter setDateFormat:@"yyyyMMdd"];
+//  NSDate *date = [dateFormatter dateFromString:userData.birthday];
+//  [self.birthdayLabel addTapCallBack:self sel:@selector(onBirthdayClick:)];
+//  self.birthdayLabel.text = [NSString stringWithFormat:@"%@", [date stringWithFormat:@"yyyy-MM-dd"]];
+//  self.phoneLabel.text = userData.coachTel;
+    
+    
+    HTAppContext *appContext = [HTAppContext sharedContext];
+    appContext.uid = [response uid];
+    [appContext save];
+    HTUserData *userData = [HTUserData sharedInstance];
+    userData.isFresh = [response isFresh];
+    userData.age = [response age];
+    userData.avatar = [response avatar];
+    userData.birthday = [response birthday];
+    userData.coachTel = [response coachTel];
+    //  userData.device = response.device;
+    userData.height = [response height];
+    userData.isCoach = [response isCoach];
+    userData.nick = [response nick];
+    userData.sex = [response sex];
+    userData.tel = [response tel];
+    userData.uid = [response uid];
+    [userData save];
+    [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:userData.avatar]];
+    self.nameLabel.text = userData.nick;
+    self.heightLabel.text = [NSString stringWithFormat:@"%d厘米", userData.height];
+    self.sex = userData.sex;
+    if (0 == self.sex) {
+        self.sexLabel.text = @"女";
+    } else {
+        self.sexLabel.text = @"男";
+    }
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyyMMdd"];
+    NSDate *date = [dateFormatter dateFromString:userData.birthday];
+    [self.birthdayLabel addTapCallBack:self sel:@selector(onBirthdayClick:)];
+    self.birthdayLabel.text = [NSString stringWithFormat:@"%@", [date stringWithFormat:@"yyyy-MM-dd"]];
+    self.phoneLabel.text = userData.coachTel;
+
+    
+    
+    
   [NotificationCenter postModifyInfoNotification];
 }
 

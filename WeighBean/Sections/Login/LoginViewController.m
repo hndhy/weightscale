@@ -232,29 +232,30 @@
 - (void)loginFinished:(UserResponse *)response
 {
     HTAppContext *appContext = [HTAppContext sharedContext];
-    appContext.uid = response.uid;
+
+    appContext.uid = [response uid];
     [appContext save];
     HTUserData *userData = [HTUserData sharedInstance];
-    userData.isFresh = response.isFresh;
-    userData.age = response.age;
-    userData.avatar = response.avatar;
-    userData.birthday = response.birthday;
-    userData.coachTel = response.coachTel;
-    //  userData.device = response.device;
-    userData.height = response.height;
-    userData.isCoach = response.isCoach;
-    userData.nick = response.nick;
-    userData.sex = response.sex;
-    userData.tel = response.tel;
-    userData.uid = response.uid;
+    userData.isFresh = [response isFresh];
+    userData.age = [response age];
+    userData.avatar = [response avatar];
+    userData.birthday = [response birthday];
+    userData.coachTel = [response coachTel];
+    //    userData.device = response.device;
+    userData.height = [response height];
+    userData.isCoach = [response isCoach];
+    userData.nick = [response nick];
+    userData.sex = [response sex];
+    userData.tel = [response tel];
+    userData.uid = [response uid];
     [userData save];
-
+    
     NSString *name = self.nameTextField.textValue;
     NSString *pwd = self.pwdTextField.textValue;
     AccountData *accountData = [[AccountData alloc]init];
-    accountData.avatar = response.tel;
+    accountData.avatar = [response tel];
     accountData.pwd = pwd;
-    accountData.nick = response.nick;
+    accountData.nick = [response nick];
     accountData.loginTime = [[NSDate date] timeIntervalSince1970];
     LKDBHelper *lkdbHelper = [DBHelper getUsingLKDBHelper];
     [lkdbHelper deleteWithClass:[AccountData class] where:[NSString stringWithFormat:@"avatar=%@",name] callback:^(BOOL result) {

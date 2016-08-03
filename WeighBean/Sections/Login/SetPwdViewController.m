@@ -108,30 +108,30 @@
 - (void)findPwdFinished:(UserResponse *)response
 {
     HTAppContext *appContext = [HTAppContext sharedContext];
-    appContext.uid = response.uid;
+    appContext.uid = [response uid];
     [appContext save];
     HTUserData *userData = [HTUserData sharedInstance];
-    userData.isFresh = response.isFresh;
-    userData.age = response.age;
-    userData.avatar = response.avatar;
-    userData.birthday = response.birthday;
-    userData.coachTel = response.coachTel;
+    userData.isFresh = [response isFresh];
+    userData.age = [response age];
+    userData.avatar = [response avatar];
+    userData.birthday = [response birthday];
+    userData.coachTel = [response coachTel];
     //  userData.device = response.device;
-    userData.height = response.height;
-    userData.isCoach = response.isCoach;
-    userData.nick = response.nick;
-    userData.sex = response.sex;
-    userData.tel = response.tel;
-    userData.uid = response.uid;
+    userData.height = [response height];
+    userData.isCoach = [response isCoach];
+    userData.nick = [response nick];
+    userData.sex = [response sex];
+    userData.tel = [response tel];
+    userData.uid = [response uid];
     [userData save];
     
     NSString *pwd = self.pwdTextField.textValue;
     AccountData *accountData = [[AccountData alloc]init];
-    accountData.avatar = response.avatar;
+    accountData.avatar = [response avatar];
     accountData.pwd = pwd;
     accountData.loginTime = [[NSDate date] timeIntervalSince1970];
     LKDBHelper *lkdbHelper = [DBHelper getUsingLKDBHelper];
-    [lkdbHelper deleteWithClass:[AccountData class] where:[NSString stringWithFormat:@"avatar=%@",response.avatar] callback:^(BOOL result) {
+    [lkdbHelper deleteWithClass:[AccountData class] where:[NSString stringWithFormat:@"avatar=%@",[response avatar]] callback:^(BOOL result) {
         
         [lkdbHelper insertToDB:accountData];
     }];
