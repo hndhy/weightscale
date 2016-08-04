@@ -15,11 +15,9 @@
 {
     NSString *pageStr = [NSString stringWithFormat:@"%d",page];
     NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithCapacity:5];
-//    [parameters setValue:pageStr forKey:@"page"];
     HTAppContext *appContext = [HTAppContext sharedContext];
     [parameters setValue:appContext.uid forKey:@"uid"];
-    NSLog(@"parameters = %@",parameters);
-    [self getPath:@"/List.htm" parameters:parameters];
+    [self getPath:@"api/team/List" parameters:parameters];
 }
 
 - (BaseResponse*)parseResponse:(NSDictionary*)responseDict error:(NSError**)error

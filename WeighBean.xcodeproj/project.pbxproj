@@ -112,6 +112,7 @@
 		5CE173141D4DFC860047E8B9 /* CoachListResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173131D4DFC860047E8B9 /* CoachListResponse.m */; };
 		5CE173171D4DFD130047E8B9 /* CoachObjModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173161D4DFD130047E8B9 /* CoachObjModel.m */; };
 		5CE1731A1D4E01470047E8B9 /* CoachListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173191D4E01470047E8B9 /* CoachListModel.m */; };
+		5CEC2E5B1D52565600CBA6BA /* CoachListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEC2E5A1D52565600CBA6BA /* CoachListCell.m */; };
 		5F3A54081B770D4200F52C55 /* menu_nav_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A54071B770D4200F52C55 /* menu_nav_bar@2x.png */; };
 		5F3A540A1B771A2200F52C55 /* home_forward_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A54091B771A2200F52C55 /* home_forward_icon@2x.png */; };
 		5F3A540D1B771A5300F52C55 /* home_title@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A540C1B771A5300F52C55 /* home_title@2x.png */; };
@@ -517,12 +518,14 @@
 		5C6562A31D47DEC4004CF31B /* HTMultiLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMultiLabel.m; sourceTree = "<group>"; };
 		5CE1730F1D4DFB930047E8B9 /* CoachModelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachModelHandler.h; sourceTree = "<group>"; };
 		5CE173101D4DFB930047E8B9 /* CoachModelHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachModelHandler.m; sourceTree = "<group>"; };
-		5CE173121D4DFC860047E8B9 /* CoachListResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachListResponse.h; sourceTree = "<group>"; };
-		5CE173131D4DFC860047E8B9 /* CoachListResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachListResponse.m; sourceTree = "<group>"; };
+		5CE173121D4DFC860047E8B9 /* CoachListResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoachListResponse.h; path = Home/CoachListResponse.h; sourceTree = "<group>"; };
+		5CE173131D4DFC860047E8B9 /* CoachListResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoachListResponse.m; path = Home/CoachListResponse.m; sourceTree = "<group>"; };
 		5CE173151D4DFD130047E8B9 /* CoachObjModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachObjModel.h; sourceTree = "<group>"; };
 		5CE173161D4DFD130047E8B9 /* CoachObjModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachObjModel.m; sourceTree = "<group>"; };
-		5CE173181D4E01470047E8B9 /* CoachListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachListModel.h; sourceTree = "<group>"; };
-		5CE173191D4E01470047E8B9 /* CoachListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachListModel.m; sourceTree = "<group>"; };
+		5CE173181D4E01470047E8B9 /* CoachListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoachListModel.h; path = ../ModelObjects/Home/CoachListModel.h; sourceTree = "<group>"; };
+		5CE173191D4E01470047E8B9 /* CoachListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoachListModel.m; path = ../ModelObjects/Home/CoachListModel.m; sourceTree = "<group>"; };
+		5CEC2E591D52565600CBA6BA /* CoachListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachListCell.h; sourceTree = "<group>"; };
+		5CEC2E5A1D52565600CBA6BA /* CoachListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachListCell.m; sourceTree = "<group>"; };
 		5F3A54071B770D4200F52C55 /* menu_nav_bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_nav_bar@2x.png"; sourceTree = "<group>"; };
 		5F3A54091B771A2200F52C55 /* home_forward_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_forward_icon@2x.png"; sourceTree = "<group>"; };
 		5F3A540C1B771A5300F52C55 /* home_title@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_title@2x.png"; sourceTree = "<group>"; };
@@ -1010,6 +1013,8 @@
 		5CE1730D1D4DEF240047E8B9 /* Coach */ = {
 			isa = PBXGroup;
 			children = (
+				5CE173121D4DFC860047E8B9 /* CoachListResponse.h */,
+				5CE173131D4DFC860047E8B9 /* CoachListResponse.m */,
 			);
 			name = Coach;
 			sourceTree = "<group>";
@@ -1017,6 +1022,10 @@
 		5CE1730E1D4DEF300047E8B9 /* Coach */ = {
 			isa = PBXGroup;
 			children = (
+				5CE173181D4E01470047E8B9 /* CoachListModel.h */,
+				5CE173191D4E01470047E8B9 /* CoachListModel.m */,
+				5CE173151D4DFD130047E8B9 /* CoachObjModel.h */,
+				5CE173161D4DFD130047E8B9 /* CoachObjModel.m */,
 			);
 			name = Coach;
 			sourceTree = "<group>";
@@ -1865,6 +1874,8 @@
 			children = (
 				B01A8EE01B80623E0049D86D /* CoachViewController.h */,
 				B01A8EE11B80623E0049D86D /* CoachViewController.m */,
+				5CEC2E591D52565600CBA6BA /* CoachListCell.h */,
+				5CEC2E5A1D52565600CBA6BA /* CoachListCell.m */,
 				528D7BD01C16BFCC00246E00 /* HideSetViewController.h */,
 				528D7BD11C16BFCC00246E00 /* HideSetViewController.m */,
 				5FE2556E1B7A08F00029BD4D /* ClockInViewController.h */,
@@ -1962,10 +1973,6 @@
 				524A91771BA1816400F36516 /* AddLookResponse.m */,
 				524A917C1BA1845D00F36516 /* AddLookModel.h */,
 				524A917D1BA1845D00F36516 /* AddLookModel.m */,
-				5CE173121D4DFC860047E8B9 /* CoachListResponse.h */,
-				5CE173131D4DFC860047E8B9 /* CoachListResponse.m */,
-				5CE173181D4E01470047E8B9 /* CoachListModel.h */,
-				5CE173191D4E01470047E8B9 /* CoachListModel.m */,
 				522123BB1BFCABCA006BCCC4 /* OnlineListResponse.h */,
 				522123BC1BFCABCA006BCCC4 /* OnlineListResponse.m */,
 				522123BE1BFCAD9C006BCCC4 /* OnlineListModel.h */,
@@ -2031,8 +2038,6 @@
 				5289FEA01C0ABAE80036FA6F /* ToolsObjModel.m */,
 				52C639101C0C53B900BB45D7 /* OLProductModel.h */,
 				52C639111C0C53B900BB45D7 /* OLProductModel.m */,
-				5CE173151D4DFD130047E8B9 /* CoachObjModel.h */,
-				5CE173161D4DFD130047E8B9 /* CoachObjModel.m */,
 				52964C581C19588E003FA17A /* TrendObjModel.h */,
 				52964C591C19588E003FA17A /* TrendObjModel.m */,
 			);
@@ -2494,6 +2499,7 @@
 				B01A8ECC1B7ED2AD0049D86D /* HTSyncDataModel.m in Sources */,
 				5FA9F2B31B66096C00997BA8 /* TZXActivityIndicatorView.m in Sources */,
 				5F7F82891B76421000AC04B3 /* BLEInfo.m in Sources */,
+				5CEC2E5B1D52565600CBA6BA /* CoachListCell.m in Sources */,
 				5FA9F30F1B66096C00997BA8 /* HTCollectClickModel.m in Sources */,
 				B01A8E881B7CC4B70049D86D /* DBHelper.m in Sources */,
 				5FA9F2901B66096C00997BA8 /* HTBaseCell.m in Sources */,

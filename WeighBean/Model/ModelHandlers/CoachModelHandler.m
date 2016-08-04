@@ -10,12 +10,6 @@
 
 @implementation CoachModelHandler
 
-//@end
-//
-//#import "OnlineModelHandler.h"
-//
-//@implementation OnlineModelHandler
-
 - (id)initWithController:(HTBaseViewController<CoachModelProtocol> *)controller
 {
     return [super initWithController:controller];

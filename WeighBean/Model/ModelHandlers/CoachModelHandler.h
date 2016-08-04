@@ -16,9 +16,8 @@
 
 @end
 
-
-
 @interface CoachModelHandler : HTBaseModelHandler
+
 - (id)initWithController:(HTBaseViewController<CoachModelProtocol> *)controller;
 
 @end
