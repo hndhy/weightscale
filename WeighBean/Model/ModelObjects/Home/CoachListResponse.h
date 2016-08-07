@@ -10,6 +10,6 @@
 #import "CoachObjModel.h"
 
 @interface CoachListResponse : BaseResponse
-@property (nonatomic,strong) NSArray <CoachObjModel>*results;
+@property (nonatomic,strong) NSArray <CoachObjModel>*data;
 
 @end

@@ -7,7 +7,15 @@
 //
 
 #import "HTBaseModelHandler.h"
+#import "CreateCoachResponse.h"
+
+@protocol CreateCoachModelProtocol <NSObject>
+
+- (void)createCoachFinished:(CreateCoachResponse *)response;
+
+@end
 
 @interface CreateCoachModelHandler : HTBaseModelHandler
+- (id)initWithController:(HTBaseViewController<CreateCoachModelProtocol> *)controller;
 
 @end

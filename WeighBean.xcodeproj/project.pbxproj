@@ -113,6 +113,12 @@
 		5CE173171D4DFD130047E8B9 /* CoachObjModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173161D4DFD130047E8B9 /* CoachObjModel.m */; };
 		5CE1731A1D4E01470047E8B9 /* CoachListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173191D4E01470047E8B9 /* CoachListModel.m */; };
 		5CEC2E5B1D52565600CBA6BA /* CoachListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEC2E5A1D52565600CBA6BA /* CoachListCell.m */; };
+		5CEC2E5E1D53A90F00CBA6BA /* CoachChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEC2E5D1D53A90F00CBA6BA /* CoachChooseViewController.m */; };
+		5CEC2E611D53AD7B00CBA6BA /* CoachNewTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEC2E601D53AD7B00CBA6BA /* CoachNewTypeViewController.m */; };
+		5CEC2E641D562E5F00CBA6BA /* CoachNewBuildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEC2E631D562E5F00CBA6BA /* CoachNewBuildViewController.m */; };
+		5CEC2E671D56361600CBA6BA /* CreateCoachModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEC2E661D56361600CBA6BA /* CreateCoachModelHandler.m */; };
+		5CEC2E6A1D5638F700CBA6BA /* CreateCoachResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEC2E691D5638F700CBA6BA /* CreateCoachResponse.m */; };
+		5CEC2E6D1D56399F00CBA6BA /* CreateCoachModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEC2E6C1D56399F00CBA6BA /* CreateCoachModel.m */; };
 		5F3A54081B770D4200F52C55 /* menu_nav_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A54071B770D4200F52C55 /* menu_nav_bar@2x.png */; };
 		5F3A540A1B771A2200F52C55 /* home_forward_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A54091B771A2200F52C55 /* home_forward_icon@2x.png */; };
 		5F3A540D1B771A5300F52C55 /* home_title@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A540C1B771A5300F52C55 /* home_title@2x.png */; };
@@ -526,6 +532,18 @@
 		5CE173191D4E01470047E8B9 /* CoachListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoachListModel.m; path = ../ModelObjects/Home/CoachListModel.m; sourceTree = "<group>"; };
 		5CEC2E591D52565600CBA6BA /* CoachListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachListCell.h; sourceTree = "<group>"; };
 		5CEC2E5A1D52565600CBA6BA /* CoachListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachListCell.m; sourceTree = "<group>"; };
+		5CEC2E5C1D53A90F00CBA6BA /* CoachChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachChooseViewController.h; sourceTree = "<group>"; };
+		5CEC2E5D1D53A90F00CBA6BA /* CoachChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachChooseViewController.m; sourceTree = "<group>"; };
+		5CEC2E5F1D53AD7B00CBA6BA /* CoachNewTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachNewTypeViewController.h; sourceTree = "<group>"; };
+		5CEC2E601D53AD7B00CBA6BA /* CoachNewTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachNewTypeViewController.m; sourceTree = "<group>"; };
+		5CEC2E621D562E5F00CBA6BA /* CoachNewBuildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachNewBuildViewController.h; sourceTree = "<group>"; };
+		5CEC2E631D562E5F00CBA6BA /* CoachNewBuildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachNewBuildViewController.m; sourceTree = "<group>"; };
+		5CEC2E651D56361600CBA6BA /* CreateCoachModelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateCoachModelHandler.h; sourceTree = "<group>"; };
+		5CEC2E661D56361600CBA6BA /* CreateCoachModelHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateCoachModelHandler.m; sourceTree = "<group>"; };
+		5CEC2E681D5638F700CBA6BA /* CreateCoachResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateCoachResponse.h; sourceTree = "<group>"; };
+		5CEC2E691D5638F700CBA6BA /* CreateCoachResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateCoachResponse.m; sourceTree = "<group>"; };
+		5CEC2E6B1D56399F00CBA6BA /* CreateCoachModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateCoachModel.h; sourceTree = "<group>"; };
+		5CEC2E6C1D56399F00CBA6BA /* CreateCoachModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateCoachModel.m; sourceTree = "<group>"; };
 		5F3A54071B770D4200F52C55 /* menu_nav_bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_nav_bar@2x.png"; sourceTree = "<group>"; };
 		5F3A54091B771A2200F52C55 /* home_forward_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_forward_icon@2x.png"; sourceTree = "<group>"; };
 		5F3A540C1B771A5300F52C55 /* home_title@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_title@2x.png"; sourceTree = "<group>"; };
@@ -1006,6 +1024,10 @@
 		5CE1730C1D4DEF100047E8B9 /* Coach */ = {
 			isa = PBXGroup;
 			children = (
+				5CE1730F1D4DFB930047E8B9 /* CoachModelHandler.h */,
+				5CE173101D4DFB930047E8B9 /* CoachModelHandler.m */,
+				5CEC2E651D56361600CBA6BA /* CreateCoachModelHandler.h */,
+				5CEC2E661D56361600CBA6BA /* CreateCoachModelHandler.m */,
 			);
 			name = Coach;
 			sourceTree = "<group>";
@@ -1015,6 +1037,8 @@
 			children = (
 				5CE173121D4DFC860047E8B9 /* CoachListResponse.h */,
 				5CE173131D4DFC860047E8B9 /* CoachListResponse.m */,
+				5CEC2E681D5638F700CBA6BA /* CreateCoachResponse.h */,
+				5CEC2E691D5638F700CBA6BA /* CreateCoachResponse.m */,
 			);
 			name = Coach;
 			sourceTree = "<group>";
@@ -1026,6 +1050,8 @@
 				5CE173191D4E01470047E8B9 /* CoachListModel.m */,
 				5CE173151D4DFD130047E8B9 /* CoachObjModel.h */,
 				5CE173161D4DFD130047E8B9 /* CoachObjModel.m */,
+				5CEC2E6B1D56399F00CBA6BA /* CreateCoachModel.h */,
+				5CEC2E6C1D56399F00CBA6BA /* CreateCoachModel.m */,
 			);
 			name = Coach;
 			sourceTree = "<group>";
@@ -1876,6 +1902,12 @@
 				B01A8EE11B80623E0049D86D /* CoachViewController.m */,
 				5CEC2E591D52565600CBA6BA /* CoachListCell.h */,
 				5CEC2E5A1D52565600CBA6BA /* CoachListCell.m */,
+				5CEC2E5C1D53A90F00CBA6BA /* CoachChooseViewController.h */,
+				5CEC2E5D1D53A90F00CBA6BA /* CoachChooseViewController.m */,
+				5CEC2E5F1D53AD7B00CBA6BA /* CoachNewTypeViewController.h */,
+				5CEC2E601D53AD7B00CBA6BA /* CoachNewTypeViewController.m */,
+				5CEC2E621D562E5F00CBA6BA /* CoachNewBuildViewController.h */,
+				5CEC2E631D562E5F00CBA6BA /* CoachNewBuildViewController.m */,
 				528D7BD01C16BFCC00246E00 /* HideSetViewController.h */,
 				528D7BD11C16BFCC00246E00 /* HideSetViewController.m */,
 				5FE2556E1B7A08F00029BD4D /* ClockInViewController.h */,
@@ -2055,8 +2087,6 @@
 				5FD514A11B80B5440088C7E9 /* ZouMaDengModelHandler.m */,
 				522123B81BFCAB03006BCCC4 /* OnlineModelHandler.h */,
 				522123B91BFCAB03006BCCC4 /* OnlineModelHandler.m */,
-				5CE1730F1D4DFB930047E8B9 /* CoachModelHandler.h */,
-				5CE173101D4DFB930047E8B9 /* CoachModelHandler.m */,
 				522123C71BFCB5A1006BCCC4 /* VerifyOrderHander.h */,
 				522123C81BFCB5A1006BCCC4 /* VerifyOrderHander.m */,
 				5289FE861C0756DA0036FA6F /* NotifNumberModelHandler.h */,
@@ -2348,7 +2378,9 @@
 				5F88BE181B7CEC2C008C4901 /* HTCheckTelAndNickModel.m in Sources */,
 				B01A8EE21B80623E0049D86D /* CoachViewController.m in Sources */,
 				5FA9F2951B66096C00997BA8 /* HTTabBarController.m in Sources */,
+				5CEC2E671D56361600CBA6BA /* CreateCoachModelHandler.m in Sources */,
 				5FA9F2C91B66096C00997BA8 /* RegisterModelHandler.m in Sources */,
+				5CEC2E641D562E5F00CBA6BA /* CoachNewBuildViewController.m in Sources */,
 				5FA9F2861B66096C00997BA8 /* AppDelegate.m in Sources */,
 				5F88BE391B7EE9DF008C4901 /* KcalViewController.m in Sources */,
 				5FA9F3341B66096C00997BA8 /* HTApiClient.m in Sources */,
@@ -2371,7 +2403,9 @@
 				B01A8EC11B7E408D0049D86D /* JTCalendarWeekView.m in Sources */,
 				B01A8EBB1B7E408D0049D86D /* JTCalendarContentView.m in Sources */,
 				B01A8EBF1B7E408D0049D86D /* JTCalendarMonthView.m in Sources */,
+				5CEC2E6D1D56399F00CBA6BA /* CreateCoachModel.m in Sources */,
 				5FA9F28A1B66096C00997BA8 /* NSURL+Additions.m in Sources */,
+				5CEC2E5E1D53A90F00CBA6BA /* CoachChooseViewController.m in Sources */,
 				5289FE881C0756DA0036FA6F /* NotifNumberModelHandler.m in Sources */,
 				5FA9F30E1B66096C00997BA8 /* HTAppContext.m in Sources */,
 				5CE173111D4DFB930047E8B9 /* CoachModelHandler.m in Sources */,
@@ -2432,6 +2466,7 @@
 				5F88BE2F1B7ED346008C4901 /* LBMViewController.m in Sources */,
 				522123BA1BFCAB03006BCCC4 /* OnlineModelHandler.m in Sources */,
 				5FA9F29A1B66096C00997BA8 /* PicturePicker.m in Sources */,
+				5CEC2E6A1D5638F700CBA6BA /* CreateCoachResponse.m in Sources */,
 				5F88BE341B7EDA75008C4901 /* BodyAgeViewController.m in Sources */,
 				5FE255761B7A0A520029BD4D /* CoursesViewController.m in Sources */,
 				5FA9F3211B66096C00997BA8 /* HTRegisterModel.m in Sources */,
@@ -2440,6 +2475,7 @@
 				B01A8E851B7CA6A10049D86D /* PNPlot.m in Sources */,
 				5FD5149F1B80B5050088C7E9 /* HTZouMaDengModel.m in Sources */,
 				5FA9F28E1B66096C00997BA8 /* UIView+Ext.m in Sources */,
+				5CEC2E611D53AD7B00CBA6BA /* CoachNewTypeViewController.m in Sources */,
 				5FA9F2C41B66096C00997BA8 /* HTTableModelHandler.m in Sources */,
 				525C01351C1D3D1B00B7C0FC /* BuildvtelModel.m in Sources */,
 				5F88BE2A1B7DF620008C4901 /* BMIViewController.m in Sources */,

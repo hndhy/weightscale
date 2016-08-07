@@ -10,4 +10,15 @@
 
 @implementation CreateCoachModelHandler
 
+- (id)initWithController:(HTBaseViewController<CreateCoachModelProtocol> *)controller
+{
+    return [super initWithController:controller];
+}
+
+- (void)dataDidLoad:(id)sender data:(BaseResponse*)data
+{
+    [super dataDidLoad:sender data:data];
+    HTBaseViewController<CreateCoachModelProtocol> *controller = (HTBaseViewController<CreateCoachModelProtocol>*)self.controller;
+    [controller createCoachFinished:(CreateCoachResponse *)data];
+}
 @end

@@ -7,7 +7,8 @@
 //
 
 #import "HTAbstractDataSource.h"
+#import "CreateCoachResponse.h"
 
 @interface CreateCoachModel : HTAbstractDataSource
-
+- (void)creatCoachWithUid:(NSString *)uid teamType:(int)teamType teamName:(NSString *)teamName isChat:(int)isChat description:(NSString *)description target:(NSString *)target;
 @end

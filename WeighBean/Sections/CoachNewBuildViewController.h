@@ -7,7 +7,24 @@
 //
 
 #import "HTBaseViewController.h"
+#import "CreateCoachModelHandler.h"
+#import "CreateCoachModel.h"
 
-@interface CoachNewBuildViewController : HTBaseViewController
+@interface CoachNewBuildViewController : HTBaseViewController<CreateCoachModelProtocol>
+
+{
+    UILabel *coachNameLabel;
+    UILabel *allowExchangeLabel;
+    UILabel *introductionLabel;
+    
+    UIButton *nameBtn;
+    UISwitch *allowSwitch;
+    UILabel *introDetailLabel;
+    
+    UIButton *buildBtn;
+}
+
+@property (nonatomic,strong) CreateCoachModelHandler *createCoachModelHandler;
+@property (nonatomic,strong) CreateCoachModel *createCoachModel;
 
 @end

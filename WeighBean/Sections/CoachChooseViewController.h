@@ -10,4 +10,10 @@
 
 @interface CoachChooseViewController : HTBaseViewController
 
+{
+    UIButton *fatLossBtn;
+    UIButton *muscleGainBtn;
+    UIButton *goalSetBtn;
+}
+
 @end

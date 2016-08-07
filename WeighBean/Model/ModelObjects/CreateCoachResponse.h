@@ -9,5 +9,6 @@
 #import "BaseResponse.h"
 
 @interface CreateCoachResponse : BaseResponse
+@property (nonatomic,strong) NSArray *data;
 
 @end

@@ -40,20 +40,20 @@ typedef  void (^FailureBlock)(AFHTTPRequestOperation *operation, NSError *error)
 {
   NSMutableDictionary *commonParameters = [NSMutableDictionary dictionaryWithCapacity:5];
   NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-  NSString *appVersion = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
-  [commonParameters setValue:appVersion forKey:@"appversion"];
-  [commonParameters setValue:@"ios" forKey:@"platform"];
+//  NSString *appVersion = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+//  [commonParameters setValue:appVersion forKey:@"appversion"];
+//  [commonParameters setValue:@"ios" forKey:@"platform"];
   
   HTAppContext *appContext = [HTAppContext sharedContext];
-  if (ISEMPTY(appContext.uid)) {
+//  if (ISEMPTY(appContext.uid)) {
       [commonParameters setValue:appContext.uid forKey:@"uid"];
-  }
+//  }
     
-  if (ISEMPTY(appContext.uid) || [@"-1" isEqualToString:appContext.uid]) {
-    [commonParameters setValue:@"" forKey:@"token"];
-  } else {
-    [commonParameters setValue:appContext.uid forKey:@"token"];
-  }
+//  if (ISEMPTY(appContext.uid) || [@"-1" isEqualToString:appContext.uid]) {
+//    [commonParameters setValue:@"" forKey:@"token"];
+//  } else {
+//    [commonParameters setValue:appContext.uid forKey:@"token"];
+//  }
   return commonParameters;
 }
 
@@ -137,6 +137,11 @@ typedef  void (^FailureBlock)(AFHTTPRequestOperation *operation, NSError *error)
        failure:[self getFailureBlock:weakSelf]
    ];
 }
+
+//- (void)createCoach:(NSString*)path parameters:(NSDictionary*)parameters
+//{
+//    
+//}
 
 - (BaseResponse*)parseResponse:(NSDictionary*)responseDict error:(NSError**)error
 {

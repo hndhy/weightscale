@@ -23,6 +23,8 @@
 #import <UIImageView+WebCache.h>
 #import "CoachModelHandler.h"
 #import "CoachListModel.h"
+#import "CoachChooseViewController.h"
+
 @interface CoachViewController ()<UITableViewDelegate,UITableViewDataSource,CoachModelProtocol,UIAlertViewDelegate>
 {
     UITableView *_tableView;
@@ -48,7 +50,7 @@
     
     UIButton *forwardButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44.0f, 44.0f)];
     [forwardButton setTitle:@"新建" forState:UIControlStateNormal];
-    [forwardButton addTarget:self action:@selector(onSetingClick) forControlEvents:UIControlEventTouchUpInside];
+    [forwardButton addTarget:self action:@selector(createNew) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:forwardButton];
     self.navigationItem.rightBarButtonItem = rightItem;
 }
@@ -79,11 +81,20 @@
     [super viewWillAppear:animated];
 }
 
+#pragma mark action
+
+- (void)createNew
+{
+    CoachChooseViewController * vc = [[CoachChooseViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 - (void)onSetingClick
 {
     HideSetViewController *hide = [[HideSetViewController alloc] init];
     [self.navigationController pushViewController:hide animated:YES];
 }
+
+#pragma mark tableview delegate datasource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
@@ -132,7 +143,7 @@
 - (void)syncFinished:(CoachListResponse *)response
 {
     [_dataArray removeAllObjects];
-    [_dataArray addObjectsFromArray:response.results];
+    [_dataArray addObjectsFromArray:response.data];
     [_tableView reloadData];
 }
 
