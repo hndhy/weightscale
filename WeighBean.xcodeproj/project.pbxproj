@@ -119,6 +119,12 @@
 		5CEC2E671D56361600CBA6BA /* CreateCoachModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEC2E661D56361600CBA6BA /* CreateCoachModelHandler.m */; };
 		5CEC2E6A1D5638F700CBA6BA /* CreateCoachResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEC2E691D5638F700CBA6BA /* CreateCoachResponse.m */; };
 		5CEC2E6D1D56399F00CBA6BA /* CreateCoachModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEC2E6C1D56399F00CBA6BA /* CreateCoachModel.m */; };
+		5CEC2E7D1D5745B500CBA6BA /* NSMutableArray+SWUtilityButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEC2E721D5745B500CBA6BA /* NSMutableArray+SWUtilityButtons.m */; };
+		5CEC2E7E1D5745B500CBA6BA /* SWCellScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEC2E741D5745B500CBA6BA /* SWCellScrollView.m */; };
+		5CEC2E7F1D5745B500CBA6BA /* SWLongPressGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEC2E761D5745B500CBA6BA /* SWLongPressGestureRecognizer.m */; };
+		5CEC2E801D5745B500CBA6BA /* SWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEC2E781D5745B500CBA6BA /* SWTableViewCell.m */; };
+		5CEC2E811D5745B500CBA6BA /* SWUtilityButtonTapGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEC2E7A1D5745B500CBA6BA /* SWUtilityButtonTapGestureRecognizer.m */; };
+		5CEC2E821D5745B500CBA6BA /* SWUtilityButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEC2E7C1D5745B500CBA6BA /* SWUtilityButtonView.m */; };
 		5F3A54081B770D4200F52C55 /* menu_nav_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A54071B770D4200F52C55 /* menu_nav_bar@2x.png */; };
 		5F3A540A1B771A2200F52C55 /* home_forward_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A54091B771A2200F52C55 /* home_forward_icon@2x.png */; };
 		5F3A540D1B771A5300F52C55 /* home_title@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A540C1B771A5300F52C55 /* home_title@2x.png */; };
@@ -544,6 +550,18 @@
 		5CEC2E691D5638F700CBA6BA /* CreateCoachResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateCoachResponse.m; sourceTree = "<group>"; };
 		5CEC2E6B1D56399F00CBA6BA /* CreateCoachModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateCoachModel.h; sourceTree = "<group>"; };
 		5CEC2E6C1D56399F00CBA6BA /* CreateCoachModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateCoachModel.m; sourceTree = "<group>"; };
+		5CEC2E711D5745B500CBA6BA /* NSMutableArray+SWUtilityButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+SWUtilityButtons.h"; sourceTree = "<group>"; };
+		5CEC2E721D5745B500CBA6BA /* NSMutableArray+SWUtilityButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+SWUtilityButtons.m"; sourceTree = "<group>"; };
+		5CEC2E731D5745B500CBA6BA /* SWCellScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCellScrollView.h; sourceTree = "<group>"; };
+		5CEC2E741D5745B500CBA6BA /* SWCellScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCellScrollView.m; sourceTree = "<group>"; };
+		5CEC2E751D5745B500CBA6BA /* SWLongPressGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWLongPressGestureRecognizer.h; sourceTree = "<group>"; };
+		5CEC2E761D5745B500CBA6BA /* SWLongPressGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWLongPressGestureRecognizer.m; sourceTree = "<group>"; };
+		5CEC2E771D5745B500CBA6BA /* SWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWTableViewCell.h; sourceTree = "<group>"; };
+		5CEC2E781D5745B500CBA6BA /* SWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWTableViewCell.m; sourceTree = "<group>"; };
+		5CEC2E791D5745B500CBA6BA /* SWUtilityButtonTapGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUtilityButtonTapGestureRecognizer.h; sourceTree = "<group>"; };
+		5CEC2E7A1D5745B500CBA6BA /* SWUtilityButtonTapGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUtilityButtonTapGestureRecognizer.m; sourceTree = "<group>"; };
+		5CEC2E7B1D5745B500CBA6BA /* SWUtilityButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUtilityButtonView.h; sourceTree = "<group>"; };
+		5CEC2E7C1D5745B500CBA6BA /* SWUtilityButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUtilityButtonView.m; sourceTree = "<group>"; };
 		5F3A54071B770D4200F52C55 /* menu_nav_bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_nav_bar@2x.png"; sourceTree = "<group>"; };
 		5F3A54091B771A2200F52C55 /* home_forward_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_forward_icon@2x.png"; sourceTree = "<group>"; };
 		5F3A540C1B771A5300F52C55 /* home_title@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_title@2x.png"; sourceTree = "<group>"; };
@@ -1056,6 +1074,25 @@
 			name = Coach;
 			sourceTree = "<group>";
 		};
+		5CEC2E701D57458800CBA6BA /* SWTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5CEC2E711D5745B500CBA6BA /* NSMutableArray+SWUtilityButtons.h */,
+				5CEC2E721D5745B500CBA6BA /* NSMutableArray+SWUtilityButtons.m */,
+				5CEC2E731D5745B500CBA6BA /* SWCellScrollView.h */,
+				5CEC2E741D5745B500CBA6BA /* SWCellScrollView.m */,
+				5CEC2E751D5745B500CBA6BA /* SWLongPressGestureRecognizer.h */,
+				5CEC2E761D5745B500CBA6BA /* SWLongPressGestureRecognizer.m */,
+				5CEC2E771D5745B500CBA6BA /* SWTableViewCell.h */,
+				5CEC2E781D5745B500CBA6BA /* SWTableViewCell.m */,
+				5CEC2E791D5745B500CBA6BA /* SWUtilityButtonTapGestureRecognizer.h */,
+				5CEC2E7A1D5745B500CBA6BA /* SWUtilityButtonTapGestureRecognizer.m */,
+				5CEC2E7B1D5745B500CBA6BA /* SWUtilityButtonView.h */,
+				5CEC2E7C1D5745B500CBA6BA /* SWUtilityButtonView.m */,
+			);
+			name = SWTableViewCell;
+			sourceTree = "<group>";
+		};
 		5F3A540B1B771A5300F52C55 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -1508,6 +1545,7 @@
 		5FA9F14D1B66096C00997BA8 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				5CEC2E701D57458800CBA6BA /* SWTableViewCell */,
 				5289FE8C1C09FD1A0036FA6F /* MIPushSDK */,
 				525F70A71B9F0D8800D8F97E /* UMAnalytics_Sdk_3.5.12 */,
 				5FD514951B806A640088C7E9 /* JSONKit */,
@@ -2394,6 +2432,7 @@
 				5FA9F31E1B66096C00997BA8 /* HTCheckCodeModel.m in Sources */,
 				5FD514A51B80B56A0088C7E9 /* ZouMaDengListResponse.m in Sources */,
 				5F3A54101B7788CB00F52C55 /* MyViewController.m in Sources */,
+				5CEC2E7F1D5745B500CBA6BA /* SWLongPressGestureRecognizer.m in Sources */,
 				528D7BD81C16C6E200246E00 /* HideModel.m in Sources */,
 				5F5454231B6E2069002F7583 /* RegisterViewController.m in Sources */,
 				5FE255521B7893D60029BD4D /* UploadAvatarModelHandler.m in Sources */,
@@ -2452,6 +2491,7 @@
 				5FA9F2F21B66096C00997BA8 /* UserResponse.m in Sources */,
 				525E87D71B9746E800929E86 /* QuestionViewController.m in Sources */,
 				B04DAA021B8812EE006562EB /* AccountData.m in Sources */,
+				5CEC2E7E1D5745B500CBA6BA /* SWCellScrollView.m in Sources */,
 				52964C5A1C19588E003FA17A /* TrendObjModel.m in Sources */,
 				B01A8EC21B7E408D0049D86D /* JTCircleView.m in Sources */,
 				5F88BE4B1B7F0DBC008C4901 /* FatViewController.m in Sources */,
@@ -2461,7 +2501,9 @@
 				B01A8EDF1B8040BC0049D86D /* WebViewDetailViewController.m in Sources */,
 				5FE2554C1B77B5860029BD4D /* TrendListViewController.m in Sources */,
 				5FA9F2B51B66096C00997BA8 /* UIScrollView+SVPullToRefresh.m in Sources */,
+				5CEC2E811D5745B500CBA6BA /* SWUtilityButtonTapGestureRecognizer.m in Sources */,
 				5FA9F29D1B66096C00997BA8 /* NotificationCenter.m in Sources */,
+				5CEC2E801D5745B500CBA6BA /* SWTableViewCell.m in Sources */,
 				5FE255421B77A61D0029BD4D /* SharePlat.m in Sources */,
 				5F88BE2F1B7ED346008C4901 /* LBMViewController.m in Sources */,
 				522123BA1BFCAB03006BCCC4 /* OnlineModelHandler.m in Sources */,
@@ -2504,6 +2546,7 @@
 				5FA9F2C71B66096C00997BA8 /* FindPwdModelHandler.m in Sources */,
 				522123AA1BFB3230006BCCC4 /* VerifyOrderView.m in Sources */,
 				5FA9F2CB1B66096C00997BA8 /* UpdateInfoModelHandler.m in Sources */,
+				5CEC2E821D5745B500CBA6BA /* SWUtilityButtonView.m in Sources */,
 				5289FE9E1C0AB9410036FA6F /* ToolsModel.m in Sources */,
 				522123B41BFC27F4006BCCC4 /* OnlineOrderData.m in Sources */,
 				5FA9F2BD1B66096C00997BA8 /* UncollectClickModelHandler.m in Sources */,
@@ -2518,6 +2561,7 @@
 				B01A8EC51B7E45660049D86D /* JTCalendarViewController.m in Sources */,
 				5FA9F2961B66096C00997BA8 /* HTTableViewController.m in Sources */,
 				522123C91BFCB5A1006BCCC4 /* VerifyOrderHander.m in Sources */,
+				5CEC2E7D1D5745B500CBA6BA /* NSMutableArray+SWUtilityButtons.m in Sources */,
 				B01A8EBD1B7E408D0049D86D /* JTCalendarMenuMonthView.m in Sources */,
 				B01A8E6A1B7C6D470049D86D /* BodilyDataViewController.m in Sources */,
 				5FA9F2F11B66096C00997BA8 /* OauthInfoModel.m in Sources */,
