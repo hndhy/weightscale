@@ -9,6 +9,21 @@
 #import "CoachNewBuildViewController.h"
 
 @implementation CoachNewBuildViewController
+
+
+- (id)initWithUserID:(NSString *)uid teamID:(NSString *)tid teamName:(NSString *)name
+{
+    self = [super init];
+    if (self) {
+        userid = uid;
+        teamid = tid;
+        teamname = name;
+//        ischat = chat;
+//        teamdescription = description;
+    }
+    return self;
+}
+
 - (void)initNavbar
 {
     self.title = @"新建战队";
@@ -39,13 +54,14 @@
     coachNameLabel.text = @"战队名称";
     [view1 addSubview:coachNameLabel];
     
-    nameBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width-150, 0, 150, 40)];
-    nameBtn.titleLabel.textColor = [UIColor blackColor];
-    nameBtn.titleLabel.font = [UIFont systemFontOfSize:13];
-    nameBtn.titleLabel.text = @"点击修改";
+    nameBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    nameBtn.frame = CGRectMake(self.view.frame.size.width-100,5,80,20);
+    [nameBtn setTitle:@"点击修改" forState:UIControlStateNormal];
+    [nameBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    nameBtn.titleLabel.font = [UIFont systemFontOfSize:12];
+    [nameBtn addTarget:self action:@selector(changeDicClick) forControlEvents:UIControlEventTouchUpInside];
     [view1 addSubview:nameBtn];
-    
-    
+
     
     UIView *view2 = [[UIView alloc] initWithFrame:CGRectMake(0, view1.bottom+5, self.view.frame.size.width, 50)];
     view2.backgroundColor = [UIColor whiteColor];
@@ -93,6 +109,13 @@
     buildBtn.titleLabel.text = @"成立";
     [buildBtn addTarget:self action:@selector(buildDidClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:buildBtn];
+    
+    
+    if (userid && teamid && teamname) {
+//        nameBtn.titleLabel.text = teamname;
+        [nameBtn setTitle:teamname forState:UIControlStateNormal];
+        isEditType = YES;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -116,6 +139,10 @@
 - (void)allowAction:(id)sender
 {
     
+}
+
+- (void)changeDicClick
+{
 }
 
 - (void)buildDidClick

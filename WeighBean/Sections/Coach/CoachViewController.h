@@ -7,6 +7,9 @@
 //
 
 #import "HTBaseViewController.h"
+#import "SWTableViewCell.h"
+#import "CoachListCell.h"
+
 
 @interface CoachViewController : HTBaseViewController
 

@@ -22,9 +22,21 @@
     UILabel *introDetailLabel;
     
     UIButton *buildBtn;
+    
+    NSString *userid;
+    NSString *teamid;
+    NSString *teamname;
+//    int ischat;
+//    NSString *teamdescription;
+    
+    BOOL isEditType;
 }
 
 @property (nonatomic,strong) CreateCoachModelHandler *createCoachModelHandler;
 @property (nonatomic,strong) CreateCoachModel *createCoachModel;
+
+//- (id)initWithUserID:(NSString *)uid teamID:(NSString *)tid teamName:(NSString *)name isChat:(int)chat teamDescription:(NSString *)description;
+- (id)initWithUserID:(NSString *)uid teamID:(NSString *)tid teamName:(NSString *)name;
+
 
 @end

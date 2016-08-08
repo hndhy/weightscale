@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "CoachObjModel.h"
+#import "SWTableViewCell.h"
 
-@interface CoachListCell : UITableViewCell
+@interface CoachListCell : SWTableViewCell
 
 
 {

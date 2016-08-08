@@ -18,14 +18,15 @@
 //#import "QuestionViewController.h"
 #import "QHistoryViewController.h"
 #import "UIViewController+RESideMenu.h"
-#import "CoachListCell.h"
 #import "VerifyOrderViewController.h"
 #import <UIImageView+WebCache.h>
 #import "CoachModelHandler.h"
 #import "CoachListModel.h"
 #import "CoachChooseViewController.h"
+#import "CoachNewBuildViewController.h"
 
-@interface CoachViewController ()<UITableViewDelegate,UITableViewDataSource,CoachModelProtocol,UIAlertViewDelegate>
+
+@interface CoachViewController ()<UITableViewDelegate,UITableViewDataSource,CoachModelProtocol,UIAlertViewDelegate,SWTableViewCellDelegate>
 {
     UITableView *_tableView;
     NSMutableArray *_dataArray;
@@ -109,18 +110,87 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     static NSString *identier = @"identier";
-    CoachListCell *cell = [tableView dequeueReusableCellWithIdentifier:identier];
-    if (!cell)
+    CoachListCell *cell = (CoachListCell*)[tableView dequeueReusableCellWithIdentifier:identier];
+    if (cell == nil)
     {
         cell = [[CoachListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identier];
+        [cell setRightUtilityButtons:[self rightButtons] WithButtonWidth:58.0f];
+        cell.delegate = self;
+
     }
-    __weak typeof(self) weakSelf = self;
-    [cell setSelectBlock:^(NSInteger index,CoachObjModel *obj,NSIndexPath *path) {
-        [weakSelf selectIndex:index product:obj indexPath:path];
-    }];
+//    __weak typeof(self) weakSelf = self;
+//    [cell setSelectBlock:^(NSInteger index,CoachObjModel *obj,NSIndexPath *path) {
+//        [weakSelf selectIndex:index product:obj indexPath:path];
+//    }];
     [cell loadContent:_dataArray[indexPath.row] path:indexPath];
     return cell;
 }
+
+- (NSArray *)rightButtons
+{
+    NSMutableArray *rightUtilityButtons = [NSMutableArray new];
+    
+    [rightUtilityButtons sw_addUtilityButtonWithColor:[UIColor blueColor]
+                                                title:@"编辑"];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:[UIColor blueColor]
+                                                title:@"查看"];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:[UIColor blueColor]
+                                                title:@"重启"];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:[UIColor blueColor]
+                                                title:@"解散"];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:[UIColor blueColor]
+                                                title:@"目标"];
+    
+    return rightUtilityButtons;
+}
+
+#pragma mark -SWTableViewCellDelegate
+- (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index
+{
+    NSIndexPath *cellIndexPath = [_tableView indexPathForCell:cell];
+
+    switch (index) {
+        case 0:
+            NSLog(@"button 0 was pressed");
+            [self editTeam:cellIndexPath];
+            break;
+        case 1:
+            NSLog(@"button 1 was pressed");
+            break;
+        case 2:
+            NSLog(@"button 2 was pressed");
+            break;
+        case 3:
+            NSLog(@"button 3 was pressed");
+            break;
+        default:
+            break;
+    }
+}
+- (void)swipeableTableViewCell:(SWTableViewCell *)cell scrollingToState:(SWCellState)state
+{
+    
+}
+//- (BOOL)swipeableTableViewCellShouldHideUtilityButtonsOnSwipe:(SWTableViewCell *)cell
+//{
+//    
+//}
+//- (BOOL)swipeableTableViewCell:(SWTableViewCell *)cell canSwipeToState:(SWCellState)state
+//{
+//    
+//}
+
+- (void)editTeam:(NSIndexPath *)indexpath
+{
+    HTAppContext *appContext = [HTAppContext sharedContext];
+    CoachObjModel *obj = _dataArray[indexpath.row];
+
+    CoachNewBuildViewController *vc = [[CoachNewBuildViewController alloc] initWithUserID:appContext.uid teamID:obj.tid teamName:obj.teamName];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
+
 
 - (void)selectIndex:(NSInteger )index product:(CoachObjModel *)obj indexPath:(NSIndexPath *)path
 {

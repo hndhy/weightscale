@@ -21,36 +21,30 @@
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.backgroundColor = [UIColor clearColor];
         
-        UIView *background = [[UIView alloc] initWithFrame:CGRectMake(0, 5, CGRectGetWidth(self.frame), 65)];
-        background.backgroundColor = [UIColor whiteColor];
-        background.layer.cornerRadius = 5;
-        background.layer.masksToBounds = YES;
-        [self addSubview:background];
-        
         coachIcon = [[UIImageView alloc] initWithFrame:CGRectMake(15, 15, 40, 40)];
         coachIcon.backgroundColor = [UIColor blueColor];
         coachIcon.image = nil;
-        [background addSubview:coachIcon];
+        [self.contentView addSubview:coachIcon];
         
         title = [[UILabel alloc] initWithFrame:CGRectMake(coachIcon.right+10, 10, 100, 20)];
         title.text = @"人教练战队";
         title.font = [UIFont systemFontOfSize:14];
-        [background addSubview:title];
+        [self.contentView addSubview:title];
         
         subTitle1 = [[UILabel alloc] initWithFrame:CGRectMake(coachIcon.right+10, title.bottom, 55, 30)];
         subTitle1.text = @"活跃人数";
         subTitle1.font = [UIFont systemFontOfSize:11];
-        [background addSubview:subTitle1];
+        [self.contentView addSubview:subTitle1];
         
         subTitle2 = [[UILabel alloc] initWithFrame:CGRectMake(subTitle1.right+10, title.bottom, 55, 30)];
         subTitle2.text = @"有效率";
         subTitle2.font = [UIFont systemFontOfSize:11];
-        [background addSubview:subTitle2];
+        [self.contentView addSubview:subTitle2];
         
         stataLbl = [[UILabel alloc] initWithFrame:CGRectMake(title.right+50, 10, 150, 20)];
         stataLbl.text = @"状态";
         stataLbl.font = [UIFont systemFontOfSize:14];
-        [background addSubview:stataLbl];
+        [self.contentView addSubview:stataLbl];
         
         joinBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         joinBtn.frame = CGRectMake(stataLbl.left,stataLbl.bottom+5,80,20);
@@ -59,12 +53,12 @@
         joinBtn.titleLabel.tintColor = [UIColor whiteColor];
         joinBtn.titleLabel.font = [UIFont systemFontOfSize:12];
         [joinBtn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
-        [background addSubview:joinBtn];
+        [self.contentView addSubview:joinBtn];
         
         coachTypeLbl = [[UILabel alloc] initWithFrame:joinBtn.frame];
         coachTypeLbl.text = @"状态";
         coachTypeLbl.font = [UIFont systemFontOfSize:14];
-        [background addSubview:coachTypeLbl];
+        [self.contentView addSubview:coachTypeLbl];
         coachTypeLbl.hidden = YES;
     }
     return self;
