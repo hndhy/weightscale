@@ -9,5 +9,15 @@
 #import "DissolveCoachModelHandler.h"
 
 @implementation DissolveCoachModelHandler
+- (id)initWithController:(HTBaseViewController<DissolveCoachModelProtocol> *)controller
+{
+    return [super initWithController:controller];
+}
 
+- (void)dataDidLoad:(id)sender data:(BaseResponse*)data
+{
+    [super dataDidLoad:sender data:data];
+    HTBaseViewController<DissolveCoachModelProtocol> *controller = (HTBaseViewController<DissolveCoachModelProtocol>*)self.controller;
+    [controller dissolveCoachFinished:(DissolveCoachResponse *)data];
+}
 @end

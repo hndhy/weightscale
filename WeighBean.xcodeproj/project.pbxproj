@@ -110,6 +110,9 @@
 		5C2B1F3B1D58159C00032D3F /* UpdateCoachModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F3A1D58159C00032D3F /* UpdateCoachModel.m */; };
 		5C2B1F3E1D5816A900032D3F /* UpdateCoachResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F3D1D5816A900032D3F /* UpdateCoachResponse.m */; };
 		5C2B1F411D58174600032D3F /* UpdateCoachModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F401D58174600032D3F /* UpdateCoachModelHandler.m */; };
+		5C2B1F441D58B91E00032D3F /* DissolveCoachModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F431D58B91E00032D3F /* DissolveCoachModel.m */; };
+		5C2B1F471D58B94D00032D3F /* DissolveCoachResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F461D58B94D00032D3F /* DissolveCoachResponse.m */; };
+		5C2B1F4D1D58B9EA00032D3F /* DissolveCoachModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F4C1D58B9EA00032D3F /* DissolveCoachModelHandler.m */; };
 		5C6562A41D47DEC4004CF31B /* HTMultiLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6562A31D47DEC4004CF31B /* HTMultiLabel.m */; };
 		5CE173111D4DFB930047E8B9 /* CoachModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173101D4DFB930047E8B9 /* CoachModelHandler.m */; };
 		5CE173141D4DFC860047E8B9 /* CoachListResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173131D4DFC860047E8B9 /* CoachListResponse.m */; };
@@ -535,6 +538,12 @@
 		5C2B1F3D1D5816A900032D3F /* UpdateCoachResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateCoachResponse.m; sourceTree = "<group>"; };
 		5C2B1F3F1D58174600032D3F /* UpdateCoachModelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateCoachModelHandler.h; sourceTree = "<group>"; };
 		5C2B1F401D58174600032D3F /* UpdateCoachModelHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateCoachModelHandler.m; sourceTree = "<group>"; };
+		5C2B1F421D58B91E00032D3F /* DissolveCoachModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DissolveCoachModel.h; sourceTree = "<group>"; };
+		5C2B1F431D58B91E00032D3F /* DissolveCoachModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DissolveCoachModel.m; sourceTree = "<group>"; };
+		5C2B1F451D58B94D00032D3F /* DissolveCoachResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DissolveCoachResponse.h; sourceTree = "<group>"; };
+		5C2B1F461D58B94D00032D3F /* DissolveCoachResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DissolveCoachResponse.m; sourceTree = "<group>"; };
+		5C2B1F4B1D58B9EA00032D3F /* DissolveCoachModelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DissolveCoachModelHandler.h; sourceTree = "<group>"; };
+		5C2B1F4C1D58B9EA00032D3F /* DissolveCoachModelHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DissolveCoachModelHandler.m; sourceTree = "<group>"; };
 		5C6562A21D47DEC4004CF31B /* HTMultiLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMultiLabel.h; sourceTree = "<group>"; };
 		5C6562A31D47DEC4004CF31B /* HTMultiLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMultiLabel.m; sourceTree = "<group>"; };
 		5CE1730F1D4DFB930047E8B9 /* CoachModelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachModelHandler.h; sourceTree = "<group>"; };
@@ -1057,6 +1066,8 @@
 				5CEC2E661D56361600CBA6BA /* CreateCoachModelHandler.m */,
 				5C2B1F3F1D58174600032D3F /* UpdateCoachModelHandler.h */,
 				5C2B1F401D58174600032D3F /* UpdateCoachModelHandler.m */,
+				5C2B1F4B1D58B9EA00032D3F /* DissolveCoachModelHandler.h */,
+				5C2B1F4C1D58B9EA00032D3F /* DissolveCoachModelHandler.m */,
 			);
 			name = Coach;
 			sourceTree = "<group>";
@@ -1070,6 +1081,8 @@
 				5CEC2E691D5638F700CBA6BA /* CreateCoachResponse.m */,
 				5C2B1F3C1D5816A900032D3F /* UpdateCoachResponse.h */,
 				5C2B1F3D1D5816A900032D3F /* UpdateCoachResponse.m */,
+				5C2B1F451D58B94D00032D3F /* DissolveCoachResponse.h */,
+				5C2B1F461D58B94D00032D3F /* DissolveCoachResponse.m */,
 			);
 			name = Coach;
 			sourceTree = "<group>";
@@ -1085,6 +1098,8 @@
 				5CEC2E6C1D56399F00CBA6BA /* CreateCoachModel.m */,
 				5C2B1F391D58159C00032D3F /* UpdateCoachModel.h */,
 				5C2B1F3A1D58159C00032D3F /* UpdateCoachModel.m */,
+				5C2B1F421D58B91E00032D3F /* DissolveCoachModel.h */,
+				5C2B1F431D58B91E00032D3F /* DissolveCoachModel.m */,
 			);
 			name = Coach;
 			sourceTree = "<group>";
@@ -2454,6 +2469,7 @@
 				5FA9F2CA1B66096C00997BA8 /* SendCodeModelHandler.m in Sources */,
 				5FA9F2881B66096C00997BA8 /* NSDictionary+UrlEncoding.m in Sources */,
 				5FE255701B7A08F00029BD4D /* ClockInViewController.m in Sources */,
+				5C2B1F471D58B94D00032D3F /* DissolveCoachResponse.m in Sources */,
 				B01A8EC11B7E408D0049D86D /* JTCalendarWeekView.m in Sources */,
 				B01A8EBB1B7E408D0049D86D /* JTCalendarContentView.m in Sources */,
 				B01A8EBF1B7E408D0049D86D /* JTCalendarMonthView.m in Sources */,
@@ -2471,6 +2487,7 @@
 				5209E3D81BF5BC37005D14DD /* OnlineBuyViewController.m in Sources */,
 				528D7BD21C16BFCC00246E00 /* HideSetViewController.m in Sources */,
 				527316631BA6CFAE00E33110 /* WiFiController.m in Sources */,
+				5C2B1F4D1D58B9EA00032D3F /* DissolveCoachModelHandler.m in Sources */,
 				52964C541C19578A003FA17A /* TrendModelHandler.m in Sources */,
 				5F88BE1E1B7DA24D008C4901 /* HTMyInfoModel.m in Sources */,
 				5FA9F2AC1B66096C00997BA8 /* HTTextField.m in Sources */,
@@ -2529,6 +2546,7 @@
 				5FA9F3211B66096C00997BA8 /* HTRegisterModel.m in Sources */,
 				B01A8E841B7CA6A10049D86D /* PNLineChartView.m in Sources */,
 				522123AD1BFC124D006BCCC4 /* ModifyViewController.m in Sources */,
+				5C2B1F441D58B91E00032D3F /* DissolveCoachModel.m in Sources */,
 				B01A8E851B7CA6A10049D86D /* PNPlot.m in Sources */,
 				5FD5149F1B80B5050088C7E9 /* HTZouMaDengModel.m in Sources */,
 				5FA9F28E1B66096C00997BA8 /* UIView+Ext.m in Sources */,

@@ -25,8 +25,11 @@
 #import "CoachChooseViewController.h"
 #import "CoachNewBuildViewController.h"
 
+#import "DissolveCoachModelHandler.h"
+#import "DissolveCoachModel.h"
 
-@interface CoachViewController ()<UITableViewDelegate,UITableViewDataSource,CoachModelProtocol,UIAlertViewDelegate,SWTableViewCellDelegate>
+
+@interface CoachViewController ()<UITableViewDelegate,UITableViewDataSource,CoachModelProtocol,DissolveCoachModelProtocol,UIAlertViewDelegate,SWTableViewCellDelegate>
 {
     UITableView *_tableView;
     NSMutableArray *_dataArray;
@@ -35,6 +38,9 @@
 @property (nonatomic,strong)CoachModelHandler *handle;
 @property (nonatomic,strong)CoachListModel *listModel;
 @property (nonatomic,strong)NSIndexPath *selectPath;
+
+@property (nonatomic,strong)DissolveCoachModelHandler *dissolveCoachHandle;
+@property (nonatomic,strong)DissolveCoachModel *dissolveCoachModel;
 
 @end
 
@@ -62,6 +68,11 @@
     self.listModel = [[CoachListModel alloc] initWithHandler:self.handle];
     _dataArray = [[NSMutableArray alloc] init];
     [self.listModel getCoachListPage:1];
+    
+    
+    self.dissolveCoachHandle = [[DissolveCoachModelHandler alloc] initWithController:self];
+    self.dissolveCoachModel = [[DissolveCoachModel alloc] initWithHandler:self.dissolveCoachHandle];
+    
 }
 
 - (void)initView
@@ -148,6 +159,9 @@
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index
 {
     NSIndexPath *cellIndexPath = [_tableView indexPathForCell:cell];
+    HTAppContext *appContext = [HTAppContext sharedContext];
+
+    CoachObjModel *obj = _dataArray[cellIndexPath.row];
 
     switch (index) {
         case 0:
@@ -162,6 +176,9 @@
             break;
         case 3:
             NSLog(@"button 3 was pressed");
+            [self.dissolveCoachModel dissolveCoachWithUid:appContext.uid teamID:obj.tid];
+            [_dataArray removeObjectAtIndex:cellIndexPath.row];
+            [_tableView deleteRowsAtIndexPaths:@[cellIndexPath] withRowAnimation:UITableViewRowAnimationLeft];
             break;
         default:
             break;

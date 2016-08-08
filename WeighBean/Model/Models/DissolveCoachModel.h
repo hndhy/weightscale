@@ -7,7 +7,9 @@
 //
 
 #import "HTAbstractDataSource.h"
+#import "DissolveCoachResponse.h"
 
 @interface DissolveCoachModel : HTAbstractDataSource
+- (void)dissolveCoachWithUid:(NSString *)uid teamID:(NSString *)tid;
 
 @end
