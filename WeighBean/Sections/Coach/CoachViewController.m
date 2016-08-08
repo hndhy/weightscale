@@ -146,7 +146,7 @@
     [rightUtilityButtons sw_addUtilityButtonWithColor:[UIColor blueColor]
                                                 title:@"查看"];
     [rightUtilityButtons sw_addUtilityButtonWithColor:[UIColor blueColor]
-                                                title:@"重启"];
+                                                title:@"刷新"];
     [rightUtilityButtons sw_addUtilityButtonWithColor:[UIColor blueColor]
                                                 title:@"解散"];
     [rightUtilityButtons sw_addUtilityButtonWithColor:[UIColor blueColor]

@@ -113,6 +113,10 @@
 		5C2B1F441D58B91E00032D3F /* DissolveCoachModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F431D58B91E00032D3F /* DissolveCoachModel.m */; };
 		5C2B1F471D58B94D00032D3F /* DissolveCoachResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F461D58B94D00032D3F /* DissolveCoachResponse.m */; };
 		5C2B1F4D1D58B9EA00032D3F /* DissolveCoachModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F4C1D58B9EA00032D3F /* DissolveCoachModelHandler.m */; };
+		5C2B1F501D58C5BC00032D3F /* ViewCoachDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F4F1D58C5BC00032D3F /* ViewCoachDetailModel.m */; };
+		5C2B1F531D58C5EC00032D3F /* ViewCoachDetailResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F521D58C5EC00032D3F /* ViewCoachDetailResponse.m */; };
+		5C2B1F561D58C63D00032D3F /* ViewCoachDetailModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F551D58C63D00032D3F /* ViewCoachDetailModelHandler.m */; };
+		5C2B1F591D58C8DB00032D3F /* ViewCoachObjModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F581D58C8DB00032D3F /* ViewCoachObjModel.m */; };
 		5C6562A41D47DEC4004CF31B /* HTMultiLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6562A31D47DEC4004CF31B /* HTMultiLabel.m */; };
 		5CE173111D4DFB930047E8B9 /* CoachModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173101D4DFB930047E8B9 /* CoachModelHandler.m */; };
 		5CE173141D4DFC860047E8B9 /* CoachListResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173131D4DFC860047E8B9 /* CoachListResponse.m */; };
@@ -544,6 +548,14 @@
 		5C2B1F461D58B94D00032D3F /* DissolveCoachResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DissolveCoachResponse.m; sourceTree = "<group>"; };
 		5C2B1F4B1D58B9EA00032D3F /* DissolveCoachModelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DissolveCoachModelHandler.h; sourceTree = "<group>"; };
 		5C2B1F4C1D58B9EA00032D3F /* DissolveCoachModelHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DissolveCoachModelHandler.m; sourceTree = "<group>"; };
+		5C2B1F4E1D58C5BC00032D3F /* ViewCoachDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewCoachDetailModel.h; sourceTree = "<group>"; };
+		5C2B1F4F1D58C5BC00032D3F /* ViewCoachDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewCoachDetailModel.m; sourceTree = "<group>"; };
+		5C2B1F511D58C5EC00032D3F /* ViewCoachDetailResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewCoachDetailResponse.h; sourceTree = "<group>"; };
+		5C2B1F521D58C5EC00032D3F /* ViewCoachDetailResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewCoachDetailResponse.m; sourceTree = "<group>"; };
+		5C2B1F541D58C63D00032D3F /* ViewCoachDetailModelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewCoachDetailModelHandler.h; sourceTree = "<group>"; };
+		5C2B1F551D58C63D00032D3F /* ViewCoachDetailModelHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewCoachDetailModelHandler.m; sourceTree = "<group>"; };
+		5C2B1F571D58C8DB00032D3F /* ViewCoachObjModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewCoachObjModel.h; sourceTree = "<group>"; };
+		5C2B1F581D58C8DB00032D3F /* ViewCoachObjModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewCoachObjModel.m; sourceTree = "<group>"; };
 		5C6562A21D47DEC4004CF31B /* HTMultiLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMultiLabel.h; sourceTree = "<group>"; };
 		5C6562A31D47DEC4004CF31B /* HTMultiLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMultiLabel.m; sourceTree = "<group>"; };
 		5CE1730F1D4DFB930047E8B9 /* CoachModelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachModelHandler.h; sourceTree = "<group>"; };
@@ -1068,6 +1080,8 @@
 				5C2B1F401D58174600032D3F /* UpdateCoachModelHandler.m */,
 				5C2B1F4B1D58B9EA00032D3F /* DissolveCoachModelHandler.h */,
 				5C2B1F4C1D58B9EA00032D3F /* DissolveCoachModelHandler.m */,
+				5C2B1F541D58C63D00032D3F /* ViewCoachDetailModelHandler.h */,
+				5C2B1F551D58C63D00032D3F /* ViewCoachDetailModelHandler.m */,
 			);
 			name = Coach;
 			sourceTree = "<group>";
@@ -1083,6 +1097,8 @@
 				5C2B1F3D1D5816A900032D3F /* UpdateCoachResponse.m */,
 				5C2B1F451D58B94D00032D3F /* DissolveCoachResponse.h */,
 				5C2B1F461D58B94D00032D3F /* DissolveCoachResponse.m */,
+				5C2B1F511D58C5EC00032D3F /* ViewCoachDetailResponse.h */,
+				5C2B1F521D58C5EC00032D3F /* ViewCoachDetailResponse.m */,
 			);
 			name = Coach;
 			sourceTree = "<group>";
@@ -1100,6 +1116,10 @@
 				5C2B1F3A1D58159C00032D3F /* UpdateCoachModel.m */,
 				5C2B1F421D58B91E00032D3F /* DissolveCoachModel.h */,
 				5C2B1F431D58B91E00032D3F /* DissolveCoachModel.m */,
+				5C2B1F4E1D58C5BC00032D3F /* ViewCoachDetailModel.h */,
+				5C2B1F4F1D58C5BC00032D3F /* ViewCoachDetailModel.m */,
+				5C2B1F571D58C8DB00032D3F /* ViewCoachObjModel.h */,
+				5C2B1F581D58C8DB00032D3F /* ViewCoachObjModel.m */,
 			);
 			name = Coach;
 			sourceTree = "<group>";
@@ -2474,6 +2494,7 @@
 				B01A8EBB1B7E408D0049D86D /* JTCalendarContentView.m in Sources */,
 				B01A8EBF1B7E408D0049D86D /* JTCalendarMonthView.m in Sources */,
 				5CEC2E6D1D56399F00CBA6BA /* CreateCoachModel.m in Sources */,
+				5C2B1F531D58C5EC00032D3F /* ViewCoachDetailResponse.m in Sources */,
 				5FA9F28A1B66096C00997BA8 /* NSURL+Additions.m in Sources */,
 				5CEC2E5E1D53A90F00CBA6BA /* CoachChooseViewController.m in Sources */,
 				5289FE881C0756DA0036FA6F /* NotifNumberModelHandler.m in Sources */,
@@ -2580,6 +2601,7 @@
 				5FA9F2C31B66096C00997BA8 /* HTBaseModelHandler.m in Sources */,
 				5F88BE0A1B7AC9E1008C4901 /* MeasureInfoModel.m in Sources */,
 				5FA9F2C71B66096C00997BA8 /* FindPwdModelHandler.m in Sources */,
+				5C2B1F501D58C5BC00032D3F /* ViewCoachDetailModel.m in Sources */,
 				522123AA1BFB3230006BCCC4 /* VerifyOrderView.m in Sources */,
 				5FA9F2CB1B66096C00997BA8 /* UpdateInfoModelHandler.m in Sources */,
 				5CEC2E821D5745B500CBA6BA /* SWUtilityButtonView.m in Sources */,
@@ -2608,6 +2630,7 @@
 				5FE255731B7A09B80029BD4D /* PlanViewController.m in Sources */,
 				5FA9F2981B66096C00997BA8 /* HTTextViewDelegate.m in Sources */,
 				B01A8EBC1B7E408D0049D86D /* JTCalendarDayView.m in Sources */,
+				5C2B1F591D58C8DB00032D3F /* ViewCoachObjModel.m in Sources */,
 				5FA9F2BE1B66096C00997BA8 /* UnlikeClickModelHandler.m in Sources */,
 				525C012C1C1BE59E00B7C0FC /* QHistoryViewController.m in Sources */,
 				5FA9F2D81B66096C00997BA8 /* BaseResponse.m in Sources */,
@@ -2627,6 +2650,7 @@
 				5CE173141D4DFC860047E8B9 /* CoachListResponse.m in Sources */,
 				B01A8E981B7DCFEB0049D86D /* BDListCell.m in Sources */,
 				5FA9F2BA1B66096C00997BA8 /* CollectClickModelHandler.m in Sources */,
+				5C2B1F561D58C63D00032D3F /* ViewCoachDetailModelHandler.m in Sources */,
 				5FA9F2B41B66096C00997BA8 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				5FA9F33B1B661B7E00997BA8 /* IndexViewController.m in Sources */,
 				526E83141BFDDB2C0096A874 /* BoneMassViewController.m in Sources */,
