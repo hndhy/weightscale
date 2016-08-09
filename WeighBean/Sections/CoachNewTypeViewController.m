@@ -15,7 +15,7 @@
 - (void)initView
 {
     //减脂
-    fatLossBackView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 300)];
+    fatLossBackView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 220)];
     fatLossBackView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:fatLossBackView];
     fatLossBackView.hidden = YES;
@@ -27,7 +27,7 @@
     [fatLossLbl setText:@"减脂"];
     [fatLossBackView addSubview:fatLossLbl];
     
-    fatLossTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, 250)];
+    fatLossTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, 200)];
     fatLossTextView.backgroundColor = [UIColor whiteColor];
     [fatLossTextView setTextColor:[UIColor grayColor]];
     [fatLossTextView setFont:[UIFont systemFontOfSize:12]];
@@ -36,7 +36,7 @@
     [fatLossBackView addSubview:fatLossTextView];
     
     //增肌
-    muscleGainBackView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 300)];
+    muscleGainBackView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 220)];
     muscleGainBackView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:muscleGainBackView];
     muscleGainBackView.hidden = YES;
@@ -48,7 +48,7 @@
     [muscleGainLbl setText:@"增肌"];
     [muscleGainBackView addSubview:muscleGainLbl];
     
-    muscleGainTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, 250)];
+    muscleGainTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, 200)];
     muscleGainTextView.backgroundColor = [UIColor whiteColor];
     [muscleGainTextView setTextColor:[UIColor grayColor]];
     [muscleGainTextView setFont:[UIFont systemFontOfSize:12]];
@@ -60,12 +60,14 @@
     confirmBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     confirmBtn.frame = CGRectMake(5,350,self.view.frame.size.width-10,40);
     confirmBtn.backgroundColor = [UIColor blueColor];
+    [confirmBtn setTitle:@"确定" forState:UIControlStateNormal];
     [confirmBtn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:confirmBtn];
 
     shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     shareBtn.frame = CGRectMake(5,400,self.view.frame.size.width-10,40);
     shareBtn.backgroundColor = [UIColor blueColor];
+    [shareBtn setTitle:@"分享给微信好友" forState:UIControlStateNormal];
     [shareBtn addTarget:self action:@selector(shareDicClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:shareBtn];
     
@@ -88,15 +90,18 @@
     if (currentNewType ==1) {
         muscleGainBackView.hidden=goalSetBackView.hidden=YES;
         fatLossBackView.hidden=NO;
+        self.title = @"新建减脂";
     } else if (currentNewType==2)
     {
         fatLossBackView.hidden=goalSetBackView.hidden=YES;
         muscleGainBackView.hidden=NO;
+        self.title = @"新建增肌";
     }else
     {
         fatLossBackView.hidden=muscleGainBackView.hidden=YES;
         goalSetBackView.hidden=NO;
         confirmBtn.hidden=shareBtn.hidden=YES;
+        self.title = @"个人目标设置";
     }
 }
 

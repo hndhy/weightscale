@@ -44,8 +44,13 @@
 
 #import "HTMultiLabel.h"
 
+#import "CheckInImgPickerViewController.h"
 
-@interface HomeViewController ()<SharePlatDelegate, SyncModelProtocol, MFMessageComposeViewControllerDelegate,JTCalendarDelegate,RESideMenuDelegate>
+#import "CheckInPickResultViewController.h"
+
+
+
+@interface HomeViewController ()<SharePlatDelegate, SyncModelProtocol, MFMessageComposeViewControllerDelegate,JTCalendarDelegate,RESideMenuDelegate,TZImagePickerControllerDelegate>
 
 @property (nonatomic, strong) UILabel *weightNumLabel;
 @property (nonatomic, strong) UILabel *weightStatLabel;
@@ -282,6 +287,34 @@
     
     
     
+    UIButton *checkInBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    checkInBtn.frame = CGRectMake(0, thirdView.bottom, self.view.size.width/3, 40);
+    checkInBtn.backgroundColor = [UIColor whiteColor];
+    checkInBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [checkInBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [checkInBtn setTitle:@"打卡" forState:UIControlStateNormal];
+    [checkInBtn addTarget:self action:@selector(showImgPicker) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:checkInBtn];
+    
+    UIButton *measureBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    measureBtn.frame = CGRectMake(self.view.size.width/3, thirdView.bottom, self.view.size.width/3, 40);
+    measureBtn.backgroundColor = [UIColor whiteColor];
+    measureBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [measureBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [measureBtn setTitle:@"测量" forState:UIControlStateNormal];
+    [measureBtn addTarget:self action:@selector(enterDidClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:measureBtn];
+    
+    UIButton *sportBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    sportBtn.frame = CGRectMake(2*self.view.size.width/3, thirdView.bottom, self.view.size.width/3, 40);
+    sportBtn.backgroundColor = [UIColor whiteColor];
+    sportBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [sportBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [sportBtn setTitle:@"运动" forState:UIControlStateNormal];
+    [sportBtn addTarget:self action:@selector(enterDidClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:sportBtn];
+
+    
     /*
      // 首页感叹号View
      UIImageView *targetImageView = [[UIImageView alloc] initWithFrame:CGRectMake(thirdView.right - 30.0f,
@@ -329,6 +362,21 @@
     }
     self.sideMenuViewController.delegate = self;
 }
+
+- (void)showImgPicker
+{
+    CheckInImgPickerViewController *VC = [[CheckInImgPickerViewController alloc] initWithMaxImagesCount:9 delegate:self];
+    [VC setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
+        
+        CheckInPickResultViewController *vc = [[CheckInPickResultViewController alloc] initWithImg:photos[0]];
+        [self.navigationController pushViewController:vc animated:YES];
+
+        
+    }];
+    [self presentViewController:VC animated:YES completion:nil];
+    
+}
+
 
 
 - (BOOL)needRefreshView

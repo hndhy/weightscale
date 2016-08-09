@@ -297,6 +297,14 @@
                   delegate:nil
                cancelTitle:@"确定"
                otherTitles:nil];
+  } else if (0 == error.code)
+  {
+      [self alert:@"成功"
+          message:[NSString stringWithFormat:@"%@", error.domain]
+         delegate:nil
+      cancelTitle:@"确定"
+      otherTitles:nil];
+
   } else {
     [self alert:@"出错了"
                    message:[NSString stringWithFormat:@"%@", error.domain]

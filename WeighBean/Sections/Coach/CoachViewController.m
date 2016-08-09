@@ -31,7 +31,9 @@
 #import "CoachDetailViewController.h"
 
 
-@interface CoachViewController ()<UITableViewDelegate,UITableViewDataSource,CoachModelProtocol,DissolveCoachModelProtocol,UIAlertViewDelegate,SWTableViewCellDelegate>
+#import "CheckInImgPickerViewController.h"
+
+@interface CoachViewController ()<UITableViewDelegate,UITableViewDataSource,CoachModelProtocol,DissolveCoachModelProtocol,UIAlertViewDelegate,SWTableViewCellDelegate,TZImagePickerControllerDelegate>
 {
     UITableView *_tableView;
     NSMutableArray *_dataArray;
