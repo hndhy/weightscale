@@ -117,6 +117,7 @@
 		5C2B1F531D58C5EC00032D3F /* ViewCoachDetailResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F521D58C5EC00032D3F /* ViewCoachDetailResponse.m */; };
 		5C2B1F561D58C63D00032D3F /* ViewCoachDetailModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F551D58C63D00032D3F /* ViewCoachDetailModelHandler.m */; };
 		5C2B1F591D58C8DB00032D3F /* ViewCoachObjModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F581D58C8DB00032D3F /* ViewCoachObjModel.m */; };
+		5C2B1F5C1D58E8AE00032D3F /* CoachDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F5B1D58E8AE00032D3F /* CoachDetailViewController.m */; };
 		5C6562A41D47DEC4004CF31B /* HTMultiLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6562A31D47DEC4004CF31B /* HTMultiLabel.m */; };
 		5CE173111D4DFB930047E8B9 /* CoachModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173101D4DFB930047E8B9 /* CoachModelHandler.m */; };
 		5CE173141D4DFC860047E8B9 /* CoachListResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173131D4DFC860047E8B9 /* CoachListResponse.m */; };
@@ -556,6 +557,8 @@
 		5C2B1F551D58C63D00032D3F /* ViewCoachDetailModelHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewCoachDetailModelHandler.m; sourceTree = "<group>"; };
 		5C2B1F571D58C8DB00032D3F /* ViewCoachObjModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewCoachObjModel.h; sourceTree = "<group>"; };
 		5C2B1F581D58C8DB00032D3F /* ViewCoachObjModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewCoachObjModel.m; sourceTree = "<group>"; };
+		5C2B1F5A1D58E8AE00032D3F /* CoachDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachDetailViewController.h; sourceTree = "<group>"; };
+		5C2B1F5B1D58E8AE00032D3F /* CoachDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachDetailViewController.m; sourceTree = "<group>"; };
 		5C6562A21D47DEC4004CF31B /* HTMultiLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMultiLabel.h; sourceTree = "<group>"; };
 		5C6562A31D47DEC4004CF31B /* HTMultiLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMultiLabel.m; sourceTree = "<group>"; };
 		5CE1730F1D4DFB930047E8B9 /* CoachModelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachModelHandler.h; sourceTree = "<group>"; };
@@ -1996,6 +1999,8 @@
 				5CEC2E601D53AD7B00CBA6BA /* CoachNewTypeViewController.m */,
 				5CEC2E621D562E5F00CBA6BA /* CoachNewBuildViewController.h */,
 				5CEC2E631D562E5F00CBA6BA /* CoachNewBuildViewController.m */,
+				5C2B1F5A1D58E8AE00032D3F /* CoachDetailViewController.h */,
+				5C2B1F5B1D58E8AE00032D3F /* CoachDetailViewController.m */,
 				528D7BD01C16BFCC00246E00 /* HideSetViewController.h */,
 				528D7BD11C16BFCC00246E00 /* HideSetViewController.m */,
 				5FE2556E1B7A08F00029BD4D /* ClockInViewController.h */,
@@ -2608,6 +2613,7 @@
 				5289FE9E1C0AB9410036FA6F /* ToolsModel.m in Sources */,
 				522123B41BFC27F4006BCCC4 /* OnlineOrderData.m in Sources */,
 				5FA9F2BD1B66096C00997BA8 /* UncollectClickModelHandler.m in Sources */,
+				5C2B1F5C1D58E8AE00032D3F /* CoachDetailViewController.m in Sources */,
 				5FE255551B78BE550029BD4D /* UploadAvatarResponse.m in Sources */,
 				52964C571C195833003FA17A /* TrendResponse.m in Sources */,
 				5CE173171D4DFD130047E8B9 /* CoachObjModel.m in Sources */,

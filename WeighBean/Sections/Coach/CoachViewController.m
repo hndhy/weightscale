@@ -28,6 +28,8 @@
 #import "DissolveCoachModelHandler.h"
 #import "DissolveCoachModel.h"
 
+#import "CoachDetailViewController.h"
+
 
 @interface CoachViewController ()<UITableViewDelegate,UITableViewDataSource,CoachModelProtocol,DissolveCoachModelProtocol,UIAlertViewDelegate,SWTableViewCellDelegate>
 {
@@ -170,6 +172,8 @@
             break;
         case 1:
             NSLog(@"button 1 was pressed");
+            [self viewCoachDetail:cellIndexPath];
+
             break;
         case 2:
             NSLog(@"button 2 was pressed");
@@ -203,6 +207,12 @@
     CoachObjModel *obj = _dataArray[indexpath.row];
 
     CoachNewBuildViewController *vc = [[CoachNewBuildViewController alloc] initWithUserID:appContext.uid teamID:obj.tid teamName:obj.teamName];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)viewCoachDetail:(NSIndexPath *)indexPath
+{
+    CoachDetailViewController *vc = [[CoachDetailViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
