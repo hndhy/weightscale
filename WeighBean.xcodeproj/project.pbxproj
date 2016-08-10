@@ -119,6 +119,11 @@
 		5C16AC161D5A504500C5B76C /* CheckInImgPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C16AC151D5A504500C5B76C /* CheckInImgPickerViewController.m */; };
 		5C16AC191D5A56C300C5B76C /* CheckInPickResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C16AC181D5A56C300C5B76C /* CheckInPickResultViewController.m */; };
 		5C16AC1C1D5A602D00C5B76C /* CheckInChooseTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C16AC1B1D5A602D00C5B76C /* CheckInChooseTagViewController.m */; };
+		5C16AC231D5B819F00C5B76C /* fat_iconv.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C16AC201D5B819F00C5B76C /* fat_iconv.png */; };
+		5C16AC241D5B819F00C5B76C /* strong_iconv.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C16AC211D5B819F00C5B76C /* strong_iconv.png */; };
+		5C16AC251D5B819F00C5B76C /* target_iconv.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C16AC221D5B819F00C5B76C /* target_iconv.png */; };
+		5C16AC271D5B81B100C5B76C /* join_team.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C16AC261D5B81B100C5B76C /* join_team.png */; };
+		5C16AC2A1D5B849000C5B76C /* MutiLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C16AC291D5B849000C5B76C /* MutiLabel.m */; };
 		5C1C13301D4E459C009A238D /* NSDictionary+GetValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C132F1D4E459C009A238D /* NSDictionary+GetValue.m */; };
 		5C2B1F3B1D58159C00032D3F /* UpdateCoachModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F3A1D58159C00032D3F /* UpdateCoachModel.m */; };
 		5C2B1F3E1D5816A900032D3F /* UpdateCoachResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F3D1D5816A900032D3F /* UpdateCoachResponse.m */; };
@@ -573,6 +578,12 @@
 		5C16AC181D5A56C300C5B76C /* CheckInPickResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInPickResultViewController.m; sourceTree = "<group>"; };
 		5C16AC1A1D5A602D00C5B76C /* CheckInChooseTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInChooseTagViewController.h; sourceTree = "<group>"; };
 		5C16AC1B1D5A602D00C5B76C /* CheckInChooseTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInChooseTagViewController.m; sourceTree = "<group>"; };
+		5C16AC201D5B819F00C5B76C /* fat_iconv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fat_iconv.png; sourceTree = "<group>"; };
+		5C16AC211D5B819F00C5B76C /* strong_iconv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strong_iconv.png; sourceTree = "<group>"; };
+		5C16AC221D5B819F00C5B76C /* target_iconv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = target_iconv.png; sourceTree = "<group>"; };
+		5C16AC261D5B81B100C5B76C /* join_team.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = join_team.png; sourceTree = "<group>"; };
+		5C16AC281D5B849000C5B76C /* MutiLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutiLabel.h; sourceTree = "<group>"; };
+		5C16AC291D5B849000C5B76C /* MutiLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutiLabel.m; sourceTree = "<group>"; };
 		5C1C132E1D4E459C009A238D /* NSDictionary+GetValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+GetValue.h"; sourceTree = "<group>"; };
 		5C1C132F1D4E459C009A238D /* NSDictionary+GetValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+GetValue.m"; sourceTree = "<group>"; };
 		5C2B1F391D58159C00032D3F /* UpdateCoachModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateCoachModel.h; sourceTree = "<group>"; };
@@ -1169,6 +1180,17 @@
 			name = OnLine;
 			sourceTree = "<group>";
 		};
+		5C16AC1F1D5B815900C5B76C /* Coach */ = {
+			isa = PBXGroup;
+			children = (
+				5C16AC201D5B819F00C5B76C /* fat_iconv.png */,
+				5C16AC211D5B819F00C5B76C /* strong_iconv.png */,
+				5C16AC221D5B819F00C5B76C /* target_iconv.png */,
+				5C16AC261D5B81B100C5B76C /* join_team.png */,
+			);
+			name = Coach;
+			sourceTree = "<group>";
+		};
 		5CE1730C1D4DEF100047E8B9 /* Coach */ = {
 			isa = PBXGroup;
 			children = (
@@ -1630,6 +1652,8 @@
 				5FE255641B79A0710029BD4D /* HeightPicker.m */,
 				5FE255661B79E38D0029BD4D /* BirthdayPicker.h */,
 				5FE255671B79E38D0029BD4D /* BirthdayPicker.m */,
+				5C16AC281D5B849000C5B76C /* MutiLabel.h */,
+				5C16AC291D5B849000C5B76C /* MutiLabel.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1925,6 +1949,7 @@
 		5FA9F2801B66096C00997BA8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5C16AC1F1D5B815900C5B76C /* Coach */,
 				5FD514841B8015DA0088C7E9 /* Icon */,
 				5FE255771B7A0FFA0029BD4D /* Tabbar */,
 				5FE255431B77A9F40029BD4D /* SharePlat */,
@@ -2389,6 +2414,7 @@
 				5F88BE5C1B7F219D008C4901 /* target_3@2x.png in Resources */,
 				5F3A540A1B771A2200F52C55 /* home_forward_icon@2x.png in Resources */,
 				B01A8E7B1B7CA0A80049D86D /* body_icon1@2x.png in Resources */,
+				5C16AC251D5B819F00C5B76C /* target_iconv.png in Resources */,
 				5FA9F3431B66286300997BA8 /* blue_nav_bar@2x.png in Resources */,
 				5F7F827D1B75FE7A00AC04B3 /* menu_measure_icon@2x.png in Resources */,
 				5FA9F3401B66285800997BA8 /* Default@2x.png in Resources */,
@@ -2468,12 +2494,14 @@
 				5F88BE2C1B7E4CDC008C4901 /* bmi@2x.png in Resources */,
 				524E0B431C1066920069B2DA /* bmi_2_2.0_4@2x.png in Resources */,
 				5F920F271B881E9C005BD616 /* carlender_nav_bar@2x.png in Resources */,
+				5C16AC271D5B81B100C5B76C /* join_team.png in Resources */,
 				5FD5149C1B8081170088C7E9 /* arrow_right_icon@2x.png in Resources */,
 				5FD5148C1B8015DA0088C7E9 /* 58x58.png in Resources */,
 				B01A8E7C1B7CA0A80049D86D /* body_icon2@2x.png in Resources */,
 				524E0B411C1066920069B2DA /* bmi_2_2.0_1@2x.png in Resources */,
 				5F88BE101B7AE71C008C4901 /* index_1@2x.png in Resources */,
 				5FA9F34D1B675FB300997BA8 /* index_dot_normal@2x.png in Resources */,
+				5C16AC231D5B819F00C5B76C /* fat_iconv.png in Resources */,
 				5F5454301B6E655E002F7583 /* register_dot_normal@2x.png in Resources */,
 				5F88BE5A1B7F219D008C4901 /* target_1@2x.png in Resources */,
 				52964C4C1C194AEA003FA17A /* tab_v_sel@2x.png in Resources */,
@@ -2508,6 +2536,7 @@
 				5FD5148E1B8015DA0088C7E9 /* 87x87.png in Resources */,
 				524E0B451C1066920069B2DA /* bmi_2_2.0_2@2x.png in Resources */,
 				522123B11BFC1C62006BCCC4 /* verfiy_wx_icon@2x.png in Resources */,
+				5C16AC241D5B819F00C5B76C /* strong_iconv.png in Resources */,
 				B01A8E7E1B7CA0A80049D86D /* body_icon4@2x.png in Resources */,
 				5FE255811B7A0FFA0029BD4D /* courses_tab_bar_selected@2x.png in Resources */,
 				5F88BE3C1B7EEB7D008C4901 /* kcal_1@2x.png in Resources */,
@@ -2773,6 +2802,7 @@
 				526E830A1BFDD7F80096A874 /* WeightViewController.m in Sources */,
 				5FD514911B80675E0088C7E9 /* UploadInfo.m in Sources */,
 				522123BD1BFCABCA006BCCC4 /* OnlineListResponse.m in Sources */,
+				5C16AC2A1D5B849000C5B76C /* MutiLabel.m in Sources */,
 				524A917E1BA1845D00F36516 /* AddLookModel.m in Sources */,
 				5FA9F2971B66096C00997BA8 /* HTTextFieldDelegate.m in Sources */,
 				5FA9F28B1B66096C00997BA8 /* UIDevice-Hardware.m in Sources */,

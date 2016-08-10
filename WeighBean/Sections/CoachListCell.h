@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CoachObjModel.h"
 #import "SWTableViewCell.h"
+#import "MutiLabel.h"
 
 @interface CoachListCell : SWTableViewCell
 
@@ -17,8 +18,8 @@
     UIImageView *coachIcon;
     
     UILabel *title;
-    UILabel *subTitle1;
-    UILabel *subTitle2;
+    MutiLabel *subTitle1;
+    MutiLabel *subTitle2;
     UILabel *stataLbl;
     UIButton *joinBtn;
     UILabel *coachTypeLbl;
