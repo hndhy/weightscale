@@ -10,8 +10,9 @@
 #import "CoachObjModel.h"
 #import "SWTableViewCell.h"
 #import "MutiLabel.h"
+#import "MGSwipeTableCell.h"
 
-@interface CoachListCell : SWTableViewCell
+@interface CoachListCell : MGSwipeTableCell
 
 
 {

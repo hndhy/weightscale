@@ -33,7 +33,10 @@
 
 #import "CheckInImgPickerViewController.h"
 
-@interface CoachViewController ()<UITableViewDelegate,UITableViewDataSource,CoachModelProtocol,DissolveCoachModelProtocol,UIAlertViewDelegate,SWTableViewCellDelegate,TZImagePickerControllerDelegate>
+#import "MGSwipeTableCell.h"
+
+
+@interface CoachViewController ()<UITableViewDelegate,UITableViewDataSource,CoachModelProtocol,DissolveCoachModelProtocol,UIAlertViewDelegate,SWTableViewCellDelegate,TZImagePickerControllerDelegate,MGSwipeTableCellDelegate>
 {
     UITableView *_tableView;
     NSMutableArray *_dataArray;
@@ -129,14 +132,9 @@
     if (cell == nil)
     {
         cell = [[CoachListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identier];
-        [cell setRightUtilityButtons:[self rightButtons] WithButtonWidth:58.0f];
         cell.delegate = self;
-
     }
-//    __weak typeof(self) weakSelf = self;
-//    [cell setSelectBlock:^(NSInteger index,CoachObjModel *obj,NSIndexPath *path) {
-//        [weakSelf selectIndex:index product:obj indexPath:path];
-//    }];
+    
     [cell loadContent:_dataArray[indexPath.row] path:indexPath];
     return cell;
 }
@@ -159,49 +157,79 @@
     return rightUtilityButtons;
 }
 
-#pragma mark -SWTableViewCellDelegate
-- (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index
+#pragma mark Swipe Delegate
+
+-(BOOL) swipeTableCell:(MGSwipeTableCell*) cell canSwipe:(MGSwipeDirection) direction;
 {
+    return YES;
+}
+
+-(NSArray*) swipeTableCell:(MGSwipeTableCell*) cell swipeButtonsForDirection:(MGSwipeDirection)direction
+             swipeSettings:(MGSwipeSettings*) swipeSettings expansionSettings:(MGSwipeExpansionSettings*) expansionSettings
+{
+    swipeSettings.transition = MGSwipeTransitionBorder;
+    expansionSettings.buttonIndex = 0;
+    expansionSettings.fillOnTrigger = NO;
+    expansionSettings.threshold = 1;
+    
     NSIndexPath *cellIndexPath = [_tableView indexPathForCell:cell];
     HTAppContext *appContext = [HTAppContext sharedContext];
-
     CoachObjModel *obj = _dataArray[cellIndexPath.row];
 
-    switch (index) {
-        case 0:
-            NSLog(@"button 0 was pressed");
-            [self editTeam:cellIndexPath];
-            break;
-        case 1:
-            NSLog(@"button 1 was pressed");
-            [self viewCoachDetail:cellIndexPath];
-
-            break;
-        case 2:
-            NSLog(@"button 2 was pressed");
-            break;
-        case 3:
-            NSLog(@"button 3 was pressed");
-            [self.dissolveCoachModel dissolveCoachWithUid:appContext.uid teamID:obj.tid];
-            [_dataArray removeObjectAtIndex:cellIndexPath.row];
-            [_tableView deleteRowsAtIndexPaths:@[cellIndexPath] withRowAnimation:UITableViewRowAnimationLeft];
-            break;
-        default:
-            break;
-    }
-}
-- (void)swipeableTableViewCell:(SWTableViewCell *)cell scrollingToState:(SWCellState)state
-{
     
+    CGFloat padding = -10;
+    
+    MGSwipeButton *editBtn = [MGSwipeButton buttonWithTitle:nil icon:[UIImage imageNamed:@"edit_but"] backgroundColor:BLUECOLOR padding:padding callback:^BOOL(MGSwipeTableCell *sender) {
+        
+        [self editTeam:cellIndexPath];
+
+        return NO;
+    }];
+    
+    MGSwipeButton *viewBtn = [MGSwipeButton buttonWithTitle:nil icon:[UIImage imageNamed:@"view_but"] backgroundColor:BLUECOLOR padding:padding callback:^BOOL(MGSwipeTableCell *sender) {
+        
+        [self viewCoachDetail:cellIndexPath];
+
+        return NO;
+    }];
+    
+    MGSwipeButton *refreshBtn = [MGSwipeButton buttonWithTitle:nil icon:[UIImage imageNamed:@"refresh_but"] backgroundColor:BLUECOLOR padding:padding callback:^BOOL(MGSwipeTableCell *sender) {
+        return NO;
+    }];
+    
+    MGSwipeButton *dissolveBtn = [MGSwipeButton buttonWithTitle:nil icon:[UIImage imageNamed:@"dissolve_but"] backgroundColor:BLUECOLOR padding:padding callback:^BOOL(MGSwipeTableCell *sender) {
+        [self.dissolveCoachModel dissolveCoachWithUid:appContext.uid teamID:obj.tid];
+        [_dataArray removeObjectAtIndex:cellIndexPath.row];
+        [_tableView deleteRowsAtIndexPaths:@[cellIndexPath] withRowAnimation:UITableViewRowAnimationLeft];
+
+        return NO;
+    }];
+    
+    MGSwipeButton *goalBtn = [MGSwipeButton buttonWithTitle:nil icon:[UIImage imageNamed:@"target_iconv"] backgroundColor:BLUECOLOR padding:padding callback:^BOOL(MGSwipeTableCell *sender) {
+        return NO;
+    }];
+
+    
+    return @[goalBtn,dissolveBtn, refreshBtn, viewBtn,editBtn];
 }
-//- (BOOL)swipeableTableViewCellShouldHideUtilityButtonsOnSwipe:(SWTableViewCell *)cell
-//{
-//    
-//}
-//- (BOOL)swipeableTableViewCell:(SWTableViewCell *)cell canSwipeToState:(SWCellState)state
-//{
-//    
-//}
+
+-(void) swipeTableCell:(MGSwipeTableCell*) cell didChangeSwipeState:(MGSwipeState)state gestureIsActive:(BOOL)gestureIsActive
+{
+    NSString * str;
+    switch (state) {
+        case MGSwipeStateNone: str = @"None"; break;
+        case MGSwipeStateSwippingLeftToRight: str = @"SwippingLeftToRight"; break;
+        case MGSwipeStateSwippingRightToLeft: str = @"SwippingRightToLeft"; break;
+        case MGSwipeStateExpandingLeftToRight: str = @"ExpandingLeftToRight"; break;
+        case MGSwipeStateExpandingRightToLeft: str = @"ExpandingRightToLeft"; break;
+    }
+    NSLog(@"Swipe state: %@ ::: Gesture: %@", str, gestureIsActive ? @"Active" : @"Ended");
+}
+
+
+
+
+
 
 - (void)editTeam:(NSIndexPath *)indexpath
 {

@@ -24,5 +24,6 @@
 #define APP_ORANGE [UIColor colorWithRed:249.0f/255.0 green:150.0f/255.0 blue:21.0f/255.0 alpha:1]
 #define APP_RED [UIColor colorWithRed:223.0f/255.0 green:48.0f/255.0 blue:48.0f/255.0 alpha:1]
 #define APP_GREEN [UIColor colorWithRed:71.0f/255.0 green:249.0f/255.0 blue:130.0f/255.0 alpha:1]
+#define BLUECOLOR [UIColor colorWithRed:29/255.0 green:168/255.0 blue:225/255.0 alpha:1]
 
 #endif
