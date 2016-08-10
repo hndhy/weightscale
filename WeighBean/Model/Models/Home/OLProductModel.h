@@ -17,14 +17,18 @@
 @property (nonatomic,copy)NSString *afterTel;
 @property (nonatomic,copy)NSString *content;
 @property (nonatomic,copy)NSString *id;
+@property (nonatomic,copy)NSString *mainPic;
 @property (nonatomic,copy)NSString *origin;
-@property (nonatomic,copy)NSString *pic;
+@property (nonatomic,copy)NSString *pNo;
+@property (nonatomic,copy)NSString *picNames;
 @property (nonatomic,copy)NSString *preTel;
 @property (nonatomic,copy)NSString *price;
 @property (nonatomic,copy)NSString *saler;
+@property (nonatomic,copy)NSString *status;
 @property (nonatomic,copy)NSString *taobaourl;
 @property (nonatomic,copy)NSString *title;
 @property (nonatomic,copy)NSString *unit;
+@property (nonatomic,copy)NSString *updateTime;
 @property (nonatomic,copy)NSString *weight;
 
 

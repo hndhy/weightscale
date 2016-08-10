@@ -145,12 +145,12 @@
     self.obj = obj;
     self.path = path;
     _title.text = obj.title;
-    [_productImage sd_setImageWithURL:[NSURL URLWithString:obj.pic] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        if (image)
-        {
-            _productImage.image = image;
-        }
-    }];
+//    [_productImage sd_setImageWithURL:[NSURL URLWithString:obj.pic] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//        if (image)
+//        {
+//            _productImage.image = image;
+//        }
+//    }];
     _priceLabel.text = [NSString stringWithFormat:@"￥%@/箱",obj.price];
     _productLabel.text = obj.content;
 }

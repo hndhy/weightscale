@@ -428,10 +428,10 @@
 		522123B61BFC2DB5006BCCC4 /* WXThrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXThrid.m; sourceTree = "<group>"; };
 		522123B81BFCAB03006BCCC4 /* OnlineModelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OnlineModelHandler.h; path = Home/OnlineModelHandler.h; sourceTree = "<group>"; };
 		522123B91BFCAB03006BCCC4 /* OnlineModelHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OnlineModelHandler.m; path = Home/OnlineModelHandler.m; sourceTree = "<group>"; };
-		522123BB1BFCABCA006BCCC4 /* OnlineListResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlineListResponse.h; sourceTree = "<group>"; };
-		522123BC1BFCABCA006BCCC4 /* OnlineListResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlineListResponse.m; sourceTree = "<group>"; };
-		522123BE1BFCAD9C006BCCC4 /* OnlineListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlineListModel.h; sourceTree = "<group>"; };
-		522123BF1BFCAD9C006BCCC4 /* OnlineListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlineListModel.m; sourceTree = "<group>"; };
+		522123BB1BFCABCA006BCCC4 /* OnlineListResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OnlineListResponse.h; path = Home/OnlineListResponse.h; sourceTree = "<group>"; };
+		522123BC1BFCABCA006BCCC4 /* OnlineListResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OnlineListResponse.m; path = Home/OnlineListResponse.m; sourceTree = "<group>"; };
+		522123BE1BFCAD9C006BCCC4 /* OnlineListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OnlineListModel.h; path = ../ModelObjects/Home/OnlineListModel.h; sourceTree = "<group>"; };
+		522123BF1BFCAD9C006BCCC4 /* OnlineListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OnlineListModel.m; path = ../ModelObjects/Home/OnlineListModel.m; sourceTree = "<group>"; };
 		522123C11BFCB538006BCCC4 /* VerfiyOrderResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerfiyOrderResponse.h; sourceTree = "<group>"; };
 		522123C21BFCB538006BCCC4 /* VerfiyOrderResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerfiyOrderResponse.m; sourceTree = "<group>"; };
 		522123C41BFCB56D006BCCC4 /* VerifyOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyOrderModel.h; sourceTree = "<group>"; };
@@ -1149,6 +1149,26 @@
 			name = CheckIn;
 			sourceTree = "<group>";
 		};
+		5C16AC1D1D5B77EA00C5B76C /* OnLine */ = {
+			isa = PBXGroup;
+			children = (
+				522123BE1BFCAD9C006BCCC4 /* OnlineListModel.h */,
+				522123BF1BFCAD9C006BCCC4 /* OnlineListModel.m */,
+				52C639101C0C53B900BB45D7 /* OLProductModel.h */,
+				52C639111C0C53B900BB45D7 /* OLProductModel.m */,
+			);
+			name = OnLine;
+			sourceTree = "<group>";
+		};
+		5C16AC1E1D5B79DC00C5B76C /* OnLine */ = {
+			isa = PBXGroup;
+			children = (
+				522123BB1BFCABCA006BCCC4 /* OnlineListResponse.h */,
+				522123BC1BFCABCA006BCCC4 /* OnlineListResponse.m */,
+			);
+			name = OnLine;
+			sourceTree = "<group>";
+		};
 		5CE1730C1D4DEF100047E8B9 /* Coach */ = {
 			isa = PBXGroup;
 			children = (
@@ -1783,6 +1803,7 @@
 			children = (
 				5FA9F1A51B66096C00997BA8 /* BaseResponse.h */,
 				5FA9F1A61B66096C00997BA8 /* BaseResponse.m */,
+				5C16AC1E1D5B79DC00C5B76C /* OnLine */,
 				5CE1730D1D4DEF240047E8B9 /* Coach */,
 				B01A8E8D1B7CD6110049D86D /* Home */,
 				5F7F82861B7641B700AC04B3 /* Measure */,
@@ -1823,6 +1844,7 @@
 			children = (
 				5FA9F2431B66096C00997BA8 /* HTAbstractDataSource.h */,
 				5FA9F2441B66096C00997BA8 /* HTAbstractDataSource.m */,
+				5C16AC1D1D5B77EA00C5B76C /* OnLine */,
 				5CE1730E1D4DEF300047E8B9 /* Coach */,
 				B01A8EC91B7ED1C40049D86D /* Home */,
 				5FA9F2251B66096C00997BA8 /* Common */,
@@ -2177,10 +2199,6 @@
 				524A91771BA1816400F36516 /* AddLookResponse.m */,
 				524A917C1BA1845D00F36516 /* AddLookModel.h */,
 				524A917D1BA1845D00F36516 /* AddLookModel.m */,
-				522123BB1BFCABCA006BCCC4 /* OnlineListResponse.h */,
-				522123BC1BFCABCA006BCCC4 /* OnlineListResponse.m */,
-				522123BE1BFCAD9C006BCCC4 /* OnlineListModel.h */,
-				522123BF1BFCAD9C006BCCC4 /* OnlineListModel.m */,
 				522123B21BFC27F4006BCCC4 /* OnlineOrderData.h */,
 				522123B31BFC27F4006BCCC4 /* OnlineOrderData.m */,
 				522123C11BFCB538006BCCC4 /* VerfiyOrderResponse.h */,
@@ -2240,8 +2258,6 @@
 				5289FE9D1C0AB9410036FA6F /* ToolsModel.m */,
 				5289FE9F1C0ABAE80036FA6F /* ToolsObjModel.h */,
 				5289FEA01C0ABAE80036FA6F /* ToolsObjModel.m */,
-				52C639101C0C53B900BB45D7 /* OLProductModel.h */,
-				52C639111C0C53B900BB45D7 /* OLProductModel.m */,
 				52964C581C19588E003FA17A /* TrendObjModel.h */,
 				52964C591C19588E003FA17A /* TrendObjModel.m */,
 			);

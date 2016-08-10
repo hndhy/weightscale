@@ -11,6 +11,6 @@
 
 @interface OnlineListResponse : BaseResponse
 
-@property (nonatomic,strong) NSArray <OLProductModel>*results;
+@property (nonatomic,strong) NSArray <OLProductModel>*data;
 
 @end

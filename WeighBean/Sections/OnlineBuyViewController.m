@@ -118,7 +118,7 @@
 - (void)syncFinished:(OnlineListResponse *)response
 {
     [_dataArray removeAllObjects];
-    [_dataArray addObjectsFromArray:response.results];
+    [_dataArray addObjectsFromArray:response.data];
     [_tableView reloadData];
 }
 
