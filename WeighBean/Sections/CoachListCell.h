@@ -12,6 +12,11 @@
 #import "MutiLabel.h"
 #import "MGSwipeTableCell.h"
 
+@protocol CoachCellDelegate <NSObject>
+
+- (void)joinCoachWithTid:(NSString *)tid;
+
+@end
 @interface CoachListCell : MGSwipeTableCell
 
 
@@ -24,11 +29,15 @@
     UILabel *stataLbl;
     UIButton *joinBtn;
     UILabel *coachTypeLbl;
+    
+    NSString *teamId;
 }
 
 @property (nonatomic,strong) CoachObjModel *obj;
 @property (nonatomic,copy) void (^selectBlock)(NSInteger index,CoachObjModel *obj,NSIndexPath *path);
 @property (nonatomic,strong) NSIndexPath *path;
+@property (nonatomic, weak) id<CoachCellDelegate> coachCellDelegate;
+
 - (void)loadContent:(CoachObjModel *)obj path:(NSIndexPath *)path;
 
 @end

@@ -15,7 +15,7 @@
 - (void)initView
 {
     //减脂
-    fatLossBackView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 220)];
+    fatLossBackView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 180)];
     fatLossBackView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:fatLossBackView];
     fatLossBackView.hidden = YES;
@@ -27,7 +27,7 @@
     [fatLossLbl setText:@"减脂"];
     [fatLossBackView addSubview:fatLossLbl];
     
-    fatLossTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, 200)];
+    fatLossTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, 160)];
     fatLossTextView.backgroundColor = [UIColor whiteColor];
     [fatLossTextView setTextColor:[UIColor grayColor]];
     [fatLossTextView setFont:[UIFont systemFontOfSize:12]];
@@ -59,15 +59,16 @@
     //确认和分享按钮
     confirmBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     confirmBtn.frame = CGRectMake(5,350,self.view.frame.size.width-10,40);
-    confirmBtn.backgroundColor = [UIColor blueColor];
+    confirmBtn.backgroundColor = BLUECOLOR;
     [confirmBtn setTitle:@"确定" forState:UIControlStateNormal];
     [confirmBtn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:confirmBtn];
 
     shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     shareBtn.frame = CGRectMake(5,400,self.view.frame.size.width-10,40);
-    shareBtn.backgroundColor = [UIColor blueColor];
+    shareBtn.backgroundColor = [UIColor whiteColor];
     [shareBtn setTitle:@"分享给微信好友" forState:UIControlStateNormal];
+    [shareBtn setTitleColor:BLUECOLOR forState:UIControlStateNormal];
     [shareBtn addTarget:self action:@selector(shareDicClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:shareBtn];
     
@@ -112,7 +113,7 @@
 
 - (void)btnAction:(id)sender
 {
-    CoachNewBuildViewController *vc = [[CoachNewBuildViewController alloc] init];
+    CoachNewBuildViewController *vc = [[CoachNewBuildViewController alloc] initWithType:currentNewType];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

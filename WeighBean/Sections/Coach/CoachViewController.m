@@ -28,6 +28,10 @@
 #import "DissolveCoachModelHandler.h"
 #import "DissolveCoachModel.h"
 
+#import "JoinCoachModel.h"
+#import "JoinCoachModelHandler.h"
+
+
 #import "CoachDetailViewController.h"
 
 
@@ -36,7 +40,7 @@
 #import "MGSwipeTableCell.h"
 
 
-@interface CoachViewController ()<UITableViewDelegate,UITableViewDataSource,CoachModelProtocol,DissolveCoachModelProtocol,UIAlertViewDelegate,SWTableViewCellDelegate,TZImagePickerControllerDelegate,MGSwipeTableCellDelegate>
+@interface CoachViewController ()<UITableViewDelegate,UITableViewDataSource,CoachModelProtocol,DissolveCoachModelProtocol,UIAlertViewDelegate,SWTableViewCellDelegate,TZImagePickerControllerDelegate,MGSwipeTableCellDelegate,CoachCellDelegate>
 {
     UITableView *_tableView;
     NSMutableArray *_dataArray;
@@ -48,6 +52,9 @@
 
 @property (nonatomic,strong)DissolveCoachModelHandler *dissolveCoachHandle;
 @property (nonatomic,strong)DissolveCoachModel *dissolveCoachModel;
+
+@property (nonatomic,strong)JoinCoachModelHandler *joinCoachHandle;
+@property (nonatomic,strong)JoinCoachModel *joinCoachModel;
 
 @end
 
@@ -80,6 +87,8 @@
     self.dissolveCoachHandle = [[DissolveCoachModelHandler alloc] initWithController:self];
     self.dissolveCoachModel = [[DissolveCoachModel alloc] initWithHandler:self.dissolveCoachHandle];
     
+    self.joinCoachHandle = [[JoinCoachModelHandler alloc] initWithController:self];
+    self.joinCoachModel = [[JoinCoachModel alloc] initWithHandler:self.joinCoachHandle];
 }
 
 - (void)initView
@@ -133,6 +142,7 @@
     {
         cell = [[CoachListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identier];
         cell.delegate = self;
+        cell.coachCellDelegate = self;
     }
     
     [cell loadContent:_dataArray[indexPath.row] path:indexPath];
@@ -226,7 +236,11 @@
     NSLog(@"Swipe state: %@ ::: Gesture: %@", str, gestureIsActive ? @"Active" : @"Ended");
 }
 
-
+- (void)joinCoachWithTid:(NSString *)tid
+{
+    HTAppContext *appContext = [HTAppContext sharedContext];
+    [self.joinCoachModel joinCoachWithUid:appContext.uid teamID:tid];
+}
 
 
 

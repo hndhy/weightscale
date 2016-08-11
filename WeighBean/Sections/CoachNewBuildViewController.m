@@ -11,6 +11,15 @@
 @implementation CoachNewBuildViewController
 
 
+- (id)initWithType:(int)type
+{
+    self = [super init];
+    if (self) {
+        teamType = type;
+    }
+    return self;
+}
+
 - (id)initWithUserID:(NSString *)uid teamID:(NSString *)tid teamName:(NSString *)name
 {
     self = [super init];
@@ -18,11 +27,10 @@
         userid = uid;
         teamid = tid;
         teamname = name;
-//        ischat = chat;
-//        teamdescription = description;
     }
     return self;
 }
+
 
 - (void)initNavbar
 {
@@ -104,7 +112,7 @@
     
     
     buildBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 300, self.view.frame.size.width-20, 50)];
-    buildBtn.backgroundColor = [UIColor blueColor];
+    buildBtn.backgroundColor = BLUECOLOR;
     [buildBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [buildBtn setTitle:@"成立" forState:UIControlStateNormal];
     buildBtn.titleLabel.font = [UIFont systemFontOfSize:14];
@@ -184,7 +192,12 @@
 - (void)buildDidClick
 {
     HTUserData *userData = [HTUserData sharedInstance];
-    
-    [self.createCoachModel creatCoachWithUid:@"2868B375-B110-817D-DB49-6EBC0572D2E5" teamType:1 teamName:nameBtn.titleLabel.text isChat:1 description:@"fsdfsdfs" target:nil];
+    if (allowSwitch.on == YES) {
+        ischat = 1;
+    } else
+    {
+        ischat = 0;
+    }
+    [self.createCoachModel creatCoachWithUid:userData.uid teamType:teamType teamName:nameBtn.titleLabel.text isChat:ischat description:introDetailLabel.text target:nil];
 }
 @end

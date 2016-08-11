@@ -70,37 +70,21 @@
     return self;
 }
 
-//- (void)btnAction:(UIButton *)btn
-//{
-//    NSInteger index = 0;
-//    if (btn == _buyBtn)
-//    {
-//        index = 3;
-//    }
-//    else if (btn == _saleAfterBtn)
-//    {
-//        index = 2;
-//    }
-//    else if (btn == _saleBeforBtn)
-//    {
-//        index = 1;
-//    }
-//    if (self.selectBlock)
-//    {
-//        self.selectBlock(index,_obj,_path);
-//    }
-//}
+- (void)btnAction:(UIButton *)btn
+{
+    if (teamId) {
+        if ([self.coachCellDelegate respondsToSelector:@selector(joinCoachWithTid:)]) {
+            [self.coachCellDelegate joinCoachWithTid:teamId];
+        }
+    }
+}
 
 - (void)loadContent:(CoachObjModel *)obj path:(NSIndexPath *)path
 {
     self.obj = obj;
     self.path = path;
     title.text = obj.teamName;
-//    subTitle1.text = [NSString stringWithFormat:@"活跃人数:%@",obj.activeNum];
-    
     [subTitle1 setText:@"活跃人数：" withInteger:obj.activeNum];
-//    subTitle2.text = [NSString stringWithFormat:@"有效率:%@",obj.valid];
-//    [subTitle2 setText:@"有效率：" withInteger:obj.valid];
     [subTitle2 setText:@"有效率：" withPercent:obj.valid];
     stataLbl.text = [NSString stringWithFormat:@"状态:%@",obj.teamType];
     
@@ -131,12 +115,8 @@
         joinBtn.hidden = NO;
         coachTypeLbl.hidden = YES;
     }
-//    [coachIcon sd_setImageWithURL:[NSURL URLWithString:obj.pic] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-//        if (image)
-//        {
-//            _productImage.image = image;
-//        }
-//    }];
+    
+    teamId = obj.tid;
 }
 
 - (void)awakeFromNib {

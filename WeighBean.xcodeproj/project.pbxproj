@@ -143,6 +143,9 @@
 		5C3BD8531D5BA05500D3B410 /* dissolve_but.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3BD84F1D5BA05500D3B410 /* dissolve_but.png */; };
 		5C3BD8541D5BA05500D3B410 /* edit_but.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3BD8501D5BA05500D3B410 /* edit_but.png */; };
 		5C3BD8551D5BA05500D3B410 /* refresh_but.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3BD8511D5BA05500D3B410 /* refresh_but.png */; };
+		5C3BD8581D5BA49100D3B410 /* JoinCoachModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BD8571D5BA49100D3B410 /* JoinCoachModel.m */; };
+		5C3BD85B1D5BA4C900D3B410 /* JoinCoachResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BD85A1D5BA4C900D3B410 /* JoinCoachResponse.m */; };
+		5C3BD85E1D5BA4F300D3B410 /* JoinCoachModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BD85D1D5BA4F300D3B410 /* JoinCoachModelHandler.m */; };
 		5C6562A41D47DEC4004CF31B /* HTMultiLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6562A31D47DEC4004CF31B /* HTMultiLabel.m */; };
 		5CE173111D4DFB930047E8B9 /* CoachModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173101D4DFB930047E8B9 /* CoachModelHandler.m */; };
 		5CE173141D4DFC860047E8B9 /* CoachListResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173131D4DFC860047E8B9 /* CoachListResponse.m */; };
@@ -625,6 +628,12 @@
 		5C3BD84F1D5BA05500D3B410 /* dissolve_but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dissolve_but.png; sourceTree = "<group>"; };
 		5C3BD8501D5BA05500D3B410 /* edit_but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit_but.png; sourceTree = "<group>"; };
 		5C3BD8511D5BA05500D3B410 /* refresh_but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh_but.png; sourceTree = "<group>"; };
+		5C3BD8561D5BA49100D3B410 /* JoinCoachModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoinCoachModel.h; sourceTree = "<group>"; };
+		5C3BD8571D5BA49100D3B410 /* JoinCoachModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinCoachModel.m; sourceTree = "<group>"; };
+		5C3BD8591D5BA4C900D3B410 /* JoinCoachResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoinCoachResponse.h; sourceTree = "<group>"; };
+		5C3BD85A1D5BA4C900D3B410 /* JoinCoachResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinCoachResponse.m; sourceTree = "<group>"; };
+		5C3BD85C1D5BA4F300D3B410 /* JoinCoachModelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoinCoachModelHandler.h; sourceTree = "<group>"; };
+		5C3BD85D1D5BA4F300D3B410 /* JoinCoachModelHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinCoachModelHandler.m; sourceTree = "<group>"; };
 		5C6562A21D47DEC4004CF31B /* HTMultiLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMultiLabel.h; sourceTree = "<group>"; };
 		5C6562A31D47DEC4004CF31B /* HTMultiLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMultiLabel.m; sourceTree = "<group>"; };
 		5CE1730F1D4DFB930047E8B9 /* CoachModelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachModelHandler.h; sourceTree = "<group>"; };
@@ -1235,6 +1244,8 @@
 				5C2B1F401D58174600032D3F /* UpdateCoachModelHandler.m */,
 				5C2B1F4B1D58B9EA00032D3F /* DissolveCoachModelHandler.h */,
 				5C2B1F4C1D58B9EA00032D3F /* DissolveCoachModelHandler.m */,
+				5C3BD85C1D5BA4F300D3B410 /* JoinCoachModelHandler.h */,
+				5C3BD85D1D5BA4F300D3B410 /* JoinCoachModelHandler.m */,
 				5C2B1F541D58C63D00032D3F /* ViewCoachDetailModelHandler.h */,
 				5C2B1F551D58C63D00032D3F /* ViewCoachDetailModelHandler.m */,
 			);
@@ -1252,6 +1263,8 @@
 				5C2B1F3D1D5816A900032D3F /* UpdateCoachResponse.m */,
 				5C2B1F451D58B94D00032D3F /* DissolveCoachResponse.h */,
 				5C2B1F461D58B94D00032D3F /* DissolveCoachResponse.m */,
+				5C3BD8591D5BA4C900D3B410 /* JoinCoachResponse.h */,
+				5C3BD85A1D5BA4C900D3B410 /* JoinCoachResponse.m */,
 				5C2B1F511D58C5EC00032D3F /* ViewCoachDetailResponse.h */,
 				5C2B1F521D58C5EC00032D3F /* ViewCoachDetailResponse.m */,
 			);
@@ -1271,6 +1284,8 @@
 				5C2B1F3A1D58159C00032D3F /* UpdateCoachModel.m */,
 				5C2B1F421D58B91E00032D3F /* DissolveCoachModel.h */,
 				5C2B1F431D58B91E00032D3F /* DissolveCoachModel.m */,
+				5C3BD8561D5BA49100D3B410 /* JoinCoachModel.h */,
+				5C3BD8571D5BA49100D3B410 /* JoinCoachModel.m */,
 				5C2B1F4E1D58C5BC00032D3F /* ViewCoachDetailModel.h */,
 				5C2B1F4F1D58C5BC00032D3F /* ViewCoachDetailModel.m */,
 				5C2B1F571D58C8DB00032D3F /* ViewCoachObjModel.h */,
@@ -2642,10 +2657,12 @@
 				5CEC2E641D562E5F00CBA6BA /* CoachNewBuildViewController.m in Sources */,
 				5FA9F2861B66096C00997BA8 /* AppDelegate.m in Sources */,
 				5C16AC0A1D5A4F7700C5B76C /* TZImageManager.m in Sources */,
+				5C3BD85B1D5BA4C900D3B410 /* JoinCoachResponse.m in Sources */,
 				5F88BE391B7EE9DF008C4901 /* KcalViewController.m in Sources */,
 				5FA9F3341B66096C00997BA8 /* HTApiClient.m in Sources */,
 				5FA9F2BB1B66096C00997BA8 /* LikeClickModelHandler.m in Sources */,
 				522123C61BFCB56D006BCCC4 /* VerifyOrderModel.m in Sources */,
+				5C3BD8581D5BA49100D3B410 /* JoinCoachModel.m in Sources */,
 				5255F99C1BBBC5D200FEAD5F /* RegAgreementViewController.m in Sources */,
 				5FA9F31F1B66096C00997BA8 /* HTFindPwdModel.m in Sources */,
 				5F88BE521B7F170A008C4901 /* TargetViewController.m in Sources */,
@@ -2662,6 +2679,7 @@
 				5FE255521B7893D60029BD4D /* UploadAvatarModelHandler.m in Sources */,
 				5FA9F2CA1B66096C00997BA8 /* SendCodeModelHandler.m in Sources */,
 				5FA9F2881B66096C00997BA8 /* NSDictionary+UrlEncoding.m in Sources */,
+				5C3BD85E1D5BA4F300D3B410 /* JoinCoachModelHandler.m in Sources */,
 				5FE255701B7A08F00029BD4D /* ClockInViewController.m in Sources */,
 				5C2B1F471D58B94D00032D3F /* DissolveCoachResponse.m in Sources */,
 				B01A8EC11B7E408D0049D86D /* JTCalendarWeekView.m in Sources */,
