@@ -15,11 +15,11 @@
 - (void)syncData:(NSString *)lastSyncTime withData:(NSString*)data
 {
     NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithCapacity:5];
-    [parameters setValue:lastSyncTime forKey:@"lastSync"];
-    [parameters setValue:data forKey:@"data"];
-    [parameters setValue:@"ios" forKey:@"os"];
     HTUserData *userDate = [HTUserData sharedInstance];
     [parameters setValue:userDate.uid forKey:@"uid"];
+    [parameters setValue:lastSyncTime forKey:@"lastSync"];
+    [parameters setValue:data forKey:@"data"];
+
     [self uploadImage:@"api/data/SyncData" parameters:parameters image:[UIImage imageNamed:@"upload_pic.png"] imageName:@"pic"];
 }
 

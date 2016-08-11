@@ -215,7 +215,7 @@
         return NO;
     }];
     
-    MGSwipeButton *goalBtn = [MGSwipeButton buttonWithTitle:nil icon:[UIImage imageNamed:@"target_iconv"] backgroundColor:BLUECOLOR padding:padding callback:^BOOL(MGSwipeTableCell *sender) {
+    MGSwipeButton *goalBtn = [MGSwipeButton buttonWithTitle:nil icon:[UIImage imageNamed:@"target_iconv"] backgroundColor:[UIColor whiteColor] padding:padding callback:^BOOL(MGSwipeTableCell *sender) {
         return NO;
     }];
 

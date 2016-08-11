@@ -14,7 +14,7 @@
 {
   NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithCapacity:5];
   [parameters setValue:uid forKey:@"uid"];
-  [self getPath:@"/getMyInfo.htm" parameters:parameters];
+  [self getPath:@"api/user/UpdateInfo" parameters:parameters];
 }
 
 - (BaseResponse*)parseResponse:(NSDictionary*)responseDict error:(NSError**)error

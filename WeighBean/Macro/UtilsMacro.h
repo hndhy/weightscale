@@ -26,4 +26,8 @@
 #define APP_GREEN [UIColor colorWithRed:71.0f/255.0 green:249.0f/255.0 blue:130.0f/255.0 alpha:1]
 #define BLUECOLOR [UIColor colorWithRed:29/255.0 green:168/255.0 blue:225/255.0 alpha:1]
 
+#define DEVICEW ([[UIScreen mainScreen] bounds].size.width)
+#define DEVICEH ([[UIScreen mainScreen] bounds].size.height)
+
+
 #endif
