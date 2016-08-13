@@ -7,9 +7,19 @@
 //
 
 #import "CheckInChooseTagViewController.h"
-
+#import "CheckInReleaseViewController.h"
 
 @implementation CheckInChooseTagViewController
+
+
+- (id)initWithImage:(UIImage *)img
+{
+    self = [super init];
+    if (self) {
+        sourceImg = img;
+    }
+    return self;
+}
 
 - (void)initNavbar
 {
@@ -32,7 +42,8 @@
 - (void)initModel
 {
     dataArray = [[NSMutableArray alloc] initWithObjects:@"hello",@"fsdfag",@"re",@"fdgfdge",@"bergerwf",@"rewd",@"eger",@"brtbrt",@"fsaf",@"htrr",@"saf",@"bfdsb",@"gerh",@"rwe",@"br",@"fsaf",@"hrg",@"fsdaf",@"rbrbr", nil];
-    
+    selectedArr = [[NSMutableArray alloc] init];
+    selectedDataArr = [[NSMutableArray alloc] init];
     //    self.handle = [[CoachModelHandler alloc] initWithController:self];
     //    self.listModel = [[CoachListModel alloc] initWithHandler:self.handle];
     //    _dataArray = [[NSMutableArray alloc] init];
@@ -41,6 +52,10 @@
 
 - (void)initView
 {
+    [self setNeedsStatusBarAppearanceUpdate];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+
+    self.view.backgroundColor = [UIColor whiteColor];
     if (!_tableView)
     {
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.width, SCREEN_HEIGHT_EXCEPTNAV) style:UITableViewStylePlain];
@@ -51,11 +66,44 @@
     }
     [self.view addSubview:_tableView];
 
-    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 44)];
+    
+    UIButton *btnBack = [[UIButton alloc] initWithFrame:CGRectMake(0, 20, 40, 40)];
+    btnBack.backgroundColor = [UIColor whiteColor];
+    [btnBack setImage:[UIImage imageNamed:@"edit_btn_back"] forState:UIControlStateNormal];
+    [btnBack addTarget:self action:@selector(backDidClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btnBack];
+    
+    
+
+    
+    
+    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(40, 20, self.view.frame.size.width-40, 44)];
     [searchBar setTintColor:[UIColor blackColor]];
-    [searchBar setSearchBarStyle:UISearchBarStyleDefault];
+    [searchBar setSearchBarStyle:UISearchBarStyleMinimal];
+    searchBar.showsCancelButton = YES;
     searchBar.delegate = self;
     [self.view addSubview:searchBar];
+    
+    for (UIView *view in searchBar.subviews)
+    {
+        for (id subview in view.subviews)
+        {
+            if ( [subview isKindOfClass:[UIButton class]] )
+            {
+                [subview setEnabled:YES];
+                UIButton *cancelButton = (UIButton*)subview;
+                [cancelButton setTitle:@"确认" forState:UIControlStateNormal];
+                [cancelButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+                
+                return;
+            }
+        }
+    }
+}
+
+- (void)backDidClick
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark tableview delegate datasource
@@ -78,20 +126,62 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identier];
     }
-
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.textLabel.text = dataArray[indexPath.row];
+    if ([selectedArr containsObject:[NSString stringWithFormat:@"%ld",indexPath.row]]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else
+    {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([selectedArr containsObject:[NSString stringWithFormat:@"%ld",indexPath.row]]) {
+        [selectedArr removeObject:[NSString stringWithFormat:@"%ld",indexPath.row]];
+        [selectedDataArr removeObject:dataArray[indexPath.row]];
+    } else
+    {
+        [selectedArr addObject:[NSString stringWithFormat:@"%ld",indexPath.row]];
+        [selectedDataArr addObject:dataArray[indexPath.row]];
+    }
+
+    [tableView reloadData];
+}
+
+#pragma mark searchbardelegate
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    CheckInReleaseViewController *vc = [[CheckInReleaseViewController alloc] initWithImg:sourceImg selectedArr:selectedDataArr];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleDefault;
 }
 
 - (void)dismiss
 {
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
+
+
+
+
+
+
+
+
 
 @end

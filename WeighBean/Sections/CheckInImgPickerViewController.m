@@ -8,6 +8,8 @@
 
 #import "CheckInImgPickerViewController.h"
 #import "CheckInImagePickerCell.h"
+#import "CheckInPickResultViewController.h"
+
 @import Photos;
 
 
@@ -92,7 +94,7 @@
     [nextBtn setTitle:@"下一步" forState:UIControlStateNormal];
     nextBtn.titleLabel.font = UIFontOfSize(14);
     [nextBtn addTarget:self action:@selector(nextStep) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:nextBtn];
+//    [self.view addSubview:nextBtn];
     
     size1 = (DEVICEW-2)/2;
     size2 = (int)((DEVICEW-4)/3);
@@ -375,7 +377,7 @@
         [self.delegate imagePicker:self selectIndex:indexPath.row asset:nil];
     }
     else if (indexPath.row-1 < [myArray count]) {
-        [self.delegate imagePicker:self selectIndex:indexPath.row asset:[myArray objectAtIndex:indexPath.row-1]];
+        [self imagePicker:self selectIndex:indexPath.row asset:[myArray objectAtIndex:indexPath.row-1]];
     }
 }
 
@@ -437,6 +439,59 @@
     NSString *result = [path stringByAppendingPathComponent:[_fname copy]];
     
     return result;
+}
+
+
+
+
+
+
+
+
+
+
+#pragma mark - srtimagepicker delegate
+- (void)goWithImage:(UIImage *)img picker:(CheckInImgPickerViewController *)picker
+{
+    picker.view.userInteractionEnabled = YES;
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+    CheckInPickResultViewController *vc = [[CheckInPickResultViewController alloc] initWithImg:img];
+    [picker.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)requestImageWithAsset:(PHAsset *)a options:(PHImageRequestOptions *)op picker:(CheckInImgPickerViewController *)picker
+{
+    [[PHImageManager defaultManager] requestImageDataForAsset:a options:op resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
+        
+        UIImage *result = [UIImage imageWithData:imageData];
+        if (result) {
+            [self goWithImage:result picker:picker];
+        }
+        else
+        {
+            picker.view.userInteractionEnabled = YES;
+        }
+    }];
+    
+}
+
+- (void)imagePicker:(CheckInImgPickerViewController *)picker selectIndex:(NSUInteger)index asset:(ALAsset *)al
+{
+    if ([al isKindOfClass:[PHAsset class]]) {
+        PHAsset *a = (PHAsset *)al;
+        PHImageRequestOptions *op = [PHImageRequestOptions new];
+        op.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
+        op.networkAccessAllowed = YES;
+        op.progressHandler = ^(double progress, NSError *error, BOOL *stop, NSDictionary *info) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                picker.view.userInteractionEnabled = NO;
+            });
+        };
+
+        [self requestImageWithAsset:a options:op picker:picker];
+
+    }
 }
 
 

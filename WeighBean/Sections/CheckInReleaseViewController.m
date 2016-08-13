@@ -1,35 +1,34 @@
 //
-//  CheckInPickResultViewController.m
+//  CheckInReleaseViewController.m
 //  WeighBean
 //
-//  Created by sealband on 16/8/10.
+//  Created by sealband on 16/8/14.
 //  Copyright © 2016年 lmd. All rights reserved.
 //
 
-#import "CheckInPickResultViewController.h"
-#import "CheckInChooseTagViewController.h"
+#import "CheckInReleaseViewController.h"
+#import "UIView+Tag.h"
 
-@implementation CheckInPickResultViewController
-
-
-- (id)initWithImg:(UIImage *)img
+@implementation CheckInReleaseViewController
+- (id)initWithImg:(UIImage *)img selectedArr:(NSMutableArray *)arr
 {
     self = [super init];
     if (self) {
         resultImg = img;
+        sourceArr = arr;
     }
     return self;
 }
 
 - (void)initNavbar
 {
-
-//    self.title = @"添加标签";
-//    UIButton *menuButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44.0f, 44.0f)];
-//    [menuButton setImage:[UIImage imageNamed:@"menu_nav_bar.png"] forState:UIControlStateNormal];
-//    [menuButton addTarget:self action:@selector(presentLeftMenuViewController:) forControlEvents:UIControlEventTouchUpInside];
-//    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:menuButton];
-//    self.navigationItem.leftBarButtonItem = leftItem;
+    
+    //    self.title = @"添加标签";
+    //    UIButton *menuButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44.0f, 44.0f)];
+    //    [menuButton setImage:[UIImage imageNamed:@"menu_nav_bar.png"] forState:UIControlStateNormal];
+    //    [menuButton addTarget:self action:@selector(presentLeftMenuViewController:) forControlEvents:UIControlEventTouchUpInside];
+    //    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:menuButton];
+    //    self.navigationItem.leftBarButtonItem = leftItem;
 }
 
 - (void)initModel
@@ -50,34 +49,37 @@
     }
     [self.view addSubview:imageView];
     
-    
-    UILabel *addTagLbl = [[UILabel alloc] initWithFrame:CGRectMake(80, 10, DEVICEW-160, 40)];
-    addTagLbl.backgroundColor = [UIColor whiteColor];
-    addTagLbl.textColor = [UIColor grayColor];
-    addTagLbl.font = UIFontOfSize(14);
-    addTagLbl.text = @"添加标签";
-    addTagLbl.textAlignment = NSTextAlignmentCenter;
-    [self.view addSubview:addTagLbl];
-
-    
-    UIButton *addTipBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    addTipBtn.frame = CGRectMake(0, self.view.frame.size.height-40 , self.view.frame.size.width, 40);
-    addTipBtn.backgroundColor = [UIColor clearColor];
-    addTipBtn.titleLabel.font = [UIFont systemFontOfSize:15];
-    [addTipBtn setTitleColor:BLUECOLOR forState:UIControlStateNormal];
-    [addTipBtn setTitle:@"添加标签" forState:UIControlStateNormal];
-    [addTipBtn addTarget:self action:@selector(addTag) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:addTipBtn];
-    
     UIButton *btnBack = [[UIButton alloc] initWithFrame:CGRectMake(0, 20, 40, 40)];
     btnBack.backgroundColor = [UIColor whiteColor];
     [btnBack setImage:[UIImage imageNamed:@"edit_btn_back"] forState:UIControlStateNormal];
     [btnBack addTarget:self action:@selector(backDidClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btnBack];
     
+
     
+    UILabel *addTagLbl = [[UILabel alloc] initWithFrame:CGRectMake(80, 10, DEVICEW-160, 40)];
+    addTagLbl.backgroundColor = [UIColor whiteColor];
+    addTagLbl.textColor = [UIColor grayColor];
+    addTagLbl.font = UIFontOfSize(14);
+    addTagLbl.text = @"去发布";
+    addTagLbl.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:addTagLbl];
+    
+    
+    UIButton *addTipBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    addTipBtn.frame = CGRectMake(0, self.view.frame.size.height-40 , self.view.frame.size.width, 40);
+    addTipBtn.backgroundColor = [UIColor clearColor];
+    addTipBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+    [addTipBtn setTitleColor:BLUECOLOR forState:UIControlStateNormal];
+    [addTipBtn setTitle:@"发布" forState:UIControlStateNormal];
+    [addTipBtn addTarget:self action:@selector(addTag) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:addTipBtn];
+    
+    NSArray *percentArray = @[[NSValue valueWithCGPoint:CGPointMake(0.5, 0.5)],[NSValue valueWithCGPoint:CGPointMake(0.2, 0.8)],[NSValue valueWithCGPoint:CGPointMake(0.8, 0.7)]];
+    NSArray *textArray = @[@"测试",@"测试默默",@"人群中寻找"];
+    [imageView aj_showTagsWithPercentArray:percentArray textArray:sourceArr];
 
-
+    
 }
 
 - (void)backDidClick
@@ -89,16 +91,7 @@
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
-
+    
 }
-
-- (void)addTag
-{
-    CheckInChooseTagViewController *vc = [[CheckInChooseTagViewController alloc] initWithImage:resultImg];
-//    [self presentViewController:vc animated:YES completion:nil];
-    [self.navigationController pushViewController:vc animated:YES];
-
-}
-
 
 @end

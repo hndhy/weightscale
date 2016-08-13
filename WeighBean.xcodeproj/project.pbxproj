@@ -144,6 +144,12 @@
 		5C3BD8941D5F194300D3B410 /* CheckInImagePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BD8931D5F194300D3B410 /* CheckInImagePickerCell.m */; };
 		5C3BD8961D5F199A00D3B410 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3BD8951D5F199A00D3B410 /* Photos.framework */; };
 		5C3BD8991D5F265800D3B410 /* btn_close.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5C3BD8981D5F265800D3B410 /* btn_close.pdf */; };
+		5C3BD89B1D5F566500D3B410 /* search_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3BD89A1D5F566500D3B410 /* search_bg.png */; };
+		5C3BD89D1D5F5BE100D3B410 /* edit_btn_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3BD89C1D5F5BE100D3B410 /* edit_btn_back.png */; };
+		5C3BD8A01D5F7E3C00D3B410 /* CheckInReleaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BD89F1D5F7E3C00D3B410 /* CheckInReleaseViewController.m */; };
+		5C3BD8A81D5F928400D3B410 /* AJInsetLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BD8A31D5F928400D3B410 /* AJInsetLabel.m */; };
+		5C3BD8A91D5F928400D3B410 /* AJTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BD8A51D5F928400D3B410 /* AJTagView.m */; };
+		5C3BD8AA1D5F928400D3B410 /* UIView+Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BD8A71D5F928400D3B410 /* UIView+Tag.m */; };
 		5C6562A41D47DEC4004CF31B /* HTMultiLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6562A31D47DEC4004CF31B /* HTMultiLabel.m */; };
 		5CE173111D4DFB930047E8B9 /* CoachModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173101D4DFB930047E8B9 /* CoachModelHandler.m */; };
 		5CE173141D4DFC860047E8B9 /* CoachListResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173131D4DFC860047E8B9 /* CoachListResponse.m */; };
@@ -623,6 +629,16 @@
 		5C3BD8931D5F194300D3B410 /* CheckInImagePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInImagePickerCell.m; sourceTree = "<group>"; };
 		5C3BD8951D5F199A00D3B410 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		5C3BD8981D5F265800D3B410 /* btn_close.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = btn_close.pdf; sourceTree = "<group>"; };
+		5C3BD89A1D5F566500D3B410 /* search_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_bg.png; sourceTree = "<group>"; };
+		5C3BD89C1D5F5BE100D3B410 /* edit_btn_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit_btn_back.png; sourceTree = "<group>"; };
+		5C3BD89E1D5F7E3C00D3B410 /* CheckInReleaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInReleaseViewController.h; sourceTree = "<group>"; };
+		5C3BD89F1D5F7E3C00D3B410 /* CheckInReleaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInReleaseViewController.m; sourceTree = "<group>"; };
+		5C3BD8A21D5F928400D3B410 /* AJInsetLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJInsetLabel.h; sourceTree = "<group>"; };
+		5C3BD8A31D5F928400D3B410 /* AJInsetLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJInsetLabel.m; sourceTree = "<group>"; };
+		5C3BD8A41D5F928400D3B410 /* AJTagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJTagView.h; sourceTree = "<group>"; };
+		5C3BD8A51D5F928400D3B410 /* AJTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJTagView.m; sourceTree = "<group>"; };
+		5C3BD8A61D5F928400D3B410 /* UIView+Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Tag.h"; sourceTree = "<group>"; };
+		5C3BD8A71D5F928400D3B410 /* UIView+Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Tag.m"; sourceTree = "<group>"; };
 		5C6562A21D47DEC4004CF31B /* HTMultiLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMultiLabel.h; sourceTree = "<group>"; };
 		5C6562A31D47DEC4004CF31B /* HTMultiLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMultiLabel.m; sourceTree = "<group>"; };
 		5CE1730F1D4DFB930047E8B9 /* CoachModelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachModelHandler.h; sourceTree = "<group>"; };
@@ -1150,6 +1166,8 @@
 				5C16AC181D5A56C300C5B76C /* CheckInPickResultViewController.m */,
 				5C16AC1A1D5A602D00C5B76C /* CheckInChooseTagViewController.h */,
 				5C16AC1B1D5A602D00C5B76C /* CheckInChooseTagViewController.m */,
+				5C3BD89E1D5F7E3C00D3B410 /* CheckInReleaseViewController.h */,
+				5C3BD89F1D5F7E3C00D3B410 /* CheckInReleaseViewController.m */,
 			);
 			name = CheckIn;
 			sourceTree = "<group>";
@@ -1205,8 +1223,23 @@
 			isa = PBXGroup;
 			children = (
 				5C3BD8981D5F265800D3B410 /* btn_close.pdf */,
+				5C3BD89A1D5F566500D3B410 /* search_bg.png */,
+				5C3BD89C1D5F5BE100D3B410 /* edit_btn_back.png */,
 			);
 			name = checkin;
+			sourceTree = "<group>";
+		};
+		5C3BD8A11D5F927500D3B410 /* AJTagView */ = {
+			isa = PBXGroup;
+			children = (
+				5C3BD8A21D5F928400D3B410 /* AJInsetLabel.h */,
+				5C3BD8A31D5F928400D3B410 /* AJInsetLabel.m */,
+				5C3BD8A41D5F928400D3B410 /* AJTagView.h */,
+				5C3BD8A51D5F928400D3B410 /* AJTagView.m */,
+				5C3BD8A61D5F928400D3B410 /* UIView+Tag.h */,
+				5C3BD8A71D5F928400D3B410 /* UIView+Tag.m */,
+			);
+			name = AJTagView;
 			sourceTree = "<group>";
 		};
 		5CE1730C1D4DEF100047E8B9 /* Coach */ = {
@@ -1747,6 +1780,7 @@
 		5FA9F14D1B66096C00997BA8 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				5C3BD8A11D5F927500D3B410 /* AJTagView */,
 				5C16AC351D5B8FFF00C5B76C /* MGSwipeTableCell */,
 				5CEC2E701D57458800CBA6BA /* SWTableViewCell */,
 				5289FE8C1C09FD1A0036FA6F /* MIPushSDK */,
@@ -2470,6 +2504,7 @@
 				5F7F827F1B75FE7A00AC04B3 /* menu_stat_icon@2x.png in Resources */,
 				5C3BD8641D5CCCB100D3B410 /* time_iconv.png in Resources */,
 				5F88BE311B7ED88B008C4901 /* lbm@2x.png in Resources */,
+				5C3BD89D1D5F5BE100D3B410 /* edit_btn_back.png in Resources */,
 				527028F11BA1D2F0007E24F8 /* add_nav_bar@2x.png in Resources */,
 				5FD5149B1B8081170088C7E9 /* arrow_left_icon@2x.png in Resources */,
 				5F920F2C1B89A8FF005BD616 /* login_arrow_icon@2x.png in Resources */,
@@ -2548,6 +2583,7 @@
 				526447631B9DD60F00C1A799 /* fat_new_1@2x.png in Resources */,
 				5F88BE5E1B7F219D008C4901 /* target_5@2x.png in Resources */,
 				5221239D1BFB171B006BCCC4 /* zx_cheng_def@2x.png in Resources */,
+				5C3BD89B1D5F566500D3B410 /* search_bg.png in Resources */,
 				5C3BD8551D5BA05500D3B410 /* refresh_but.png in Resources */,
 				B01A8E921B7D84270049D86D /* body_list@2x.png in Resources */,
 				526E83011BFDD2770096A874 /* vat_1_2.0@2x.png in Resources */,
@@ -2689,6 +2725,7 @@
 				5FA9F2AC1B66096C00997BA8 /* HTTextField.m in Sources */,
 				52C639121C0C53B900BB45D7 /* OLProductModel.m in Sources */,
 				5F88BE271B7DC377008C4901 /* SetPwdViewController.m in Sources */,
+				5C3BD8A01D5F7E3C00D3B410 /* CheckInReleaseViewController.m in Sources */,
 				B01A8EC01B7E408D0049D86D /* JTCalendarMonthWeekDaysView.m in Sources */,
 				5289FE851C0755BC0036FA6F /* NotifNumberModel.m in Sources */,
 				5FA9F2AB1B66096C00997BA8 /* HTTableView.m in Sources */,
@@ -2711,6 +2748,7 @@
 				5FA9F2A61B66096C00997BA8 /* HTNavigationBar.m in Sources */,
 				5FA9F2AA1B66096C00997BA8 /* HTTabBarItem.m in Sources */,
 				B01A8EBA1B7E408D0049D86D /* JTCalendarAppearance.m in Sources */,
+				5C3BD8AA1D5F928400D3B410 /* UIView+Tag.m in Sources */,
 				522123C31BFCB538006BCCC4 /* VerfiyOrderResponse.m in Sources */,
 				5F7F82831B760B9C00AC04B3 /* MeasureViewController.m in Sources */,
 				5C3BD87B1D5E393A00D3B410 /* CheckInImgPickerViewController.m in Sources */,
@@ -2795,6 +2833,7 @@
 				5F7F82701B75BA1200AC04B3 /* HomeViewController.m in Sources */,
 				B01A8ED91B7F5F9A0049D86D /* DelDatasModelHandler.m in Sources */,
 				5FA9F3371B66135C00997BA8 /* LoginViewController.m in Sources */,
+				5C3BD8A81D5F928400D3B410 /* AJInsetLabel.m in Sources */,
 				B01A8E951B7DCFBE0049D86D /* BDDataSource.m in Sources */,
 				5FA9F28D1B66096C00997BA8 /* UILabel+Ext.m in Sources */,
 				B01A8EC51B7E45660049D86D /* JTCalendarViewController.m in Sources */,
@@ -2845,6 +2884,7 @@
 				5FA9F2971B66096C00997BA8 /* HTTextFieldDelegate.m in Sources */,
 				5FA9F28B1B66096C00997BA8 /* UIDevice-Hardware.m in Sources */,
 				5FA9F3201B66096C00997BA8 /* HTLoginModel.m in Sources */,
+				5C3BD8A91D5F928400D3B410 /* AJTagView.m in Sources */,
 				B01A8ECF1B7EE5AE0049D86D /* SyncDataListResponse.m in Sources */,
 				5FA9F2AD1B66096C00997BA8 /* HTTextView.m in Sources */,
 				5FA9F3111B66096C00997BA8 /* HTPlayClickModel.m in Sources */,

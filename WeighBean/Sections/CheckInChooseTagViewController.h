@@ -13,5 +13,12 @@
 {
     UITableView *_tableView;
     NSMutableArray *dataArray;
+    
+    NSMutableArray *selectedArr;
+    NSMutableArray *selectedDataArr;
+    
+    UIImageView *sourceImageView;
+    UIImage *sourceImg;
 }
+- (id)initWithImage:(UIImage *)img;
 @end
