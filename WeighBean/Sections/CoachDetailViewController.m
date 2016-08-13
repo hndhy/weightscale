@@ -26,7 +26,7 @@
 
 - (void)initNavbar
 {
-    self.title = @"新建战队";
+    self.title = @"V身战队";
 //    UIButton *shareBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44.0f, 44.0f)];
 //    [shareBtn setImage:[UIImage imageNamed:@"menu_nav_bar.png"] forState:UIControlStateNormal];
 //    [shareBtn addTarget:self action:@selector(presentLeftMenuViewController:) forControlEvents:UIControlEventTouchUpInside];
@@ -43,15 +43,18 @@
 - (void)initView
 {
     scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    scrollView.frame = CGRectMake(5, 5, DEVICEW-10, DEVICEH);
+//    scrollView.backgroundColor = UIColorFromRGB(242.0f, 242.0f, 242.0f);
     scrollView.backgroundColor = [UIColor whiteColor];
+    scrollView.layer.cornerRadius = 4.0;
     scrollView.scrollEnabled = YES;
     [self.view addSubview:scrollView];
     
     
-    coachTypeLbl = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, 50, 60)];
-    coachTypeLbl.backgroundColor = [UIColor blueColor];
+    coachTypeLbl = [[UILabel alloc] initWithFrame:CGRectMake(25, 10, 50, 60)];
+    coachTypeLbl.backgroundColor = BLUECOLOR;
     [coachTypeLbl setTextColor:[UIColor whiteColor]];
-    [coachTypeLbl setFont:[UIFont systemFontOfSize:13]];
+    [coachTypeLbl setFont:[UIFont systemFontOfSize:15]];
     [coachTypeLbl setText:@"增肌"];
     [scrollView addSubview:coachTypeLbl];
     
@@ -86,18 +89,24 @@
     
     
     
-    UILabel *ingTitleLbl = [[UILabel alloc] initWithFrame:CGRectMake(15, 120, 160, 30)];
-    ingTitleLbl.backgroundColor = [UIColor clearColor];
-    [ingTitleLbl setTextColor:[UIColor blackColor]];
-    [ingTitleLbl setFont:[UIFont systemFontOfSize:14]];
-    [ingTitleLbl setText:@"正在进行中（活跃用户人数／总人数）"];
-    [scrollView addSubview:ingTitleLbl];
+    UILabel *ingTitleLbl1 = [[UILabel alloc] initWithFrame:CGRectMake(15, 120, 75, 30)];
+    ingTitleLbl1.backgroundColor = [UIColor clearColor];
+    [ingTitleLbl1 setTextColor:[UIColor blackColor]];
+    [ingTitleLbl1 setFont:[UIFont systemFontOfSize:14]];
+    [ingTitleLbl1 setText:@"正在进行中"];
+    [scrollView addSubview:ingTitleLbl1];
     
-    //     *brisk_num;
-    //     *sum_num;
-    activeRatioLbl = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width-100, ingTitleLbl.top, 100, 30)];
+    UILabel *ingTitleLbl2 = [[UILabel alloc] initWithFrame:CGRectMake(ingTitleLbl1.right, 120, 160, 30)];
+    ingTitleLbl2.backgroundColor = [UIColor clearColor];
+    [ingTitleLbl2 setTextColor:[UIColor lightGrayColor]];
+    [ingTitleLbl2 setFont:[UIFont systemFontOfSize:11]];
+    [ingTitleLbl2 setText:@"(活跃用户人数／总人数)"];
+    ingTitleLbl2.textAlignment = NSTextAlignmentLeft;
+    [scrollView addSubview:ingTitleLbl2];
+    
+    activeRatioLbl = [[UILabel alloc] initWithFrame:CGRectMake(DEVICEW-60, ingTitleLbl1.top, 60, 30)];
     activeRatioLbl.backgroundColor = [UIColor clearColor];
-    [activeRatioLbl setTextColor:[UIColor blackColor]];
+    [activeRatioLbl setTextColor:UIColorFromRGB(127, 168, 238)];
     [activeRatioLbl setFont:[UIFont systemFontOfSize:14]];
     [activeRatioLbl setText:@"3/6"];
     [scrollView addSubview:activeRatioLbl];
@@ -115,7 +124,7 @@
     
     UILabel *dataLbl1 = [[UILabel alloc] initWithFrame:CGRectMake(25, 200, 80, 30)];
     dataLbl1.backgroundColor = [UIColor clearColor];
-    [dataLbl1 setTextColor:[UIColor blackColor]];
+    [dataLbl1 setTextColor:[UIColor lightGrayColor]];
     [dataLbl1 setFont:[UIFont systemFontOfSize:13]];
     [dataLbl1 setText:@"人均减脂重量"];
     [scrollView addSubview:dataLbl1];
@@ -129,7 +138,7 @@
     
     UILabel *dataLbl2 = [[UILabel alloc] initWithFrame:CGRectMake(meanfatLbl.right+50, dataLbl1.top, 80, 30)];
     dataLbl2.backgroundColor = [UIColor clearColor];
-    [dataLbl2 setTextColor:[UIColor blackColor]];
+    [dataLbl2 setTextColor:[UIColor lightGrayColor]];
     [dataLbl2 setFont:[UIFont systemFontOfSize:13]];
     [dataLbl2 setText:@"减重比"];
     [scrollView addSubview:dataLbl2];
@@ -141,9 +150,9 @@
     [loseWeightRatioLbl setText:@"0.5%"];
     [scrollView addSubview:loseWeightRatioLbl];
     
-    UILabel *dataLbl3 = [[UILabel alloc] initWithFrame:CGRectMake(dataLbl1.left, 230, 80, 30)];
+    UILabel *dataLbl3 = [[UILabel alloc] initWithFrame:CGRectMake(dataLbl1.left, 240, 80, 30)];
     dataLbl3.backgroundColor = [UIColor clearColor];
-    [dataLbl3 setTextColor:[UIColor blackColor]];
+    [dataLbl3 setTextColor:[UIColor lightGrayColor]];
     [dataLbl3 setFont:[UIFont systemFontOfSize:13]];
     [dataLbl3 setText:@"人均增肌重量"];
     [scrollView addSubview:dataLbl3];
@@ -157,7 +166,7 @@
     
     UILabel *dataLbl4 = [[UILabel alloc] initWithFrame:CGRectMake(muscleBuilderLbl.right+50, dataLbl3.top, 80, 30)];
     dataLbl4.backgroundColor = [UIColor clearColor];
-    [dataLbl4 setTextColor:[UIColor blackColor]];
+    [dataLbl4 setTextColor:[UIColor lightGrayColor]];
     [dataLbl4 setFont:[UIFont systemFontOfSize:13]];
     [dataLbl4 setText:@"增重比"];
     [scrollView addSubview:dataLbl4];
@@ -173,7 +182,7 @@
     
 
 
-    UILabel *ingValid = [[UILabel alloc] initWithFrame:CGRectMake(15, 260, 120, 30)];
+    UILabel *ingValid = [[UILabel alloc] initWithFrame:CGRectMake(15, 270, 120, 30)];
     ingValid.backgroundColor = [UIColor clearColor];
     [ingValid setTextColor:[UIColor blackColor]];
     [ingValid setFont:[UIFont systemFontOfSize:14]];
@@ -189,7 +198,7 @@
     
     
     
-    UILabel *completeValid = [[UILabel alloc] initWithFrame:CGRectMake(15, 290, 120, 30)];
+    UILabel *completeValid = [[UILabel alloc] initWithFrame:CGRectMake(15, 300, 120, 30)];
     completeValid.backgroundColor = [UIColor clearColor];
     [completeValid setTextColor:[UIColor blackColor]];
     [completeValid setFont:[UIFont systemFontOfSize:14]];
@@ -209,14 +218,14 @@
     
     
     
-    UILabel *completeDataLbl = [[UILabel alloc] initWithFrame:CGRectMake(15, 330, 100, 30)];
+    UILabel *completeDataLbl = [[UILabel alloc] initWithFrame:CGRectMake(15, 340, 100, 30)];
     completeDataLbl.backgroundColor = [UIColor clearColor];
     [completeDataLbl setTextColor:[UIColor blackColor]];
     [completeDataLbl setFont:[UIFont systemFontOfSize:13]];
     [completeDataLbl setText:@"已完成数据统计"];
     [scrollView addSubview:completeDataLbl];
     
-    UILabel *comDataLbl1 = [[UILabel alloc] initWithFrame:CGRectMake(25, 360, 80, 30)];
+    UILabel *comDataLbl1 = [[UILabel alloc] initWithFrame:CGRectMake(25, 370, 80, 30)];
     comDataLbl1.backgroundColor = [UIColor clearColor];
     [comDataLbl1 setTextColor:[UIColor blackColor]];
     [comDataLbl1 setFont:[UIFont systemFontOfSize:13]];
@@ -275,7 +284,7 @@
     
     
     UIButton *enterBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    enterBtn.frame = CGRectMake(0, 430, self.view.size.width/2, 40);
+    enterBtn.frame = CGRectMake(0, 440, self.view.size.width/2, 40);
     enterBtn.backgroundColor = [UIColor clearColor];
     enterBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     [enterBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
@@ -284,7 +293,7 @@
     [scrollView addSubview:enterBtn];
     
     UIButton *inviteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    inviteBtn.frame = CGRectMake(self.view.size.width/2, 430, self.view.size.width/2, 40);
+    inviteBtn.frame = CGRectMake(self.view.size.width/2, 440, self.view.size.width/2, 40);
     inviteBtn.backgroundColor = [UIColor clearColor];
     inviteBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     [inviteBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
@@ -294,7 +303,7 @@
     
     
     
-    [scrollView setContentSize:CGSizeMake(self.view.frame.size.width, 800)];
+    [scrollView setContentSize:CGSizeMake(self.view.frame.size.width-10, 800)];
 }
 
 - (void)viewWillAppear:(BOOL)animated

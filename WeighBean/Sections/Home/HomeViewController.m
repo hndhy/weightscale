@@ -49,9 +49,11 @@
 #import "CheckInPickResultViewController.h"
 #import "WiFiController.h"
 
+#import "HTNavigationController.h"
 
 
-@interface HomeViewController ()<SharePlatDelegate, SyncModelProtocol, MFMessageComposeViewControllerDelegate,JTCalendarDelegate,RESideMenuDelegate,TZImagePickerControllerDelegate>
+
+@interface HomeViewController ()<SharePlatDelegate, SyncModelProtocol, MFMessageComposeViewControllerDelegate,JTCalendarDelegate,RESideMenuDelegate,UIImagePickerControllerDelegate>
 
 @property (nonatomic, strong) UILabel *weightNumLabel;
 @property (nonatomic, strong) UILabel *weightStatLabel;
@@ -422,14 +424,22 @@
 
 - (void)showImgPicker
 {
-    CheckInImgPickerViewController *VC = [[CheckInImgPickerViewController alloc] initWithMaxImagesCount:1 delegate:self];
-    [VC setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
-        
-        CheckInPickResultViewController *vc = [[CheckInPickResultViewController alloc] initWithImg:photos[0]];
-        [self.navigationController pushViewController:vc animated:YES];
+//    CheckInImgPickerViewController *imgPickerVC = [[CheckInImgPickerViewController alloc] initWithMaxImagesCount:1 delegate:self];
+//    [imgPickerVC setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
+    
+//        CheckInPickResultViewController *vc = [[CheckInPickResultViewController alloc] initWithImg:photos[0]];
+//        [self.navigationController pushViewController:vc animated:YES];
 
-    }];
-    [self presentViewController:VC animated:YES completion:nil];
+//    }];
+//    [self presentViewController:VC animated:YES completion:nil];
+    
+    
+    
+    
+    CheckInImgPickerViewController *imgPickerVC = [[CheckInImgPickerViewController alloc] init];
+    HTNavigationController *navController = [[HTNavigationController alloc] initWithRootViewController:imgPickerVC];
+    [self presentViewController:navController animated:YES completion:nil];
+
 }
 
 - (BOOL)needRefreshView

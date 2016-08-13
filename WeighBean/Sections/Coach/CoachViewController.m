@@ -40,7 +40,7 @@
 #import "MGSwipeTableCell.h"
 
 
-@interface CoachViewController ()<UITableViewDelegate,UITableViewDataSource,CoachModelProtocol,DissolveCoachModelProtocol,UIAlertViewDelegate,SWTableViewCellDelegate,TZImagePickerControllerDelegate,MGSwipeTableCellDelegate,CoachCellDelegate>
+@interface CoachViewController ()<UITableViewDelegate,UITableViewDataSource,CoachModelProtocol,DissolveCoachModelProtocol,UIAlertViewDelegate,SWTableViewCellDelegate,MGSwipeTableCellDelegate,CoachCellDelegate>
 {
     UITableView *_tableView;
     NSMutableArray *_dataArray;
