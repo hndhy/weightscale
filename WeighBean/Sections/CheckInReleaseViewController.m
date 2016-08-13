@@ -8,6 +8,7 @@
 
 #import "CheckInReleaseViewController.h"
 #import "UIView+Tag.h"
+#import "TimelineViwController.h"
 
 @implementation CheckInReleaseViewController
 - (id)initWithImg:(UIImage *)img selectedArr:(NSMutableArray *)arr
@@ -72,7 +73,7 @@
     addTipBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     [addTipBtn setTitleColor:BLUECOLOR forState:UIControlStateNormal];
     [addTipBtn setTitle:@"发布" forState:UIControlStateNormal];
-    [addTipBtn addTarget:self action:@selector(addTag) forControlEvents:UIControlEventTouchUpInside];
+    [addTipBtn addTarget:self action:@selector(releasePhoto) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:addTipBtn];
     
     NSArray *percentArray = @[[NSValue valueWithCGPoint:CGPointMake(0.5, 0.5)],[NSValue valueWithCGPoint:CGPointMake(0.2, 0.8)],[NSValue valueWithCGPoint:CGPointMake(0.8, 0.7)]];
@@ -92,6 +93,12 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     
+}
+
+- (void)releasePhoto
+{
+    TimelineViwController *vc = [[TimelineViwController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

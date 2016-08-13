@@ -150,6 +150,7 @@
 		5C3BD8A81D5F928400D3B410 /* AJInsetLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BD8A31D5F928400D3B410 /* AJInsetLabel.m */; };
 		5C3BD8A91D5F928400D3B410 /* AJTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BD8A51D5F928400D3B410 /* AJTagView.m */; };
 		5C3BD8AA1D5F928400D3B410 /* UIView+Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BD8A71D5F928400D3B410 /* UIView+Tag.m */; };
+		5C3BD8AE1D5FA62700D3B410 /* TimelineViwController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BD8AD1D5FA62700D3B410 /* TimelineViwController.m */; };
 		5C6562A41D47DEC4004CF31B /* HTMultiLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6562A31D47DEC4004CF31B /* HTMultiLabel.m */; };
 		5CE173111D4DFB930047E8B9 /* CoachModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173101D4DFB930047E8B9 /* CoachModelHandler.m */; };
 		5CE173141D4DFC860047E8B9 /* CoachListResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173131D4DFC860047E8B9 /* CoachListResponse.m */; };
@@ -639,6 +640,8 @@
 		5C3BD8A51D5F928400D3B410 /* AJTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJTagView.m; sourceTree = "<group>"; };
 		5C3BD8A61D5F928400D3B410 /* UIView+Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Tag.h"; sourceTree = "<group>"; };
 		5C3BD8A71D5F928400D3B410 /* UIView+Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Tag.m"; sourceTree = "<group>"; };
+		5C3BD8AC1D5FA62700D3B410 /* TimelineViwController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineViwController.h; sourceTree = "<group>"; };
+		5C3BD8AD1D5FA62700D3B410 /* TimelineViwController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineViwController.m; sourceTree = "<group>"; };
 		5C6562A21D47DEC4004CF31B /* HTMultiLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMultiLabel.h; sourceTree = "<group>"; };
 		5C6562A31D47DEC4004CF31B /* HTMultiLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMultiLabel.m; sourceTree = "<group>"; };
 		5CE1730F1D4DFB930047E8B9 /* CoachModelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachModelHandler.h; sourceTree = "<group>"; };
@@ -1240,6 +1243,16 @@
 				5C3BD8A71D5F928400D3B410 /* UIView+Tag.m */,
 			);
 			name = AJTagView;
+			sourceTree = "<group>";
+		};
+		5C3BD8AB1D5FA60E00D3B410 /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				5C3BD8AC1D5FA62700D3B410 /* TimelineViwController.h */,
+				5C3BD8AD1D5FA62700D3B410 /* TimelineViwController.m */,
+			);
+			name = Timeline;
+			path = ../Resources;
 			sourceTree = "<group>";
 		};
 		5CE1730C1D4DEF100047E8B9 /* Coach */ = {
@@ -2063,6 +2076,7 @@
 		5FA9F2831B66096C00997BA8 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				5C3BD8AB1D5FA60E00D3B410 /* Timeline */,
 				5C16AC131D5A500100C5B76C /* CheckIn */,
 				522123A71BFB3196006BCCC4 /* OnLine */,
 				5FE2556D1B7A07CF0029BD4D /* Coach */,
@@ -2858,6 +2872,7 @@
 				B01A8ECC1B7ED2AD0049D86D /* HTSyncDataModel.m in Sources */,
 				5FA9F2B31B66096C00997BA8 /* TZXActivityIndicatorView.m in Sources */,
 				5F7F82891B76421000AC04B3 /* BLEInfo.m in Sources */,
+				5C3BD8AE1D5FA62700D3B410 /* TimelineViwController.m in Sources */,
 				5CEC2E5B1D52565600CBA6BA /* CoachListCell.m in Sources */,
 				5FA9F30F1B66096C00997BA8 /* HTCollectClickModel.m in Sources */,
 				B01A8E881B7CC4B70049D86D /* DBHelper.m in Sources */,

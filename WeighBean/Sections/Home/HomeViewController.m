@@ -52,6 +52,7 @@
 #import "HTNavigationController.h"
 
 
+#import "TimelineViwController.h"
 
 @interface HomeViewController ()<SharePlatDelegate, SyncModelProtocol, MFMessageComposeViewControllerDelegate,JTCalendarDelegate,RESideMenuDelegate,UIImagePickerControllerDelegate>
 
@@ -242,7 +243,7 @@
     [thirdView addSubview:ageLabel];
     
     
-    //三个按钮
+    //三个按钮 打卡
     UIButton *checkInBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     checkInBtn.frame = CGRectMake(0, SCREEN_HEIGHT_EXCEPTNAV-48, self.view.size.width/3, 48);
     checkInBtn.backgroundColor = [UIColor whiteColor];
@@ -847,6 +848,12 @@
 - (void)refreshHome
 {
     [self refreshData:YES];
+}
+
+- (void)enterDidClick
+{
+    TimelineViwController *vc = [[TimelineViwController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end
