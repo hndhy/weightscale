@@ -177,6 +177,8 @@
 -(NSArray*) swipeTableCell:(MGSwipeTableCell*) cell swipeButtonsForDirection:(MGSwipeDirection)direction
              swipeSettings:(MGSwipeSettings*) swipeSettings expansionSettings:(MGSwipeExpansionSettings*) expansionSettings
 {
+    if (direction == MGSwipeDirectionRightToLeft) {
+
     swipeSettings.transition = MGSwipeTransitionBorder;
     expansionSettings.buttonIndex = 0;
     expansionSettings.fillOnTrigger = NO;
@@ -221,6 +223,8 @@
 
     
     return @[goalBtn,dissolveBtn, refreshBtn, viewBtn,editBtn];
+    }
+    return nil;
 }
 
 -(void) swipeTableCell:(MGSwipeTableCell*) cell didChangeSwipeState:(MGSwipeState)state gestureIsActive:(BOOL)gestureIsActive
@@ -256,7 +260,9 @@
 
 - (void)viewCoachDetail:(NSIndexPath *)indexPath
 {
-    CoachDetailViewController *vc = [[CoachDetailViewController alloc] init];
+    CoachObjModel *obj = _dataArray[indexPath.row];
+
+    CoachDetailViewController *vc = [[CoachDetailViewController alloc] initWithTeamID:obj.tid];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

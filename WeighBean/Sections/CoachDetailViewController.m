@@ -9,7 +9,14 @@
 #import "CoachDetailViewController.h"
 
 @implementation CoachDetailViewController
-
+- (id)initWithTeamID:(NSString *)tid
+{
+    self = [super init];
+    if (self) {
+        teamID = tid;
+    }
+    return self;
+}
 
 //- (id)initWithUserID:(NSString *)uid teamID:(NSString *)tid teamName:(NSString *)name
 //{
@@ -38,6 +45,11 @@
 {
 //    self.createCoachModelHandler = [[CreateCoachModelHandler alloc] initWithController:self];
 //    self.createCoachModel = [[CreateCoachModel alloc] initWithHandler:self.createCoachModelHandler];
+    
+//    @property (nonatomic,strong)ViewCoachDetailModelHandler *viewCoachDetailModelHandler;
+//    @property (nonatomic,strong)ViewCoachDetailModel *viewCoachDetailModel;
+    self.viewCoachDetailModelHandler = [[ViewCoachDetailModelHandler alloc] initWithController:self];
+    self.viewCoachDetailModel = [[ViewCoachDetailModel alloc] initWithHandler:self.viewCoachDetailModelHandler];
 }
 
 - (void)initView
@@ -319,6 +331,13 @@
     
     
     [scrollView setContentSize:CGSizeMake(DEVICEW-10, lineView10.bottom+120)];
+
+//    [self.viewCoachDetailModel viewCoachDetailWithUid:teamID];
+}
+
+- (void)viewCoachDetailFinished:(ViewCoachDetailResponse *)response
+{
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated

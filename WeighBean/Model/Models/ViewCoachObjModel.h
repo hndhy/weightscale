@@ -7,6 +7,8 @@
 //
 
 #import "JSONModel.h"
+#import "brisk_listModel.h"
+#import "sum_listModel.h"
 
 @protocol ViewCoachObjModel <NSObject>
 
@@ -23,6 +25,10 @@
 @property (nonatomic,copy)NSString *brisk_num;
 @property (nonatomic,copy)NSString *sum_num;
 
+@property (nonatomic,strong) NSArray <brisk_listModel> *brisk_list;
+@property (nonatomic,strong) NSArray <sum_listModel>*sum_list;
+
+
 @property (nonatomic,copy)NSString *meanfat;
 @property (nonatomic,copy)NSString *loseWeight;
 @property (nonatomic,copy)NSString *muscleBuilder;
@@ -30,6 +36,8 @@
 
 @property (nonatomic,copy)NSString *underway;
 @property (nonatomic,copy)NSString *complete;
+@property (nonatomic,copy)NSString *complete_num;
+
 
 @property (nonatomic,copy)NSString *meanfat_complete;
 @property (nonatomic,copy)NSString *loseWeight_complete;

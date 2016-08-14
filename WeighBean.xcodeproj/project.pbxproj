@@ -151,6 +151,8 @@
 		5C3BD8A91D5F928400D3B410 /* AJTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BD8A51D5F928400D3B410 /* AJTagView.m */; };
 		5C3BD8AA1D5F928400D3B410 /* UIView+Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BD8A71D5F928400D3B410 /* UIView+Tag.m */; };
 		5C3BD8AE1D5FA62700D3B410 /* TimelineViwController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BD8AD1D5FA62700D3B410 /* TimelineViwController.m */; };
+		5C48EFED1D60DB1E00C3AF4E /* brisk_listModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C48EFEC1D60DB1E00C3AF4E /* brisk_listModel.m */; };
+		5C48EFF01D60DB3600C3AF4E /* sum_listModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C48EFEF1D60DB3600C3AF4E /* sum_listModel.m */; };
 		5C6562A41D47DEC4004CF31B /* HTMultiLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6562A31D47DEC4004CF31B /* HTMultiLabel.m */; };
 		5CE173111D4DFB930047E8B9 /* CoachModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173101D4DFB930047E8B9 /* CoachModelHandler.m */; };
 		5CE173141D4DFC860047E8B9 /* CoachListResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173131D4DFC860047E8B9 /* CoachListResponse.m */; };
@@ -642,6 +644,10 @@
 		5C3BD8A71D5F928400D3B410 /* UIView+Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Tag.m"; sourceTree = "<group>"; };
 		5C3BD8AC1D5FA62700D3B410 /* TimelineViwController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineViwController.h; sourceTree = "<group>"; };
 		5C3BD8AD1D5FA62700D3B410 /* TimelineViwController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineViwController.m; sourceTree = "<group>"; };
+		5C48EFEB1D60DB1E00C3AF4E /* brisk_listModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = brisk_listModel.h; sourceTree = "<group>"; };
+		5C48EFEC1D60DB1E00C3AF4E /* brisk_listModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = brisk_listModel.m; sourceTree = "<group>"; };
+		5C48EFEE1D60DB3600C3AF4E /* sum_listModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sum_listModel.h; sourceTree = "<group>"; };
+		5C48EFEF1D60DB3600C3AF4E /* sum_listModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sum_listModel.m; sourceTree = "<group>"; };
 		5C6562A21D47DEC4004CF31B /* HTMultiLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMultiLabel.h; sourceTree = "<group>"; };
 		5C6562A31D47DEC4004CF31B /* HTMultiLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMultiLabel.m; sourceTree = "<group>"; };
 		5CE1730F1D4DFB930047E8B9 /* CoachModelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachModelHandler.h; sourceTree = "<group>"; };
@@ -1312,6 +1318,10 @@
 				5C2B1F4F1D58C5BC00032D3F /* ViewCoachDetailModel.m */,
 				5C2B1F571D58C8DB00032D3F /* ViewCoachObjModel.h */,
 				5C2B1F581D58C8DB00032D3F /* ViewCoachObjModel.m */,
+				5C48EFEB1D60DB1E00C3AF4E /* brisk_listModel.h */,
+				5C48EFEC1D60DB1E00C3AF4E /* brisk_listModel.m */,
+				5C48EFEE1D60DB3600C3AF4E /* sum_listModel.h */,
+				5C48EFEF1D60DB3600C3AF4E /* sum_listModel.m */,
 			);
 			name = Coach;
 			sourceTree = "<group>";
@@ -2795,9 +2805,11 @@
 				5CEC2E6A1D5638F700CBA6BA /* CreateCoachResponse.m in Sources */,
 				5C16AC1C1D5A602D00C5B76C /* CheckInChooseTagViewController.m in Sources */,
 				5F88BE341B7EDA75008C4901 /* BodyAgeViewController.m in Sources */,
+				5C48EFF01D60DB3600C3AF4E /* sum_listModel.m in Sources */,
 				5FE255761B7A0A520029BD4D /* CoursesViewController.m in Sources */,
 				5FA9F3211B66096C00997BA8 /* HTRegisterModel.m in Sources */,
 				B01A8E841B7CA6A10049D86D /* PNLineChartView.m in Sources */,
+				5C48EFED1D60DB1E00C3AF4E /* brisk_listModel.m in Sources */,
 				522123AD1BFC124D006BCCC4 /* ModifyViewController.m in Sources */,
 				5C2B1F441D58B91E00032D3F /* DissolveCoachModel.m in Sources */,
 				B01A8E851B7CA6A10049D86D /* PNPlot.m in Sources */,

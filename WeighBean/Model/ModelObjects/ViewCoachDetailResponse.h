@@ -7,8 +7,8 @@
 //
 
 #import "BaseResponse.h"
-
+#import "ViewCoachObjModel.h"
 @interface ViewCoachDetailResponse : BaseResponse
-@property (nonatomic,strong) NSArray *data;
+@property (nonatomic,strong) NSDictionary <ViewCoachObjModel>*data;
 
 @end

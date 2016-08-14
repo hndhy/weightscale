@@ -12,7 +12,7 @@
 - (void)viewCoachDetailWithUid:(NSString *)uid
 {
     NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithCapacity:6];
-    [parameters setValue:uid forKey:@"fromUid"];
+    [parameters setValue:uid forKey:@"tid"];
     [self getPath:@"api/team/TeamInfo" parameters:parameters];
 }
 

@@ -7,12 +7,14 @@
 //
 
 #import "HTBaseViewController.h"
+#import "ViewCoachDetailModel.h"
+#import "ViewCoachDetailModelHandler.h"
 
-@interface CoachDetailViewController : HTBaseViewController
+@interface CoachDetailViewController : HTBaseViewController <ViewCoachDetailModelProtocol>
 {
     UIScrollView *scrollView;
     
-    
+    NSString *teamID;
     
     UILabel *coachNameLbl;
     UILabel *coachTypeLbl;
@@ -48,6 +50,9 @@
     UIView *lineView8;
     UIView *lineView9;
     UIView *lineView10;
-    
 }
+@property (nonatomic,strong)ViewCoachDetailModelHandler *viewCoachDetailModelHandler;
+@property (nonatomic,strong)ViewCoachDetailModel *viewCoachDetailModel;
+
+- (id)initWithTeamID:(NSString *)tid;
 @end
