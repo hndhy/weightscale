@@ -38,5 +38,16 @@
     UILabel *dynamite_completeRatioLbl;
 
     
+    UIView *lineView1;
+    UIView *lineView2;
+    UIView *lineView3;
+    UIView *lineView4;
+    UIView *lineView5;
+    UIView *lineView6;
+    UIView *lineView7;
+    UIView *lineView8;
+    UIView *lineView9;
+    UIView *lineView10;
+    
 }
 @end

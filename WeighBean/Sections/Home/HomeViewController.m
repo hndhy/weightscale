@@ -852,8 +852,8 @@
 
 - (void)enterDidClick
 {
-    TimelineViwController *vc = [[TimelineViwController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+//    TimelineViwController *vc = [[TimelineViwController alloc] init];
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

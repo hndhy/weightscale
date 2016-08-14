@@ -90,6 +90,9 @@
                                              withSize:12.0f withColor:UIColorFromRGB(120.0f, 120.0f, 120.0f)];
   titleLabel.text = @"个人详细信息";
   [self.view addSubview:titleLabel];
+    
+    
+    
   UIView *firstView = [[UIView alloc] initWithFrame:CGRectMake(-0.5f, titleLabel.bottom, self.view.width + 1.0f, 105.0f)];
   firstView.layer.borderColor = UIColorFromRGB(211.0f, 211.0f, 211.0f).CGColor;
   firstView.layer.borderWidth = 0.5f;
@@ -118,6 +121,10 @@
   self.nameLabel.text = userData.nick;
   [self.nameLabel addTapCallBack:self sel:@selector(onNameClick:)];
   [self.view addSubview:self.nameLabel];
+    
+    
+    
+    
   UIView *secondView = [[UIView alloc] initWithFrame:CGRectMake(-0.5f, firstView.bottom + 6.0f, firstView.width, 130.0f)];
   secondView.layer.borderColor = UIColorFromRGB(211.0f, 211.0f, 211.0f).CGColor;
   secondView.layer.borderWidth = 0.5f;
@@ -164,6 +171,10 @@
   [self.birthdayLabel addTapCallBack:self sel:@selector(onBirthdayClick:)];
   self.birthdayLabel.text = [NSString stringWithFormat:@"%@", [date stringWithFormat:@"yyyy-MM-dd"]];
   [self.view addSubview:self.birthdayLabel];
+    
+    
+    
+    
   UIView *thirdView = [[UIView alloc] initWithFrame:CGRectMake(-0.5f, secondView.bottom + 6.0f, self.view.width + 1.0f, 43.0f)];
   thirdView.layer.borderColor = UIColorFromRGB(211.0f, 211.0f, 211.0f).CGColor;
   thirdView.layer.borderWidth = 0.5f;
@@ -178,6 +189,10 @@
   self.phoneLabel.text = userData.coachTel;
   [self.phoneLabel addTapCallBack:self sel:@selector(onCoachTelClick:)];
   [self.view addSubview:self.phoneLabel];
+    
+    
+    
+    
   UIView *fourthView = [[UIView alloc] initWithFrame:CGRectMake(-0.5f, thirdView.bottom + 6.0f, thirdView.width, 43.0f)];
   fourthView.layer.borderColor = UIColorFromRGB(211.0f, 211.0f, 211.0f).CGColor;
   fourthView.layer.borderWidth = 0.5f;
@@ -228,12 +243,12 @@
   [self.myInfoModel getMyInfo:userData.uid];
 }
 
-- (void)switchAction:(UISwitch *)swit
-{
-    HTAppContext *appContext = [HTAppContext sharedContext];
-    appContext.isOpenWiFi = swit.on;
-    [appContext saveIsOpen];
-}
+//- (void)switchAction:(UISwitch *)swit
+//{
+//    HTAppContext *appContext = [HTAppContext sharedContext];
+//    appContext.isOpenWiFi = swit.on;
+//    [appContext saveIsOpen];
+//}
 
 - (void)onEditClick:(UIButton *)sender
 {
