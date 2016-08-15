@@ -9,6 +9,6 @@
 #import "BaseResponse.h"
 #import "ViewCoachObjModel.h"
 @interface ViewCoachDetailResponse : BaseResponse
-@property (nonatomic,strong) NSDictionary <ViewCoachObjModel>*data;
+@property (nonatomic,strong) ViewCoachObjModel*data;
 
 @end

@@ -332,11 +332,49 @@
     
     [scrollView setContentSize:CGSizeMake(DEVICEW-10, lineView10.bottom+120)];
 
-//    [self.viewCoachDetailModel viewCoachDetailWithUid:teamID];
+    [self.viewCoachDetailModel viewCoachDetailWithUid:teamID];
 }
 
 - (void)viewCoachDetailFinished:(ViewCoachDetailResponse *)response
 {
+    
+    switch ([response.data.teamType integerValue]) {
+        case 1:
+            [coachTypeLbl setText:@"减脂"];
+            break;
+        case 2:
+            [coachTypeLbl setText:@"增肌"];
+            break;
+        default:
+            break;
+    }
+    
+    NSDate *startTimesp = [NSDate dateWithTimeIntervalSince1970:[response.data.startTime intValue]/1000];
+    NSDate *endTimesp = [NSDate dateWithTimeIntervalSince1970:[response.data.endTime intValue]/1000];
+    
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    
+    [startTimeLbl setText:[NSString stringWithFormat:@"开始时间：%@",[formatter stringFromDate:startTimesp]]];
+    [endTimeLbl setText:[NSString stringWithFormat:@"结束时间：%@",[formatter stringFromDate:endTimesp]]];
+    [teamIdLbl setText:response.data.teamId];
+    [activeRatioLbl setText:[NSString stringWithFormat:@"%@/%@",response.data.brisk_num,response.data.sum_num]];
+    
+    [meanfatLbl setText:[NSString stringWithFormat:@"%@%%",response.data.meanfat]];
+    [loseWeightRatioLbl setText:[NSString stringWithFormat:@"%@%%",response.data.loseWeight]];
+    [muscleBuilderLbl setText:[NSString stringWithFormat:@"%@%%",response.data.muscleBuilder]];
+    [dynamiteRatioLbl setText:[NSString stringWithFormat:@"%@%%",response.data.dynamite]];
+    
+    [underwayRatioLbl setText:[NSString stringWithFormat:@"%@%%",response.data.underway]];
+    [completeRatioLbl setText:[NSString stringWithFormat:@"%@%%",response.data.complete]];
+    
+    [meanfat_completeLbl setText:[NSString stringWithFormat:@"%@%%",response.data.meanfat_complete]];
+    [loseWeight_completeRatioLbl setText:[NSString stringWithFormat:@"%@%%",response.data.loseWeight_complete]];
+    [muscleBuilder_completeLbl setText:[NSString stringWithFormat:@"%@%%",response.data.muscleBuilder_complete]];
+    [dynamite_completeRatioLbl setText:[NSString stringWithFormat:@"%@%%",response.data.dynamite_complete]];
+
     
 }
 

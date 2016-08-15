@@ -20,7 +20,7 @@
 @property (nonatomic,copy)NSString *teamType;
 @property (nonatomic,copy)NSString *startTime;
 @property (nonatomic,copy)NSString *endTime;
-@property (nonatomic,copy)NSString *teamId;
+@property (nonatomic,copy)NSString <Optional>*teamId;
 
 @property (nonatomic,copy)NSString *brisk_num;
 @property (nonatomic,copy)NSString *sum_num;
