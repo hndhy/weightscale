@@ -128,6 +128,18 @@
 		5C2B1F561D58C63D00032D3F /* ViewCoachDetailModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F551D58C63D00032D3F /* ViewCoachDetailModelHandler.m */; };
 		5C2B1F591D58C8DB00032D3F /* ViewCoachObjModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F581D58C8DB00032D3F /* ViewCoachObjModel.m */; };
 		5C2B1F5C1D58E8AE00032D3F /* CoachDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F5B1D58E8AE00032D3F /* CoachDetailViewController.m */; };
+		5C397AC41D6213DD009B7951 /* UserDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C397AC31D6213DD009B7951 /* UserDataModel.m */; };
+		5C397AC71D629F96009B7951 /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C397AC61D629F96009B7951 /* PersonalViewController.m */; };
+		5C397ACA1D62A089009B7951 /* PersonalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C397AC91D62A089009B7951 /* PersonalCell.m */; };
+		5C397AD01D6367D0009B7951 /* PersonalListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C397ACF1D6367D0009B7951 /* PersonalListModel.m */; };
+		5C397AD31D63689B009B7951 /* PersonalListResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C397AD21D63689B009B7951 /* PersonalListResponse.m */; };
+		5C397AD61D636902009B7951 /* PersonalListModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C397AD51D636902009B7951 /* PersonalListModelHandler.m */; };
+		5C397AD91D637C49009B7951 /* TeamLineResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C397AD81D637C49009B7951 /* TeamLineResponse.m */; };
+		5C397ADC1D637C86009B7951 /* TeamLineModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C397ADB1D637C86009B7951 /* TeamLineModelHandler.m */; };
+		5C397ADF1D637D75009B7951 /* TeamListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C397ADE1D637D75009B7951 /* TeamListModel.m */; };
+		5C397AE21D637E3F009B7951 /* TeamLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C397AE11D637E3F009B7951 /* TeamLineViewController.m */; };
+		5C397AE51D639356009B7951 /* TeamObjModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C397AE41D639356009B7951 /* TeamObjModel.m */; };
+		5C397AE81D6399F4009B7951 /* TeamLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C397AE71D6399F4009B7951 /* TeamLineCell.m */; };
 		5C3BD8521D5BA05500D3B410 /* view_but.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3BD84E1D5BA05500D3B410 /* view_but.png */; };
 		5C3BD8531D5BA05500D3B410 /* dissolve_but.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3BD84F1D5BA05500D3B410 /* dissolve_but.png */; };
 		5C3BD8541D5BA05500D3B410 /* edit_but.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3BD8501D5BA05500D3B410 /* edit_but.png */; };
@@ -609,6 +621,30 @@
 		5C2B1F581D58C8DB00032D3F /* ViewCoachObjModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewCoachObjModel.m; sourceTree = "<group>"; };
 		5C2B1F5A1D58E8AE00032D3F /* CoachDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachDetailViewController.h; sourceTree = "<group>"; };
 		5C2B1F5B1D58E8AE00032D3F /* CoachDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachDetailViewController.m; sourceTree = "<group>"; };
+		5C397AC21D6213DD009B7951 /* UserDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDataModel.h; sourceTree = "<group>"; };
+		5C397AC31D6213DD009B7951 /* UserDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDataModel.m; sourceTree = "<group>"; };
+		5C397AC51D629F96009B7951 /* PersonalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalViewController.h; sourceTree = "<group>"; };
+		5C397AC61D629F96009B7951 /* PersonalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalViewController.m; sourceTree = "<group>"; };
+		5C397AC81D62A089009B7951 /* PersonalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalCell.h; sourceTree = "<group>"; };
+		5C397AC91D62A089009B7951 /* PersonalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalCell.m; sourceTree = "<group>"; };
+		5C397ACE1D6367D0009B7951 /* PersonalListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalListModel.h; sourceTree = "<group>"; };
+		5C397ACF1D6367D0009B7951 /* PersonalListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalListModel.m; sourceTree = "<group>"; };
+		5C397AD11D63689B009B7951 /* PersonalListResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalListResponse.h; sourceTree = "<group>"; };
+		5C397AD21D63689B009B7951 /* PersonalListResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalListResponse.m; sourceTree = "<group>"; };
+		5C397AD41D636902009B7951 /* PersonalListModelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalListModelHandler.h; sourceTree = "<group>"; };
+		5C397AD51D636902009B7951 /* PersonalListModelHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalListModelHandler.m; sourceTree = "<group>"; };
+		5C397AD71D637C49009B7951 /* TeamLineResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamLineResponse.h; sourceTree = "<group>"; };
+		5C397AD81D637C49009B7951 /* TeamLineResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamLineResponse.m; sourceTree = "<group>"; };
+		5C397ADA1D637C86009B7951 /* TeamLineModelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamLineModelHandler.h; sourceTree = "<group>"; };
+		5C397ADB1D637C86009B7951 /* TeamLineModelHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamLineModelHandler.m; sourceTree = "<group>"; };
+		5C397ADD1D637D75009B7951 /* TeamListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamListModel.h; sourceTree = "<group>"; };
+		5C397ADE1D637D75009B7951 /* TeamListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamListModel.m; sourceTree = "<group>"; };
+		5C397AE01D637E3F009B7951 /* TeamLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamLineViewController.h; sourceTree = "<group>"; };
+		5C397AE11D637E3F009B7951 /* TeamLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamLineViewController.m; sourceTree = "<group>"; };
+		5C397AE31D639356009B7951 /* TeamObjModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamObjModel.h; sourceTree = "<group>"; };
+		5C397AE41D639356009B7951 /* TeamObjModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamObjModel.m; sourceTree = "<group>"; };
+		5C397AE61D6399F4009B7951 /* TeamLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamLineCell.h; sourceTree = "<group>"; };
+		5C397AE71D6399F4009B7951 /* TeamLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamLineCell.m; sourceTree = "<group>"; };
 		5C3BD84D1D5B98D100D3B410 /* Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
 		5C3BD84E1D5BA05500D3B410 /* view_but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = view_but.png; sourceTree = "<group>"; };
 		5C3BD84F1D5BA05500D3B410 /* dissolve_but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dissolve_but.png; sourceTree = "<group>"; };
@@ -1228,6 +1264,41 @@
 			name = MGSwipeTableCell;
 			sourceTree = "<group>";
 		};
+		5C397ACB1D636779009B7951 /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				5C397ACE1D6367D0009B7951 /* PersonalListModel.h */,
+				5C397ACF1D6367D0009B7951 /* PersonalListModel.m */,
+				5C397ADD1D637D75009B7951 /* TeamListModel.h */,
+				5C397ADE1D637D75009B7951 /* TeamListModel.m */,
+				5C397AE31D639356009B7951 /* TeamObjModel.h */,
+				5C397AE41D639356009B7951 /* TeamObjModel.m */,
+			);
+			name = Timeline;
+			sourceTree = "<group>";
+		};
+		5C397ACC1D636786009B7951 /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				5C397AD11D63689B009B7951 /* PersonalListResponse.h */,
+				5C397AD21D63689B009B7951 /* PersonalListResponse.m */,
+				5C397AD71D637C49009B7951 /* TeamLineResponse.h */,
+				5C397AD81D637C49009B7951 /* TeamLineResponse.m */,
+			);
+			name = Timeline;
+			sourceTree = "<group>";
+		};
+		5C397ACD1D63678E009B7951 /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				5C397AD41D636902009B7951 /* PersonalListModelHandler.h */,
+				5C397AD51D636902009B7951 /* PersonalListModelHandler.m */,
+				5C397ADA1D637C86009B7951 /* TeamLineModelHandler.h */,
+				5C397ADB1D637C86009B7951 /* TeamLineModelHandler.m */,
+			);
+			name = Timeline;
+			sourceTree = "<group>";
+		};
 		5C3BD8971D5F264B00D3B410 /* checkin */ = {
 			isa = PBXGroup;
 			children = (
@@ -1256,6 +1327,14 @@
 			children = (
 				5C3BD8AC1D5FA62700D3B410 /* TimelineViwController.h */,
 				5C3BD8AD1D5FA62700D3B410 /* TimelineViwController.m */,
+				5C397AC51D629F96009B7951 /* PersonalViewController.h */,
+				5C397AC61D629F96009B7951 /* PersonalViewController.m */,
+				5C397AC81D62A089009B7951 /* PersonalCell.h */,
+				5C397AC91D62A089009B7951 /* PersonalCell.m */,
+				5C397AE01D637E3F009B7951 /* TeamLineViewController.h */,
+				5C397AE11D637E3F009B7951 /* TeamLineViewController.m */,
+				5C397AE61D6399F4009B7951 /* TeamLineCell.h */,
+				5C397AE71D6399F4009B7951 /* TeamLineCell.m */,
 			);
 			name = Timeline;
 			path = ../Resources;
@@ -1846,6 +1925,7 @@
 				5FA9F1731B66096C00997BA8 /* HTBaseModelHandler.m */,
 				5FA9F1741B66096C00997BA8 /* HTTableModelHandler.h */,
 				5FA9F1751B66096C00997BA8 /* HTTableModelHandler.m */,
+				5C397ACD1D63678E009B7951 /* Timeline */,
 				5CE1730C1D4DEF100047E8B9 /* Coach */,
 				B01A8ED01B7EE6310049D86D /* Home */,
 				5FA9F15E1B66096C00997BA8 /* Common */,
@@ -1913,6 +1993,7 @@
 			children = (
 				5FA9F1A51B66096C00997BA8 /* BaseResponse.h */,
 				5FA9F1A61B66096C00997BA8 /* BaseResponse.m */,
+				5C397ACC1D636786009B7951 /* Timeline */,
 				5C16AC1E1D5B79DC00C5B76C /* OnLine */,
 				5CE1730D1D4DEF240047E8B9 /* Coach */,
 				B01A8E8D1B7CD6110049D86D /* Home */,
@@ -1930,6 +2011,8 @@
 				5FA9F1E11B66096C00997BA8 /* OauthInfoModel.m */,
 				5FA9F1E21B66096C00997BA8 /* UserResponse.h */,
 				5FA9F1E31B66096C00997BA8 /* UserResponse.m */,
+				5C397AC21D6213DD009B7951 /* UserDataModel.h */,
+				5C397AC31D6213DD009B7951 /* UserDataModel.m */,
 				B04DAA001B8812EE006562EB /* AccountData.h */,
 				B04DAA011B8812EE006562EB /* AccountData.m */,
 				5FE255531B78BE550029BD4D /* UploadAvatarResponse.h */,
@@ -1954,6 +2037,7 @@
 			children = (
 				5FA9F2431B66096C00997BA8 /* HTAbstractDataSource.h */,
 				5FA9F2441B66096C00997BA8 /* HTAbstractDataSource.m */,
+				5C397ACB1D636779009B7951 /* Timeline */,
 				5C16AC1D1D5B77EA00C5B76C /* OnLine */,
 				5CE1730E1D4DEF300047E8B9 /* Coach */,
 				B01A8EC91B7ED1C40049D86D /* Home */,
@@ -2747,6 +2831,7 @@
 				52964C541C19578A003FA17A /* TrendModelHandler.m in Sources */,
 				5F88BE1E1B7DA24D008C4901 /* HTMyInfoModel.m in Sources */,
 				5FA9F2AC1B66096C00997BA8 /* HTTextField.m in Sources */,
+				5C397ADF1D637D75009B7951 /* TeamListModel.m in Sources */,
 				52C639121C0C53B900BB45D7 /* OLProductModel.m in Sources */,
 				5F88BE271B7DC377008C4901 /* SetPwdViewController.m in Sources */,
 				5C3BD8A01D5F7E3C00D3B410 /* CheckInReleaseViewController.m in Sources */,
@@ -2762,6 +2847,7 @@
 				5F88BE1B1B7CED5C008C4901 /* CheckTelAndNickModelHandler.m in Sources */,
 				5FE2554F1B7892D60029BD4D /* UpLoadAvatarModel.m in Sources */,
 				5CE1731A1D4E01470047E8B9 /* CoachListModel.m in Sources */,
+				5C397AE81D6399F4009B7951 /* TeamLineCell.m in Sources */,
 				5289FE8B1C0757AD0036FA6F /* NotifNumberResponse.m in Sources */,
 				5C16AC3D1D5B901C00C5B76C /* MGSwipeTableCell.m in Sources */,
 				5F88BE241B7DC355008C4901 /* ForgetPwdViewController.m in Sources */,
@@ -2788,6 +2874,7 @@
 				B01A8EC21B7E408D0049D86D /* JTCircleView.m in Sources */,
 				5F88BE4B1B7F0DBC008C4901 /* FatViewController.m in Sources */,
 				5FA9F3131B66096C00997BA8 /* HTUnlikeClickModel.m in Sources */,
+				5C397AE21D637E3F009B7951 /* TeamLineViewController.m in Sources */,
 				B01A8E901B7CD6110049D86D /* BodyData.m in Sources */,
 				5C16AC3C1D5B901C00C5B76C /* MGSwipeButton.m in Sources */,
 				524A91781BA1816400F36516 /* AddLookResponse.m in Sources */,
@@ -2819,11 +2906,13 @@
 				5FA9F2C41B66096C00997BA8 /* HTTableModelHandler.m in Sources */,
 				525C01351C1D3D1B00B7C0FC /* BuildvtelModel.m in Sources */,
 				5F88BE2A1B7DF620008C4901 /* BMIViewController.m in Sources */,
+				5C397AD01D6367D0009B7951 /* PersonalListModel.m in Sources */,
 				5FA9F2C61B66096C00997BA8 /* CheckCodeModelHandler.m in Sources */,
 				5FA9F0B91B65E30600997BA8 /* main.m in Sources */,
 				528D7BD51C16C66B00246E00 /* HideModelHandler.m in Sources */,
 				522123B71BFC2DB5006BCCC4 /* WXThrid.m in Sources */,
 				5FA9F2BC1B66096C00997BA8 /* PlayClickModelHandler.m in Sources */,
+				5C397ACA1D62A089009B7951 /* PersonalCell.m in Sources */,
 				5209E3D51BF5BC26005D14DD /* ToolsViewController.m in Sources */,
 				B01A8E9E1B7DE10E0049D86D /* TrendListCell.m in Sources */,
 				5FD514A81B80B58D0088C7E9 /* ZouMaDengInfoModel.m in Sources */,
@@ -2841,13 +2930,18 @@
 				5FA9F2B61B66096C00997BA8 /* CommonHelper.m in Sources */,
 				5F88BE211B7DA41B008C4901 /* MyInfoModelHandler.m in Sources */,
 				522123A61BFB2C37006BCCC4 /* VerifyOrderViewController.m in Sources */,
+				5C397AC41D6213DD009B7951 /* UserDataModel.m in Sources */,
 				5FA9F2C81B66096C00997BA8 /* LoginModelHandler.m in Sources */,
 				5FA9F2C31B66096C00997BA8 /* HTBaseModelHandler.m in Sources */,
 				5F88BE0A1B7AC9E1008C4901 /* MeasureInfoModel.m in Sources */,
+				5C397ADC1D637C86009B7951 /* TeamLineModelHandler.m in Sources */,
 				5FA9F2C71B66096C00997BA8 /* FindPwdModelHandler.m in Sources */,
+				5C397AE51D639356009B7951 /* TeamObjModel.m in Sources */,
+				5C397AC71D629F96009B7951 /* PersonalViewController.m in Sources */,
 				5C2B1F501D58C5BC00032D3F /* ViewCoachDetailModel.m in Sources */,
 				522123AA1BFB3230006BCCC4 /* VerifyOrderView.m in Sources */,
 				5FA9F2CB1B66096C00997BA8 /* UpdateInfoModelHandler.m in Sources */,
+				5C397AD61D636902009B7951 /* PersonalListModelHandler.m in Sources */,
 				5CEC2E821D5745B500CBA6BA /* SWUtilityButtonView.m in Sources */,
 				5289FE9E1C0AB9410036FA6F /* ToolsModel.m in Sources */,
 				522123B41BFC27F4006BCCC4 /* OnlineOrderData.m in Sources */,
@@ -2885,10 +2979,12 @@
 				5FA9F2B31B66096C00997BA8 /* TZXActivityIndicatorView.m in Sources */,
 				5F7F82891B76421000AC04B3 /* BLEInfo.m in Sources */,
 				5C3BD8AE1D5FA62700D3B410 /* TimelineViwController.m in Sources */,
+				5C397AD91D637C49009B7951 /* TeamLineResponse.m in Sources */,
 				5CEC2E5B1D52565600CBA6BA /* CoachListCell.m in Sources */,
 				5FA9F30F1B66096C00997BA8 /* HTCollectClickModel.m in Sources */,
 				B01A8E881B7CC4B70049D86D /* DBHelper.m in Sources */,
 				5FA9F2901B66096C00997BA8 /* HTBaseCell.m in Sources */,
+				5C397AD31D63689B009B7951 /* PersonalListResponse.m in Sources */,
 				B01A8ED61B7F5ED50049D86D /* HtDelDatasModel.m in Sources */,
 				525C01321C1D3C5F00B7C0FC /* BuildvtelResponse.m in Sources */,
 				524A91721BA175B400F36516 /* AddLookViewController.m in Sources */,

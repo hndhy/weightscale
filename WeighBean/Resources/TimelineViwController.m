@@ -7,9 +7,8 @@
 //
 
 #import "TimelineViwController.h"
-#import "CheckInImgPickerViewController.h"
-#import "CheckInChooseTagViewController.h"
-
+#import "PersonalViewController.h"
+#import "TeamLineViewController.h"
 @implementation TimelineViwController
 - (void)initNavbar
 {
@@ -48,21 +47,21 @@
     
     //初始化 消息表格视图
     
-    CheckInImgPickerViewController * tabMessage = [CheckInImgPickerViewController  new];
-    tabMessage.view.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    PersonalViewController * personalVC = [PersonalViewController  new];
+    personalVC.view.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     
     //把表格添加到父视图，注意，使用的是addChildViewController
-//    [self addChildViewController:tabMessage];
+    [self addChildViewController:personalVC];
     //把表格视图添加到滚动视图
-//    [_scroll addSubview:tabMessage.view];
+    [_scroll addSubview:personalVC.view];
 
     //初始化 电话表格视图(注释就不写了哈，和初始化消息表格视图一样)
     
-    CheckInChooseTagViewController * tabPhone = [CheckInChooseTagViewController new];
-    tabPhone.view.frame = CGRectMake(SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    TeamLineViewController * teamLineVC = [TeamLineViewController new];
+    teamLineVC.view.frame = CGRectMake(SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     
-//    [self addChildViewController:tabPhone];
-//    [_scroll addSubview:tabPhone.view];
+    [self addChildViewController:teamLineVC];
+    [_scroll addSubview:teamLineVC.view];
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
     {
         self.edgesForExtendedLayout = UIRectEdgeNone;
