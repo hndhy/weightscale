@@ -9,6 +9,7 @@
 #import "PersonalCell.h"
 #import "UtilsMacro.h"
 #import "UIView+Ext.h"
+#import <UIImageView+WebCache.h>
 
 @implementation PersonalCell
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -90,20 +91,34 @@
 //    }
 }
 
-//- (void)loadContent:(OLProductModel *)obj path:(NSIndexPath *)path
-//{
-//    self.obj = obj;
-//    self.path = path;
-//    _title.text = obj.title;
-//    //    [_productImage sd_setImageWithURL:[NSURL URLWithString:obj.pic] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-//    //        if (image)
-//    //        {
-//    //            _productImage.image = image;
-//    //        }
-//    //    }];
-//    _priceLabel.text = [NSString stringWithFormat:@"￥%@/箱",obj.price];
-//    _productLabel.text = obj.content;
-//}
+- (void)loadContent:(PersonalObjModel *)obj path:(NSIndexPath *)path;
+{
+    self.obj = obj;
+    self.path = path;
+    
+    NSDate *createTime = [NSDate dateWithTimeIntervalSince1970:[obj.createTime intValue]/1000];
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+
+    
+    
+    [avatar sd_setImageWithURL:[NSURL URLWithString:obj.avatar] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        if (image) {
+            avatar.image = image;
+        }
+    }];
+    
+    nickName.text = obj.nick;
+    timeLbl.text = [formatter stringFromDate:createTime];
+    [picView sd_setImageWithURL:[NSURL URLWithString:obj.pics] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        picView.image = image;
+    }];
+    likeLbl.text = obj.favour;
+    [commentBtn setTitle:obj.comment_num forState:UIControlStateNormal];
+    
+}
 
 - (void)awakeFromNib {
     // Initialization code

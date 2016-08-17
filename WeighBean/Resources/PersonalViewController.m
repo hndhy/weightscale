@@ -18,7 +18,7 @@
     self.handle = [[PersonalListModelHandler alloc] initWithController:self];
     self.listModel = [[PersonalListModel alloc] initWithHandler:self.handle];
     _dataArray = [[NSMutableArray alloc] init];
-//    [self.listModel getPersonalList];
+    [self.listModel getPersonalList];
 }
 
 - (void)initNavbar
@@ -69,8 +69,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
-//    return _dataArray.count;
-    return 1;
+    return _dataArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -90,7 +89,7 @@
 //    [cell setSelectBlock:^(NSInteger index,OLProductModel *obj,NSIndexPath *path) {
 //        [weakSelf selectIndex:index product:obj indexPath:path];
 //    }];
-//    [cell loadContent:_dataArray[indexPath.row] path:indexPath];
+    [cell loadContent:_dataArray[indexPath.row] path:indexPath];
     return cell;
 }
 

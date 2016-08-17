@@ -58,7 +58,6 @@
         [self.contentView addSubview:commentBtn];
         
         likeLbl = [[UILabel alloc] initWithFrame:CGRectMake(commentBtn.right+10, commentBtn.top, 44, 23)];
-        likeLbl.backgroundColor = UIColorFromRGB(238, 238, 238);
         likeLbl.font = UIFontOfSize(12);
         likeLbl.text = @"3";
         likeLbl.textColor = [UIColor grayColor];
@@ -71,6 +70,11 @@
 
     }
     return self;
+}
+
+- (void)loadContent:(TeamObjModel *)obj path:(NSIndexPath *)path
+{
+    
 }
 
 @end

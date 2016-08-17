@@ -140,6 +140,8 @@
 		5C397AE21D637E3F009B7951 /* TeamLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C397AE11D637E3F009B7951 /* TeamLineViewController.m */; };
 		5C397AE51D639356009B7951 /* TeamObjModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C397AE41D639356009B7951 /* TeamObjModel.m */; };
 		5C397AE81D6399F4009B7951 /* TeamLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C397AE71D6399F4009B7951 /* TeamLineCell.m */; };
+		5C397AEB1D63F4B3009B7951 /* MeasureObjModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C397AEA1D63F4B3009B7951 /* MeasureObjModel.m */; };
+		5C397AEE1D64C9A8009B7951 /* PersonalObjModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C397AED1D64C9A8009B7951 /* PersonalObjModel.m */; };
 		5C3BD8521D5BA05500D3B410 /* view_but.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3BD84E1D5BA05500D3B410 /* view_but.png */; };
 		5C3BD8531D5BA05500D3B410 /* dissolve_but.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3BD84F1D5BA05500D3B410 /* dissolve_but.png */; };
 		5C3BD8541D5BA05500D3B410 /* edit_but.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3BD8501D5BA05500D3B410 /* edit_but.png */; };
@@ -645,6 +647,10 @@
 		5C397AE41D639356009B7951 /* TeamObjModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamObjModel.m; sourceTree = "<group>"; };
 		5C397AE61D6399F4009B7951 /* TeamLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamLineCell.h; sourceTree = "<group>"; };
 		5C397AE71D6399F4009B7951 /* TeamLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamLineCell.m; sourceTree = "<group>"; };
+		5C397AE91D63F4B3009B7951 /* MeasureObjModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeasureObjModel.h; sourceTree = "<group>"; };
+		5C397AEA1D63F4B3009B7951 /* MeasureObjModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeasureObjModel.m; sourceTree = "<group>"; };
+		5C397AEC1D64C9A8009B7951 /* PersonalObjModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalObjModel.h; sourceTree = "<group>"; };
+		5C397AED1D64C9A8009B7951 /* PersonalObjModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalObjModel.m; sourceTree = "<group>"; };
 		5C3BD84D1D5B98D100D3B410 /* Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
 		5C3BD84E1D5BA05500D3B410 /* view_but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = view_but.png; sourceTree = "<group>"; };
 		5C3BD84F1D5BA05500D3B410 /* dissolve_but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dissolve_but.png; sourceTree = "<group>"; };
@@ -1269,10 +1275,14 @@
 			children = (
 				5C397ACE1D6367D0009B7951 /* PersonalListModel.h */,
 				5C397ACF1D6367D0009B7951 /* PersonalListModel.m */,
+				5C397AEC1D64C9A8009B7951 /* PersonalObjModel.h */,
+				5C397AED1D64C9A8009B7951 /* PersonalObjModel.m */,
 				5C397ADD1D637D75009B7951 /* TeamListModel.h */,
 				5C397ADE1D637D75009B7951 /* TeamListModel.m */,
 				5C397AE31D639356009B7951 /* TeamObjModel.h */,
 				5C397AE41D639356009B7951 /* TeamObjModel.m */,
+				5C397AE91D63F4B3009B7951 /* MeasureObjModel.h */,
+				5C397AEA1D63F4B3009B7951 /* MeasureObjModel.m */,
 			);
 			name = Timeline;
 			sourceTree = "<group>";
@@ -2931,6 +2941,7 @@
 				5F88BE211B7DA41B008C4901 /* MyInfoModelHandler.m in Sources */,
 				522123A61BFB2C37006BCCC4 /* VerifyOrderViewController.m in Sources */,
 				5C397AC41D6213DD009B7951 /* UserDataModel.m in Sources */,
+				5C397AEB1D63F4B3009B7951 /* MeasureObjModel.m in Sources */,
 				5FA9F2C81B66096C00997BA8 /* LoginModelHandler.m in Sources */,
 				5FA9F2C31B66096C00997BA8 /* HTBaseModelHandler.m in Sources */,
 				5F88BE0A1B7AC9E1008C4901 /* MeasureInfoModel.m in Sources */,
@@ -2950,6 +2961,7 @@
 				5FE255551B78BE550029BD4D /* UploadAvatarResponse.m in Sources */,
 				52964C571C195833003FA17A /* TrendResponse.m in Sources */,
 				5CE173171D4DFD130047E8B9 /* CoachObjModel.m in Sources */,
+				5C397AEE1D64C9A8009B7951 /* PersonalObjModel.m in Sources */,
 				5F7F82701B75BA1200AC04B3 /* HomeViewController.m in Sources */,
 				B01A8ED91B7F5F9A0049D86D /* DelDatasModelHandler.m in Sources */,
 				5FA9F3371B66135C00997BA8 /* LoginViewController.m in Sources */,

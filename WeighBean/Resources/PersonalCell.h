@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "PersonalObjModel.h"
 @interface PersonalCell : UITableViewCell
 {
 
@@ -24,11 +24,11 @@
     
 }
 
-//@property (nonatomic,strong) CoachObjModel *obj;
+@property (nonatomic,strong) PersonalObjModel *obj;
 //@property (nonatomic,copy) void (^selectBlock)(NSInteger index,CoachObjModel *obj,NSIndexPath *path);
 @property (nonatomic,strong) NSIndexPath *path;
 //@property (nonatomic, weak) id<CoachCellDelegate> coachCellDelegate;
 //
-//- (void)loadContent:(CoachObjModel *)obj path:(NSIndexPath *)path;
+- (void)loadContent:(PersonalObjModel *)obj path:(NSIndexPath *)path;
 
 @end

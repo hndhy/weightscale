@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "TeamObjModel.h"
 @interface TeamLineCell : UICollectionViewCell
 {
     UIImageView *avatar;
@@ -22,5 +22,8 @@
     NSMutableArray *commentArr;
 
 }
+
+- (void)loadContent:(TeamObjModel *)obj path:(NSIndexPath *)path;
+
 
 @end

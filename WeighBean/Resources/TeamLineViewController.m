@@ -14,7 +14,7 @@
 {
     self.handle = [[TeamLineModelHandler alloc] initWithController:self];
     self.listModel = [[TeamListModel alloc] initWithHandler:self.handle];
-//    _dataArray = [[NSMutableArray alloc] init];
+    _dataArray = [[NSMutableArray alloc] init];
 //    [self.listModel getTeamLisetInfo];
 }
 
@@ -47,14 +47,13 @@
     if (!cell) {
         cell = [[TeamLineCell alloc] init];
     }
-//    cell.backgroundColor = [UIColor whiteColor];
-
+    [cell loadContent:_dataArray[indexPath.row] path:indexPath];
     return cell;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 5;
+    return [_dataArray count];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -64,7 +63,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(DEVICEW/2-2, DEVICEW/2-2);
+    return CGSizeMake(DEVICEW/2-2, 420*(DEVICEW/2-2)/304);
 }
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
@@ -90,6 +89,20 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 {
     return CGSizeZero;
+}
+
+
+- (void)syncFinished:(TeamLineResponse *)response
+{
+    [_dataArray removeAllObjects];
+    [_dataArray addObjectsFromArray:response.data];
+    [collection reloadData];
+
+    
+}
+- (void)syncFailure
+{
+    
 }
 
 //- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath

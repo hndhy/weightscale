@@ -13,7 +13,7 @@
 @interface TeamLineViewController : HTBaseViewController <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 {
     UICollectionView *collection;
-    //    NSMutableArray *_dataArray;
+    NSMutableArray *_dataArray;
 }
 
 @property (nonatomic,strong)TeamLineModelHandler *handle;

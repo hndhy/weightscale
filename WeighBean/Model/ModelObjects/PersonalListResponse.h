@@ -7,8 +7,9 @@
 //
 
 #import "BaseResponse.h"
+#import "PersonalObjModel.h"
 
 @interface PersonalListResponse : BaseResponse
-@property (nonatomic,strong) NSArray *data;
+@property (nonatomic,strong) NSArray <PersonalObjModel>*data;
 
 @end

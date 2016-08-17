@@ -7,6 +7,7 @@
 //
 
 #import "JSONModel.h"
+#import "MeasureObjModel.h"
 
 
 @interface TeamObjModel : JSONModel
@@ -21,6 +22,6 @@
 @property (nonatomic,copy)NSString *teamType;
 @property (nonatomic,copy)NSString *uid;
 
-@property (nonatomic,assign) NSDictionary *measure;
+@property (nonatomic,assign) MeasureObjModel *measure;
 @end
 
