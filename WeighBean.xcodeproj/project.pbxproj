@@ -142,6 +142,7 @@
 		5C397AE81D6399F4009B7951 /* TeamLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C397AE71D6399F4009B7951 /* TeamLineCell.m */; };
 		5C397AEB1D63F4B3009B7951 /* MeasureObjModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C397AEA1D63F4B3009B7951 /* MeasureObjModel.m */; };
 		5C397AEE1D64C9A8009B7951 /* PersonalObjModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C397AED1D64C9A8009B7951 /* PersonalObjModel.m */; };
+		5C397AF11D660350009B7951 /* HTLoginDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C397AF01D660350009B7951 /* HTLoginDataModel.m */; };
 		5C3BD8521D5BA05500D3B410 /* view_but.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3BD84E1D5BA05500D3B410 /* view_but.png */; };
 		5C3BD8531D5BA05500D3B410 /* dissolve_but.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3BD84F1D5BA05500D3B410 /* dissolve_but.png */; };
 		5C3BD8541D5BA05500D3B410 /* edit_but.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3BD8501D5BA05500D3B410 /* edit_but.png */; };
@@ -651,6 +652,8 @@
 		5C397AEA1D63F4B3009B7951 /* MeasureObjModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeasureObjModel.m; sourceTree = "<group>"; };
 		5C397AEC1D64C9A8009B7951 /* PersonalObjModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalObjModel.h; sourceTree = "<group>"; };
 		5C397AED1D64C9A8009B7951 /* PersonalObjModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalObjModel.m; sourceTree = "<group>"; };
+		5C397AEF1D660350009B7951 /* HTLoginDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLoginDataModel.h; sourceTree = "<group>"; };
+		5C397AF01D660350009B7951 /* HTLoginDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLoginDataModel.m; sourceTree = "<group>"; };
 		5C3BD84D1D5B98D100D3B410 /* Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
 		5C3BD84E1D5BA05500D3B410 /* view_but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = view_but.png; sourceTree = "<group>"; };
 		5C3BD84F1D5BA05500D3B410 /* dissolve_but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dissolve_but.png; sourceTree = "<group>"; };
@@ -2090,6 +2093,8 @@
 				5FA9F24E1B66096C00997BA8 /* HTFindPwdModel.m */,
 				5FA9F24F1B66096C00997BA8 /* HTLoginModel.h */,
 				5FA9F2501B66096C00997BA8 /* HTLoginModel.m */,
+				5C397AEF1D660350009B7951 /* HTLoginDataModel.h */,
+				5C397AF01D660350009B7951 /* HTLoginDataModel.m */,
 				5FA9F2511B66096C00997BA8 /* HTRegisterModel.h */,
 				5FA9F2521B66096C00997BA8 /* HTRegisterModel.m */,
 				5FA9F2531B66096C00997BA8 /* HTSendCodeModel.h */,
@@ -2794,6 +2799,7 @@
 				5FA9F2951B66096C00997BA8 /* HTTabBarController.m in Sources */,
 				5CEC2E671D56361600CBA6BA /* CreateCoachModelHandler.m in Sources */,
 				5FA9F2C91B66096C00997BA8 /* RegisterModelHandler.m in Sources */,
+				5C397AF11D660350009B7951 /* HTLoginDataModel.m in Sources */,
 				5CEC2E641D562E5F00CBA6BA /* CoachNewBuildViewController.m in Sources */,
 				5FA9F2861B66096C00997BA8 /* AppDelegate.m in Sources */,
 				5C3BD85B1D5BA4C900D3B410 /* JoinCoachResponse.m in Sources */,

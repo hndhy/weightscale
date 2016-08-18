@@ -22,6 +22,7 @@
 @property (nonatomic, assign) int sex;
 @property (nonatomic, strong) NSString *tel;
 @property (nonatomic, strong) NSString *uid;
+@property (nonatomic, strong) NSString *token;
 
 + (instancetype)sharedInstance;
 - (void)save;
