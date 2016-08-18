@@ -161,8 +161,6 @@
                                                 title:@"刷新"];
     [rightUtilityButtons sw_addUtilityButtonWithColor:[UIColor blueColor]
                                                 title:@"解散"];
-    [rightUtilityButtons sw_addUtilityButtonWithColor:[UIColor blueColor]
-                                                title:@"目标"];
     
     return rightUtilityButtons;
 }
@@ -177,7 +175,7 @@
 -(NSArray*) swipeTableCell:(MGSwipeTableCell*) cell swipeButtonsForDirection:(MGSwipeDirection)direction
              swipeSettings:(MGSwipeSettings*) swipeSettings expansionSettings:(MGSwipeExpansionSettings*) expansionSettings
 {
-    if (direction == MGSwipeDirectionRightToLeft) {
+    if (direction == MGSwipeDirectionLeftToRight) {
 
     swipeSettings.transition = MGSwipeTransitionBorder;
     expansionSettings.buttonIndex = 0;
@@ -189,7 +187,7 @@
     CoachObjModel *obj = _dataArray[cellIndexPath.row];
 
     
-    CGFloat padding = -10;
+    CGFloat padding = 10;
     
     MGSwipeButton *editBtn = [MGSwipeButton buttonWithTitle:nil icon:[UIImage imageNamed:@"edit_but"] backgroundColor:BLUECOLOR padding:padding callback:^BOOL(MGSwipeTableCell *sender) {
         
@@ -217,12 +215,7 @@
         return NO;
     }];
     
-    MGSwipeButton *goalBtn = [MGSwipeButton buttonWithTitle:nil icon:[UIImage imageNamed:@"target_iconv"] backgroundColor:[UIColor whiteColor] padding:padding callback:^BOOL(MGSwipeTableCell *sender) {
-        return NO;
-    }];
-
-    
-    return @[goalBtn,dissolveBtn, refreshBtn, viewBtn,editBtn];
+    return @[editBtn,viewBtn,refreshBtn,dissolveBtn];
     }
     return nil;
 }
