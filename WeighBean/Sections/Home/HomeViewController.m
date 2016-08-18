@@ -776,7 +776,7 @@
         bodyData.uid = [NSString stringWithFormat:@"%@",@""];
         bodyData.BMI = [NSString stringWithFormat:@"%.1f",sbd.bmi.floatValue];
         bodyData.FAT = [NSString stringWithFormat:@"%.1f",sbd.fat.floatValue];
-        bodyData.BMC = sbd.bmc;
+//        bodyData.BMC = sbd.bmc;
         bodyData.LBM = [NSString stringWithFormat:@"%.1f",sbd.lbm.floatValue];
         bodyData.TBW = [NSString stringWithFormat:@"%.1f",sbd.tbw.floatValue];
         bodyData.VAT = sbd.vat;

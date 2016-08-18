@@ -13,4 +13,7 @@
 
 @property(nonatomic, strong) NSArray<SyncBodyData> *results;
 
+@property(nonatomic, strong) NSArray<SyncBodyData> *delResults;
+@property(nonatomic, copy) NSString *lastSync;
+
 @end
