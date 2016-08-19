@@ -312,7 +312,7 @@
     state.color = APP_ORANGE;
   } else if (bmi >=18.5 && bmi <= 24.9f) {
     state.text = @"标准";
-    state.color = APP_BLUE;
+    state.color = BLUECOLOR;
   } else if (bmi >= 25.0f && bmi <= 29.9) {
     state.text = @"警告";
     state.color = APP_ORANGE;
@@ -325,7 +325,7 @@
         state.color = UIColorFromRGB(180, 180, 180);
     } else if (bmi >= 18.5 && bmi <= 23.9) {
         state.text = @"正常";
-        state.color = APP_BLUE;
+        state.color = BLUECOLOR;
     } else {
         state.text = @"较高";
         state.color = APP_ORANGE;
@@ -345,7 +345,7 @@
           state.color = APP_ORANGE;
       } else if (fat >= 17.0 && fat <= 23.0) {
           state.text = @"正常";
-          state.color = APP_BLUE;
+          state.color = BLUECOLOR;
       }else {
           state.text = @"较高";
           state.color = APP_ORANGE;
@@ -358,7 +358,7 @@
         state.color = APP_ORANGE;
       } else if (fat >= 20.9 && fat <= 32.5) {
         state.text = @"标准";
-        state.color = APP_BLUE;
+        state.color = BLUECOLOR;
       } else if (fat >= 32.6 && fat <= 38.2) {
         state.text = @"警告";
         state.color = APP_ORANGE;
@@ -372,7 +372,7 @@
         state.color = APP_ORANGE;
       } else if (fat >= 23.5 && fat <= 35.1) {
         state.text = @"标准";
-        state.color = APP_BLUE;
+        state.color = BLUECOLOR;
       } else if (fat >= 35.2 && fat <= 40.8) {
         state.text = @"警告";
         state.color = APP_ORANGE;
@@ -387,7 +387,7 @@
         state.color = APP_ORANGE;
       } else if (fat >= 24.5 && fat <= 36.1) {
         state.text = @"标准";
-        state.color = APP_BLUE;
+        state.color = BLUECOLOR;
       } else if (fat >= 36.2 && fat <= 41.8) {
         state.text = @"警告";
         state.color = APP_ORANGE;
@@ -403,7 +403,7 @@
           state.color = APP_ORANGE;
       } else if (fat >= 10.0 && fat <= 17.0) {
           state.text = @"正常";
-          state.color = APP_BLUE;
+          state.color = BLUECOLOR;
       }else {
           state.text = @"较高";
           state.color = APP_ORANGE;
@@ -415,7 +415,7 @@
         state.color = APP_ORANGE;
       } else if (fat >= 8.6 && fat <= 19.3) {
         state.text = @"标准";
-        state.color = APP_BLUE;
+        state.color = BLUECOLOR;
       } else if (fat >= 19.4 && fat <= 25.0) {
         state.text = @"警告";
         state.color = APP_ORANGE;
@@ -429,7 +429,7 @@
         state.color = APP_ORANGE;
       } else if (fat >= 11.8 && fat <= 22.5) {
         state.text = @"标准";
-        state.color = APP_BLUE;
+        state.color = BLUECOLOR;
       } else if (fat >= 22.6 && fat <= 27.6) {
         state.text = @"警告";
         state.color = APP_ORANGE;
@@ -443,7 +443,7 @@
         state.color = APP_ORANGE;
       } else if (fat >= 13.8 && fat <= 24.5) {
         state.text = @"标准";
-        state.color = APP_BLUE;
+        state.color = BLUECOLOR;
       } else if (fat >= 24.6 && fat <= 30.2) {
         state.text = @"警告";
         state.color = APP_ORANGE;
@@ -462,7 +462,7 @@
   State *state = [[State alloc] init];
   if (vat >= 1.0 && vat <= 3.0) {
     state.text = @"正常";
-    state.color = APP_BLUE;
+    state.color = BLUECOLOR;
   } else if (vat >= 4.0f && vat <= 6.0) {
     state.text = @"警告";
     state.color = APP_ORANGE;
@@ -485,7 +485,7 @@
       state.color = APP_ORANGE;
     } else if (lbm >= 34.6 && lbm <= 38.5) {
       state.text = @"正常";
-      state.color = APP_BLUE;
+      state.color = BLUECOLOR;
     } else {
       state.text = @"优秀";
       state.color = APP_GREEN;
@@ -500,7 +500,7 @@
           else if (lbm >=42.5-4.0 && lbm <=42.5+4.0)
           {
               state.text = @"正常";
-              state.color = APP_BLUE;
+              state.color = BLUECOLOR;
           }
           else if (lbm >42.5+4.0)
           {
@@ -517,7 +517,7 @@
           else if (lbm >=48.5-4.2 && lbm <=48.5+4.2)
           {
               state.text = @"正常";
-              state.color = APP_BLUE;
+              state.color = BLUECOLOR;
           }
           else if (lbm >48.5+4.2)
           {
@@ -535,7 +535,7 @@
           else if (lbm >= 54.4-5.0 && lbm <= 54.4+5.0)
           {
               state.text = @"正常";
-              state.color = APP_BLUE;
+              state.color = BLUECOLOR;
           }
           else if (lbm > 54.4+5.0)
           {
@@ -554,7 +554,7 @@
           else if (lbm >= 31.4-2.8 && lbm <= 31.4+2.8)
           {
               state.text = @"正常";
-              state.color = APP_BLUE;
+              state.color = BLUECOLOR;
           }
           else if (lbm > 31.4+2.8)
           {
@@ -571,7 +571,7 @@
           else if (lbm >= 35.2-2.3 && lbm <= 35.2+2.3)
           {
               state.text = @"正常";
-              state.color = APP_BLUE;
+              state.color = BLUECOLOR;
           }
           else if (lbm > 35.2+2.3)
           {
@@ -588,7 +588,7 @@
           else if (lbm >= 39.5-3.0 && lbm <= 39.5+3.0)
           {
               state.text = @"正常";
-              state.color = APP_BLUE;
+              state.color = BLUECOLOR;
           }
           else if (lbm > 39.5+3.0)
           {
@@ -601,7 +601,7 @@
       state.color = APP_ORANGE;
     } else if (lbm >= 27.4 && lbm <= 31.3) {
       state.text = @"正常";
-      state.color = APP_BLUE;
+      state.color = BLUECOLOR;
     } else {
       state.text = @"优秀";
       state.color = APP_GREEN;
@@ -642,7 +642,7 @@
       state.color = APP_ORANGE;
     } else if (tbw >= 50.0f && tbw <= 65.0f) {
       state.text = @"正常";
-      state.color = APP_BLUE;
+      state.color = BLUECOLOR;
     } else {
       state.text = @"较高";
       state.color = APP_GREEN;
@@ -653,7 +653,7 @@
       state.color = APP_ORANGE;
     } else if (tbw >= 40.0f && tbw <= 55.0f) {
       state.text = @"正常";
-      state.color = APP_BLUE;
+      state.color = BLUECOLOR;
     } else {
       state.text = @"较高";
       state.color = APP_GREEN;
@@ -672,7 +672,7 @@
     if (age <= 29) {
       if (kcal >= 1550) {
         state.text = @"正常";
-        state.color = APP_BLUE;
+        state.color = BLUECOLOR;
       } else {
         state.text = @"略低";
         state.color = APP_ORANGE;
@@ -680,7 +680,7 @@
     } else if (age >= 30 && age <= 49) {
       if (kcal >= 1500) {
         state.text = @"正常";
-        state.color = APP_BLUE;
+        state.color = BLUECOLOR;
       } else {
         state.text = @"略低";
         state.color = APP_ORANGE;
@@ -688,7 +688,7 @@
     } else if (age >= 50 && age <= 69) {
       if (kcal >= 1350) {
         state.text = @"正常";
-        state.color = APP_BLUE;
+        state.color = BLUECOLOR;
       } else {
         state.text = @"略低";
         state.color = APP_ORANGE;
@@ -696,7 +696,7 @@
     } else {
       if (kcal >= 1220) {
         state.text = @"正常";
-        state.color = APP_BLUE;
+        state.color = BLUECOLOR;
       } else {
         state.text = @"略低";
         state.color = APP_ORANGE;
@@ -706,7 +706,7 @@
     if (age <= 29) {
       if (kcal >= 1210) {
         state.text = @"正常";
-        state.color = APP_BLUE;
+        state.color = BLUECOLOR;
       } else {
         state.text = @"略低";
         state.color = APP_ORANGE;
@@ -714,7 +714,7 @@
     } else if (age >= 30 && age <= 49) {
       if (kcal >= 1170) {
         state.text = @"正常";
-        state.color = APP_BLUE;
+        state.color = BLUECOLOR;
       } else {
         state.text = @"略低";
         state.color = APP_ORANGE;
@@ -722,7 +722,7 @@
     } else if (age >= 50 && age <= 69) {
       if (kcal >= 1110) {
         state.text = @"正常";
-        state.color = APP_BLUE;
+        state.color = BLUECOLOR;
       } else {
         state.text = @"略低";
         state.color = APP_ORANGE;
@@ -730,7 +730,7 @@
     } else {
       if (kcal >= 1010) {
         state.text = @"正常";
-        state.color = APP_BLUE;
+        state.color = BLUECOLOR;
       } else {
         state.text = @"略低";
         state.color = APP_ORANGE;
@@ -755,7 +755,7 @@
         else if (bone >= 34.6 && bone <= 38.5)
         {
             state.text = @"标准";
-            state.color = APP_BLUE;
+            state.color = BLUECOLOR;
         }
 //        38.6%~44.8% 高
         else if (bone >= 38.6 && bone <= 44.8)
@@ -787,7 +787,7 @@
         else if (bone >= 27.4 && bone <= 31.3)
         {
             state.text = @"标准";
-            state.color = APP_BLUE;
+            state.color = BLUECOLOR;
         }
         //        31.4%~38.7% 高
         else if (bone >= 31.4 && bone <= 38.7)

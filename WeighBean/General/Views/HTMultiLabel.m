@@ -46,12 +46,13 @@
     [self addSubview:self.weightStatLabel];
 }
 
-- (void)setInfoForNumber:(NSString *)number titleLabel:(NSString *)title tagLabel:(NSString *)tag stateLabel:(NSString *)state
+- (void)setInfoForNumber:(NSString *)number titleLabel:(NSString *)title tagLabel:(NSString *)tag stateLabel:(State *)state;
 {
     self.weightNumLabel.text = number;
     self.weightTitleLabel.text = title;
     self.weightTagLabel.text = [NSString stringWithFormat:@"(%@)",tag];
-    self.weightStatLabel.text = state;
+    self.weightStatLabel.text = state.text;
+    self.weightStatLabel.backgroundColor = state.color;
 }
 
 @end

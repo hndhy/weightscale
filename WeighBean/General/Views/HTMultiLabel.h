@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "State.h"
 @interface HTMultiLabel : UIView
 - (instancetype)initWithFrame:(CGRect)frame;
 @property (nonatomic,strong) UILabel *weightNumLabel;
@@ -17,6 +17,6 @@
 @property (nonatomic,strong) UIImageView * iconView;
 
 //- (void)setInfoForNumber:(CGFloat)number titleLabel:(NSString *)title tagLabel:(NSString *)tag stateLabel:(NSString *)state;
-- (void)setInfoForNumber:(NSString *)number titleLabel:(NSString *)title tagLabel:(NSString *)tag stateLabel:(NSString *)state;
+- (void)setInfoForNumber:(NSString *)number titleLabel:(NSString *)title tagLabel:(NSString *)tag stateLabel:(State *)state;
 
 @end

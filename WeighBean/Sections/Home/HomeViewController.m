@@ -56,6 +56,18 @@
 
 @interface HomeViewController ()<SharePlatDelegate, SyncModelProtocol, MFMessageComposeViewControllerDelegate,JTCalendarDelegate,RESideMenuDelegate,UIImagePickerControllerDelegate>
 
+{
+    HTMultiLabel *weightLabel;
+    HTMultiLabel *fatLabel;
+    HTMultiLabel *nFatLabel;
+    HTMultiLabel *boneLabel;
+    HTMultiLabel *muscleLabel;
+    HTMultiLabel *metaLabel;
+    HTMultiLabel *mbiLabel;
+    HTMultiLabel *wetLabel;
+    HTMultiLabel *ageLabel;
+}
+
 @property (nonatomic, strong) UILabel *weightNumLabel;
 @property (nonatomic, strong) UILabel *weightStatLabel;
 @property (nonatomic, strong) UILabel *fatNumLabel;
@@ -160,18 +172,18 @@
     [titleView addSubview:self.dateLabel];
 
     
-    self.timeLabel = [UILabel createLabelWithFrame:CGRectMake(200, titleView.top, 100, 50)
+    self.timeLabel = [UILabel createLabelWithFrame:CGRectMake(190, titleView.top, 90, 50)
                                           withSize:18.0f withColor:UIColorFromRGB(105.0f, 142.0f, 166.0f)];
     self.timeLabel.textAlignment = NSTextAlignmentCenter;
     [titleView addSubview:self.timeLabel];
     
-    self.leftButton = [[UIButton alloc] initWithFrame:CGRectMake(self.timeLabel.left - 33.0f, self.timeLabel.top, 33.0f, 33.0f)];
+    self.leftButton = [[UIButton alloc] initWithFrame:CGRectMake(self.timeLabel.left - 33.0f, self.timeLabel.top, 33.0f, 50)];
     [self.leftButton setImage:[UIImage imageNamed:@"arrow_left_icon.png"] forState:UIControlStateNormal];
     [self.leftButton addTarget:self action:@selector(onLeftButton:) forControlEvents:UIControlEventTouchUpInside];
 //    self.leftButton.hidden = YES;
     [titleView addSubview:self.leftButton];
     
-    self.rightButton = [[UIButton alloc] initWithFrame:CGRectMake(self.timeLabel.right, self.timeLabel.top, 33.0f, 33.0f)];
+    self.rightButton = [[UIButton alloc] initWithFrame:CGRectMake(self.timeLabel.right, self.timeLabel.top, 33.0f, 50)];
     [self.rightButton setImage:[UIImage imageNamed:@"arrow_right_icon.png"] forState:UIControlStateNormal];
     [self.rightButton addTarget:self action:@selector(onRightButton:) forControlEvents:UIControlEventTouchUpInside];
 //    self.rightButton.hidden = YES;
@@ -196,49 +208,53 @@
     [self.view addSubview:thirdView];
     
     
+    State *normalState = [[State alloc] init];
+    normalState.text = @"正常";
+    normalState.color = BLUECOLOR;
+    
     //数据视图
-    HTMultiLabel *weightLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.left, 0, firstView.width/3.0f, firstView.height)];
-    [weightLabel setInfoForNumber:@"0" titleLabel:@"体重" tagLabel:@"公斤" stateLabel:@"不判断"];
+    weightLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.left, 0, firstView.width/3.0f, firstView.height)];
+    [weightLabel setInfoForNumber:@"0" titleLabel:@"体重" tagLabel:@"公斤" stateLabel:normalState];
     [weightLabel addTapCallBack:self sel:@selector(onWeightClick:)];
     [firstView addSubview:weightLabel];
     
-    HTMultiLabel *fatLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.width/3.0f, 0, firstView.width/3.0f, firstView.height)];
-    [fatLabel setInfoForNumber:@"0" titleLabel:@"体脂率" tagLabel:@"％" stateLabel:@"正常"];
+    fatLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.width/3.0f, 0, firstView.width/3.0f, firstView.height)];
+    [fatLabel setInfoForNumber:@"0" titleLabel:@"体脂率" tagLabel:@"％" stateLabel:normalState];
     [fatLabel addTapCallBack:self sel:@selector(onFatClick:)];
     [firstView addSubview:fatLabel];
     
-    HTMultiLabel *nFatLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.width*2/3.0f, 0, firstView.width/3.0f, firstView.height)];
-    [nFatLabel setInfoForNumber:@"0" titleLabel:@"内脂" tagLabel:@"级" stateLabel:@"警戒"];
+    nFatLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.width*2/3.0f, 0, firstView.width/3.0f, firstView.height)];
+    [nFatLabel setInfoForNumber:@"0" titleLabel:@"内脂" tagLabel:@"级" stateLabel:normalState];
     [nFatLabel addTapCallBack:self sel:@selector(onVatClick:)];
     [firstView addSubview:nFatLabel];
     
-    HTMultiLabel *boneLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.left, 0, firstView.width/3.0f, firstView.height)];
-    [boneLabel setInfoForNumber:@"0" titleLabel:@"骨骼肌率" tagLabel:@"％" stateLabel:@"警报"];
+    boneLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.left, 0, firstView.width/3.0f, firstView.height)];
+    [boneLabel setInfoForNumber:@"0" titleLabel:@"骨骼肌率" tagLabel:@"％" stateLabel:normalState];
     [boneLabel addTapCallBack:self sel:@selector(onBoneMssClick:)];
     [secondView addSubview:boneLabel];
     
-    HTMultiLabel *muscleLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.width/3.0f, 0, firstView.width/3.0f, firstView.height)];
-    [muscleLabel setInfoForNumber:@"0" titleLabel:@"肌肉量" tagLabel:@"公斤" stateLabel:@"正常"];
+    muscleLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.width/3.0f, 0, firstView.width/3.0f, firstView.height)];
+    [muscleLabel setInfoForNumber:@"0" titleLabel:@"肌肉量" tagLabel:@"公斤" stateLabel:normalState];
     [muscleLabel addTapCallBack:self sel:@selector(onLBMClick:)];
     [secondView addSubview:muscleLabel];
     
-    HTMultiLabel *metaLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.width*2/3.0f, 0, firstView.width/3.0f, firstView.height)];
-    [metaLabel setInfoForNumber:@"0" titleLabel:@"基础代谢" tagLabel:@"kcal" stateLabel:@"正常"];
+    metaLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.width*2/3.0f, 0, firstView.width/3.0f, firstView.height)];
+    [metaLabel setInfoForNumber:@"0" titleLabel:@"基础代谢" tagLabel:@"kcal" stateLabel:normalState];
     [metaLabel addTapCallBack:self sel:@selector(onKcalClick:)];
     [secondView addSubview:metaLabel];
     
-    HTMultiLabel *mbiLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.left, 0, firstView.width/3.0f, firstView.height)];
-    [mbiLabel setInfoForNumber:@"0" titleLabel:@"BMI" tagLabel:@"" stateLabel:@"正常"];
+    mbiLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.left, 0, firstView.width/3.0f, firstView.height)];
+    [mbiLabel setInfoForNumber:@"0" titleLabel:@"BMI" tagLabel:@"" stateLabel:normalState];
     [mbiLabel addTapCallBack:self sel:@selector(onMBIClick:)];
     [thirdView addSubview:mbiLabel];
     
-    HTMultiLabel *wetLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.width/3.0f, 0, firstView.width/3.0f, firstView.height)];
-    [wetLabel setInfoForNumber:@"0" titleLabel:@"体水分" tagLabel:@"％" stateLabel:@"警报"];
+    wetLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.width/3.0f, 0, firstView.width/3.0f, firstView.height)];
+    [wetLabel setInfoForNumber:@"0" titleLabel:@"体水分" tagLabel:@"％" stateLabel:normalState];
     [wetLabel addTapCallBack:self sel:@selector(onWaterClick:)];
     [thirdView addSubview:wetLabel];
     
-    HTMultiLabel *ageLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.width*2/3.0f, 0, firstView.width/3.0f, firstView.height)];
-    [ageLabel setInfoForNumber:@"0" titleLabel:@"身体年龄" tagLabel:@"％" stateLabel:@"危险"];
+    ageLabel = [[HTMultiLabel alloc] initWithFrame:CGRectMake(firstView.width*2/3.0f, 0, firstView.width/3.0f, firstView.height)];
+    [ageLabel setInfoForNumber:@"0" titleLabel:@"身体年龄" tagLabel:@"％" stateLabel:normalState];
     [ageLabel addTapCallBack:self sel:@selector(onBodyAgeClick:)];
     [thirdView addSubview:ageLabel];
     
@@ -537,58 +553,49 @@
     HTUserData *userData = [HTUserData sharedInstance];
     self.testLabel.text = [NSString stringWithFormat:@"%@---%@", self.testStr, userData.requestCode];
     
-    // 体重
-    self.weightNumLabel.text = [NSString stringWithFormat:@"%0.1f", infoModel.weight];
+    
+    
+    
+    State *normalState = [[State alloc] init];
+    normalState.text = @"正常";
+    normalState.color = BLUECOLOR;
 
+    // 体重
+    [weightLabel setInfoForNumber:[NSString stringWithFormat:@"%0.1f", infoModel.weight] titleLabel:@"体重" tagLabel:@"公斤" stateLabel:normalState];
+    
     // 体脂
-    self.fatNumLabel.text = [NSString stringWithFormat:@"%0.1f", infoModel.fat];
-    if (infoModel.fat > 60)
-    {
-        self.fatNumLabel.text = [NSString stringWithFormat:@"61"];
-    }
-    State *fatState = [CommonHelper calculateFat:infoModel.fat];
-    self.fatStatLabel.text = fatState.text;
-    self.fatStatLabel.backgroundColor = fatState.color;
-    
+//    self.fatNumLabel.text = [NSString stringWithFormat:@"%0.1f", infoModel.fat];
+//    if (infoModel.fat > 60)
+//    {
+//        self.fatNumLabel.text = [NSString stringWithFormat:@"61"];
+//    }
+    [fatLabel setInfoForNumber:[NSString stringWithFormat:@"%0.1f", infoModel.fat] titleLabel:@"体脂率" tagLabel:@"％" stateLabel:[CommonHelper calculateFat:infoModel.fat]];
+   
     // 内脂
-    self.nFatNumLabel.text = [NSString stringWithFormat:@"%0.1f", infoModel.vat];
-    State *vatState = [CommonHelper calculateVat:infoModel.vat];
-    self.nFatStatLabel.text = vatState.text;
-    self.nFatStatLabel.backgroundColor = [UIColor blackColor];
-    self.nFatStatLabel.backgroundColor = vatState.color;
-    
-    // 体水分
-    self.wetNumLabel.text = [NSString stringWithFormat:@"%0.1f", infoModel.tbw];
-    State *tbwState = [CommonHelper calculateTBW:infoModel.tbw];
-    self.wetStatLabel.text = tbwState.text;
-    self.wetStatLabel.backgroundColor = tbwState.color;
-    
+    [nFatLabel setInfoForNumber:[NSString stringWithFormat:@"%0.1f", infoModel.vat] titleLabel:@"内脂" tagLabel:@"级" stateLabel:[CommonHelper calculateVat:infoModel.vat]];
+   
+    //骨骼肌率
+//    self.boneMassNumLabel.text = [NSString stringWithFormat:@"%0.1f", infoModel.smr];
+//    if ([boneMassState.text isEqualToString:@"N/A"])
+//    {
+//        self.boneMassNumLabel.text = [NSString stringWithFormat:@"%0.1f", 0.0];
+//    }
+    [boneLabel setInfoForNumber:[NSString stringWithFormat:@"%0.1f", infoModel.smr] titleLabel:@"骨骼肌率" tagLabel:@"％" stateLabel:[CommonHelper calculateBoneMass:infoModel.smr]];
+   
     // 肌肉量
-    self.muscleNumLabel.text = [NSString stringWithFormat:@"%0.1f", infoModel.lbm];
-    State *lbmState = [CommonHelper calculateLBM:infoModel.lbm];
-    self.muscleStatLabel.text = lbmState.text;
-    self.muscleStatLabel.backgroundColor = lbmState.color;
-    self.metaNumLabel.text = [NSString stringWithFormat:@"%d", infoModel.kcal];
-    
+    [muscleLabel setInfoForNumber:[NSString stringWithFormat:@"%0.1f", infoModel.lbm] titleLabel:@"肌肉量" tagLabel:@"公斤" stateLabel:[CommonHelper calculateLBM:infoModel.lbm]];
+  
+    //meta
+    [metaLabel setInfoForNumber:[NSString stringWithFormat:@"%d", infoModel.kcal] titleLabel:@"基础代谢" tagLabel:@"kcal" stateLabel:normalState];
+   
     // BMI
-    self.mbiNumLabel.text = [NSString stringWithFormat:@"%0.1f", infoModel.bmi];
-    State *bmiStat = [CommonHelper calculateBMI:infoModel.bmi];
-    self.mbiStatLabel.text = bmiStat.text;
-    self.mbiStatLabel.backgroundColor = bmiStat.color;
-    
-//    int age = (int)[CommonHelper bodyAgeWithFat:infoModel.fat measureAge:infoModel.bodyAge];
-    // 身体年龄
-    self.ageNumLabel.text = [NSString stringWithFormat:@"%d",infoModel.bodyAge];
-    
-    // 骨骼率
-    State *boneMassState = [CommonHelper calculateBoneMass:infoModel.smr];
-    self.boneMassStatLabel.text = boneMassState.text;
-    self.boneMassStatLabel.backgroundColor = boneMassState.color;
-    self.boneMassNumLabel.text = [NSString stringWithFormat:@"%0.1f", infoModel.smr];
-    if ([boneMassState.text isEqualToString:@"N/A"])
-    {
-       self.boneMassNumLabel.text = [NSString stringWithFormat:@"%0.1f", 0.0];
-    }
+    [mbiLabel setInfoForNumber:[NSString stringWithFormat:@"%0.1f", infoModel.bmi] titleLabel:@"BMI" tagLabel:@"" stateLabel:[CommonHelper calculateBMI:infoModel.bmi]];
+  
+    // 体水分
+    [wetLabel setInfoForNumber:[NSString stringWithFormat:@"%0.1f", infoModel.tbw] titleLabel:@"体水分" tagLabel:@"％" stateLabel:[CommonHelper calculateTBW:infoModel.tbw]];
+   
+    //身体年龄
+    [ageLabel setInfoForNumber:[NSString stringWithFormat:@"%d",infoModel.bodyAge] titleLabel:@"身体年龄" tagLabel:@"％" stateLabel:normalState];
 }
 
 -(void)oncalendaClick:(id)sender

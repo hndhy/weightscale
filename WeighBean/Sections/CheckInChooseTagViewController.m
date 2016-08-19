@@ -67,15 +67,12 @@
     [self.view addSubview:_tableView];
 
     
-    UIButton *btnBack = [[UIButton alloc] initWithFrame:CGRectMake(0, 20, 40, 40)];
+    UIButton *btnBack = [[UIButton alloc] initWithFrame:CGRectMake(10, 34, 19, 15)];
     btnBack.backgroundColor = [UIColor whiteColor];
-    [btnBack setImage:[UIImage imageNamed:@"edit_btn_back"] forState:UIControlStateNormal];
+    btnBack.imageView.contentMode = UIViewContentModeScaleToFill;
+    [btnBack setImage:[UIImage imageNamed:@"left_arrow"] forState:UIControlStateNormal];
     [btnBack addTarget:self action:@selector(backDidClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btnBack];
-    
-    
-
-    
     
     UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(40, 20, self.view.frame.size.width-40, 44)];
     [searchBar setTintColor:[UIColor blackColor]];

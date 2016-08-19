@@ -50,12 +50,12 @@
     }
     [self.view addSubview:imageView];
     
-    UIButton *btnBack = [[UIButton alloc] initWithFrame:CGRectMake(0, 20, 40, 40)];
+    UIButton *btnBack = [[UIButton alloc] initWithFrame:CGRectMake(10, 22, 19, 15)];
     btnBack.backgroundColor = [UIColor whiteColor];
-    [btnBack setImage:[UIImage imageNamed:@"edit_btn_back"] forState:UIControlStateNormal];
+    btnBack.imageView.contentMode = UIViewContentModeScaleToFill;
+    [btnBack setImage:[UIImage imageNamed:@"left_arrow"] forState:UIControlStateNormal];
     [btnBack addTarget:self action:@selector(backDidClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btnBack];
-    
 
     
     UILabel *addTagLbl = [[UILabel alloc] initWithFrame:CGRectMake(80, 10, DEVICEW-160, 40)];

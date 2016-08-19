@@ -69,15 +69,12 @@
     [addTipBtn addTarget:self action:@selector(addTag) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:addTipBtn];
     
-    UIButton *btnBack = [[UIButton alloc] initWithFrame:CGRectMake(0, 20, 40, 40)];
+    UIButton *btnBack = [[UIButton alloc] initWithFrame:CGRectMake(10, 22, 19, 15)];
     btnBack.backgroundColor = [UIColor whiteColor];
-    [btnBack setImage:[UIImage imageNamed:@"edit_btn_back"] forState:UIControlStateNormal];
+    btnBack.imageView.contentMode = UIViewContentModeScaleToFill;
+    [btnBack setImage:[UIImage imageNamed:@"left_arrow"] forState:UIControlStateNormal];
     [btnBack addTarget:self action:@selector(backDidClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btnBack];
-    
-    
-
-
 }
 
 - (void)backDidClick

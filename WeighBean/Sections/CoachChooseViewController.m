@@ -30,15 +30,13 @@
 
 - (void)initView
 {
-    fatLossBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 150)];
-    fatLossBtn.backgroundColor = [UIColor redColor];
-    [fatLossBtn setTitle:@"减脂" forState:UIControlStateNormal];
+    fatLossBtn = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, DEVICEW-10, 280*(DEVICEW-10)/620)];
+    [fatLossBtn setBackgroundImage:[UIImage imageNamed:@"looseweight"] forState:UIControlStateNormal];
     [fatLossBtn addTarget:self action:@selector(fatlossDidClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:fatLossBtn];
     
-    muscleGainBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 160, self.view.frame.size.width, 150)];
-    muscleGainBtn.backgroundColor = [UIColor redColor];
-    [muscleGainBtn setTitle:@"增肌" forState:UIControlStateNormal];
+    muscleGainBtn = [[UIButton alloc] initWithFrame:CGRectMake(5, fatLossBtn.bottom+5, DEVICEW-10, 280*(DEVICEW-10)/620)];
+    [muscleGainBtn setBackgroundImage:[UIImage imageNamed:@"gainmuscle"] forState:UIControlStateNormal];
     [muscleGainBtn addTarget:self action:@selector(muscleGainDidClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:muscleGainBtn];
     
@@ -46,7 +44,7 @@
     goalSetBtn.backgroundColor = [UIColor redColor];
     [goalSetBtn setTitle:@"个人目标" forState:UIControlStateNormal];
     [goalSetBtn addTarget:self action:@selector(goalSetDicClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:goalSetBtn];
+//    [self.view addSubview:goalSetBtn];
 }
 
 - (void)viewWillAppear:(BOOL)animated
