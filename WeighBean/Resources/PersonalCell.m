@@ -19,7 +19,7 @@
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.backgroundColor = [UIColor clearColor];
         
-        UIView *background = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DEVICEW, 355)];
+        UIView *background = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DEVICEW, DEVICEW+140)];
         background.backgroundColor = [UIColor whiteColor];
         background.layer.masksToBounds = YES;
         [self.contentView addSubview:background];
@@ -39,29 +39,32 @@
         nickName.textColor = [UIColor blackColor];
         [self.contentView addSubview:nickName];
         
-        timeLbl = [[UILabel alloc] initWithFrame:CGRectMake(DEVICEW-100, 15, 100, 25)];
+        timeLbl = [[UILabel alloc] initWithFrame:CGRectMake(DEVICEW-125, 15, 100, 25)];
         timeLbl.backgroundColor = [UIColor clearColor];
         timeLbl.font = UIFontOfSize(11);
         timeLbl.text = @"1小时前发布";
         timeLbl.textColor = [UIColor lightGrayColor];
         [self.contentView addSubview:timeLbl];
         
-        picView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 57, DEVICEW, 213)];
+        picView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 57, DEVICEW, DEVICEW)];
         picView.backgroundColor = [UIColor lightGrayColor];
         [self.contentView addSubview:picView];
         
-        likeLbl = [[UILabel alloc] initWithFrame:CGRectMake(7, picView.bottom+12, 44, 18)];
-        likeLbl.backgroundColor = UIColorFromRGB(238, 238, 238);
-        likeLbl.font = UIFontOfSize(12);
-        likeLbl.text = @"3";
-        likeLbl.textColor = [UIColor grayColor];
-        [self.contentView addSubview:likeLbl];
+        likeBtn = [[UIButton alloc] initWithFrame:CGRectMake(7, picView.bottom+20, 44, 18)];
+        likeBtn.backgroundColor = UIColorFromRGB(238, 238, 238);
+        likeBtn.titleLabel.font = UIFontOfSize(12);
+        [likeBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        likeBtn.titleLabel.textAlignment = NSTextAlignmentRight;
+        likeBtn.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        [likeBtn setImage:[UIImage imageNamed:@"likeicon"] forState:UIControlStateNormal];
+        [self.contentView addSubview:likeBtn];
         
-        commentBtn = [[UIButton alloc] initWithFrame:CGRectMake(DEVICEW-60, likeLbl.top, 45, 23)];
+        commentBtn = [[UIButton alloc] initWithFrame:CGRectMake(DEVICEW-60, likeBtn.top, 45, 23)];
         [commentBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         commentBtn.titleLabel.font = UIFontOfSize(12);
-        [commentBtn setTitle:@"1" forState:UIControlStateNormal];
         commentBtn.titleLabel.textAlignment = NSTextAlignmentRight;
+        commentBtn.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        [commentBtn setImage:[UIImage imageNamed:@"commenticon"] forState:UIControlStateNormal];
         [self.contentView addSubview:commentBtn];
         
         favourArr = [[NSMutableArray alloc] init];
@@ -100,7 +103,7 @@
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     [formatter setTimeStyle:NSDateFormatterShortStyle];
-    [formatter setDateFormat:@"yyyy-MM-dd"];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
 
     
     
@@ -115,7 +118,7 @@
     [picView sd_setImageWithURL:[NSURL URLWithString:obj.pics] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         picView.image = image;
     }];
-    likeLbl.text = obj.favour;
+    likeBtn.titleLabel.text = obj.favour;
     [commentBtn setTitle:obj.comment_num forState:UIControlStateNormal];
     
 }

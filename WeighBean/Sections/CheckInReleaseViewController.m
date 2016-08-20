@@ -8,7 +8,8 @@
 
 #import "CheckInReleaseViewController.h"
 #import "UIView+Tag.h"
-#import "TimelineViwController.h"
+//#import "TimelineViwController.h"
+#import "PersonalViewController.h"
 
 @implementation CheckInReleaseViewController
 - (id)initWithImg:(UIImage *)img selectedArr:(NSMutableArray *)arr
@@ -28,10 +29,9 @@
 
 - (void)initModel
 {
-    //    self.handle = [[CoachModelHandler alloc] initWithController:self];
-    //    self.listModel = [[CoachListModel alloc] initWithHandler:self.handle];
-    //    _dataArray = [[NSMutableArray alloc] init];
-    //    [self.listModel getCoachListPage:1];
+        self.handle = [[UploadDakaModelHandler alloc] initWithController:self];
+        self.listModel = [[UploadDakaModel alloc] initWithHandler:self.handle];
+//        [self.listModel getCoachListPage:1];
 }
 
 - (void)initView
@@ -102,8 +102,23 @@
 
 - (void)releasePhoto
 {
-    TimelineViwController *vc = [[TimelineViwController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+    [self showHUDWithLabel:@"正在上传..."];
+    [self.listModel uploadDakaWithImage:imageView.image];
+//    TimelineViwController *vc = [[TimelineViwController alloc] init];
+//    [self.navigationController pushViewController:vc animated:YES];
 }
+
+- (void)syncFinished:(UploadDakaResponse *)response
+{
+    PersonalViewController * personalVC = [PersonalViewController  new];
+    [self.navigationController pushViewController:personalVC animated:YES];
+   
+}
+- (void)syncFailure
+{
+    
+}
+
+
 
 @end

@@ -175,6 +175,11 @@
 		5C4BD8161D6888DF00020B78 /* TagResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4BD8151D6888DF00020B78 /* TagResponse.m */; };
 		5C4BD8191D6888FF00020B78 /* TagModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4BD8181D6888FF00020B78 /* TagModelHandler.m */; };
 		5C4BD81C1D68A8C900020B78 /* TagObjModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4BD81B1D68A8C900020B78 /* TagObjModel.m */; };
+		5C4BD81F1D68B48100020B78 /* UploadDakaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4BD81E1D68B48100020B78 /* UploadDakaModel.m */; };
+		5C4BD8221D68B4A100020B78 /* UploadDakaResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4BD8211D68B4A100020B78 /* UploadDakaResponse.m */; };
+		5C4BD8251D68B4D600020B78 /* UploadDakaModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4BD8241D68B4D600020B78 /* UploadDakaModelHandler.m */; };
+		5C4BD8281D68D1A600020B78 /* commenticon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C4BD8261D68D1A600020B78 /* commenticon.png */; };
+		5C4BD8291D68D1A600020B78 /* likeicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C4BD8271D68D1A600020B78 /* likeicon.png */; };
 		5C6562A41D47DEC4004CF31B /* HTMultiLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6562A31D47DEC4004CF31B /* HTMultiLabel.m */; };
 		5CE173111D4DFB930047E8B9 /* CoachModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173101D4DFB930047E8B9 /* CoachModelHandler.m */; };
 		5CE173141D4DFC860047E8B9 /* CoachListResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173131D4DFC860047E8B9 /* CoachListResponse.m */; };
@@ -711,6 +716,14 @@
 		5C4BD8181D6888FF00020B78 /* TagModelHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagModelHandler.m; sourceTree = "<group>"; };
 		5C4BD81A1D68A8C900020B78 /* TagObjModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagObjModel.h; sourceTree = "<group>"; };
 		5C4BD81B1D68A8C900020B78 /* TagObjModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagObjModel.m; sourceTree = "<group>"; };
+		5C4BD81D1D68B48100020B78 /* UploadDakaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadDakaModel.h; sourceTree = "<group>"; };
+		5C4BD81E1D68B48100020B78 /* UploadDakaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadDakaModel.m; sourceTree = "<group>"; };
+		5C4BD8201D68B4A100020B78 /* UploadDakaResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadDakaResponse.h; sourceTree = "<group>"; };
+		5C4BD8211D68B4A100020B78 /* UploadDakaResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadDakaResponse.m; sourceTree = "<group>"; };
+		5C4BD8231D68B4D600020B78 /* UploadDakaModelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadDakaModelHandler.h; sourceTree = "<group>"; };
+		5C4BD8241D68B4D600020B78 /* UploadDakaModelHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadDakaModelHandler.m; sourceTree = "<group>"; };
+		5C4BD8261D68D1A600020B78 /* commenticon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commenticon.png; sourceTree = "<group>"; };
+		5C4BD8271D68D1A600020B78 /* likeicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = likeicon.png; sourceTree = "<group>"; };
 		5C6562A21D47DEC4004CF31B /* HTMultiLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMultiLabel.h; sourceTree = "<group>"; };
 		5C6562A31D47DEC4004CF31B /* HTMultiLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMultiLabel.m; sourceTree = "<group>"; };
 		5CE1730F1D4DFB930047E8B9 /* CoachModelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachModelHandler.h; sourceTree = "<group>"; };
@@ -1335,6 +1348,8 @@
 		5C3BD8971D5F264B00D3B410 /* checkin */ = {
 			isa = PBXGroup;
 			children = (
+				5C4BD8261D68D1A600020B78 /* commenticon.png */,
+				5C4BD8271D68D1A600020B78 /* likeicon.png */,
 				5C3BD8981D5F265800D3B410 /* btn_close.pdf */,
 				5C3BD89A1D5F566500D3B410 /* search_bg.png */,
 				5C3BD89C1D5F5BE100D3B410 /* edit_btn_back.png */,
@@ -1379,6 +1394,8 @@
 			children = (
 				5C4BD8111D6888B500020B78 /* TagModel.h */,
 				5C4BD8121D6888B500020B78 /* TagModel.m */,
+				5C4BD81D1D68B48100020B78 /* UploadDakaModel.h */,
+				5C4BD81E1D68B48100020B78 /* UploadDakaModel.m */,
 			);
 			name = CheckIn;
 			sourceTree = "<group>";
@@ -1390,6 +1407,8 @@
 				5C4BD8151D6888DF00020B78 /* TagResponse.m */,
 				5C4BD81A1D68A8C900020B78 /* TagObjModel.h */,
 				5C4BD81B1D68A8C900020B78 /* TagObjModel.m */,
+				5C4BD8201D68B4A100020B78 /* UploadDakaResponse.h */,
+				5C4BD8211D68B4A100020B78 /* UploadDakaResponse.m */,
 			);
 			name = CheckIn;
 			sourceTree = "<group>";
@@ -1399,6 +1418,8 @@
 			children = (
 				5C4BD8171D6888FF00020B78 /* TagModelHandler.h */,
 				5C4BD8181D6888FF00020B78 /* TagModelHandler.m */,
+				5C4BD8231D68B4D600020B78 /* UploadDakaModelHandler.h */,
+				5C4BD8241D68B4D600020B78 /* UploadDakaModelHandler.m */,
 			);
 			name = CheckIn;
 			sourceTree = "<group>";
@@ -2765,6 +2786,7 @@
 				5C3BD89B1D5F566500D3B410 /* search_bg.png in Resources */,
 				5C3BD8551D5BA05500D3B410 /* refresh_but.png in Resources */,
 				B01A8E921B7D84270049D86D /* body_list@2x.png in Resources */,
+				5C4BD8281D68D1A600020B78 /* commenticon.png in Resources */,
 				526E83011BFDD2770096A874 /* vat_1_2.0@2x.png in Resources */,
 				524E0B441C1066920069B2DA /* bmi_2_2.0_3@2x.png in Resources */,
 				5206765E1C2D1D610081FDAC /* lbm2.0_w@2x.png in Resources */,
@@ -2783,6 +2805,7 @@
 				5F88BE5D1B7F219D008C4901 /* target_4@2x.png in Resources */,
 				5FE255491B77A9F40029BD4D /* wechat_icon@2x.png in Resources */,
 				5F920F281B881E9C005BD616 /* check_mark_nav_bar@2x.png in Resources */,
+				5C4BD8291D68D1A600020B78 /* likeicon.png in Resources */,
 				5C3BD8541D5BA05500D3B410 /* edit_but.png in Resources */,
 				5F88BE461B7EF6CB008C4901 /* vat_1@2x.png in Resources */,
 				5F88BE361B7EDBE5008C4901 /* body_age@2x.png in Resources */,
@@ -2850,6 +2873,7 @@
 			files = (
 				5C3BD8911D5F17D000D3B410 /* CheckInImageAlbumViewController.m in Sources */,
 				5F88BE181B7CEC2C008C4901 /* HTCheckTelAndNickModel.m in Sources */,
+				5C4BD8251D68B4D600020B78 /* UploadDakaModelHandler.m in Sources */,
 				B01A8EE21B80623E0049D86D /* CoachViewController.m in Sources */,
 				5C16AC191D5A56C300C5B76C /* CheckInPickResultViewController.m in Sources */,
 				5FA9F2951B66096C00997BA8 /* HTTabBarController.m in Sources */,
@@ -2908,6 +2932,7 @@
 				52C639121C0C53B900BB45D7 /* OLProductModel.m in Sources */,
 				5F88BE271B7DC377008C4901 /* SetPwdViewController.m in Sources */,
 				5C3BD8A01D5F7E3C00D3B410 /* CheckInReleaseViewController.m in Sources */,
+				5C4BD8221D68B4A100020B78 /* UploadDakaResponse.m in Sources */,
 				5C4BD8191D6888FF00020B78 /* TagModelHandler.m in Sources */,
 				B01A8EC01B7E408D0049D86D /* JTCalendarMonthWeekDaysView.m in Sources */,
 				5289FE851C0755BC0036FA6F /* NotifNumberModel.m in Sources */,
@@ -2921,6 +2946,7 @@
 				5289FE9B1C0AB8940036FA6F /* ToolsResponse.m in Sources */,
 				5F88BE1B1B7CED5C008C4901 /* CheckTelAndNickModelHandler.m in Sources */,
 				5FE2554F1B7892D60029BD4D /* UpLoadAvatarModel.m in Sources */,
+				5C4BD81F1D68B48100020B78 /* UploadDakaModel.m in Sources */,
 				5CE1731A1D4E01470047E8B9 /* CoachListModel.m in Sources */,
 				5C397AE81D6399F4009B7951 /* TeamLineCell.m in Sources */,
 				5289FE8B1C0757AD0036FA6F /* NotifNumberResponse.m in Sources */,

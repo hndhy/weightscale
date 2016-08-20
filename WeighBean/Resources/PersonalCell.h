@@ -17,7 +17,7 @@
     
     UIImageView *picView;
     
-    UILabel *likeLbl;
+    UIButton *likeBtn;
     UIButton *commentBtn;
     NSMutableArray *favourArr;
     NSMutableArray *commentArr;

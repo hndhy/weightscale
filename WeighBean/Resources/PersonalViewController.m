@@ -51,19 +51,19 @@
     }
     [self.view addSubview:_tableView];
     
-    UIButton *checkInBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT_EXCEPTNAV-48, DEVICEW/2, 48)];
-    checkInBtn.backgroundColor = [UIColor whiteColor];
-    [checkInBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-    [checkInBtn setTitle:@"打卡" forState:UIControlStateNormal];
-    checkInBtn.titleLabel.font = UIFontOfSize(14);
-    [self.view addSubview:checkInBtn];
-    
-    UIButton *exerciseBtn = [[UIButton alloc] initWithFrame:CGRectMake(DEVICEW/2, SCREEN_HEIGHT_EXCEPTNAV-48, DEVICEW/2, 48)];
-    exerciseBtn.backgroundColor = [UIColor whiteColor];
-    [exerciseBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-    [exerciseBtn setTitle:@"运动" forState:UIControlStateNormal];
-    exerciseBtn.titleLabel.font = UIFontOfSize(14);
-    [self.view addSubview:exerciseBtn];
+//    UIButton *checkInBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT_EXCEPTNAV-48, DEVICEW/2, 48)];
+//    checkInBtn.backgroundColor = [UIColor whiteColor];
+//    [checkInBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+//    [checkInBtn setTitle:@"打卡" forState:UIControlStateNormal];
+//    checkInBtn.titleLabel.font = UIFontOfSize(14);
+//    [self.view addSubview:checkInBtn];
+//    
+//    UIButton *exerciseBtn = [[UIButton alloc] initWithFrame:CGRectMake(DEVICEW/2, SCREEN_HEIGHT_EXCEPTNAV-48, DEVICEW/2, 48)];
+//    exerciseBtn.backgroundColor = [UIColor whiteColor];
+//    [exerciseBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+//    [exerciseBtn setTitle:@"运动" forState:UIControlStateNormal];
+//    exerciseBtn.titleLabel.font = UIFontOfSize(14);
+//    [self.view addSubview:exerciseBtn];
 
 }
 
@@ -74,7 +74,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 360;
+    return DEVICEW+145;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
