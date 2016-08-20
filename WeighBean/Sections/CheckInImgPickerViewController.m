@@ -72,7 +72,17 @@
     // Do any additional setup after loading the view from its nib.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fetchPhoto) name:ALAssetsLibraryChangedNotification object:nil];
     
-    btnClose = [[UIButton alloc] initWithFrame:CGRectMake(10, 20, 40, 40)];
+    
+    UILabel *addTagLbl = [[UILabel alloc] initWithFrame:CGRectMake(80, 10, DEVICEW-160, 40)];
+    addTagLbl.backgroundColor = [UIColor whiteColor];
+    addTagLbl.textColor = [UIColor grayColor];
+    addTagLbl.font = UIFontOfSize(14);
+    addTagLbl.text = @"相机胶卷";
+    addTagLbl.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:addTagLbl];
+
+    
+    btnClose = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 40, 40)];
     btnClose.backgroundColor = [UIColor whiteColor];
     [btnClose setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [btnClose setTitle:@"close" forState:UIControlStateNormal];
@@ -88,13 +98,18 @@
     collection.dataSource = self;
     [self.view addSubview:collection];
     
-    nextBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, collection.bottom, DEVICEW, 40)];
+    nextBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, DEVICEH-49, DEVICEW, 49)];
     nextBtn.backgroundColor = [UIColor whiteColor];
     [nextBtn setTitleColor:BLUECOLOR forState:UIControlStateNormal];
     [nextBtn setTitle:@"下一步" forState:UIControlStateNormal];
     nextBtn.titleLabel.font = UIFontOfSize(14);
     [nextBtn addTarget:self action:@selector(nextStep) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:nextBtn];
+    [self.view addSubview:nextBtn];
+    
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, DEVICEH-50, DEVICEW, 1)];
+    lineView.backgroundColor = UIColorFromRGB(238, 238, 238);
+    [self.view addSubview:lineView];
+
     
     size1 = (DEVICEW-2)/2;
     size2 = (int)((DEVICEW-4)/3);
@@ -284,6 +299,22 @@
 
 
 #pragma mark - collectionview delegate
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return [myArray count]+1;
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(size2, size2);
+}
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (SYSTEM_VERSION_LESS_THAN(@"8.0")) {
@@ -301,9 +332,9 @@
     
     float w = size2;
     
-    if (indexPath.row-1 < [myArray count]) {
+    if (indexPath.row < [myArray count]) {
         if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")) {
-            PHAsset *asset = [myArray objectAtIndex:indexPath.row-1];
+            PHAsset *asset = [myArray objectAtIndex:indexPath.row];
             cell.imageview.image = nil;
             cell.representedAssetIdentifier = asset.localIdentifier;
         
@@ -331,20 +362,11 @@
     return cell;
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [myArray count]+1;
+    [self imagePicker:self selectIndex:indexPath.row asset:[myArray objectAtIndex:indexPath.row]];
 }
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
-    return 1;
-}
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    return CGSizeMake(size2, size2);
-}
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
     return 2;
@@ -369,16 +391,6 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 {
     return CGSizeZero;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.row == 0) {
-        [self.delegate imagePicker:self selectIndex:indexPath.row asset:nil];
-    }
-    else if (indexPath.row-1 < [myArray count]) {
-        [self imagePicker:self selectIndex:indexPath.row asset:[myArray objectAtIndex:indexPath.row-1]];
-    }
 }
 
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath

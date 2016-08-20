@@ -14,6 +14,8 @@
 #import "UILabel+Ext.h"
 #import "UtilsMacro.h"
 #import <iToast.h>
+#import "CheckInImgPickerViewController.h"
+#import "HTNavigationController.h"
 
 //static const NSTimeInterval kAnimationDuration = 0.33;
 
@@ -117,18 +119,28 @@
 /**从相册里获取图片*/
 - (void)getPhotoFromLibrary
 {
-  UIImagePickerController *pickerImage = [[UIImagePickerController alloc] init];
-  if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
-    pickerImage.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    pickerImage.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:pickerImage.sourceType];
+
+    if (PicturePickerCheckIn == self.type) {
     
-  }
-  pickerImage.delegate = self;
-  if (PicturePickerAvatar == self.type) {
-    pickerImage.allowsEditing = YES;
-  }
-  [self onCloseClick:nil];
-  [self.controller presentViewController:pickerImage animated:YES completion:NULL];
+        CheckInImgPickerViewController *imgPickerVC = [[CheckInImgPickerViewController alloc] init];
+        HTNavigationController *navController = [[HTNavigationController alloc] initWithRootViewController:imgPickerVC];
+        [self.controller presentViewController:navController animated:YES completion:nil];
+
+    } else
+    {
+      UIImagePickerController *pickerImage = [[UIImagePickerController alloc] init];
+      if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+        pickerImage.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        pickerImage.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:pickerImage.sourceType];
+    
+      }
+      pickerImage.delegate = self;
+      if (PicturePickerAvatar == self.type) {
+        pickerImage.allowsEditing = YES;
+      }
+      [self onCloseClick:nil];
+      [self.controller presentViewController:pickerImage animated:YES completion:NULL];
+    }
 }
 
 #pragma mark - UIActionSheetDelegate

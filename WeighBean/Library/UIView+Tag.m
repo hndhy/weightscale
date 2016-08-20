@@ -35,6 +35,8 @@
         
         NSString *text = textArray[i];
         AJTagView *tagView = [self aj_showTagWithPercent:point text:text];
+        tagView.enableMove = YES;
+        tagView.enableLongGesture = YES;
         [tagArray addObject:tagView];
     }
     return tagArray;

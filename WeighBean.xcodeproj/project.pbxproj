@@ -171,6 +171,10 @@
 		5C3BD8AE1D5FA62700D3B410 /* TimelineViwController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BD8AD1D5FA62700D3B410 /* TimelineViwController.m */; };
 		5C48EFED1D60DB1E00C3AF4E /* brisk_listModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C48EFEC1D60DB1E00C3AF4E /* brisk_listModel.m */; };
 		5C48EFF01D60DB3600C3AF4E /* sum_listModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C48EFEF1D60DB3600C3AF4E /* sum_listModel.m */; };
+		5C4BD8131D6888B500020B78 /* TagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4BD8121D6888B500020B78 /* TagModel.m */; };
+		5C4BD8161D6888DF00020B78 /* TagResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4BD8151D6888DF00020B78 /* TagResponse.m */; };
+		5C4BD8191D6888FF00020B78 /* TagModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4BD8181D6888FF00020B78 /* TagModelHandler.m */; };
+		5C4BD81C1D68A8C900020B78 /* TagObjModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4BD81B1D68A8C900020B78 /* TagObjModel.m */; };
 		5C6562A41D47DEC4004CF31B /* HTMultiLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6562A31D47DEC4004CF31B /* HTMultiLabel.m */; };
 		5CE173111D4DFB930047E8B9 /* CoachModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173101D4DFB930047E8B9 /* CoachModelHandler.m */; };
 		5CE173141D4DFC860047E8B9 /* CoachListResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173131D4DFC860047E8B9 /* CoachListResponse.m */; };
@@ -699,6 +703,14 @@
 		5C48EFEC1D60DB1E00C3AF4E /* brisk_listModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = brisk_listModel.m; sourceTree = "<group>"; };
 		5C48EFEE1D60DB3600C3AF4E /* sum_listModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sum_listModel.h; sourceTree = "<group>"; };
 		5C48EFEF1D60DB3600C3AF4E /* sum_listModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sum_listModel.m; sourceTree = "<group>"; };
+		5C4BD8111D6888B500020B78 /* TagModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagModel.h; sourceTree = "<group>"; };
+		5C4BD8121D6888B500020B78 /* TagModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagModel.m; sourceTree = "<group>"; };
+		5C4BD8141D6888DF00020B78 /* TagResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagResponse.h; sourceTree = "<group>"; };
+		5C4BD8151D6888DF00020B78 /* TagResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagResponse.m; sourceTree = "<group>"; };
+		5C4BD8171D6888FF00020B78 /* TagModelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagModelHandler.h; sourceTree = "<group>"; };
+		5C4BD8181D6888FF00020B78 /* TagModelHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagModelHandler.m; sourceTree = "<group>"; };
+		5C4BD81A1D68A8C900020B78 /* TagObjModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagObjModel.h; sourceTree = "<group>"; };
+		5C4BD81B1D68A8C900020B78 /* TagObjModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagObjModel.m; sourceTree = "<group>"; };
 		5C6562A21D47DEC4004CF31B /* HTMultiLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMultiLabel.h; sourceTree = "<group>"; };
 		5C6562A31D47DEC4004CF31B /* HTMultiLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMultiLabel.m; sourceTree = "<group>"; };
 		5CE1730F1D4DFB930047E8B9 /* CoachModelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachModelHandler.h; sourceTree = "<group>"; };
@@ -1362,6 +1374,35 @@
 			path = ../Resources;
 			sourceTree = "<group>";
 		};
+		5C4BD80E1D68876A00020B78 /* CheckIn */ = {
+			isa = PBXGroup;
+			children = (
+				5C4BD8111D6888B500020B78 /* TagModel.h */,
+				5C4BD8121D6888B500020B78 /* TagModel.m */,
+			);
+			name = CheckIn;
+			sourceTree = "<group>";
+		};
+		5C4BD80F1D68877800020B78 /* CheckIn */ = {
+			isa = PBXGroup;
+			children = (
+				5C4BD8141D6888DF00020B78 /* TagResponse.h */,
+				5C4BD8151D6888DF00020B78 /* TagResponse.m */,
+				5C4BD81A1D68A8C900020B78 /* TagObjModel.h */,
+				5C4BD81B1D68A8C900020B78 /* TagObjModel.m */,
+			);
+			name = CheckIn;
+			sourceTree = "<group>";
+		};
+		5C4BD8101D68877F00020B78 /* CheckIn */ = {
+			isa = PBXGroup;
+			children = (
+				5C4BD8171D6888FF00020B78 /* TagModelHandler.h */,
+				5C4BD8181D6888FF00020B78 /* TagModelHandler.m */,
+			);
+			name = CheckIn;
+			sourceTree = "<group>";
+		};
 		5CE1730C1D4DEF100047E8B9 /* Coach */ = {
 			isa = PBXGroup;
 			children = (
@@ -1943,6 +1984,7 @@
 		5FA9F1541B66096C00997BA8 /* ModelHandlers */ = {
 			isa = PBXGroup;
 			children = (
+				5C4BD8101D68877F00020B78 /* CheckIn */,
 				5FA9F1721B66096C00997BA8 /* HTBaseModelHandler.h */,
 				5FA9F1731B66096C00997BA8 /* HTBaseModelHandler.m */,
 				5FA9F1741B66096C00997BA8 /* HTTableModelHandler.h */,
@@ -2013,6 +2055,7 @@
 		5FA9F1A41B66096C00997BA8 /* ModelObjects */ = {
 			isa = PBXGroup;
 			children = (
+				5C4BD80F1D68877800020B78 /* CheckIn */,
 				5FA9F1A51B66096C00997BA8 /* BaseResponse.h */,
 				5FA9F1A61B66096C00997BA8 /* BaseResponse.m */,
 				5C397ACC1D636786009B7951 /* Timeline */,
@@ -2057,6 +2100,7 @@
 		5FA9F2101B66096C00997BA8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5C4BD80E1D68876A00020B78 /* CheckIn */,
 				5FA9F2431B66096C00997BA8 /* HTAbstractDataSource.h */,
 				5FA9F2441B66096C00997BA8 /* HTAbstractDataSource.m */,
 				5C397ACB1D636779009B7951 /* Timeline */,
@@ -2855,6 +2899,7 @@
 				5209E3D81BF5BC37005D14DD /* OnlineBuyViewController.m in Sources */,
 				528D7BD21C16BFCC00246E00 /* HideSetViewController.m in Sources */,
 				527316631BA6CFAE00E33110 /* WiFiController.m in Sources */,
+				5C4BD8161D6888DF00020B78 /* TagResponse.m in Sources */,
 				5C2B1F4D1D58B9EA00032D3F /* DissolveCoachModelHandler.m in Sources */,
 				52964C541C19578A003FA17A /* TrendModelHandler.m in Sources */,
 				5F88BE1E1B7DA24D008C4901 /* HTMyInfoModel.m in Sources */,
@@ -2863,6 +2908,7 @@
 				52C639121C0C53B900BB45D7 /* OLProductModel.m in Sources */,
 				5F88BE271B7DC377008C4901 /* SetPwdViewController.m in Sources */,
 				5C3BD8A01D5F7E3C00D3B410 /* CheckInReleaseViewController.m in Sources */,
+				5C4BD8191D6888FF00020B78 /* TagModelHandler.m in Sources */,
 				B01A8EC01B7E408D0049D86D /* JTCalendarMonthWeekDaysView.m in Sources */,
 				5289FE851C0755BC0036FA6F /* NotifNumberModel.m in Sources */,
 				5FA9F2AB1B66096C00997BA8 /* HTTableView.m in Sources */,
@@ -2870,6 +2916,7 @@
 				5F88BE401B7EF128008C4901 /* VatViewController.m in Sources */,
 				5FA9F2911B66096C00997BA8 /* HTBaseTableDataSource.m in Sources */,
 				525C012F1C1D3B5500B7C0FC /* BuildvtelModelHandler.m in Sources */,
+				5C4BD81C1D68A8C900020B78 /* TagObjModel.m in Sources */,
 				B01A8EC81B7ED0950049D86D /* SyncBodyData.m in Sources */,
 				5289FE9B1C0AB8940036FA6F /* ToolsResponse.m in Sources */,
 				5F88BE1B1B7CED5C008C4901 /* CheckTelAndNickModelHandler.m in Sources */,
@@ -2958,6 +3005,7 @@
 				5FA9F2B61B66096C00997BA8 /* CommonHelper.m in Sources */,
 				5F88BE211B7DA41B008C4901 /* MyInfoModelHandler.m in Sources */,
 				522123A61BFB2C37006BCCC4 /* VerifyOrderViewController.m in Sources */,
+				5C4BD8131D6888B500020B78 /* TagModel.m in Sources */,
 				5C397AC41D6213DD009B7951 /* UserDataModel.m in Sources */,
 				5C397AEB1D63F4B3009B7951 /* MeasureObjModel.m in Sources */,
 				5FA9F2C81B66096C00997BA8 /* LoginModelHandler.m in Sources */,

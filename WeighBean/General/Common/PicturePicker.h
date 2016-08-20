@@ -11,7 +11,8 @@
 
 typedef enum {
   PicturePickerAvatar,
-  PicturePickerPic
+  PicturePickerPic,
+  PicturePickerCheckIn
 } PicturePickerType;
 
 @protocol PicturePickerProtocol <NSObject>

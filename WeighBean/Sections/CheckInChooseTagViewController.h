@@ -7,8 +7,10 @@
 //
 
 #import "HTBaseViewController.h"
+#import "TagModelHandler.h"
+#import "TagModel.h"
 
-@interface CheckInChooseTagViewController : HTBaseViewController <UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
+@interface CheckInChooseTagViewController : HTBaseViewController <UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,TagModelProtocol>
 
 {
     UITableView *_tableView;
@@ -20,5 +22,8 @@
     UIImageView *sourceImageView;
     UIImage *sourceImg;
 }
+@property (nonatomic,strong)TagModelHandler *handle;
+@property (nonatomic,strong)TagModel *listModel;
+
 - (id)initWithImage:(UIImage *)img;
 @end

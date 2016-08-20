@@ -44,12 +44,13 @@
 {
     
     self.view.backgroundColor = [UIColor whiteColor];
-    imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height-150)];
+    imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, (DEVICEH-DEVICEW)/2, DEVICEW, DEVICEW)];
     if (resultImg) {
         imageView.image = resultImg;
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
     }
     [self.view addSubview:imageView];
-    
+
     
     UILabel *addTagLbl = [[UILabel alloc] initWithFrame:CGRectMake(80, 10, DEVICEW-160, 40)];
     addTagLbl.backgroundColor = [UIColor whiteColor];
@@ -61,7 +62,7 @@
 
     
     UIButton *addTipBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    addTipBtn.frame = CGRectMake(0, self.view.frame.size.height-40 , self.view.frame.size.width, 40);
+    addTipBtn.frame = CGRectMake(0, DEVICEH-49 , DEVICEW, 49);
     addTipBtn.backgroundColor = [UIColor clearColor];
     addTipBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     [addTipBtn setTitleColor:BLUECOLOR forState:UIControlStateNormal];
@@ -75,6 +76,14 @@
     [btnBack setImage:[UIImage imageNamed:@"left_arrow"] forState:UIControlStateNormal];
     [btnBack addTarget:self action:@selector(backDidClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btnBack];
+    
+    UIView *lineView1 = [[UIView alloc] initWithFrame:CGRectMake(0, 46, DEVICEW, 1)];
+    lineView1.backgroundColor = UIColorFromRGB(238, 238, 238);
+    [self.view addSubview:lineView1];
+    
+    UIView *lineView2 = [[UIView alloc] initWithFrame:CGRectMake(0, DEVICEH-50, DEVICEW, 1)];
+    lineView2.backgroundColor = UIColorFromRGB(238, 238, 238);
+    [self.view addSubview:lineView2];
 }
 
 - (void)backDidClick

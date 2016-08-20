@@ -53,8 +53,10 @@
 
 
 #import "TimelineViwController.h"
+#import "PicturePicker.h"
 
-@interface HomeViewController ()<SharePlatDelegate, SyncModelProtocol, MFMessageComposeViewControllerDelegate,JTCalendarDelegate,RESideMenuDelegate,UIImagePickerControllerDelegate>
+
+@interface HomeViewController ()<SharePlatDelegate, SyncModelProtocol, MFMessageComposeViewControllerDelegate,JTCalendarDelegate,RESideMenuDelegate,UIImagePickerControllerDelegate,PicturePickerProtocol>
 
 {
     HTMultiLabel *weightLabel;
@@ -107,6 +109,7 @@
 @property (nonatomic, strong) NSMutableArray *infoMArray;
 
 @property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) PicturePicker *picturePicker;
 
 @end
 
@@ -441,22 +444,11 @@
 
 - (void)showImgPicker
 {
-//    CheckInImgPickerViewController *imgPickerVC = [[CheckInImgPickerViewController alloc] initWithMaxImagesCount:1 delegate:self];
-//    [imgPickerVC setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
-    
-//        CheckInPickResultViewController *vc = [[CheckInPickResultViewController alloc] initWithImg:photos[0]];
-//        [self.navigationController pushViewController:vc animated:YES];
-
-//    }];
-//    [self presentViewController:VC animated:YES completion:nil];
-    
-    
-    
-    
-    CheckInImgPickerViewController *imgPickerVC = [[CheckInImgPickerViewController alloc] init];
-    HTNavigationController *navController = [[HTNavigationController alloc] initWithRootViewController:imgPickerVC];
-    [self presentViewController:navController animated:YES completion:nil];
-
+    if (nil == self.picturePicker) {
+        self.picturePicker = [[PicturePicker alloc] initWithController:self];
+        self.picturePicker.type = PicturePickerCheckIn;
+    }
+    [self.picturePicker showActionSheet:nil];
 }
 
 - (BOOL)needRefreshView

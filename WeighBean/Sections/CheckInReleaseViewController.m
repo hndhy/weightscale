@@ -24,12 +24,6 @@
 - (void)initNavbar
 {
     
-    //    self.title = @"添加标签";
-    //    UIButton *menuButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44.0f, 44.0f)];
-    //    [menuButton setImage:[UIImage imageNamed:@"menu_nav_bar.png"] forState:UIControlStateNormal];
-    //    [menuButton addTarget:self action:@selector(presentLeftMenuViewController:) forControlEvents:UIControlEventTouchUpInside];
-    //    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:menuButton];
-    //    self.navigationItem.leftBarButtonItem = leftItem;
 }
 
 - (void)initModel
@@ -44,9 +38,10 @@
 {
     
     self.view.backgroundColor = [UIColor whiteColor];
-    imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height-150)];
+    imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, (DEVICEH-DEVICEW)/2, DEVICEW, DEVICEW)];
     if (resultImg) {
         imageView.image = resultImg;
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
     }
     [self.view addSubview:imageView];
     
@@ -79,6 +74,16 @@
     NSArray *percentArray = @[[NSValue valueWithCGPoint:CGPointMake(0.5, 0.5)],[NSValue valueWithCGPoint:CGPointMake(0.2, 0.8)],[NSValue valueWithCGPoint:CGPointMake(0.8, 0.7)]];
     NSArray *textArray = @[@"测试",@"测试默默",@"人群中寻找"];
     [imageView aj_showTagsWithPercentArray:percentArray textArray:sourceArr];
+    imageView.userInteractionEnabled = YES;
+    
+    UIView *lineView1 = [[UIView alloc] initWithFrame:CGRectMake(0, 46, DEVICEW, 1)];
+    lineView1.backgroundColor = UIColorFromRGB(238, 238, 238);
+    [self.view addSubview:lineView1];
+    
+    UIView *lineView2 = [[UIView alloc] initWithFrame:CGRectMake(0, DEVICEH-50, DEVICEW, 1)];
+    lineView2.backgroundColor = UIColorFromRGB(238, 238, 238);
+    [self.view addSubview:lineView2];
+
 
     
 }

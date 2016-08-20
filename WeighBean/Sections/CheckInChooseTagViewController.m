@@ -8,6 +8,8 @@
 
 #import "CheckInChooseTagViewController.h"
 #import "CheckInReleaseViewController.h"
+#import "NSDictionary+GetValue.h"
+#import "TagObjModel.h"
 
 @implementation CheckInChooseTagViewController
 
@@ -24,11 +26,6 @@
 - (void)initNavbar
 {
     self.title = @"添加标签";
-    //    UIButton *menuButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44.0f, 44.0f)];
-    //    [menuButton setImage:[UIImage imageNamed:@"menu_nav_bar.png"] forState:UIControlStateNormal];
-    //    [menuButton addTarget:self action:@selector(presentLeftMenuViewController:) forControlEvents:UIControlEventTouchUpInside];
-    //    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:menuButton];
-    //    self.navigationItem.leftBarButtonItem = leftItem;
     UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     cancelBtn.frame = CGRectMake(0, 0, 40, 30);
     [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
@@ -41,13 +38,14 @@
 
 - (void)initModel
 {
-    dataArray = [[NSMutableArray alloc] initWithObjects:@"hello",@"fsdfag",@"re",@"fdgfdge",@"bergerwf",@"rewd",@"eger",@"brtbrt",@"fsaf",@"htrr",@"saf",@"bfdsb",@"gerh",@"rwe",@"br",@"fsaf",@"hrg",@"fsdaf",@"rbrbr", nil];
+//    dataArray = [[NSMutableArray alloc] initWithObjects:@"hello",@"fsdfag",@"re",@"fdgfdge",@"bergerwf",@"rewd",@"eger",@"brtbrt",@"fsaf",@"htrr",@"saf",@"bfdsb",@"gerh",@"rwe",@"br",@"fsaf",@"hrg",@"fsdaf",@"rbrbr", nil];
     selectedArr = [[NSMutableArray alloc] init];
     selectedDataArr = [[NSMutableArray alloc] init];
-    //    self.handle = [[CoachModelHandler alloc] initWithController:self];
-    //    self.listModel = [[CoachListModel alloc] initWithHandler:self.handle];
-    //    _dataArray = [[NSMutableArray alloc] init];
-    //    [self.listModel getCoachListPage:1];
+    
+        self.handle = [[TagModelHandler alloc] initWithController:self];
+        self.listModel = [[TagModel alloc] initWithHandler:self.handle];
+        dataArray = [[NSMutableArray alloc] init];
+        [self.listModel getTagList];
 }
 
 - (void)initView
@@ -173,7 +171,22 @@
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark --TagModelProtocol
+- (void)syncFinished:(TagResponse *)response
+{
+    [dataArray removeAllObjects];
+    for (int i=0; i<[response.data count]; i++) {
+        TagObjModel *obj = [response.data objectAtIndex:i];
+        NSString *str = obj.tagName;
+        [dataArray addObject:str];
+    }
+    [_tableView reloadData];
+}
 
+- (void)syncFailure
+{
+    
+}
 
 
 
