@@ -7,11 +7,16 @@
 //
 
 #import "HTBaseViewController.h"
+#import "UploadDakaModelHandler.h"
+#import "UploadDakaModel.h"
 
-@interface CheckInPickResultViewController : HTBaseViewController
+@interface CheckInPickResultViewController : HTBaseViewController <UploadDakaModelProtocol>
 {
     UIImageView *imageView;
     UIImage *resultImg;
 }
+@property (nonatomic,strong)UploadDakaModelHandler *handle;
+@property (nonatomic,strong)UploadDakaModel *listModel;
+
 - (id)initWithImg:(UIImage *)img;
 @end

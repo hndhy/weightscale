@@ -103,7 +103,14 @@
 - (void)releasePhoto
 {
     [self showHUDWithLabel:@"正在上传..."];
-    [self.listModel uploadDakaWithImage:imageView.image];
+    
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(imageView.frame.size.width, imageView.frame.size.height), NO, 2.0);
+    [imageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    UIImageWriteToSavedPhotosAlbum(viewImage, nil, nil, nil);
+
+    [self.listModel uploadDakaWithImage:viewImage];
 //    TimelineViwController *vc = [[TimelineViwController alloc] init];
 //    [self.navigationController pushViewController:vc animated:YES];
 }

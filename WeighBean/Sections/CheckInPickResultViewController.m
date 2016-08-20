@@ -8,6 +8,8 @@
 
 #import "CheckInPickResultViewController.h"
 #import "CheckInChooseTagViewController.h"
+#import "PersonalViewController.h"
+#import "ImageCropView.h"
 
 @implementation CheckInPickResultViewController
 
@@ -34,6 +36,9 @@
 
 - (void)initModel
 {
+    self.handle = [[UploadDakaModelHandler alloc] initWithController:self];
+    self.listModel = [[UploadDakaModel alloc] initWithHandler:self.handle];
+
     //    self.handle = [[CoachModelHandler alloc] initWithController:self];
     //    self.listModel = [[CoachListModel alloc] initWithHandler:self.handle];
     //    _dataArray = [[NSMutableArray alloc] init];
@@ -61,14 +66,32 @@
     [self.view addSubview:addTagLbl];
 
     
-    UIButton *addTipBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    addTipBtn.frame = CGRectMake(0, DEVICEH-49 , DEVICEW, 49);
-    addTipBtn.backgroundColor = [UIColor clearColor];
-    addTipBtn.titleLabel.font = [UIFont systemFontOfSize:15];
-    [addTipBtn setTitleColor:BLUECOLOR forState:UIControlStateNormal];
-    [addTipBtn setTitle:@"添加标签" forState:UIControlStateNormal];
-    [addTipBtn addTarget:self action:@selector(addTag) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:addTipBtn];
+    
+    UIButton *checkInBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, DEVICEH-48, DEVICEW/2, 48)];
+    checkInBtn.backgroundColor = [UIColor whiteColor];
+    [checkInBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [checkInBtn setTitle:@"发布" forState:UIControlStateNormal];
+    checkInBtn.titleLabel.font = UIFontOfSize(14);
+    [checkInBtn addTarget:self action:@selector(releaseImg) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:checkInBtn];
+
+    UIButton *exerciseBtn = [[UIButton alloc] initWithFrame:CGRectMake(DEVICEW/2, DEVICEH-48, DEVICEW/2, 48)];
+    exerciseBtn.backgroundColor = [UIColor whiteColor];
+    [exerciseBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [exerciseBtn setTitle:@"添加标签" forState:UIControlStateNormal];
+    exerciseBtn.titleLabel.font = UIFontOfSize(14);
+    [exerciseBtn addTarget:self action:@selector(addTag) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:exerciseBtn];
+
+    
+//    UIButton *addTipBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    addTipBtn.frame = CGRectMake(0, DEVICEH-49 , DEVICEW, 49);
+//    addTipBtn.backgroundColor = [UIColor clearColor];
+//    addTipBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+//    [addTipBtn setTitleColor:BLUECOLOR forState:UIControlStateNormal];
+//    [addTipBtn setTitle:@"添加标签" forState:UIControlStateNormal];
+//    [addTipBtn addTarget:self action:@selector(addTag) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:addTipBtn];
     
     UIButton *btnBack = [[UIButton alloc] initWithFrame:CGRectMake(10, 22, 19, 15)];
     btnBack.backgroundColor = [UIColor whiteColor];
@@ -105,6 +128,31 @@
     [self.navigationController pushViewController:vc animated:YES];
 
 }
+
+- (void)releaseImg
+{
+    
+    ImageCropViewController *controller = [[ImageCropViewController alloc] initWithImage:imageView.image];
+    controller.delegate = self;
+    controller.blurredBackground = YES;
+    // set the cropped area
+    // controller.cropArea = CGRectMake(0, 0, 100, 200);
+    [[self navigationController] pushViewController:controller animated:YES];
+    
+//    [self showHUDWithLabel:@"正在上传..."];
+//    [self.listModel uploadDakaWithImage:imageView.image];
+}
+
+- (void)syncFinished:(UploadDakaResponse *)response
+{
+    PersonalViewController * personalVC = [PersonalViewController  new];
+    [self.navigationController pushViewController:personalVC animated:YES];
+}
+- (void)syncFailure
+{
+    
+}
+
 
 
 @end

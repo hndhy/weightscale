@@ -39,7 +39,7 @@
         nickName.textColor = [UIColor blackColor];
         [self.contentView addSubview:nickName];
         
-        timeLbl = [[UILabel alloc] initWithFrame:CGRectMake(DEVICEW-125, 15, 100, 25)];
+        timeLbl = [[UILabel alloc] initWithFrame:CGRectMake(DEVICEW-120, 15, 120, 25)];
         timeLbl.backgroundColor = [UIColor clearColor];
         timeLbl.font = UIFontOfSize(11);
         timeLbl.text = @"1小时前发布";

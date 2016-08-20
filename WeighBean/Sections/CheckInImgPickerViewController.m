@@ -9,6 +9,7 @@
 #import "CheckInImgPickerViewController.h"
 #import "CheckInImagePickerCell.h"
 #import "CheckInPickResultViewController.h"
+#import "ImageCropView.h"
 
 @import Photos;
 
@@ -82,11 +83,9 @@
     [self.view addSubview:addTagLbl];
 
     
-    btnClose = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 40, 40)];
+    btnClose = [[UIButton alloc] initWithFrame:CGRectMake(10, 20, 18, 18)];
     btnClose.backgroundColor = [UIColor whiteColor];
-    [btnClose setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-    [btnClose setTitle:@"close" forState:UIControlStateNormal];
-    btnClose.titleLabel.font = UIFontOfSize(14);
+    [btnClose setImage:[UIImage imageNamed:@"closeicon"] forState:UIControlStateNormal];
     [btnClose addTarget:self action:@selector(closeDidClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btnClose];
 
@@ -468,8 +467,12 @@
     picker.view.userInteractionEnabled = YES;
     
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
-    CheckInPickResultViewController *vc = [[CheckInPickResultViewController alloc] initWithImg:img];
-    [picker.navigationController pushViewController:vc animated:YES];
+//    CheckInPickResultViewController *vc = [[CheckInPickResultViewController alloc] initWithImg:img];
+//    [picker.navigationController pushViewController:vc animated:YES];
+    ImageCropViewController *controller = [[ImageCropViewController alloc] initWithImage:img];
+    controller.blurredBackground = YES;
+    [[self navigationController] pushViewController:controller animated:YES];
+
 }
 
 - (void)requestImageWithAsset:(PHAsset *)a options:(PHImageRequestOptions *)op picker:(CheckInImgPickerViewController *)picker
