@@ -239,8 +239,8 @@
   exitTitleLabel.text = @"退出";
   [exitTitleLabel addTapCallBack:self sel:@selector(onExitClick:)];
   [self.view addSubview:exitTitleLabel];
-  [self showHUDWithLabel:@"更新用户信息"];
-  [self.myInfoModel getMyInfo:userData.uid];
+//  [self showHUDWithLabel:@"更新用户信息"];
+//  [self.myInfoModel getMyInfo:userData.uid];
 }
 
 //- (void)switchAction:(UISwitch *)swit
@@ -476,23 +476,17 @@
 //  [userData save];
     
     
-    HTAppContext *appContext = [HTAppContext sharedContext];
-    appContext.uid = response.data.uid;
-    [appContext save];
+    
+//    [self.updateInfoModel updateInfo:userData.uid name:name avatar:tmpAvatarUrl height:self.heightStr sex:self.sex birthday:self.birthdayStr device:device coachTel:coachTel];
+
+    
+  
     HTUserData *userData = [HTUserData sharedInstance];
-    userData.isFresh = response.data.isfresh;
-    userData.age = response.data.age;
     userData.avatar = response.data.avatar;
-    userData.birthday = response.data.birthday;
-    userData.coachTel = response.data.coachTel;
-    //  userData.device = response.device;
-    userData.height = response.data.height;
-    userData.isCoach = response.data.isCoach;
-    userData.nick = response.data.nick;
-    self.sex = response.data.sex;
-    userData.sex = response.data.sex;
-    userData.tel = response.data.tel;
-    userData.uid = response.data.uid;
+    userData.birthday = self.birthdayStr;
+    userData.height = self.heightStr;
+    userData.nick = self.nameLabel.text;
+    userData.sex =  self.sex;
     [userData save];
 
     

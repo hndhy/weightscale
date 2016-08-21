@@ -17,11 +17,12 @@
   [parameters setValue:name forKey:@"nick"];
   [parameters setValue:height forKey:@"height"];
   [parameters setValue:[NSNumber numberWithInt:sex] forKey:@"sex"];
-  [parameters setValue:birthday forKey:@"birthday"];
-  [parameters setValue:coachTel forKey:@"coachTel"];
-  [parameters setValue:@"" forKey:@"device"];
   [parameters setValue:avatar forKey:@"avatar"];
-  [self uploadImage:@"/info_update.htm" parameters:parameters image:[UIImage imageNamed:@"upload_pic.png"] imageName:@"pic"];
+  [parameters setValue:@"" forKey:@"device"];
+  [parameters setValue:coachTel forKey:@"coachTel"];
+
+//  [parameters setValue:birthday forKey:@"birthday"];
+  [self uploadImage:@"api/user/UpdateInfo" parameters:parameters image:[UIImage imageNamed:@"upload_pic.png"] imageName:@"pic"];
 }
 
 - (BaseResponse*)parseResponse:(NSDictionary*)responseDict error:(NSError**)error

@@ -11,7 +11,7 @@
 
 @interface UserResponse : BaseResponse
 
-@property (nonatomic,strong) HTLoginDataModel*data;
-@property (nonatomic,copy) NSString *token;
+@property (nonatomic,strong) HTLoginDataModel<Optional>*data;
+@property (nonatomic,copy) NSString <Optional>*token;
 
 @end
