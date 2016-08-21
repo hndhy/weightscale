@@ -10,6 +10,11 @@
 #import "BodyData.h"
 
 @interface TrendListViewController : HTTableViewController<UIAlertViewDelegate>
+{
+    UIImageView *popView;
+    UIView *maskview;
+    BOOL isListShowed;
+}
 
 @property (nonatomic,copy) NSString *otherUid;
 @property (nonatomic,copy) NSString *nickName;

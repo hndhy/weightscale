@@ -33,6 +33,15 @@
 
 @implementation BodilyDataViewController
 
+- (id)initWithType:(NSString *)type
+{
+    self = [super init];
+    if (self) {
+        dataType = type;
+    }
+    return self;
+}
+
 -(void)initModel
 {
     self.dataSource = [[BDDataSource alloc]initWithController:self];
@@ -71,15 +80,15 @@
 
 -(void)initView{
 
-    UIImageView *titleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 45.0f)];
-    titleImageView.image = [UIImage imageNamed:@"home_title.png"];
-    [self.view addSubview:titleImageView];
+//    UIImageView *titleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 45.0f)];
+//    titleImageView.image = [UIImage imageNamed:@"home_title.png"];
+//    [self.view addSubview:titleImageView];
 //    titleImageView.hidden = YES;
     
     /**
      测量时间显示视图
      */
-    self.timeView = [[UIView alloc]initWithFrame:CGRectMake(0, titleImageView.bottom+8, self.view.width, 100)];
+    self.timeView = [[UIView alloc]initWithFrame:CGRectMake(0, 5, self.view.width, 224)];
     self.timeView.backgroundColor = [UIColor whiteColor];
     
     
@@ -172,13 +181,25 @@
     [com appendFormat:@"肌肉率变化%0.1f%@",y,@"%"];
     
     
-    [self setTimeValue:days startTime:[formatter stringFromDate:startTimesp] endTime:[formatter stringFromDate:endTimesp]comm:com];
+    [self setTimeValue:days startTime:[formatter stringFromDate:startTimesp] endTime:[formatter stringFromDate:endTimesp]loose:[NSString stringWithFormat:@"%.1f",x] gain:[NSString stringWithFormat:@"%.1f",y]];
+    
 //    [self setDiffViewValue:@"-4.65" item2:@"-0.56" item3:@"-0.98" item4:@"-1.23"];
     NSArray *chas = [self getChaArray];
     [self setDiffViewValue:chas[0] item2:chas[1] item3:chas[2] item4:chas[3] item5:chas[4]];
     
     for (BodyData *obj in self.bodilyArray) {
         NSLog(@"obj.W = %@",obj.LBM);
+    }
+    
+    
+    
+    if ([dataType isEqualToString:@"list"]) {
+        self.valueListView.hidden = NO;
+        self.trendView.hidden = YES;
+    } else
+    {
+        self.valueListView.hidden = YES;
+        self.trendView.hidden = NO;
     }
 }
 
@@ -249,18 +270,18 @@
 }
 
 //初始化时间数据
--(void)setTimeValue:(int)dayTime startTime:(NSString*)startTime endTime:(NSString*)endTime comm:(NSString *)comm
+-(void)setTimeValue:(int)dayTime startTime:(NSString*)startTime endTime:(NSString*)endTime loose:(NSString *)loose gain:(NSString *)gain
 {
-    //头像
-    UIImageView *photoIV = [[UIImageView alloc]initWithFrame:CGRectMake(20, 10, 60, 60)];
-    photoIV.layer.cornerRadius = 30.0f;
-    photoIV.layer.masksToBounds = YES;
-    HTUserData *userData = [HTUserData sharedInstance];
-    NSString *avatar = _avatar.length ? _avatar : userData.avatar;
-    [photoIV sd_setImageWithURL:[NSURL URLWithString:avatar] placeholderImage:[UIImage imageNamed:@"body_photo_bg.png"]];
-    [self.timeView addSubview:photoIV];
+//    //头像
+//    UIImageView *photoIV = [[UIImageView alloc]initWithFrame:CGRectMake(20, 10, 60, 60)];
+//    photoIV.layer.cornerRadius = 30.0f;
+//    photoIV.layer.masksToBounds = YES;
+//    HTUserData *userData = [HTUserData sharedInstance];
+//    NSString *avatar = _avatar.length ? _avatar : userData.avatar;
+//    [photoIV sd_setImageWithURL:[NSURL URLWithString:avatar] placeholderImage:[UIImage imageNamed:@"body_photo_bg.png"]];
+//    [self.timeView addSubview:photoIV];
     //测量历时
-    UILabel *dayLabel = [[UILabel alloc]initWithFrame:CGRectMake(photoIV.right+20, 10, 100, 30)];
+    UILabel *dayLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 10, 100, 30)];
     dayLabel.textColor = UIColorFromRGB(20, 149, 218);
     NSString *days = [NSString stringWithFormat:@"测量历时 %d 天", dayTime];
     NSMutableAttributedString *daysText = [[NSMutableAttributedString alloc] initWithString:days];
@@ -273,29 +294,89 @@
     dayLabel.font = [UIFont systemFontOfSize:15.0f];
     [dayLabel sizeToFit];
     [self.timeView addSubview:dayLabel];
+    
     //开始时间
     
-    UILabel *startLabel = [[UILabel alloc]initWithFrame:CGRectMake(dayLabel.left, dayLabel.bottom+5, 100, 20)];
-    NSMutableAttributedString *startText = [self textAttribut:[NSString stringWithFormat:@"开始：%@",startTime]];
-    startLabel.attributedText = startText;
-    startLabel.font = [UIFont systemFontOfSize:12.0f];
+    UILabel *startLabel = [[UILabel alloc]initWithFrame:CGRectMake(dayLabel.left, dayLabel.bottom+20, 100, 30)];
+    startLabel.text = @"开始时间";
+    startLabel.font = UIFontOfSize(14);
     [startLabel sizeToFit];
     [self.timeView addSubview:startLabel];
+    
+    UILabel *startTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(dayLabel.left, startLabel.bottom+5, DEVICEW/2, 30)];
+    startTimeLabel.text = startTime;
+    startTimeLabel.font = UIFontOfSize(10);
+    startTimeLabel.textColor = [UIColor lightGrayColor];
+    [self.timeView addSubview:startTimeLabel];
+    
+    
     //结束时间
-    UILabel *endLabel = [[UILabel alloc]initWithFrame:CGRectMake(dayLabel.left, startLabel.bottom+5, 100, 20)];
-    NSMutableAttributedString *endText = [self textAttribut:[NSString stringWithFormat:@"结束：%@",endTime]];
-    endLabel.attributedText = endText;
-    endLabel.font = [UIFont systemFontOfSize:12.0f];
+    UILabel *endLabel = [[UILabel alloc]initWithFrame:CGRectMake(DEVICEW/2, startLabel.top, 100, 30)];
+    endLabel.text = @"结束时间";
+    endLabel.font = UIFontOfSize(14);
     [endLabel sizeToFit];
     [self.timeView addSubview:endLabel];
     
-    UILabel *comLabel = [[UILabel alloc]initWithFrame:CGRectMake(dayLabel.left, endLabel.bottom+5, 120, 20)];
-    NSMutableAttributedString *comText = [self spectilTextAttribut:[NSString stringWithFormat:@"测评：%@",comm]];
-    comLabel.attributedText = comText;
-    comLabel.font = [UIFont systemFontOfSize:12.0f];
+    UILabel *endTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(endLabel.left, startTimeLabel.top, DEVICEW/2, 30)];
+    endTimeLabel.text = endTime;
+    endTimeLabel.font = UIFontOfSize(10);
+    endTimeLabel.textColor = [UIColor lightGrayColor];
+    [self.timeView addSubview:endTimeLabel];
+    
+
+    
+    UILabel *comLabel = [[UILabel alloc]initWithFrame:CGRectMake(dayLabel.left, startTimeLabel.bottom+10, 120, 30)];
+    comLabel.text = @"测评结果";
+    comLabel.font = UIFontOfSize(14);
     [comLabel sizeToFit];
     [self.timeView addSubview:comLabel];
+    
+    UILabel *zhifangLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, comLabel.bottom+10, DEVICEW/2, 30)];
+    zhifangLabel.text = @"脂肪变化率";
+    zhifangLabel.font = UIFontOfSize(12);
+    zhifangLabel.textColor = [UIColor lightGrayColor];
+    [zhifangLabel setTextAlignment:NSTextAlignmentCenter];
+    [self.timeView addSubview:zhifangLabel];
+    
+    UILabel *zhifangNumLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, zhifangLabel.bottom+10, DEVICEW/2, 30)];
+    zhifangNumLabel.text = loose;
+    zhifangNumLabel.font = UIFontOfSize(20);
+    zhifangNumLabel.textColor = APP_RED;
+    [zhifangNumLabel setTextAlignment:NSTextAlignmentCenter];
+    [self.timeView addSubview:zhifangNumLabel];
 
+    
+    
+    
+    UILabel *jirouLabel = [[UILabel alloc]initWithFrame:CGRectMake(DEVICEW/2, zhifangLabel.top, DEVICEW/2, 30)];
+    jirouLabel.text = @"肌肉变化率";
+    jirouLabel.font = UIFontOfSize(12);
+    jirouLabel.textColor = [UIColor lightGrayColor];
+    [jirouLabel setTextAlignment:NSTextAlignmentCenter];
+    jirouLabel.textAlignment = NSTextAlignmentCenter;
+    [self.timeView addSubview:jirouLabel];
+    
+    UILabel *jirouNumLabel = [[UILabel alloc]initWithFrame:CGRectMake(DEVICEW/2, jirouLabel.bottom+10, DEVICEW/2, 30)];
+    jirouNumLabel.text = gain;
+    jirouNumLabel.font = UIFontOfSize(20);
+    jirouNumLabel.textColor = APP_GREEN;
+    [jirouNumLabel setTextAlignment:NSTextAlignmentCenter];
+    jirouNumLabel.textAlignment = NSTextAlignmentCenter;
+    [self.timeView addSubview:jirouNumLabel];
+    
+    
+    UIView *lineView1 = [[UIView alloc] initWithFrame:CGRectMake(20, dayLabel.bottom+10, DEVICEW-40, 0.5f)];
+    lineView1.backgroundColor = UIColorFromRGB(238, 238, 238);
+    [self.timeView addSubview:lineView1];
+
+    UIView *lineView2 = [[UIView alloc] initWithFrame:CGRectMake(20, startTimeLabel.bottom+5, DEVICEW-40, 0.5f)];
+    lineView2.backgroundColor = UIColorFromRGB(238, 238, 238);
+    [self.timeView addSubview:lineView2];
+
+    
+    UIView *lineView3 = [[UIView alloc] initWithFrame:CGRectMake(20, self.timeView.bottom-1, DEVICEW-40, 0.5f)];
+    lineView3.backgroundColor = UIColorFromRGB(238, 238, 238);
+    [self.timeView addSubview:lineView3];
 }
 
 //初始化差值数据

@@ -9,8 +9,13 @@
 #import "HTTableViewController.h"
 
 @interface BodilyDataViewController : HTTableViewController
+{
+    NSString *dataType;
+}
 
 @property(nonatomic,strong)NSMutableArray *bodilyArray;
 @property(nonatomic,copy) NSString *nickName;
 @property(nonatomic,copy) NSString *avatar;
+- (id)initWithType:(NSString *)type;
+
 @end

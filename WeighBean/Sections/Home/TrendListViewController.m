@@ -19,6 +19,7 @@
 
 @interface TrendListViewController ()<DelDatasModelProtocol,TrendModelProtocol>
 
+
 @property(nonatomic,strong) NSMutableArray *selectedArray;
 @property(nonatomic,strong) UIButton *editButton;
 @property(nonatomic,strong) TrendListDataSource *dataSource;
@@ -115,7 +116,7 @@
         [self.editButton addTarget:self action:@selector(onEditClick:) forControlEvents:UIControlEventTouchUpInside];
         
         UIButton *trendButton = [[UIButton alloc]initWithFrame:CGRectMake(rightView.width-34.0f, 0, 44.0f, 44.0f)];
-        [trendButton setImage:[UIImage imageNamed:@"body_list"] forState:UIControlStateNormal];
+        [trendButton setImage:[UIImage imageNamed:@"addimg"] forState:UIControlStateNormal];
         [trendButton addTarget:self action:@selector(onTrendClick:) forControlEvents:UIControlEventTouchUpInside];
         [rightView addSubview:self.editButton];
         [rightView addSubview:trendButton];
@@ -125,7 +126,7 @@
     else
     {
         UIButton *trendButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 44.0f, 44.0f)];
-        [trendButton setImage:[UIImage imageNamed:@"body_list"] forState:UIControlStateNormal];
+        [trendButton setImage:[UIImage imageNamed:@"addimg"] forState:UIControlStateNormal];
         [trendButton addTarget:self action:@selector(onTrendClick:) forControlEvents:UIControlEventTouchUpInside];
         UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:trendButton];
         
@@ -186,6 +187,7 @@
     [self.bottomView addSubview:lineIV];
     self.bottomView.hidden = YES;
     [self.view addSubview:self.bottomView];
+    
 }
 
 -(void)getListDatas
@@ -229,6 +231,10 @@
 
 -(void)onTrendClick:(id)sender
 {
+    if (isListShowed) {
+        return;
+    }
+    
     long count = self.selectedArray.count;
     NSLog(@"count:==%ld",count);
     if (count < 2)
@@ -237,12 +243,96 @@
         [alert show];
         return;
     }
-    BodilyDataViewController *bodyVC = [[BodilyDataViewController alloc]init];
+    
+    maskview = [[UIView alloc] initWithFrame:self.view.bounds];
+    maskview.backgroundColor = [UIColor clearColor];
+    [[self.navigationController topViewController].view addSubview:maskview];
+    
+    UIButton *maskBtn = [[UIButton alloc] initWithFrame:maskview.bounds];
+    maskBtn.backgroundColor = [UIColor clearColor];
+    [maskBtn addTarget:self action:@selector(hidePop) forControlEvents:UIControlEventTouchUpInside];
+    [maskview addSubview:maskBtn];
+    
+    
+    popView = [[UIImageView alloc] initWithFrame:CGRectMake(DEVICEW-115, 0, 100, 110)];
+    [popView setImage:[UIImage imageNamed:@"popup"]];
+    popView.userInteractionEnabled = YES;
+    [[self.navigationController topViewController].view addSubview:popView];
+    
+    
+    UIButton *listBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 10, popView.frame.size.width, 25)];
+    [listBtn setTitle:@"列表" forState:UIControlStateNormal];
+    listBtn.titleLabel.font = UIFontOfSize(11);
+    listBtn.imageEdgeInsets = UIEdgeInsetsMake(listBtn.titleLabel.intrinsicContentSize.height-13, 0, 0, listBtn.titleLabel.intrinsicContentSize.width);
+    [listBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [listBtn setImage:[UIImage imageNamed:@"listimg"] forState:UIControlStateNormal];
+    [listBtn addTarget:self action:@selector(listDidClick) forControlEvents:UIControlEventTouchUpInside];
+    [popView addSubview:listBtn];
+    
+    UIView *line1 = [[UIView alloc] initWithFrame:CGRectMake(10, listBtn.bottom, popView.frame.size.width-20, 0.2)];
+    line1.backgroundColor = [UIColor lightGrayColor];
+    [popView addSubview:line1];
+    
+    
+    
+    UIButton *circleBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, listBtn.bottom+10, popView.frame.size.width, 25)];
+    [circleBtn setTitle:@"曲线" forState:UIControlStateNormal];
+    circleBtn.titleLabel.font = UIFontOfSize(11);
+    circleBtn.imageEdgeInsets = UIEdgeInsetsMake(circleBtn.titleLabel.intrinsicContentSize.height-13, 0, 0, circleBtn.titleLabel.intrinsicContentSize.width);
+    [circleBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [circleBtn setImage:[UIImage imageNamed:@"quxian"] forState:UIControlStateNormal];
+    [circleBtn addTarget:self action:@selector(circleDidClick) forControlEvents:UIControlEventTouchUpInside];
+    [popView addSubview:circleBtn];
+    
+    UIView *line2 = [[UIView alloc] initWithFrame:CGRectMake(10, circleBtn.bottom, popView.frame.size.width-20, 0.2)];
+    line2.backgroundColor = [UIColor lightGrayColor];
+    [popView addSubview:line2];
+    
+    
+    
+    UIButton *journayBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, circleBtn.bottom+10, popView.frame.size.width, 25)];
+    [journayBtn setTitle:@"日记" forState:UIControlStateNormal];
+    journayBtn.titleLabel.font = UIFontOfSize(11);
+    journayBtn.imageEdgeInsets = UIEdgeInsetsMake(journayBtn.titleLabel.intrinsicContentSize.height-13, 0, 0, journayBtn.titleLabel.intrinsicContentSize.width);
+    [journayBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [journayBtn setImage:[UIImage imageNamed:@"riji"] forState:UIControlStateNormal];
+    [popView addSubview:journayBtn];
+    
+    UIView *line3 = [[UIView alloc] initWithFrame:CGRectMake(10, journayBtn.bottom, popView.frame.size.width-20, 0.2)];
+    line3.backgroundColor = [UIColor lightGrayColor];
+    [popView addSubview:line3];
+    
+    isListShowed = YES;
+}
+
+- (void)hidePop
+{
+    maskview.hidden = YES;
+    popView.hidden = YES;
+    [maskview removeFromSuperview];
+    [popView removeFromSuperview];
+    isListShowed = NO;
+}
+
+- (void)listDidClick
+{
+    BodilyDataViewController *bodyVC = [[BodilyDataViewController alloc] initWithType:@"list"];
     bodyVC.bodilyArray = self.selectedArray;
     bodyVC.nickName = self.nickName;
     bodyVC.avatar = self.avatar;
     [self.navigationController pushViewController:bodyVC animated:YES];
 }
+
+- (void)circleDidClick
+{
+    BodilyDataViewController *bodyVC = [[BodilyDataViewController alloc] initWithType:@"circle"];
+    bodyVC.bodilyArray = self.selectedArray;
+    bodyVC.nickName = self.nickName;
+    bodyVC.avatar = self.avatar;
+    [self.navigationController pushViewController:bodyVC animated:YES];
+}
+
+
 
 //删除部分数据
 -(void)onDelDatas
