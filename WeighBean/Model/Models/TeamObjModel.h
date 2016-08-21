@@ -9,6 +9,10 @@
 #import "JSONModel.h"
 #import "MeasureObjModel.h"
 
+@protocol TeamObjModel <NSObject>
+
+
+@end
 
 @interface TeamObjModel : JSONModel
 @property (nonatomic,copy)NSString *avatar;

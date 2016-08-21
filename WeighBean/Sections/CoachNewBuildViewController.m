@@ -20,13 +20,14 @@
     return self;
 }
 
-- (id)initWithUserID:(NSString *)uid teamID:(NSString *)tid teamName:(NSString *)name
+- (id)initWithUserID:(NSString *)uid teamID:(NSString *)tid teamName:(NSString *)name introText:(NSString *)intro
 {
     self = [super init];
     if (self) {
         userid = uid;
         teamid = tid;
         teamname = name;
+        teamdescription = intro;
     }
     return self;
 }
@@ -71,24 +72,24 @@
     [view1 addSubview:nameBtn];
 
     
-    UIView *view2 = [[UIView alloc] initWithFrame:CGRectMake(0, view1.bottom+5, self.view.frame.size.width, 50)];
-    view2.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:view2];
+//    UIView *view2 = [[UIView alloc] initWithFrame:CGRectMake(0, view1.bottom+5, self.view.frame.size.width, 50)];
+//    view2.backgroundColor = [UIColor whiteColor];
+//    [self.view addSubview:view2];
+//    
+//    allowExchangeLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, 90, 40)];
+//    allowExchangeLabel.textColor = [UIColor blackColor];
+//    allowExchangeLabel.font = [UIFont systemFontOfSize:13];
+//    allowExchangeLabel.textAlignment = NSTextAlignmentLeft;
+//    allowExchangeLabel.text = @"允许队员交流";
+//    [view2 addSubview:allowExchangeLabel];
+//    
+//    allowSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(self.view.frame.size.width-80, 10, 80, 40)];
+//    allowSwitch.on = YES;
+//    [allowSwitch addTarget:self action:@selector(allowAction:) forControlEvents:UIControlEventTouchUpInside];
+//    [view2 addSubview:allowSwitch];
     
-    allowExchangeLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, 90, 40)];
-    allowExchangeLabel.textColor = [UIColor blackColor];
-    allowExchangeLabel.font = [UIFont systemFontOfSize:13];
-    allowExchangeLabel.textAlignment = NSTextAlignmentLeft;
-    allowExchangeLabel.text = @"允许队员交流";
-    [view2 addSubview:allowExchangeLabel];
     
-    allowSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(self.view.frame.size.width-80, 10, 80, 40)];
-    allowSwitch.on = YES;
-    [allowSwitch addTarget:self action:@selector(allowAction:) forControlEvents:UIControlEventTouchUpInside];
-    [view2 addSubview:allowSwitch];
-    
-    
-    UIView *view3 = [[UIView alloc] initWithFrame:CGRectMake(0, view2.bottom+5, self.view.frame.size.width, 150)];
+    UIView *view3 = [[UIView alloc] initWithFrame:CGRectMake(0, view1.bottom+5, DEVICEW, 110)];
     view3.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:view3];
     
@@ -101,14 +102,17 @@
     [view3 addSubview:introductionLabel];
     
 
-    introDetailLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 0, self.view.frame.size.width-100, 130)];
-    introDetailLabel.textColor = [UIColor blackColor];
-    introDetailLabel.font = [UIFont systemFontOfSize:13];
-    introDetailLabel.numberOfLines = 0;
-    introDetailLabel.text = @"体育总局各个房间圣诞快fwqfweqfewqfsa乐福建省拉fsaf杜坎肌肤fdsafsdaver";
-    [view3 addSubview:introDetailLabel];
-    
-    
+    introTextView = [[UITextView alloc] initWithFrame:CGRectMake(90, 5, DEVICEW-100, 100)];
+    introTextView.textColor = [UIColor blackColor];
+    introTextView.font = [UIFont systemFontOfSize:13];
+    introTextView.textAlignment = NSTextAlignmentLeft;
+    if (teamdescription) {
+        introTextView.text = teamdescription;
+    } else
+    {
+        introTextView.text = @"体育总局各个房间圣诞快fwqfweqfewqfsa乐福建省拉fsaf杜坎肌肤fdsafsdaver";
+    }
+    [view3 addSubview:introTextView];
     
     
     buildBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 300, self.view.frame.size.width-20, 50)];
@@ -118,7 +122,6 @@
     buildBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     [buildBtn addTarget:self action:@selector(buildDidClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:buildBtn];
-    
     
     if (userid && teamid && teamname) {
 //        nameBtn.titleLabel.text = teamname;
@@ -131,7 +134,6 @@
 {
     [super viewWillAppear:animated];
 }
-
 
 #pragma mark createcoachprotocol
 - (void)createCoachFinished:(CreateCoachResponse *)response
@@ -171,17 +173,15 @@
     }
 }
 
-
-
 - (void)presentLeftMenuViewController:(id)sender
 {
     
 }
 
-- (void)allowAction:(id)sender
-{
-    
-}
+//- (void)allowAction:(id)sender
+//{
+//    
+//}
 
 - (void)changeDicClick
 {
@@ -192,12 +192,12 @@
 - (void)buildDidClick
 {
     HTUserData *userData = [HTUserData sharedInstance];
-    if (allowSwitch.on == YES) {
-        ischat = 1;
-    } else
-    {
-        ischat = 0;
-    }
-    [self.createCoachModel creatCoachWithUid:userData.uid teamType:teamType teamName:nameBtn.titleLabel.text isChat:ischat description:introDetailLabel.text target:nil];
+//    if (allowSwitch.on == YES) {
+//        ischat = 1;
+//    } else
+//    {
+//        ischat = 0;
+//    }
+    [self.createCoachModel creatCoachWithUid:userData.uid teamType:teamType teamName:nameBtn.titleLabel.text isChat:1 description:introTextView.text target:nil];
 }
 @end

@@ -9,6 +9,7 @@
 #import "HTBaseViewController.h"
 #import "ViewCoachDetailModel.h"
 #import "ViewCoachDetailModelHandler.h"
+#import "TeamLineViewController.h"
 
 @interface CoachDetailViewController : HTBaseViewController <ViewCoachDetailModelProtocol>
 {
@@ -17,7 +18,7 @@
     NSString *teamID;
     
     UILabel *coachNameLbl;
-    UILabel *coachTypeLbl;
+    UIButton *coachTypeLbl;
     UILabel *startTimeLbl;
     UILabel *endTimeLbl;
     UILabel *teamIdLbl;

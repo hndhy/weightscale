@@ -10,12 +10,25 @@
 #import "TeamLineCell.h"
 
 @implementation TeamLineViewController
+
+- (id)initWithTeamID:(NSString *)tid
+{
+    self = [super init];
+    if (self) {
+        teamid = tid;
+    }
+    return self;
+}
+
+
 - (void)initModel
 {
     self.handle = [[TeamLineModelHandler alloc] initWithController:self];
     self.listModel = [[TeamListModel alloc] initWithHandler:self.handle];
     _dataArray = [[NSMutableArray alloc] init];
-//    [self.listModel getTeamLisetInfo];
+    if (teamid) {
+        [self.listModel getTeamLisetInfoWithTeamID:teamid];
+    }
 }
 
 - (void)initNavbar

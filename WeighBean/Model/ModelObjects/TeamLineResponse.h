@@ -7,8 +7,9 @@
 //
 
 #import "BaseResponse.h"
+#import "TeamObjModel.h"
 
 @interface TeamLineResponse : BaseResponse
-@property (nonatomic,strong) NSArray *data;
+@property (nonatomic,strong) NSArray <TeamObjModel>*data;
 
 @end

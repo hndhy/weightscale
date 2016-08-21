@@ -62,12 +62,12 @@
     [self.view addSubview:scrollView];
     
     
-    coachTypeLbl = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, 50, 60)];
-    coachTypeLbl.backgroundColor = BLUECOLOR;
-    [coachTypeLbl setTextColor:[UIColor whiteColor]];
-    [coachTypeLbl setFont:[UIFont systemFontOfSize:15]];
-    coachTypeLbl.textAlignment = NSTextAlignmentCenter;
-    [coachTypeLbl setText:@"增肌"];
+    coachTypeLbl = [[UIButton alloc] initWithFrame:CGRectMake(15, 0, 40, 60)];
+    [coachTypeLbl setBackgroundImage:[UIImage imageNamed:@"coachflag"] forState:UIControlStateNormal];
+    [coachTypeLbl setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    coachTypeLbl.titleLabel.font = UIFontOfSize(15);
+    coachTypeLbl.titleLabel.textAlignment = NSTextAlignmentCenter;
+    [coachTypeLbl setTitle:@"增肌" forState:UIControlStateNormal];
     [scrollView addSubview:coachTypeLbl];
     
     startTimeLbl = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width-150, 10, 150, 20)];
@@ -340,10 +340,10 @@
     
     switch ([response.data.teamType integerValue]) {
         case 1:
-            [coachTypeLbl setText:@"减脂"];
+            [coachTypeLbl setTitle:@"减脂" forState:UIControlStateNormal];
             break;
         case 2:
-            [coachTypeLbl setText:@"增肌"];
+            [coachTypeLbl setTitle:@"增肌" forState:UIControlStateNormal];
             break;
         default:
             break;
@@ -386,7 +386,9 @@
 
 - (void)enterDidClick
 {
-    
+    TeamLineViewController * teamLineVC = [[TeamLineViewController alloc] initWithTeamID:teamID];
+    [self.navigationController pushViewController:teamLineVC animated:YES];
+
 }
 
 - (void)inviteDicClick

@@ -14,8 +14,11 @@
 {
     UICollectionView *collection;
     NSMutableArray *_dataArray;
+    NSString *teamid;
 }
 
 @property (nonatomic,strong)TeamLineModelHandler *handle;
 @property (nonatomic,strong)TeamListModel *listModel;
+- (id)initWithTeamID:(NSString *)tid;
+
 @end

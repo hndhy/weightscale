@@ -9,6 +9,9 @@
 #import "TeamLineCell.h"
 #import "UtilsMacro.h"
 #import "UIView+Ext.h"
+#import <UIImageView+WebCache.h>
+
+
 @implementation TeamLineCell
 
 - (id)initWithFrame:(CGRect)frame
@@ -53,28 +56,50 @@
         commentBtn = [[UIButton alloc] initWithFrame:CGRectMake(7, picView.bottom+25, 45, 23)];
         [commentBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         commentBtn.titleLabel.font = UIFontOfSize(12);
+        [commentBtn setImage:[UIImage imageNamed:@"coachlinecomment"] forState:UIControlStateNormal];
         [commentBtn setTitle:@"1" forState:UIControlStateNormal];
         commentBtn.titleLabel.textAlignment = NSTextAlignmentRight;
         [self.contentView addSubview:commentBtn];
         
-        likeLbl = [[UILabel alloc] initWithFrame:CGRectMake(commentBtn.right+10, commentBtn.top, 44, 23)];
-        likeLbl.font = UIFontOfSize(12);
-        likeLbl.text = @"3";
-        likeLbl.textColor = [UIColor grayColor];
-        [self.contentView addSubview:likeLbl];
-        
-        
+        likeBtn = [[UIButton alloc] initWithFrame:CGRectMake(commentBtn.right+10, commentBtn.top, 44, 23)];
+        likeBtn.titleLabel.font = UIFontOfSize(12);
+        [likeBtn setImage:[UIImage imageNamed:@"coachlinelike"] forState:UIControlStateNormal];
+        [likeBtn setTitle:@"3" forState:UIControlStateNormal];
+        [likeBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [self.contentView addSubview:likeBtn];
         
         favourArr = [[NSMutableArray alloc] init];
         commentArr = [[NSMutableArray alloc] init];
-
     }
     return self;
 }
 
 - (void)loadContent:(TeamObjModel *)obj path:(NSIndexPath *)path
 {
+    self.obj = obj;
+    self.path = path;
     
+    NSDate *createTime = [NSDate dateWithTimeIntervalSince1970:[obj.createTime intValue]/1000];
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    
+    
+    [avatar sd_setImageWithURL:[NSURL URLWithString:obj.avatar] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        if (image) {
+            avatar.image = image;
+        }
+    }];
+    
+    nickName.text = obj.nick;
+    timeLbl.text = [formatter stringFromDate:createTime];
+    [picView sd_setImageWithURL:[NSURL URLWithString:obj.pics] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        picView.image = image;
+    }];
+    [commentBtn setTitle:obj.comment_num forState:UIControlStateNormal];
+    [likeBtn setTitle:obj.favour forState:UIControlStateNormal];
+
 }
 
 @end

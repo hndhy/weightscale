@@ -18,6 +18,6 @@
 {
     [super dataDidLoad:sender data:data];
     HTBaseViewController<JoinCoachModelProtocol> *controller = (HTBaseViewController<JoinCoachModelProtocol>*)self.controller;
-//    [controller JoinCoachFinished:(JoinCoachResponse *)data];
+    [controller JoinCoachFinished:(JoinCoachResponse *)data];
 }
 @end

@@ -16,12 +16,14 @@
     
     UIImageView *picView;
     
-    UILabel *likeLbl;
+    UIButton *likeBtn;
     UIButton *commentBtn;
     NSMutableArray *favourArr;
     NSMutableArray *commentArr;
 
 }
+@property (nonatomic,strong) TeamObjModel *obj;
+@property (nonatomic,strong) NSIndexPath *path;
 
 - (void)loadContent:(TeamObjModel *)obj path:(NSIndexPath *)path;
 

@@ -40,7 +40,7 @@
 #import "MGSwipeTableCell.h"
 
 
-@interface CoachViewController ()<UITableViewDelegate,UITableViewDataSource,CoachModelProtocol,DissolveCoachModelProtocol,UIAlertViewDelegate,SWTableViewCellDelegate,MGSwipeTableCellDelegate,CoachCellDelegate>
+@interface CoachViewController ()<UITableViewDelegate,UITableViewDataSource,CoachModelProtocol,JoinCoachModelProtocol,DissolveCoachModelProtocol,UIAlertViewDelegate,SWTableViewCellDelegate,MGSwipeTableCellDelegate,CoachCellDelegate>
 {
     UITableView *_tableView;
     NSMutableArray *_dataArray;
@@ -239,7 +239,15 @@
     [self.joinCoachModel joinCoachWithUid:appContext.uid teamID:tid];
 }
 
+- (void)JoinCoachFinished:(JoinCoachResponse *)response
+{
+    [self alert:@"成功"
+        message:[NSString stringWithFormat:@"%@", response.msg]
+       delegate:nil
+    cancelTitle:@"确定"
+    otherTitles:nil];
 
+}
 
 
 - (void)editTeam:(NSIndexPath *)indexpath
@@ -247,7 +255,7 @@
     HTAppContext *appContext = [HTAppContext sharedContext];
     CoachObjModel *obj = _dataArray[indexpath.row];
 
-    CoachNewBuildViewController *vc = [[CoachNewBuildViewController alloc] initWithUserID:appContext.uid teamID:obj.tid teamName:obj.teamName];
+    CoachNewBuildViewController *vc = [[CoachNewBuildViewController alloc] initWithUserID:appContext.uid teamID:obj.tid teamName:obj.teamName introText:@""];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

@@ -19,7 +19,7 @@
     
     UIButton *nameBtn;
     UISwitch *allowSwitch;
-    UILabel *introDetailLabel;
+    UITextView *introTextView;
     
     UIButton *buildBtn;
     
@@ -28,7 +28,7 @@
     NSString *teamid;
     NSString *teamname;
     int ischat;
-//    NSString *teamdescription;
+    NSString *teamdescription;
     
     BOOL isEditType;
 }
@@ -38,6 +38,6 @@
 
 
 - (id)initWithType:(int)type;
-- (id)initWithUserID:(NSString *)uid teamID:(NSString *)tid teamName:(NSString *)name;
+- (id)initWithUserID:(NSString *)uid teamID:(NSString *)tid teamName:(NSString *)name introText:(NSString *)intro;
 
 @end

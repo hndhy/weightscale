@@ -9,11 +9,11 @@
 #import "TeamListModel.h"
 #import "HTAppContext.h"
 @implementation TeamListModel
-- (void)getTeamLisetInfo
+- (void)getTeamLisetInfoWithTeamID:(NSString *)teamID
 {
     NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithCapacity:5];
     HTAppContext *appContext = [HTAppContext sharedContext];
-    [parameters setValue:@"9951B02C-ADC0-AF9D-6378-F5374A5DCBB3" forKey:@"tid"];
+    [parameters setValue:teamID forKey:@"tid"];
     [self getPath:@"api/team/TeamsDynamic" parameters:parameters];
 
 }

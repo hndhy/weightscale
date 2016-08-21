@@ -9,6 +9,6 @@
 #import "BaseResponse.h"
 
 @interface DissolveCoachResponse : BaseResponse
-@property (nonatomic,strong) NSArray *data;
+//@property (nonatomic,strong) NSArray *data;
 
 @end

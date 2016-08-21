@@ -89,9 +89,9 @@
     stataLbl.text = [NSString stringWithFormat:@"状态:%@",obj.teamType];
     
     
-    if (obj.teamType == @"1") {
+    if ([obj.teamType isEqualToString: @"1"]) {
         coachIcon.image = [UIImage imageNamed:@"fat_iconv"];
-    } else if (obj.teamType == @"2")
+    } else if ([obj.teamType isEqualToString: @"2"])
     {
         coachIcon.image = [UIImage imageNamed:@"strong_iconv"];
     } else

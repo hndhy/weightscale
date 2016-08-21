@@ -20,6 +20,8 @@
 @property (nonatomic,copy)NSString *teamName;
 @property (nonatomic,copy)NSString *teamType;
 @property (nonatomic,copy)NSString *tid;
+@property (nonatomic,copy)NSString *uid;
 @property (nonatomic,copy)NSString *valid;
+@property (copy,readonly)NSString *description;
 
 @end
