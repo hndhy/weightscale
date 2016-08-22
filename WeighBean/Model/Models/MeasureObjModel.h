@@ -11,10 +11,10 @@
 @end
 
 @interface MeasureObjModel : JSONModel
-@property (nonatomic,copy)NSString *fat;
-@property (nonatomic,copy)NSString *lbm;
-@property (nonatomic,copy)NSString *vat;
-@property (nonatomic,copy)NSString *w;
-@property (nonatomic,copy)NSString <Optional>*measureTime;
+@property (nonatomic,assign)NSString *fat;
+@property (nonatomic,assign)NSString *lbm;
+@property (nonatomic,assign)NSString *vat;
+@property (nonatomic,assign)NSString *w;
+@property (nonatomic,assign)NSString <Optional>*measureTime;
 
 @end

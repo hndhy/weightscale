@@ -26,6 +26,6 @@
 @property (nonatomic,copy)NSString *teamType;
 @property (nonatomic,copy)NSString *uid;
 
-@property (nonatomic,assign) MeasureObjModel *measure;
+@property (nonatomic,strong) MeasureObjModel*measure;
 @end
 

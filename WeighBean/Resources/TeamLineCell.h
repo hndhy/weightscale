@@ -15,11 +15,17 @@
     UILabel *timeLbl;
     
     UIImageView *picView;
+    UIView *containerView;
     
     UIButton *likeBtn;
     UIButton *commentBtn;
     NSMutableArray *favourArr;
     NSMutableArray *commentArr;
+    
+    UILabel *weightNumLbl;
+    UILabel *weightRatioNumLbl;
+    UILabel *innerNumLbl;
+    UILabel *muscleNumLbl;
 
 }
 @property (nonatomic,strong) TeamObjModel *obj;
