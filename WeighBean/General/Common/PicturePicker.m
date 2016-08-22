@@ -16,6 +16,8 @@
 #import <iToast.h>
 #import "CheckInImgPickerViewController.h"
 #import "HTNavigationController.h"
+#import "ImageCropView.h"
+
 
 //static const NSTimeInterval kAnimationDuration = 0.33;
 
@@ -168,14 +170,24 @@
     UIImage* scaledImage = [image scaleToFitSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT)];
     [self.controller selectImage:scaledImage];
   } else {
-    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
-    [self.controller selectImage:image];
+      UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+
+      [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+      ImageCropViewController *controller = [[ImageCropViewController alloc] initWithImage:image];
+      controller.blurredBackground = YES;
+      [self.controller presentViewController:controller animated:NO completion:nil];
+
+//    [self.controller selectImage:image];
   }
+    
+    
+
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
   [picker dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 @end
