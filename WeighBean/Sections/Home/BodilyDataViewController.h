@@ -11,6 +11,10 @@
 @interface BodilyDataViewController : HTTableViewController
 {
     NSString *dataType;
+    UIImageView *popView;
+    UIView *maskview;
+    BOOL isListShowed;
+
 }
 
 @property(nonatomic,strong)NSMutableArray *bodilyArray;

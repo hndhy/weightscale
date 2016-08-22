@@ -70,7 +70,7 @@
     [forwardButton addTarget:self action:@selector(onForwardClick:) forControlEvents:UIControlEventTouchUpInside];
     
     self.trendButton = [[UIButton alloc]initWithFrame:CGRectMake(rightView.width-34.0f, 0, 44.0f, 44.0f)];
-    [self.trendButton setImage:[UIImage imageNamed:@"body_trend"] forState:UIControlStateNormal];
+    [self.trendButton setImage:[UIImage imageNamed:@"addimg"] forState:UIControlStateNormal];
     [self.trendButton addTarget:self action:@selector(onTrendClick:) forControlEvents:UIControlEventTouchUpInside];
     [rightView addSubview:forwardButton];
     [rightView addSubview:self.trendButton];
@@ -88,7 +88,7 @@
     /**
      测量时间显示视图
      */
-    self.timeView = [[UIView alloc]initWithFrame:CGRectMake(0, 5, self.view.width, 224)];
+    self.timeView = [[UIView alloc]initWithFrame:CGRectMake(0, 5, self.view.width, 189)];
     self.timeView.backgroundColor = [UIColor whiteColor];
     
     
@@ -161,7 +161,7 @@
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     [formatter setTimeStyle:NSDateFormatterShortStyle];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
     
     float x = (endBD.FAT.floatValue*endBD.W.floatValue - startBD.FAT.floatValue*startBD.W.floatValue)/100;
     float y = (endBD.LBM.floatValue/endBD.W.floatValue - startBD.LBM.floatValue/startBD.W.floatValue)*100;
@@ -245,28 +245,121 @@
 
 -(void)onTrendClick:(id)sender
 {
-    if (self.valueListView.isHidden)
+    
+    maskview = [[UIView alloc] initWithFrame:self.view.bounds];
+    maskview.backgroundColor = [UIColor clearColor];
+    [[self.navigationController topViewController].view addSubview:maskview];
+    
+    UIButton *maskBtn = [[UIButton alloc] initWithFrame:maskview.bounds];
+    maskBtn.backgroundColor = [UIColor clearColor];
+    [maskBtn addTarget:self action:@selector(hidePop) forControlEvents:UIControlEventTouchUpInside];
+    [maskview addSubview:maskBtn];
+    
+    
+    popView = [[UIImageView alloc] initWithFrame:CGRectMake(DEVICEW-115, 0, 100, 110)];
+    [popView setImage:[UIImage imageNamed:@"popup"]];
+    popView.userInteractionEnabled = YES;
+    [[self.navigationController topViewController].view addSubview:popView];
+    
+    
+    UIButton *listBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 10, popView.frame.size.width, 25)];
+    [listBtn setTitle:@"列表" forState:UIControlStateNormal];
+    listBtn.titleLabel.font = UIFontOfSize(11);
+    listBtn.imageEdgeInsets = UIEdgeInsetsMake(listBtn.titleLabel.intrinsicContentSize.height-13, 0, 0, listBtn.titleLabel.intrinsicContentSize.width);
+    [listBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [listBtn setImage:[UIImage imageNamed:@"listimg"] forState:UIControlStateNormal];
+    [listBtn addTarget:self action:@selector(listDidClick) forControlEvents:UIControlEventTouchUpInside];
+    [popView addSubview:listBtn];
+    
+    UIView *line1 = [[UIView alloc] initWithFrame:CGRectMake(10, listBtn.bottom, popView.frame.size.width-20, 0.2)];
+    line1.backgroundColor = [UIColor lightGrayColor];
+    [popView addSubview:line1];
+    
+    
+    
+    UIButton *circleBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, listBtn.bottom+10, popView.frame.size.width, 25)];
+    [circleBtn setTitle:@"曲线" forState:UIControlStateNormal];
+    circleBtn.titleLabel.font = UIFontOfSize(11);
+    circleBtn.imageEdgeInsets = UIEdgeInsetsMake(circleBtn.titleLabel.intrinsicContentSize.height-13, 0, 0, circleBtn.titleLabel.intrinsicContentSize.width);
+    [circleBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [circleBtn setImage:[UIImage imageNamed:@"quxian"] forState:UIControlStateNormal];
+    [circleBtn addTarget:self action:@selector(circleDidClick) forControlEvents:UIControlEventTouchUpInside];
+    [popView addSubview:circleBtn];
+    
+    UIView *line2 = [[UIView alloc] initWithFrame:CGRectMake(10, circleBtn.bottom, popView.frame.size.width-20, 0.2)];
+    line2.backgroundColor = [UIColor lightGrayColor];
+    [popView addSubview:line2];
+    
+    
+    
+    UIButton *journayBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, circleBtn.bottom+10, popView.frame.size.width, 25)];
+    [journayBtn setTitle:@"日记" forState:UIControlStateNormal];
+    journayBtn.titleLabel.font = UIFontOfSize(11);
+    journayBtn.imageEdgeInsets = UIEdgeInsetsMake(journayBtn.titleLabel.intrinsicContentSize.height-13, 0, 0, journayBtn.titleLabel.intrinsicContentSize.width);
+    [journayBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [journayBtn setImage:[UIImage imageNamed:@"riji"] forState:UIControlStateNormal];
+    [popView addSubview:journayBtn];
+    
+    UIView *line3 = [[UIView alloc] initWithFrame:CGRectMake(10, journayBtn.bottom, popView.frame.size.width-20, 0.2)];
+    line3.backgroundColor = [UIColor lightGrayColor];
+    [popView addSubview:line3];
+    
+    isListShowed = YES;
+    
+    
+    
+//    if (self.valueListView.isHidden)
+//    {
+//        self.valueListView.hidden = NO;
+//        self.trendView.hidden = YES;
+//        for (int i = 0; i < 4; i ++)
+//        {
+//            UIButton *bt = [self.diffView viewWithTag:1000 + i];
+//            bt.hidden = YES;
+//        }
+//    }
+//    else
+//    {
+//        self.valueListView.hidden = YES;
+//        self.trendView.hidden = NO;
+//        for (int i = 0; i < 4; i ++)
+//        {
+//            UIButton *bt = [self.diffView viewWithTag:1000 + i];
+//            bt.hidden = NO;
+//        }
+//    }
+}
+
+- (void)listDidClick
+{
+    self.valueListView.hidden = NO;
+    self.trendView.hidden = YES;
+    for (int i = 0; i < 4; i ++)
     {
-        [self.trendButton setImage:[UIImage imageNamed:@"body_trend"] forState:UIControlStateNormal];
-        self.valueListView.hidden = NO;
-        self.trendView.hidden = YES;
-        for (int i = 0; i < 4; i ++)
-        {
-            UIButton *bt = [self.diffView viewWithTag:1000 + i];
-            bt.hidden = YES;
-        }
+        UIButton *bt = [self.diffView viewWithTag:1000 + i];
+        bt.hidden = YES;
     }
-    else
+}
+
+- (void)circleDidClick
+{
+    self.valueListView.hidden = YES;
+    self.trendView.hidden = NO;
+    for (int i = 0; i < 4; i ++)
     {
-        [self.trendButton setImage:[UIImage imageNamed:@"body_list"] forState:UIControlStateNormal];
-        self.valueListView.hidden = YES;
-        self.trendView.hidden = NO;
-        for (int i = 0; i < 4; i ++)
-        {
-            UIButton *bt = [self.diffView viewWithTag:1000 + i];
-            bt.hidden = NO;
-        }
+        UIButton *bt = [self.diffView viewWithTag:1000 + i];
+        bt.hidden = NO;
     }
+}
+
+
+- (void)hidePop
+{
+    maskview.hidden = YES;
+    popView.hidden = YES;
+    [maskview removeFromSuperview];
+    [popView removeFromSuperview];
+    isListShowed = NO;
 }
 
 //初始化时间数据
@@ -297,29 +390,37 @@
     
     //开始时间
     
-    UILabel *startLabel = [[UILabel alloc]initWithFrame:CGRectMake(dayLabel.left, dayLabel.bottom+20, 100, 30)];
+    UILabel *startLabel = [[UILabel alloc]initWithFrame:CGRectMake(dayLabel.left, dayLabel.bottom+20, 44, 18)];
     startLabel.text = @"开始时间";
-    startLabel.font = UIFontOfSize(14);
-    [startLabel sizeToFit];
+    startLabel.font = UIFontOfSize(9);
+    startLabel.textAlignment = NSTextAlignmentCenter;
+    startLabel.textColor = BLUECOLOR;
+    startLabel.backgroundColor = UIColorFromRGB(235, 248, 253);
+    startLabel.layer.cornerRadius = 1;
+    startLabel.clipsToBounds = YES;
     [self.timeView addSubview:startLabel];
     
-    UILabel *startTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(dayLabel.left, startLabel.bottom+5, DEVICEW/2, 30)];
+    UILabel *startTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(startLabel.right+6, startLabel.top, DEVICEW/2, 18)];
     startTimeLabel.text = startTime;
-    startTimeLabel.font = UIFontOfSize(10);
+    startTimeLabel.font = UIFontOfSize(9);
     startTimeLabel.textColor = [UIColor lightGrayColor];
     [self.timeView addSubview:startTimeLabel];
     
     
     //结束时间
-    UILabel *endLabel = [[UILabel alloc]initWithFrame:CGRectMake(DEVICEW/2, startLabel.top, 100, 30)];
+    UILabel *endLabel = [[UILabel alloc]initWithFrame:CGRectMake(DEVICEW/2+6, startLabel.top, 44, 18)];
     endLabel.text = @"结束时间";
-    endLabel.font = UIFontOfSize(14);
-    [endLabel sizeToFit];
+    endLabel.font = UIFontOfSize(10);
+    endLabel.textAlignment = NSTextAlignmentCenter;
+    endLabel.textColor = APP_RED;
+    endLabel.backgroundColor = UIColorFromRGB(251, 219, 222);
+    endLabel.layer.cornerRadius = 1;
+    endLabel.clipsToBounds = YES;
     [self.timeView addSubview:endLabel];
     
-    UILabel *endTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(endLabel.left, startTimeLabel.top, DEVICEW/2, 30)];
+    UILabel *endTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(endLabel.right+6, endLabel.top, DEVICEW/2, 18)];
     endTimeLabel.text = endTime;
-    endTimeLabel.font = UIFontOfSize(10);
+    endTimeLabel.font = UIFontOfSize(9);
     endTimeLabel.textColor = [UIColor lightGrayColor];
     [self.timeView addSubview:endTimeLabel];
     
@@ -341,9 +442,19 @@
     UILabel *zhifangNumLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, zhifangLabel.bottom+10, DEVICEW/2, 30)];
     zhifangNumLabel.text = loose;
     zhifangNumLabel.font = UIFontOfSize(20);
+    zhifangNumLabel.font = [UIFont boldSystemFontOfSize:22];
     zhifangNumLabel.textColor = APP_RED;
+    [zhifangNumLabel sizeToFit];
+    zhifangNumLabel.center = CGPointMake(zhifangLabel.center.x, zhifangLabel.center.y+40);
     [zhifangNumLabel setTextAlignment:NSTextAlignmentCenter];
     [self.timeView addSubview:zhifangNumLabel];
+    
+    UILabel *zhifangUnitLabel = [[UILabel alloc]initWithFrame:CGRectMake(zhifangNumLabel.right+3, zhifangNumLabel.top+8, 25, 18)];
+    zhifangUnitLabel.text = @"公斤";
+    zhifangUnitLabel.font = UIFontOfSize(10);
+    zhifangUnitLabel.textColor = [UIColor lightGrayColor];
+    [zhifangUnitLabel setTextAlignment:NSTextAlignmentLeft];
+    [self.timeView addSubview:zhifangUnitLabel];
 
     
     
@@ -358,11 +469,21 @@
     
     UILabel *jirouNumLabel = [[UILabel alloc]initWithFrame:CGRectMake(DEVICEW/2, jirouLabel.bottom+10, DEVICEW/2, 30)];
     jirouNumLabel.text = gain;
-    jirouNumLabel.font = UIFontOfSize(20);
+    jirouNumLabel.font = [UIFont boldSystemFontOfSize:22];
     jirouNumLabel.textColor = APP_GREEN;
+    [jirouNumLabel sizeToFit];
+    jirouNumLabel.center = CGPointMake(jirouLabel.center.x, jirouLabel.center.y+40);
     [jirouNumLabel setTextAlignment:NSTextAlignmentCenter];
     jirouNumLabel.textAlignment = NSTextAlignmentCenter;
     [self.timeView addSubview:jirouNumLabel];
+    
+    UILabel *jirouUnitLabel = [[UILabel alloc]initWithFrame:CGRectMake(jirouNumLabel.right+3, jirouNumLabel.top+8, 25, 18)];
+    jirouUnitLabel.text = @"%";
+    jirouUnitLabel.font = UIFontOfSize(10);
+    jirouUnitLabel.textColor = [UIColor lightGrayColor];
+    [jirouUnitLabel setTextAlignment:NSTextAlignmentLeft];
+    [self.timeView addSubview:jirouUnitLabel];
+
     
     
     UIView *lineView1 = [[UIView alloc] initWithFrame:CGRectMake(20, dayLabel.bottom+10, DEVICEW-40, 0.5f)];
@@ -377,6 +498,11 @@
     UIView *lineView3 = [[UIView alloc] initWithFrame:CGRectMake(20, self.timeView.bottom-1, DEVICEW-40, 0.5f)];
     lineView3.backgroundColor = UIColorFromRGB(238, 238, 238);
     [self.timeView addSubview:lineView3];
+    
+    UIView *lineView4 = [[UIView alloc] initWithFrame:CGRectMake(DEVICEW/2, lineView1.bottom, 0.5, lineView2.top-lineView1.bottom)];
+    lineView4.backgroundColor = UIColorFromRGB(238, 238, 238);
+    [self.timeView addSubview:lineView4];
+
 }
 
 //初始化差值数据

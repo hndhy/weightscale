@@ -138,14 +138,9 @@
 }
 
 - (void)initView
-{
-    UILabel *titleLabel = [UILabel createLabelWithFrame:CGRectMake(15.0f, 0, self.view.width - 15.0f, 36.0f)
-                                             withSize:13.0f withColor:UIColorFromRGB(120.0f, 120.0f, 120.0f)];
-    titleLabel.text = @"选择要比较的数据（两条或更多）";
-    [self.view addSubview:titleLabel];
-    
-    self.tableView = [[HTTableView alloc] initWithFrame:CGRectMake(0, titleLabel.bottom, self.view.width,
-                                                                 SCREEN_HEIGHT_EXCEPTNAV - titleLabel.bottom)];
+{    
+    self.tableView = [[HTTableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width,
+                                                                 SCREEN_HEIGHT_EXCEPTNAV)];
     self.tableView.dataSource = self.dataSource;
     self.tableView.delegate = self.dataSource;
     self.tableView.allowsMultipleSelectionDuringEditing=YES;

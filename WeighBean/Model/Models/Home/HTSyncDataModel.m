@@ -23,7 +23,6 @@
     [parameters setValue:userDate.token forKey:@"token"];
 
     [self getPath:@"api/data/SyncData" parameters:parameters];
-//    [self uploadImage:@"api/data/SyncData" parameters:parameters image:[UIImage imageNamed:@"upload_pic.png"] imageName:@"pic"];
 }
 
 - (BaseResponse*)parseResponse:(NSDictionary*)responseDict error:(NSError**)error

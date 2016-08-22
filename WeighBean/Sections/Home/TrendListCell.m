@@ -82,7 +82,7 @@
     item1Lab.text = item1;
     [item1Lab sizeToFit];
     item1Lab.textColor = [UIColor whiteColor];
-    item1Lab.backgroundColor = UIColorFromRGB(180, 180, 180);
+    item1Lab.backgroundColor = UIColorFromRGB(20, 146, 215);
     item1Lab.frame = CGRectMake(35, 40/2.0-item1Lab.height/2.0,item1Lab.width ,item1Lab.height);
     
     UILabel *item2Lab = [self.labArray objectAtIndex:1];
@@ -97,6 +97,7 @@
     [item3Lab sizeToFit];
     item3Lab.backgroundColor = lbmState.color;
     item3Lab.textColor = [UIColor whiteColor];
+    item3Lab.backgroundColor = UIColorFromRGB(20, 146, 215);
     item3Lab.frame = CGRectMake(50, 40/2.0-item3Lab.height/2.0,item3Lab.width ,item3Lab.height);
     
     
