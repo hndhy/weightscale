@@ -10,6 +10,17 @@
 #import "PersonalViewController.h"
 #import "TeamLineViewController.h"
 @implementation TimelineViwController
+
+- (id)initWithTeamID:(NSString *)tid
+{
+    self = [super init];
+    if (self) {
+        teamid = tid;
+    }
+    return self;
+}
+
+
 - (void)initNavbar
 {
 //    self.title = @"V身战队";
@@ -57,7 +68,7 @@
 
     //初始化 电话表格视图(注释就不写了哈，和初始化消息表格视图一样)
     
-    TeamLineViewController * teamLineVC = [TeamLineViewController new];
+    TeamLineViewController * teamLineVC = [[TeamLineViewController alloc] initWithTeamID:teamid];
     teamLineVC.view.frame = CGRectMake(SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     
     [self addChildViewController:teamLineVC];
@@ -83,7 +94,10 @@
     [_segment addTarget:self action:@selector(click_jump:)forControlEvents:UIControlEventValueChanged];
     //把分段控件添加到导航控制器的titleView视图上面
     self.navigationItem.titleView = _segment;
+    _segment.selectedSegmentIndex = 1;
     
+    [_scroll setContentOffset:CGPointMake(_scroll.bounds.size.width, 0)animated:YES];
+
 }
 
 -(void)click_jump:(UISegmentedControl *)sender

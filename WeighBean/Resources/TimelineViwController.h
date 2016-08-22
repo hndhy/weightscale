@@ -9,6 +9,11 @@
 #import "HTBaseViewController.h"
 
 @interface TimelineViwController : HTBaseViewController <UIScrollViewDelegate>
+
+{
+    NSString *teamid;
+}
 @property (nonatomic,strong) UISegmentedControl * segment;
 @property (nonatomic,strong) UIScrollView * scroll;
+- (id)initWithTeamID:(NSString *)tid;
 @end

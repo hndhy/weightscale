@@ -7,6 +7,7 @@
 //
 
 #import "CoachDetailViewController.h"
+#import "TimelineViwController.h"
 
 @implementation CoachDetailViewController
 - (id)initWithTeamID:(NSString *)tid
@@ -386,7 +387,8 @@
 
 - (void)enterDidClick
 {
-    TeamLineViewController * teamLineVC = [[TeamLineViewController alloc] initWithTeamID:teamID];
+//    TeamLineViewController * teamLineVC = [[TeamLineViewController alloc] initWithTeamID:teamID];
+    TimelineViwController *teamLineVC = [[TimelineViwController alloc] initWithTeamID:teamID];
     [self.navigationController pushViewController:teamLineVC animated:YES];
 
 }
