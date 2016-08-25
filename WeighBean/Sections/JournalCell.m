@@ -26,48 +26,22 @@
         background.layer.masksToBounds = YES;
         [self.contentView addSubview:background];
         
-        
-        
-      
-        
-
-        
-        picView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 59, self.frame.size.width, 100)];
+        picView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
         picView.backgroundColor = [UIColor lightGrayColor];
         [self.contentView addSubview:picView];
-        
-
-        
-        
-        
-        
-        
-        
-        
-     
     }
     return self;
 }
 
 - (void)loadContent:(JournalObjModel *)obj path:(NSIndexPath *)path
 {
-    
     self.obj = obj;
     self.path = path;
-    
-    NSDate *createTime = [NSDate dateWithTimeIntervalSince1970:[obj.createTime intValue]/1000];
-    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateStyle:NSDateFormatterMediumStyle];
-    [formatter setTimeStyle:NSDateFormatterShortStyle];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     
     
     [picView sd_setImageWithURL:[NSURL URLWithString:obj.pics] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         picView.image = image;
     }];
-    
-
-    
 }
 
 

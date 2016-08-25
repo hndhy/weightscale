@@ -11,7 +11,7 @@
 #import "JournalModelHandler.h"
 #import "JournalModel.h"
 
-@interface BodilyDataViewController : HTTableViewController <UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+@interface BodilyDataViewController : HTTableViewController <UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate>
 {
     NSString *dataType;
     UIImageView *popView;
@@ -21,7 +21,7 @@
     NSDate *startTimesp;
     NSDate *endTimesp;
     NSMutableArray *_dataArray;
-
+    int currentPage;
 }
 @property (nonatomic,strong)JournalModelHandler *handle;
 @property (nonatomic,strong)JournalModel *listModel;

@@ -45,6 +45,7 @@
 -(void)initModel
 {
     self.dataSource = [[BDDataSource alloc]initWithController:self];
+    currentPage = 0;
 }
 
 - (void)initNavbar
@@ -145,7 +146,7 @@
     
     //日记
     UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
-    self.collection=[[UICollectionView alloc] initWithFrame:CGRectMake(0, self.timeView.bottom+5, self.view.frame.size.width, DEVICEH-190) collectionViewLayout:layout];
+    self.collection=[[UICollectionView alloc] initWithFrame:CGRectMake(0, self.timeView.bottom+5, self.view.frame.size.width, DEVICEH-189-10-64) collectionViewLayout:layout];
     self.collection.backgroundColor = [UIColor clearColor];
     self.collection.delegate = self;
     self.collection.dataSource = self;
@@ -218,7 +219,7 @@
     self.handle = [[JournalModelHandler alloc] initWithController:self];
     self.listModel = [[JournalModel alloc] initWithHandler:self.handle];
     _dataArray = [[NSMutableArray alloc] init];
-    [self.listModel getJournalWithStarttime:[formatter stringFromDate:startTimesp] endTime:[formatter stringFromDate:endTimesp] pageCount:@"9" starPage:@"0"];
+    [self.listModel getJournalWithStarttime:[formatter stringFromDate:startTimesp] endTime:[formatter stringFromDate:endTimesp] pageCount:@"9" starPage:currentPage];
 }
 
 - (NSArray *)getChaArray
@@ -862,6 +863,15 @@
 }
 
 
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView   // called on finger up as we are moving
+{
+    if (self.collection.contentOffset.y>90) {
+        [self.listModel getJournalWithStarttime:startTimesp endTime:endTimesp pageCount:@"9" starPage:currentPage+1];
+        currentPage +=1;
+    }
+}
+
+
 #pragma mark - collectionview delegate
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -917,7 +927,8 @@
 
 - (void)syncFinished:(JournalResponse *)response
 {
-    
+    [_dataArray addObjectsFromArray:response.data];
+    [self.collection reloadData];
 }
 
 - (void)syncFailure

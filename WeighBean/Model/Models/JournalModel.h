@@ -9,6 +9,6 @@
 #import "HTAbstractDataSource.h"
 
 @interface JournalModel : HTAbstractDataSource
-- (void)getJournalWithStarttime:(NSDate *)startTime endTime:(NSDate *)endTime pageCount:(NSString *)pageCount starPage:(NSString *)startPage;
+- (void)getJournalWithStarttime:(NSString *)startTime endTime:(NSString *)endTime pageCount:(NSString *)pageCount starPage:(int)startPage;
 
 @end

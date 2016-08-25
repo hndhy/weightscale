@@ -11,7 +11,7 @@
 #import "JournalResponse.h"
 
 @implementation JournalModel
-- (void)getJournalWithStarttime:(NSString *)startTime endTime:(NSString *)endTime pageCount:(NSString *)pageCount starPage:(NSString *)startPage
+- (void)getJournalWithStarttime:(NSString *)startTime endTime:(NSString *)endTime pageCount:(NSString *)pageCount starPage:(int)startPage
 {
     NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithCapacity:5];
     HTAppContext *appContext = [HTAppContext sharedContext];
@@ -19,7 +19,8 @@
     [parameters setValue:startTime forKey:@"startTime"];
     [parameters setValue:endTime forKey:@"endTime"];
     [parameters setValue:pageCount forKey:@"count"];
-    [parameters setValue:startPage forKey:@"start"];
+    [parameters setValue:@(startPage) forKey:@"start"];
+  
     [self getPath:@"api/user/GetDakaInDate" parameters:parameters];
 }
 
