@@ -44,11 +44,6 @@
 
 - (void)initModel
 {
-//    self.createCoachModelHandler = [[CreateCoachModelHandler alloc] initWithController:self];
-//    self.createCoachModel = [[CreateCoachModel alloc] initWithHandler:self.createCoachModelHandler];
-    
-//    @property (nonatomic,strong)ViewCoachDetailModelHandler *viewCoachDetailModelHandler;
-//    @property (nonatomic,strong)ViewCoachDetailModel *viewCoachDetailModel;
     self.viewCoachDetailModelHandler = [[ViewCoachDetailModelHandler alloc] initWithController:self];
     self.viewCoachDetailModel = [[ViewCoachDetailModel alloc] initWithHandler:self.viewCoachDetailModelHandler];
 }
@@ -76,7 +71,7 @@
     [coachTypeLbl setTitle:@"增肌" forState:UIControlStateNormal];
     [scrollView addSubview:coachTypeLbl];
     
-    UIView *redview = [[UIView alloc] initWithFrame:CGRectMake(scrollView.frame.size.width-60, 0, 30, 3)];
+    UIView *redview = [[UIView alloc] initWithFrame:CGRectMake(scrollView.frame.size.width-55, 0, 30, 3)];
     redview.backgroundColor = [UIColor redColor];
     [scrollView addSubview:redview];
     
@@ -153,6 +148,10 @@
     ingActiveRatioContainerView.clipsToBounds = YES;
     [scrollView addSubview:ingActiveRatioContainerView];
     
+    lineView2 = [[UIView alloc] initWithFrame:CGRectMake(lineView1.left, 43, lineView1.width, 0.5f)];
+    lineView2.backgroundColor = UIColorFromRGB(238, 238, 238);
+    [ingActiveRatioContainerView addSubview:lineView2];
+    
     UILabel *ingTitleLbl1 = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, 75, 30)];
     ingTitleLbl1.backgroundColor = [UIColor clearColor];
     [ingTitleLbl1 setTextColor:[UIColor blackColor]];
@@ -177,11 +176,20 @@
     [activeRatioLbl setText:@"3/6"];
     [ingActiveRatioContainerView addSubview:activeRatioLbl];
     
+    activeRatioScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 44, scrollView.frame.size.width, 70)];
+    activeRatioScrollView.backgroundColor = [UIColor clearColor];
+    [ingActiveRatioContainerView addSubview:activeRatioScrollView];
+    
     //已完成
     comPeopleContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, ingActiveRatioContainerView.bottom, scrollView.frame.size.width, 44)];
     comPeopleContainerView.backgroundColor = [UIColor clearColor];
     comPeopleContainerView.clipsToBounds = YES;
     [scrollView addSubview:comPeopleContainerView];
+    
+    lineView3 = [[UIView alloc] initWithFrame:CGRectMake(lineView1.left, 43, lineView1.width, 0.5f)];
+    lineView3.backgroundColor = UIColorFromRGB(238, 238, 238);
+    [comPeopleContainerView addSubview:lineView3];
+
     
     UILabel *comTitleLbl1 = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, 75, 30)];
     comTitleLbl1.backgroundColor = [UIColor clearColor];
@@ -197,13 +205,21 @@
     [comPeopleLbl setFont:[UIFont systemFontOfSize:14]];
     [comPeopleLbl setText:@"3/6"];
     [comPeopleContainerView addSubview:comPeopleLbl];
-
     
+    comPeopleScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 44, scrollView.frame.size.width, 70)];
+    comPeopleScrollView.backgroundColor = [UIColor clearColor];
+    [comPeopleContainerView addSubview:comPeopleScrollView];
+
     //进行中数据统计
     ingDataContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, comPeopleContainerView.bottom, scrollView.frame.size.width, 44)];
     ingDataContainerView.backgroundColor = [UIColor clearColor];
     ingDataContainerView.clipsToBounds = YES;
     [scrollView addSubview:ingDataContainerView];
+    
+    lineView4 = [[UIView alloc] initWithFrame:CGRectMake(lineView1.left, 43, lineView1.width, 0.5f)];
+    lineView4.backgroundColor = UIColorFromRGB(238, 238, 238);
+    [ingDataContainerView addSubview:lineView4];
+
     
     UILabel *ingDataLbl = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, 140, 30)];
     ingDataLbl.backgroundColor = [UIColor clearColor];
@@ -276,7 +292,13 @@
     ingAndComValidContainerView.backgroundColor = [UIColor clearColor];
     [scrollView addSubview:ingAndComValidContainerView];
     
+    lineView5 = [[UIView alloc] initWithFrame:CGRectMake(lineView1.left, 43, lineView1.width, 0.5f)];
+    lineView5.backgroundColor = UIColorFromRGB(238, 238, 238);
+    [ingAndComValidContainerView addSubview:lineView5];
     
+    lineView6 = [[UIView alloc] initWithFrame:CGRectMake(lineView1.left, 87, lineView1.width, 0.5f)];
+    lineView6.backgroundColor = UIColorFromRGB(238, 238, 238);
+    [ingAndComValidContainerView addSubview:lineView6];
     
     UILabel *ingValid = [UILabel createLabelWithFrame:CGRectMake(15, 5, DEVICEW - 40, 30) withSize:14.0f withColor:[UIColor blackColor]];
     ingValid.text = @"进行中有效率";
@@ -305,6 +327,10 @@
     comDataContainerView.backgroundColor = [UIColor clearColor];
     comDataContainerView.clipsToBounds = YES;
     [scrollView addSubview:comDataContainerView];
+    
+    lineView7 = [[UIView alloc] initWithFrame:CGRectMake(lineView1.left, 43, lineView1.width, 0.5f)];
+    lineView7.backgroundColor = UIColorFromRGB(238, 238, 238);
+    [ingAndComValidContainerView addSubview:lineView7];
     
     UILabel *completeDataLbl = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, 100, 30)];
     completeDataLbl.backgroundColor = [UIColor clearColor];
@@ -376,26 +402,24 @@
     
 
     
-//    UIButton *enterBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-//    enterBtn.frame = CGRectMake(0, lineView10.bottom+5, DEVICEW/2, 40);
-//    enterBtn.backgroundColor = [UIColor clearColor];
-//    enterBtn.titleLabel.font = [UIFont systemFontOfSize:15];
-//    [enterBtn setTitleColor:BLUECOLOR forState:UIControlStateNormal];
-//    [enterBtn setTitle:@"进入" forState:UIControlStateNormal];
-//    [enterBtn addTarget:self action:@selector(enterDidClick) forControlEvents:UIControlEventTouchUpInside];
-//    [scrollView addSubview:enterBtn];
-//    
-//    UIButton *inviteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-//    inviteBtn.frame = CGRectMake(DEVICEW/2, lineView10.bottom+5, self.view.size.width/2, 40);
-//    inviteBtn.backgroundColor = [UIColor clearColor];
-//    inviteBtn.titleLabel.font = [UIFont systemFontOfSize:15];
-//    [inviteBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-//    [inviteBtn setTitle:@"邀请" forState:UIControlStateNormal];
-//    [inviteBtn addTarget:self action:@selector(inviteDicClick) forControlEvents:UIControlEventTouchUpInside];
-//    [scrollView addSubview:inviteBtn];
+    UIButton *enterBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    enterBtn.frame = CGRectMake(0, self.view.frame.size.height-108, DEVICEW/2, 40);
+    enterBtn.backgroundColor = [UIColor whiteColor];
+    enterBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+    [enterBtn setTitleColor:BLUECOLOR forState:UIControlStateNormal];
+    [enterBtn setTitle:@"进入" forState:UIControlStateNormal];
+    [enterBtn addTarget:self action:@selector(enterDidClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:enterBtn];
     
+    UIButton *inviteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    inviteBtn.frame = CGRectMake(DEVICEW/2,self.view.frame.size.height-108, self.view.size.width/2, 40);
+    inviteBtn.backgroundColor = [UIColor whiteColor];
+    inviteBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+    [inviteBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [inviteBtn setTitle:@"邀请" forState:UIControlStateNormal];
+    [inviteBtn addTarget:self action:@selector(inviteDicClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:inviteBtn];
     
-//    [scrollView setContentSize:CGSizeMake(DEVICEW-10, lineView10.bottom+120)];
     [scrollView setContentSize:CGSizeMake(DEVICEW-10, 700+120)];
 
 
@@ -441,8 +465,24 @@
     [loseWeight_completeRatioLbl setText:[NSString stringWithFormat:@"%@%%",response.data.loseWeight_complete]];
     [muscleBuilder_completeLbl setText:[NSString stringWithFormat:@"%@%%",response.data.muscleBuilder_complete]];
     [dynamite_completeRatioLbl setText:[NSString stringWithFormat:@"%@%%",response.data.dynamite_complete]];
-
     
+    
+
+    NSArray *activeArr = [NSArray arrayWithArray:response.data.brisk_list];
+    for (int i=0; i<[activeArr count]; i++) {
+        AvatarAndNickView *avatar = [[AvatarAndNickView alloc] initWithFrame:CGRectMake(15+55*i, 0, 45, 65)];
+        [avatar setInfoActive:activeArr[i]];
+        activeRatioScrollView.contentSize = CGSizeMake(15+[activeArr count]*55, 70);
+        [activeRatioScrollView addSubview:avatar];
+    }
+    
+    NSArray *comArr = [NSArray arrayWithArray:response.data.sum_list];
+    for (int i=0; i<[comArr count]; i++) {
+        AvatarAndNickView *avatar = [[AvatarAndNickView alloc] initWithFrame:CGRectMake(15+55*i, 0, 45, 65)];
+        [avatar setInfoSum:comArr[i]];
+        comPeopleScrollView.contentSize = CGSizeMake(15+[comArr count]*55, 70);
+        [comPeopleScrollView addSubview:avatar];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated

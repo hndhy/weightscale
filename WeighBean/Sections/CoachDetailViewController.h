@@ -10,6 +10,7 @@
 #import "ViewCoachDetailModel.h"
 #import "ViewCoachDetailModelHandler.h"
 #import "TeamLineViewController.h"
+#import "AvatarAndNickView.h"
 
 @interface CoachDetailViewController : HTBaseViewController <ViewCoachDetailModelProtocol>
 {
@@ -41,6 +42,9 @@
 //     *sum_num;
     UILabel *activeRatioLbl;
     UILabel *comPeopleLbl;
+    
+    UIScrollView *activeRatioScrollView;
+    UIScrollView *comPeopleScrollView;
     
     UILabel *meanfatLbl;
     UILabel *loseWeightRatioLbl;

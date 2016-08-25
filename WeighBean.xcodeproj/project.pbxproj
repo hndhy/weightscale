@@ -195,6 +195,7 @@
 		5C716ACD1D6E73BD00ED67D5 /* likeicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C716ACB1D6E73BD00ED67D5 /* likeicon@2x.png */; };
 		5C716AD01D6E73E900ED67D5 /* coachlinecomment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C716ACE1D6E73E900ED67D5 /* coachlinecomment@2x.png */; };
 		5C716AD11D6E73E900ED67D5 /* coachlinelike@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C716ACF1D6E73E900ED67D5 /* coachlinelike@2x.png */; };
+		5C925A1B1D6F6D5000F91A48 /* AvatarAndNickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C925A1A1D6F6D5000F91A48 /* AvatarAndNickView.m */; };
 		5C92F9231D69807900609A54 /* coachflag.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C92F9221D69807900609A54 /* coachflag.png */; };
 		5C92F9311D69E03500609A54 /* popup.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C92F92D1D69E03500609A54 /* popup.png */; };
 		5CE173111D4DFB930047E8B9 /* CoachModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173101D4DFB930047E8B9 /* CoachModelHandler.m */; };
@@ -763,6 +764,8 @@
 		5C716ACB1D6E73BD00ED67D5 /* likeicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "likeicon@2x.png"; sourceTree = "<group>"; };
 		5C716ACE1D6E73E900ED67D5 /* coachlinecomment@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coachlinecomment@2x.png"; sourceTree = "<group>"; };
 		5C716ACF1D6E73E900ED67D5 /* coachlinelike@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coachlinelike@2x.png"; sourceTree = "<group>"; };
+		5C925A191D6F6D5000F91A48 /* AvatarAndNickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvatarAndNickView.h; sourceTree = "<group>"; };
+		5C925A1A1D6F6D5000F91A48 /* AvatarAndNickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarAndNickView.m; sourceTree = "<group>"; };
 		5C92F9221D69807900609A54 /* coachflag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coachflag.png; sourceTree = "<group>"; };
 		5C92F92D1D69E03500609A54 /* popup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popup.png; sourceTree = "<group>"; };
 		5CE1730F1D4DFB930047E8B9 /* CoachModelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachModelHandler.h; sourceTree = "<group>"; };
@@ -2458,6 +2461,8 @@
 				5CEC2E631D562E5F00CBA6BA /* CoachNewBuildViewController.m */,
 				5C2B1F5A1D58E8AE00032D3F /* CoachDetailViewController.h */,
 				5C2B1F5B1D58E8AE00032D3F /* CoachDetailViewController.m */,
+				5C925A191D6F6D5000F91A48 /* AvatarAndNickView.h */,
+				5C925A1A1D6F6D5000F91A48 /* AvatarAndNickView.m */,
 				528D7BD01C16BFCC00246E00 /* HideSetViewController.h */,
 				528D7BD11C16BFCC00246E00 /* HideSetViewController.m */,
 				5FE2556E1B7A08F00029BD4D /* ClockInViewController.h */,
@@ -3009,6 +3014,7 @@
 				5C6562A41D47DEC4004CF31B /* HTMultiLabel.m in Sources */,
 				5FD514981B806A640088C7E9 /* JSONKit.m in Sources */,
 				5209E3D81BF5BC37005D14DD /* OnlineBuyViewController.m in Sources */,
+				5C925A1B1D6F6D5000F91A48 /* AvatarAndNickView.m in Sources */,
 				528D7BD21C16BFCC00246E00 /* HideSetViewController.m in Sources */,
 				527316631BA6CFAE00E33110 /* WiFiController.m in Sources */,
 				5C4BD8161D6888DF00020B78 /* TagResponse.m in Sources */,

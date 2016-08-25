@@ -177,8 +177,8 @@
 {
     if (direction == MGSwipeDirectionLeftToRight) {
 
-    swipeSettings.transition = MGSwipeTransitionBorder;
-    expansionSettings.buttonIndex = 0;
+    swipeSettings.transition = MGSwipeTransitionDrag;
+//    expansionSettings.buttonIndex = 1;
     expansionSettings.fillOnTrigger = NO;
     expansionSettings.threshold = 1;
     
