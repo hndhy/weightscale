@@ -90,31 +90,32 @@
      */
     self.timeView = [[UIView alloc]initWithFrame:CGRectMake(0, 5, self.view.width, 189)];
     self.timeView.backgroundColor = [UIColor whiteColor];
-    
-    
     [self.view addSubview:self.timeView];
+    
     /**测量前后差比*/
     self.diffView = [[UIView alloc]initWithFrame:CGRectMake(0, self.timeView.bottom+8, self.view.width, 70)];
     self.diffView.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:self.diffView];
     
-    //列表展现形式
+//列表展现形式
     self.valueListView = [[UIView alloc]initWithFrame:CGRectMake(0, self.diffView.bottom + 5, self.view.width,
                                                                  SCREEN_HEIGHT_EXCEPTNAV - self.diffView.bottom - 5.0f)];
     self.valueListView.backgroundColor = [UIColor whiteColor];
     //列表展示标题
     [self createListView];
+    
     UIImageView *lineIV = [[UIImageView alloc]initWithFrame:CGRectMake(0, 30, SCREEN_WIDTH, 1)];
     lineIV.backgroundColor = UIColorFromRGB(237, 237, 237);
     [self.valueListView addSubview:lineIV];
+    
     //列表listview
     self.tableView = [[HTTableView alloc] initWithFrame:CGRectMake(0, 31,SCREEN_WIDTH, self.valueListView.height - 31)];
     self.tableView.dataSource = self.dataSource;
     self.tableView.delegate = self.dataSource;
     [self.valueListView addSubview:self.tableView];
-    
     [self.view addSubview:self.valueListView];
+    
     
     //曲线展现形式
     self.trendView = [[UIView alloc]initWithFrame:CGRectMake(0, self.diffView.bottom+5, self.view.width, self.view.height-self.diffView.bottom-5)];
@@ -128,10 +129,8 @@
     //曲线图
     self.lineChartView=[[PNLineChartView alloc]initWithFrame:CGRectMake(0, 20, self.view.width, 268+60)];
     self.lineChartView.userInteractionEnabled=NO;
-    self.lineChartView.backgroundColor = [UIColor greenColor];
-    
     self.lineChartView.backgroundColor=[UIColor clearColor];
-    self.lineChartView.xAxisFontColor=self.lineChartView.horizontalLinesColor=[UIColor lightGrayColor];     //横，纵坐标的字体颜色
+    self.lineChartView.xAxisFontColor=self.lineChartView.horizontalLinesColor=[UIColor lightGrayColor]; //横，纵坐标的字体颜色
     [self.trendView addSubview:self.lineChartView];
     [self setLineChartValue:0];
     
@@ -141,6 +140,18 @@
     [self.dataSource addDataArray:self.bodilyArray];
     [self.tableView reloadData];
     
+    
+    
+    
+    //日记
+    UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
+    self.collection=[[UICollectionView alloc] initWithFrame:CGRectMake(0, self.timeView.bottom+5, self.view.frame.size.width, DEVICEH-190) collectionViewLayout:layout];
+    self.collection.backgroundColor = [UIColor clearColor];
+    self.collection.delegate = self;
+    self.collection.dataSource = self;
+    [self.view addSubview:self.collection];
+    
+    [self.collection registerClass:[JournalCell class] forCellWithReuseIdentifier:@"MBImageCell"];
 //    LKDBHelper *lkdbHelper = [DBHelper getUsingLKDBHelper];
 //    HTAppContext *appContext = [HTAppContext sharedContext];
     
@@ -155,8 +166,8 @@
     long long difTime = endTime - startTime;
     int days = (int)(difTime/1000/60/60/24);
     
-    NSDate *startTimesp = [NSDate dateWithTimeIntervalSince1970:startTime/1000];
-    NSDate *endTimesp = [NSDate dateWithTimeIntervalSince1970:endTime/1000];
+    startTimesp = [NSDate dateWithTimeIntervalSince1970:startTime/1000];
+    endTimesp = [NSDate dateWithTimeIntervalSince1970:endTime/1000];
 
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterMediumStyle];
@@ -165,9 +176,6 @@
     
     float x = (endBD.FAT.floatValue*endBD.W.floatValue - startBD.FAT.floatValue*startBD.W.floatValue)/100;
     float y = (endBD.LBM.floatValue/endBD.W.floatValue - startBD.LBM.floatValue/startBD.W.floatValue)*100;
-    
-//    NSLog(@"start = %@ | %@ | %@",startBD.FAT,startBD.W,startBD.LBM);
-//    NSLog(@"end = %@ | %@ | %@",endBD.FAT,endBD.W,endBD.LBM);
     
     NSMutableString *com = [[NSMutableString alloc] init];
     if (x >= 0)
@@ -179,7 +187,6 @@
         [com appendFormat:@"共减脂%0.1f公斤，",x*(-1)];
     }
     [com appendFormat:@"肌肉率变化%0.1f%@",y,@"%"];
-    
     
     [self setTimeValue:days startTime:[formatter stringFromDate:startTimesp] endTime:[formatter stringFromDate:endTimesp]loose:[NSString stringWithFormat:@"%.1f",x] gain:[NSString stringWithFormat:@"%.1f",y]];
     
@@ -196,11 +203,22 @@
     if ([dataType isEqualToString:@"list"]) {
         self.valueListView.hidden = NO;
         self.trendView.hidden = YES;
-    } else
+        self.collection.hidden = YES;
+    } else if ([dataType isEqualToString:@"circle"])
     {
         self.valueListView.hidden = YES;
         self.trendView.hidden = NO;
+        self.collection.hidden = YES;
+    } else
+    {
+        self.valueListView.hidden = self.trendView.hidden = self.diffView.hidden = YES;
+        self.collection.hidden = NO;
     }
+    
+    self.handle = [[JournalModelHandler alloc] initWithController:self];
+    self.listModel = [[JournalModel alloc] initWithHandler:self.handle];
+    _dataArray = [[NSMutableArray alloc] init];
+    [self.listModel getJournalWithStarttime:[formatter stringFromDate:startTimesp] endTime:[formatter stringFromDate:endTimesp] pageCount:@"9" starPage:@"0"];
 }
 
 - (NSArray *)getChaArray
@@ -298,6 +316,7 @@
     journayBtn.imageEdgeInsets = UIEdgeInsetsMake(journayBtn.titleLabel.intrinsicContentSize.height-13, 0, 0, journayBtn.titleLabel.intrinsicContentSize.width);
     [journayBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [journayBtn setImage:[UIImage imageNamed:@"riji"] forState:UIControlStateNormal];
+    [journayBtn addTarget:self action:@selector(journalDidClick) forControlEvents:UIControlEventTouchUpInside];
     [popView addSubview:journayBtn];
     
     UIView *line3 = [[UIView alloc] initWithFrame:CGRectMake(10, journayBtn.bottom, popView.frame.size.width-20, 0.2)];
@@ -334,23 +353,47 @@
 {
     self.valueListView.hidden = NO;
     self.trendView.hidden = YES;
+    self.collection.hidden = YES;
+    self.diffView.hidden = NO;
+
     for (int i = 0; i < 4; i ++)
     {
         UIButton *bt = [self.diffView viewWithTag:1000 + i];
         bt.hidden = YES;
     }
+    [self hidePop];
 }
 
 - (void)circleDidClick
 {
     self.valueListView.hidden = YES;
     self.trendView.hidden = NO;
+    self.collection.hidden = YES;
+    self.diffView.hidden = NO;
+
     for (int i = 0; i < 4; i ++)
     {
         UIButton *bt = [self.diffView viewWithTag:1000 + i];
         bt.hidden = NO;
     }
+    [self hidePop];
 }
+
+
+- (void)journalDidClick
+{
+    self.valueListView.hidden = YES;
+    self.trendView.hidden = YES;
+    self.diffView.hidden = YES;
+    self.collection.hidden = NO;
+    for (int i = 0; i < 4; i ++)
+    {
+        UIButton *bt = [self.diffView viewWithTag:1000 + i];
+        bt.hidden = NO;
+    }
+    [self hidePop];
+}
+
 
 
 - (void)hidePop
@@ -816,6 +859,70 @@
   if (MessageComposeResultCancelled == result) {
     [controller dismissViewControllerAnimated:YES completion:nil];
   }
+}
+
+
+#pragma mark - collectionview delegate
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    NSString *rid = @"MBImageCell";
+    JournalCell *cell = (JournalCell *)[collectionView dequeueReusableCellWithReuseIdentifier:rid forIndexPath:indexPath];
+    if (!cell) {
+        cell = [[JournalCell alloc] init];
+    }
+    [cell loadContent:_dataArray[indexPath.row] path:indexPath];
+    return cell;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return [_dataArray count];
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake((DEVICEW-6)/3, (DEVICEW-6)/3);
+}
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 2;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 0;
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsZero;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return nil;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    return CGSizeZero;
+}
+
+- (void)syncFinished:(JournalResponse *)response
+{
+    
+}
+
+- (void)syncFailure
+{
+    
 }
 
 @end

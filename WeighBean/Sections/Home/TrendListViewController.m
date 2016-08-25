@@ -291,6 +291,7 @@
     journayBtn.imageEdgeInsets = UIEdgeInsetsMake(journayBtn.titleLabel.intrinsicContentSize.height-13, 0, 0, journayBtn.titleLabel.intrinsicContentSize.width);
     [journayBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [journayBtn setImage:[UIImage imageNamed:@"riji"] forState:UIControlStateNormal];
+    [journayBtn addTarget:self action:@selector(journalDidClick) forControlEvents:UIControlEventTouchUpInside];
     [popView addSubview:journayBtn];
     
     UIView *line3 = [[UIView alloc] initWithFrame:CGRectMake(10, journayBtn.bottom, popView.frame.size.width-20, 0.2)];
@@ -321,6 +322,15 @@
 - (void)circleDidClick
 {
     BodilyDataViewController *bodyVC = [[BodilyDataViewController alloc] initWithType:@"circle"];
+    bodyVC.bodilyArray = self.selectedArray;
+    bodyVC.nickName = self.nickName;
+    bodyVC.avatar = self.avatar;
+    [self.navigationController pushViewController:bodyVC animated:YES];
+}
+
+- (void)journalDidClick
+{
+    BodilyDataViewController *bodyVC = [[BodilyDataViewController alloc] initWithType:@"journal"];
     bodyVC.bodilyArray = self.selectedArray;
     bodyVC.nickName = self.nickName;
     bodyVC.avatar = self.avatar;

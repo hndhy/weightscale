@@ -7,15 +7,26 @@
 //
 
 #import "HTTableViewController.h"
+#import "JournalCell.h"
+#import "JournalModelHandler.h"
+#import "JournalModel.h"
 
-@interface BodilyDataViewController : HTTableViewController
+@interface BodilyDataViewController : HTTableViewController <UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 {
     NSString *dataType;
     UIImageView *popView;
     UIView *maskview;
     BOOL isListShowed;
 
+    NSDate *startTimesp;
+    NSDate *endTimesp;
+    NSMutableArray *_dataArray;
+
 }
+@property (nonatomic,strong)JournalModelHandler *handle;
+@property (nonatomic,strong)JournalModel *listModel;
+
+@property (nonatomic, strong) UICollectionView *collection;
 
 @property(nonatomic,strong)NSMutableArray *bodilyArray;
 @property(nonatomic,copy) NSString *nickName;
