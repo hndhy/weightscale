@@ -17,6 +17,20 @@
     
     NSString *teamID;
     
+    
+    BOOL isIngTitleOpened;
+    BOOL isComPeopleOpened;
+    BOOL isIngDataOpened;
+    BOOL isComDataOpened;
+    
+    UIView *ingActiveRatioContainerView;
+    UIView *comPeopleContainerView;
+    
+    UIView *ingDataContainerView;
+    UIView *ingAndComValidContainerView;
+    UIView *comDataContainerView;
+
+    
     UILabel *coachNameLbl;
     UIButton *coachTypeLbl;
     UILabel *startTimeLbl;
@@ -26,6 +40,7 @@
 //     *brisk_num;
 //     *sum_num;
     UILabel *activeRatioLbl;
+    UILabel *comPeopleLbl;
     
     UILabel *meanfatLbl;
     UILabel *loseWeightRatioLbl;
@@ -39,7 +54,6 @@
     UILabel *loseWeight_completeRatioLbl;
     UILabel *muscleBuilder_completeLbl;
     UILabel *dynamite_completeRatioLbl;
-
     
     UIView *lineView1;
     UIView *lineView2;
