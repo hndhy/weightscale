@@ -111,7 +111,13 @@
 
 - (void)backDidClick
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    if ([[[self.navigationController viewControllers] objectAtIndex:0] isEqual:self]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else
+    {
+        [self.navigationController popViewControllerAnimated:YES];
+
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated

@@ -171,7 +171,7 @@
     [self.controller selectImage:scaledImage];
   } else if (PicturePickerCheckIn == self.type)
   {
-      UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+      UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
 
       ImageCropViewController *controller = [[ImageCropViewController alloc] initWithImage:image];
       HTNavigationController *navController = [[HTNavigationController alloc] initWithRootViewController:controller];
