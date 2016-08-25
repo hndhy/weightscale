@@ -169,15 +169,20 @@
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     UIImage* scaledImage = [image scaleToFitSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT)];
     [self.controller selectImage:scaledImage];
-  } else {
+  } else if (PicturePickerCheckIn == self.type)
+  {
       UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
 
-      [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
       ImageCropViewController *controller = [[ImageCropViewController alloc] initWithImage:image];
-      controller.blurredBackground = YES;
-      [self.controller presentViewController:controller animated:NO completion:nil];
+      HTNavigationController *navController = [[HTNavigationController alloc] initWithRootViewController:controller];
+      [self.controller presentViewController:navController animated:NO completion:nil];
 
-//    [self.controller selectImage:image];
+  }
+  else {
+      [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+      UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+
+    [self.controller selectImage:image];
   }
     
     
