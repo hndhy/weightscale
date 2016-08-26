@@ -117,6 +117,7 @@
 		5C16AC3C1D5B901C00C5B76C /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C16AC381D5B901C00C5B76C /* MGSwipeButton.m */; };
 		5C16AC3D1D5B901C00C5B76C /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C16AC3A1D5B901C00C5B76C /* MGSwipeTableCell.m */; };
 		5C1C13301D4E459C009A238D /* NSDictionary+GetValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C132F1D4E459C009A238D /* NSDictionary+GetValue.m */; };
+		5C2245D11D70C5870085F8AE /* refresh_but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C2245D01D70C5870085F8AE /* refresh_but@2x.png */; };
 		5C2B1F3B1D58159C00032D3F /* UpdateCoachModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F3A1D58159C00032D3F /* UpdateCoachModel.m */; };
 		5C2B1F3E1D5816A900032D3F /* UpdateCoachResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F3D1D5816A900032D3F /* UpdateCoachResponse.m */; };
 		5C2B1F411D58174600032D3F /* UpdateCoachModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F401D58174600032D3F /* UpdateCoachModelHandler.m */; };
@@ -180,7 +181,6 @@
 		5C716AAA1D6DDF8C00ED67D5 /* yundong_iconv@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C716AA71D6DDF8C00ED67D5 /* yundong_iconv@2x.png */; };
 		5C716AAF1D6DE02500ED67D5 /* dissolve_but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C716AAB1D6DE02500ED67D5 /* dissolve_but@2x.png */; };
 		5C716AB01D6DE02500ED67D5 /* edit_but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C716AAC1D6DE02500ED67D5 /* edit_but@2x.png */; };
-		5C716AB11D6DE02500ED67D5 /* refresh_but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C716AAD1D6DE02500ED67D5 /* refresh_but@2x.png */; };
 		5C716AB21D6DE02500ED67D5 /* view_but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C716AAE1D6DE02500ED67D5 /* view_but@2x.png */; };
 		5C716AB41D6DE04300ED67D5 /* addimg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C716AB31D6DE04300ED67D5 /* addimg@2x.png */; };
 		5C716AB81D6DE07300ED67D5 /* listimg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C716AB51D6DE07300ED67D5 /* listimg@2x.png */; };
@@ -631,6 +631,7 @@
 		5C16AC3A1D5B901C00C5B76C /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
 		5C1C132E1D4E459C009A238D /* NSDictionary+GetValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+GetValue.h"; sourceTree = "<group>"; };
 		5C1C132F1D4E459C009A238D /* NSDictionary+GetValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+GetValue.m"; sourceTree = "<group>"; };
+		5C2245D01D70C5870085F8AE /* refresh_but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh_but@2x.png"; sourceTree = "<group>"; };
 		5C2B1F391D58159C00032D3F /* UpdateCoachModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateCoachModel.h; sourceTree = "<group>"; };
 		5C2B1F3A1D58159C00032D3F /* UpdateCoachModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateCoachModel.m; sourceTree = "<group>"; };
 		5C2B1F3C1D5816A900032D3F /* UpdateCoachResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateCoachResponse.h; sourceTree = "<group>"; };
@@ -744,7 +745,6 @@
 		5C716AA71D6DDF8C00ED67D5 /* yundong_iconv@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yundong_iconv@2x.png"; sourceTree = "<group>"; };
 		5C716AAB1D6DE02500ED67D5 /* dissolve_but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dissolve_but@2x.png"; sourceTree = "<group>"; };
 		5C716AAC1D6DE02500ED67D5 /* edit_but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit_but@2x.png"; sourceTree = "<group>"; };
-		5C716AAD1D6DE02500ED67D5 /* refresh_but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh_but@2x.png"; sourceTree = "<group>"; };
 		5C716AAE1D6DE02500ED67D5 /* view_but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "view_but@2x.png"; sourceTree = "<group>"; };
 		5C716AB31D6DE04300ED67D5 /* addimg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addimg@2x.png"; sourceTree = "<group>"; };
 		5C716AB51D6DE07300ED67D5 /* listimg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "listimg@2x.png"; sourceTree = "<group>"; };
@@ -1324,8 +1324,8 @@
 			children = (
 				5C92F9221D69807900609A54 /* coachflag.png */,
 				5C716AAB1D6DE02500ED67D5 /* dissolve_but@2x.png */,
+				5C2245D01D70C5870085F8AE /* refresh_but@2x.png */,
 				5C716AAC1D6DE02500ED67D5 /* edit_but@2x.png */,
-				5C716AAD1D6DE02500ED67D5 /* refresh_but@2x.png */,
 				5C716AAE1D6DE02500ED67D5 /* view_but@2x.png */,
 				5C397AF21D6772C6009B7951 /* gainmuscle.png */,
 				5C397AF31D6772C6009B7951 /* looseweight.png */,
@@ -2762,7 +2762,6 @@
 				B01A8E7B1B7CA0A80049D86D /* body_icon1@2x.png in Resources */,
 				5C16AC251D5B819F00C5B76C /* target_iconv.png in Resources */,
 				5C92F9231D69807900609A54 /* coachflag.png in Resources */,
-				5C716AB11D6DE02500ED67D5 /* refresh_but@2x.png in Resources */,
 				5FA9F3431B66286300997BA8 /* blue_nav_bar@2x.png in Resources */,
 				5F7F827D1B75FE7A00AC04B3 /* menu_measure_icon@2x.png in Resources */,
 				5C716AAF1D6DE02500ED67D5 /* dissolve_but@2x.png in Resources */,
@@ -2784,6 +2783,7 @@
 				526A6F9B1C2266AD0090D649 /* shake2.0@2x.png in Resources */,
 				5F7F827B1B75FE7A00AC04B3 /* menu_diary_icon@2x.png in Resources */,
 				5FD5148D1B8015DA0088C7E9 /* 80x80.png in Resources */,
+				5C2245D11D70C5870085F8AE /* refresh_but@2x.png in Resources */,
 				5F7F827E1B75FE7A00AC04B3 /* menu_setting_icon@2x.png in Resources */,
 				5F7F827A1B75FE7A00AC04B3 /* menu_coach_icon@2x.png in Resources */,
 				524C67921C45EABB007332D4 /* login_new@2x.png in Resources */,

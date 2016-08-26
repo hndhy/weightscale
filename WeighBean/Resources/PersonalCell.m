@@ -54,9 +54,11 @@
         likeBtn.backgroundColor = UIColorFromRGB(238, 238, 238);
         likeBtn.titleLabel.font = UIFontOfSize(12);
         [likeBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-        likeBtn.titleLabel.textAlignment = NSTextAlignmentRight;
         likeBtn.imageView.contentMode = UIViewContentModeScaleAspectFit;
         [likeBtn setImage:[UIImage imageNamed:@"likeicon"] forState:UIControlStateNormal];
+        [likeBtn setTitle:@"0" forState:UIControlStateNormal];
+        [likeBtn setImageEdgeInsets:UIEdgeInsetsMake(likeBtn.titleLabel.intrinsicContentSize.height-14, -6, 0, likeBtn.titleLabel.intrinsicContentSize.width)];
+        [likeBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, likeBtn.imageView.intrinsicContentSize.width, 0, 0)];
         [self.contentView addSubview:likeBtn];
         
         commentBtn = [[UIButton alloc] initWithFrame:CGRectMake(DEVICEW-60, likeBtn.top, 45, 23)];
@@ -65,6 +67,8 @@
         commentBtn.titleLabel.textAlignment = NSTextAlignmentRight;
         commentBtn.imageView.contentMode = UIViewContentModeScaleAspectFit;
         [commentBtn setImage:[UIImage imageNamed:@"commenticon"] forState:UIControlStateNormal];
+        [commentBtn setTitle:@"0" forState:UIControlStateNormal];
+        [commentBtn setImageEdgeInsets:UIEdgeInsetsMake(commentBtn.titleLabel.intrinsicContentSize.height-16, -6, 0, commentBtn.titleLabel.intrinsicContentSize.width)];
         [self.contentView addSubview:commentBtn];
         
         favourArr = [[NSMutableArray alloc] init];
@@ -106,7 +110,6 @@
     [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
 
     
-    
     [avatar sd_setImageWithURL:[NSURL URLWithString:obj.avatar] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         if (image) {
             avatar.image = image;
@@ -119,6 +122,7 @@
         picView.image = image;
     }];
     likeBtn.titleLabel.text = obj.favour;
+    commentBtn.titleLabel.text = obj.comment_num;
     [commentBtn setTitle:obj.comment_num forState:UIControlStateNormal];
     
 }

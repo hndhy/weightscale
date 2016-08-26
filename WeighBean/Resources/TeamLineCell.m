@@ -116,22 +116,21 @@
 
 
 
-        
-        
-        
         commentBtn = [[UIButton alloc] initWithFrame:CGRectMake(7, picView.bottom+25, 45, 23)];
         [commentBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-        commentBtn.titleLabel.font = UIFontOfSize(12);
+        commentBtn.titleLabel.font = UIFontOfSize(11);
         [commentBtn setImage:[UIImage imageNamed:@"coachlinecomment"] forState:UIControlStateNormal];
-        [commentBtn setTitle:@"1" forState:UIControlStateNormal];
+        [commentBtn setTitle:@"0" forState:UIControlStateNormal];
         commentBtn.titleLabel.textAlignment = NSTextAlignmentRight;
+        [commentBtn setImageEdgeInsets:UIEdgeInsetsMake(commentBtn.titleLabel.intrinsicContentSize.height-15, -4, 0, commentBtn.titleLabel.intrinsicContentSize.width)];
         [self.contentView addSubview:commentBtn];
         
         likeBtn = [[UIButton alloc] initWithFrame:CGRectMake(commentBtn.right+10, commentBtn.top, 44, 23)];
-        likeBtn.titleLabel.font = UIFontOfSize(12);
+        likeBtn.titleLabel.font = UIFontOfSize(11);
         [likeBtn setImage:[UIImage imageNamed:@"coachlinelike"] forState:UIControlStateNormal];
-        [likeBtn setTitle:@"3" forState:UIControlStateNormal];
+        [likeBtn setTitle:@"0" forState:UIControlStateNormal];
         [likeBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [likeBtn setImageEdgeInsets:UIEdgeInsetsMake(likeBtn.titleLabel.intrinsicContentSize.height-14, -5, 0, likeBtn.titleLabel.intrinsicContentSize.width)];
         [self.contentView addSubview:likeBtn];
         
         favourArr = [[NSMutableArray alloc] init];

@@ -149,6 +149,14 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CoachObjModel *obj = _dataArray[indexPath.row];
+    
+    CoachDetailViewController *vc = [[CoachDetailViewController alloc] initWithTeamID:obj.tid];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 - (NSArray *)rightButtons
 {
     NSMutableArray *rightUtilityButtons = [NSMutableArray new];
