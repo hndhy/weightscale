@@ -10,11 +10,11 @@
 #import "HTAppContext.h"
 
 @implementation PersonalListModel
-- (void)getPersonalList;
+- (void)getPersonalListWithUid:(NSString *)uid
 {
     NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithCapacity:5];
-    HTAppContext *appContext = [HTAppContext sharedContext];
-    [parameters setValue:appContext.uid forKey:@"uid"];
+//    HTAppContext *appContext = [HTAppContext sharedContext];
+    [parameters setValue:uid forKey:@"uid"];
     [self getPath:@"api/user/MyDakaDynamic" parameters:parameters];
 }
 

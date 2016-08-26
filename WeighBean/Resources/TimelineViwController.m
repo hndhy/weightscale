@@ -95,6 +95,7 @@
     //把分段控件添加到导航控制器的titleView视图上面
     self.navigationItem.titleView = _segment;
     _segment.selectedSegmentIndex = 1;
+    _segment.tintColor = [UIColor whiteColor];
     
     [_scroll setContentOffset:CGPointMake(_scroll.bounds.size.width, 0)animated:YES];
 

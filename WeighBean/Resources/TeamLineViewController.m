@@ -8,6 +8,8 @@
 
 #import "TeamLineViewController.h"
 #import "TeamLineCell.h"
+#import "PersonalViewController.h"
+#import "TeamObjModel.h"
 
 @implementation TeamLineViewController
 
@@ -118,15 +120,13 @@
     
 }
 
-//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    if (indexPath.row == 0) {
-//        [self.delegate imagePicker:self selectIndex:indexPath.row asset:nil];
-//    }
-//    else if (indexPath.row-1 < [myArray count]) {
-//        [self imagePicker:self selectIndex:indexPath.row asset:[myArray objectAtIndex:indexPath.row-1]];
-//    }
-//}
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    TeamObjModel *obj = _dataArray[indexPath.row];
+    
+    PersonalViewController *vc = [[PersonalViewController alloc] initPersonalUid:obj.uid];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
 {

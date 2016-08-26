@@ -10,6 +10,6 @@
 #import "PersonalListResponse.h"
 
 @interface PersonalListModel : HTAbstractDataSource
-- (void)getPersonalList;
+- (void)getPersonalListWithUid:(NSString *)uid;
 
 @end

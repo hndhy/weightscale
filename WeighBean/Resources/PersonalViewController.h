@@ -14,10 +14,13 @@
 {
     UITableView *_tableView;
     NSMutableArray *_dataArray;
+    
+    NSString *userid;
 }
 
 @property (nonatomic,strong)PersonalListModelHandler *handle;
 @property (nonatomic,strong)PersonalListModel *listModel;
 //@property (nonatomic,strong)NSIndexPath *selectPath;
+- (id)initPersonalUid:(NSString *)userID;
 
 @end

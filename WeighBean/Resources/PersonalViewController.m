@@ -11,14 +11,28 @@
 
 @implementation PersonalViewController
 
-
+- (id)initPersonalUid:(NSString *)userID
+{
+    self = [super init];
+    if (self) {
+        userid = userID;
+    }
+    return self;
+}
 
 - (void)initModel
 {
     self.handle = [[PersonalListModelHandler alloc] initWithController:self];
     self.listModel = [[PersonalListModel alloc] initWithHandler:self.handle];
     _dataArray = [[NSMutableArray alloc] init];
-    [self.listModel getPersonalList];
+    
+    if (userid) {
+        [self.listModel getPersonalListWithUid:userid];
+    }else
+    {
+        HTAppContext *appContext = [HTAppContext sharedContext];
+        [self.listModel getPersonalListWithUid:appContext.uid];
+    }
 }
 
 - (void)initNavbar
