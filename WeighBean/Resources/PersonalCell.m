@@ -59,6 +59,7 @@
         [likeBtn setTitle:@"0" forState:UIControlStateNormal];
         [likeBtn setImageEdgeInsets:UIEdgeInsetsMake(likeBtn.titleLabel.intrinsicContentSize.height-14, -6, 0, likeBtn.titleLabel.intrinsicContentSize.width)];
         [likeBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, likeBtn.imageView.intrinsicContentSize.width, 0, 0)];
+        [likeBtn addTarget:self action:@selector(likeDidClick) forControlEvents:UIControlEventTouchUpInside];
         [self.contentView addSubview:likeBtn];
         
         commentBtn = [[UIButton alloc] initWithFrame:CGRectMake(DEVICEW-60, likeBtn.top, 45, 23)];
@@ -69,6 +70,7 @@
         [commentBtn setImage:[UIImage imageNamed:@"commenticon"] forState:UIControlStateNormal];
         [commentBtn setTitle:@"0" forState:UIControlStateNormal];
         [commentBtn setImageEdgeInsets:UIEdgeInsetsMake(commentBtn.titleLabel.intrinsicContentSize.height-16, -6, 0, commentBtn.titleLabel.intrinsicContentSize.width)];
+        [commentBtn addTarget:self action:@selector(commentDidClick) forControlEvents:UIControlEventTouchUpInside];
         [self.contentView addSubview:commentBtn];
         
         favourArr = [[NSMutableArray alloc] init];
@@ -124,7 +126,21 @@
     likeBtn.titleLabel.text = obj.favour;
     commentBtn.titleLabel.text = obj.comment_num;
     [commentBtn setTitle:obj.comment_num forState:UIControlStateNormal];
-    
+}
+
+- (void)likeDidClick
+{
+    likeBtn.titleLabel.text = [NSString stringWithFormat:@"%d",[self.obj.favour integerValue]+1];
+    [UIView animateWithDuration:0.2 animations:^{
+        likeBtn.imageView.transform = CGAffineTransformScale(likeBtn.imageView.transform, 3, 3);
+        
+    }];
+    [self.delegate likeDidClickWithDakaID:self.obj.dakaid];
+}
+
+- (void)commentDidClick
+{
+    [self.delegate commentDidClickWithDakaID:self.obj.dakaid author:self.obj.nick];
 }
 
 - (void)awakeFromNib {

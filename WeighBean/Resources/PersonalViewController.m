@@ -26,6 +26,9 @@
     self.listModel = [[PersonalListModel alloc] initWithHandler:self.handle];
     _dataArray = [[NSMutableArray alloc] init];
     
+    self.likeHandle = [[LikeModelHandler alloc] initWithController:self];
+    self.likeModel = [[LikeModel alloc] initWithHandler:self.likeHandle];
+    
     if (userid) {
         [self.listModel getPersonalListWithUid:userid];
     }else
@@ -98,11 +101,13 @@
     if (!cell)
     {
         cell = [[PersonalCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identier];
+        
     }
     __weak typeof(self) weakSelf = self;
 //    [cell setSelectBlock:^(NSInteger index,OLProductModel *obj,NSIndexPath *path) {
 //        [weakSelf selectIndex:index product:obj indexPath:path];
 //    }];
+    cell.delegate = self;
     [cell loadContent:_dataArray[indexPath.row] path:indexPath];
     return cell;
 }
@@ -138,6 +143,26 @@
 {
     
 }
+
+- (void)likeFinished:(LikeResponse *)response
+{
+    [self alert:nil message:response.msg delegate:nil cancelTitle:@"确定" otherTitles:nil];
+}
+- (void)likeFailure
+{
+    
+}
+
+- (void)likeDidClickWithDakaID:(NSString *)dakaID
+{
+    [self.likeModel postLikeWithPicID:dakaID];
+}
+
+- (void)commentDidClickWithDakaID:(NSString *)dakaID author:(NSString *)author
+{
+    CommentViewController *vc = [[CommentViewController alloc] initWithDakaID:dakaID anthor:author];
+    [self.navigationController pushViewController:vc animated:YES];}
+
 
 //- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 //{

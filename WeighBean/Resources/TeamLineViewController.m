@@ -7,7 +7,6 @@
 //
 
 #import "TeamLineViewController.h"
-#import "TeamLineCell.h"
 #import "PersonalViewController.h"
 #import "TeamObjModel.h"
 
@@ -28,6 +27,10 @@
     self.handle = [[TeamLineModelHandler alloc] initWithController:self];
     self.listModel = [[TeamListModel alloc] initWithHandler:self.handle];
     _dataArray = [[NSMutableArray alloc] init];
+    
+    self.likeHandle = [[LikeModelHandler alloc] initWithController:self];
+    self.likeModel = [[LikeModel alloc] initWithHandler:self.likeHandle];
+
     if (teamid) {
         [self.listModel getTeamLisetInfoWithTeamID:teamid];
     }
@@ -62,6 +65,7 @@
     if (!cell) {
         cell = [[TeamLineCell alloc] init];
     }
+    cell.delegate =self;
     [cell loadContent:_dataArray[indexPath.row] path:indexPath];
     return cell;
 }
@@ -137,7 +141,26 @@
     
 }
 
+- (void)likeFinished:(LikeResponse *)response
+{
+    [self alert:nil message:response.msg delegate:nil cancelTitle:@"确定" otherTitles:nil];
 
+}
+- (void)likeFailure
+{
+    
+}
+
+- (void)likeDidClickWithDakaID:(NSString *)dakaID
+{
+    [self.likeModel postLikeWithPicID:dakaID];
+}
+
+- (void)commentDidClickWithDakaID:(NSString *)dakaID author:(NSString *)author
+{
+    CommentViewController *vc = [[CommentViewController alloc] initWithDakaID:dakaID anthor:author];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 //- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 //{

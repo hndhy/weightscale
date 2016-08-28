@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "PersonalObjModel.h"
+
+
+@protocol LikeDelegate <NSObject>
+
+- (void)likeDidClickWithDakaID:(NSString *)dakaID;
+- (void)commentDidClickWithDakaID:(NSString *)dakaID author:(NSString *)author;
+
+@end
 @interface PersonalCell : UITableViewCell
 {
 
@@ -29,6 +37,9 @@
 @property (nonatomic,strong) NSIndexPath *path;
 //@property (nonatomic, weak) id<CoachCellDelegate> coachCellDelegate;
 //
+
+@property (nonatomic, weak) id<LikeDelegate> delegate;
+
 - (void)loadContent:(PersonalObjModel *)obj path:(NSIndexPath *)path;
 
 @end

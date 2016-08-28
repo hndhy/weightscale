@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "TeamObjModel.h"
+
+@protocol LikeDelegate <NSObject>
+
+- (void)likeDidClickWithDakaID:(NSString *)dakaID;
+- (void)commentDidClickWithDakaID:(NSString *)dakaID author:(NSString *)author;
+
+@end
+
 @interface TeamLineCell : UICollectionViewCell
 {
     UIImageView *avatar;
@@ -30,6 +38,7 @@
 }
 @property (nonatomic,strong) TeamObjModel *obj;
 @property (nonatomic,strong) NSIndexPath *path;
+@property (nonatomic, weak) id<LikeDelegate> delegate;
 
 - (void)loadContent:(TeamObjModel *)obj path:(NSIndexPath *)path;
 

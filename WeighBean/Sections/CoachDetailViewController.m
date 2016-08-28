@@ -156,7 +156,9 @@
     ingTitleLbl1.backgroundColor = [UIColor clearColor];
     [ingTitleLbl1 setTextColor:[UIColor blackColor]];
     [ingTitleLbl1 setFont:[UIFont systemFontOfSize:14]];
-    [ingTitleLbl1 addTapCallBack:self sel:@selector(changeIngRatioTitle)];
+//    [ingTitleLbl1 addTapCallBack:self sel:@selector(changeIngRatioTitle)];
+    UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeIngRatioTitle)];
+    [ingActiveRatioContainerView addGestureRecognizer:tap1];
     [ingTitleLbl1 setText:@"正在进行中"];
     
     [ingActiveRatioContainerView addSubview:ingTitleLbl1];
@@ -195,9 +197,13 @@
     comTitleLbl1.backgroundColor = [UIColor clearColor];
     [comTitleLbl1 setTextColor:[UIColor blackColor]];
     [comTitleLbl1 setFont:[UIFont systemFontOfSize:14]];
-    [comTitleLbl1 addTapCallBack:self sel:@selector(changeComPeopleTitle)];
+//    [comTitleLbl1 addTapCallBack:self sel:@selector(changeComPeopleTitle)];
     [comTitleLbl1 setText:@"已完成"];
     [comPeopleContainerView addSubview:comTitleLbl1];
+    
+    UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeComPeopleTitle)];
+    [comPeopleContainerView addGestureRecognizer:tap2];
+
     
     comPeopleLbl = [[UILabel alloc] initWithFrame:CGRectMake(DEVICEW-60, ingTitleLbl1.top, 60, 30)];
     comPeopleLbl.backgroundColor = [UIColor clearColor];
@@ -228,6 +234,10 @@
     [ingDataLbl setText:@"进行中数据统计"];
     [ingDataLbl addTapCallBack:self sel:@selector(changeIngDataDisplay)];
     [ingDataContainerView addSubview:ingDataLbl];
+    
+    UITapGestureRecognizer *tap3 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeIngDataDisplay)];
+    [ingDataContainerView addGestureRecognizer:tap3];
+
     
     UILabel *dataLbl1 = [[UILabel alloc] initWithFrame:CGRectMake(25, 44+5, 80, 30)];
     dataLbl1.backgroundColor = [UIColor clearColor];
@@ -339,6 +349,9 @@
     [completeDataLbl setText:@"已完成数据统计"];
     [completeDataLbl addTapCallBack:self sel:@selector(changeComDataDisplay)];
     [comDataContainerView addSubview:completeDataLbl];
+    
+    UITapGestureRecognizer *tap4 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeComDataDisplay)];
+    [comDataContainerView addGestureRecognizer:tap4];
     
     
     UILabel *comDataLbl1 = [[UILabel alloc] initWithFrame:CGRectMake(25, 44+5, 80, 30)];

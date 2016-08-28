@@ -118,6 +118,13 @@
 		5C16AC3D1D5B901C00C5B76C /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C16AC3A1D5B901C00C5B76C /* MGSwipeTableCell.m */; };
 		5C1C13301D4E459C009A238D /* NSDictionary+GetValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C132F1D4E459C009A238D /* NSDictionary+GetValue.m */; };
 		5C2245D11D70C5870085F8AE /* refresh_but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C2245D01D70C5870085F8AE /* refresh_but@2x.png */; };
+		5C2245D41D7196650085F8AE /* LikeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2245D31D7196650085F8AE /* LikeModel.m */; };
+		5C2245D71D7196AF0085F8AE /* LikeResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2245D61D7196AF0085F8AE /* LikeResponse.m */; };
+		5C2245DA1D7196F80085F8AE /* LikeModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2245D91D7196F80085F8AE /* LikeModelHandler.m */; };
+		5C2245DD1D7327C20085F8AE /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2245DC1D7327C20085F8AE /* CommentViewController.m */; };
+		5C2245E01D7348540085F8AE /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2245DF1D7348540085F8AE /* CommentModel.m */; };
+		5C2245E31D7348740085F8AE /* CommentResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2245E21D7348740085F8AE /* CommentResponse.m */; };
+		5C2245E61D7348900085F8AE /* CommentModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2245E51D7348900085F8AE /* CommentModelHandler.m */; };
 		5C2B1F3B1D58159C00032D3F /* UpdateCoachModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F3A1D58159C00032D3F /* UpdateCoachModel.m */; };
 		5C2B1F3E1D5816A900032D3F /* UpdateCoachResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F3D1D5816A900032D3F /* UpdateCoachResponse.m */; };
 		5C2B1F411D58174600032D3F /* UpdateCoachModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B1F401D58174600032D3F /* UpdateCoachModelHandler.m */; };
@@ -632,6 +639,20 @@
 		5C1C132E1D4E459C009A238D /* NSDictionary+GetValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+GetValue.h"; sourceTree = "<group>"; };
 		5C1C132F1D4E459C009A238D /* NSDictionary+GetValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+GetValue.m"; sourceTree = "<group>"; };
 		5C2245D01D70C5870085F8AE /* refresh_but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh_but@2x.png"; sourceTree = "<group>"; };
+		5C2245D21D7196650085F8AE /* LikeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikeModel.h; sourceTree = "<group>"; };
+		5C2245D31D7196650085F8AE /* LikeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikeModel.m; sourceTree = "<group>"; };
+		5C2245D51D7196AF0085F8AE /* LikeResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikeResponse.h; sourceTree = "<group>"; };
+		5C2245D61D7196AF0085F8AE /* LikeResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikeResponse.m; sourceTree = "<group>"; };
+		5C2245D81D7196F80085F8AE /* LikeModelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikeModelHandler.h; sourceTree = "<group>"; };
+		5C2245D91D7196F80085F8AE /* LikeModelHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikeModelHandler.m; sourceTree = "<group>"; };
+		5C2245DB1D7327C20085F8AE /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
+		5C2245DC1D7327C20085F8AE /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
+		5C2245DE1D7348540085F8AE /* CommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentModel.h; sourceTree = "<group>"; };
+		5C2245DF1D7348540085F8AE /* CommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentModel.m; sourceTree = "<group>"; };
+		5C2245E11D7348740085F8AE /* CommentResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentResponse.h; sourceTree = "<group>"; };
+		5C2245E21D7348740085F8AE /* CommentResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentResponse.m; sourceTree = "<group>"; };
+		5C2245E41D7348900085F8AE /* CommentModelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentModelHandler.h; sourceTree = "<group>"; };
+		5C2245E51D7348900085F8AE /* CommentModelHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentModelHandler.m; sourceTree = "<group>"; };
 		5C2B1F391D58159C00032D3F /* UpdateCoachModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateCoachModel.h; sourceTree = "<group>"; };
 		5C2B1F3A1D58159C00032D3F /* UpdateCoachModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateCoachModel.m; sourceTree = "<group>"; };
 		5C2B1F3C1D5816A900032D3F /* UpdateCoachResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateCoachResponse.h; sourceTree = "<group>"; };
@@ -1364,6 +1385,10 @@
 				5C397AE41D639356009B7951 /* TeamObjModel.m */,
 				5C397AE91D63F4B3009B7951 /* MeasureObjModel.h */,
 				5C397AEA1D63F4B3009B7951 /* MeasureObjModel.m */,
+				5C2245D21D7196650085F8AE /* LikeModel.h */,
+				5C2245D31D7196650085F8AE /* LikeModel.m */,
+				5C2245DE1D7348540085F8AE /* CommentModel.h */,
+				5C2245DF1D7348540085F8AE /* CommentModel.m */,
 			);
 			name = Timeline;
 			sourceTree = "<group>";
@@ -1375,6 +1400,10 @@
 				5C397AD21D63689B009B7951 /* PersonalListResponse.m */,
 				5C397AD71D637C49009B7951 /* TeamLineResponse.h */,
 				5C397AD81D637C49009B7951 /* TeamLineResponse.m */,
+				5C2245D51D7196AF0085F8AE /* LikeResponse.h */,
+				5C2245D61D7196AF0085F8AE /* LikeResponse.m */,
+				5C2245E11D7348740085F8AE /* CommentResponse.h */,
+				5C2245E21D7348740085F8AE /* CommentResponse.m */,
 			);
 			name = Timeline;
 			sourceTree = "<group>";
@@ -1386,6 +1415,10 @@
 				5C397AD51D636902009B7951 /* PersonalListModelHandler.m */,
 				5C397ADA1D637C86009B7951 /* TeamLineModelHandler.h */,
 				5C397ADB1D637C86009B7951 /* TeamLineModelHandler.m */,
+				5C2245D81D7196F80085F8AE /* LikeModelHandler.h */,
+				5C2245D91D7196F80085F8AE /* LikeModelHandler.m */,
+				5C2245E41D7348900085F8AE /* CommentModelHandler.h */,
+				5C2245E51D7348900085F8AE /* CommentModelHandler.m */,
 			);
 			name = Timeline;
 			sourceTree = "<group>";
@@ -1430,6 +1463,8 @@
 				5C397AE11D637E3F009B7951 /* TeamLineViewController.m */,
 				5C397AE61D6399F4009B7951 /* TeamLineCell.h */,
 				5C397AE71D6399F4009B7951 /* TeamLineCell.m */,
+				5C2245DB1D7327C20085F8AE /* CommentViewController.h */,
+				5C2245DC1D7327C20085F8AE /* CommentViewController.m */,
 			);
 			name = Timeline;
 			path = ../Resources;
@@ -3048,6 +3083,7 @@
 				5289FE8B1C0757AD0036FA6F /* NotifNumberResponse.m in Sources */,
 				5C16AC3D1D5B901C00C5B76C /* MGSwipeTableCell.m in Sources */,
 				5F88BE241B7DC355008C4901 /* ForgetPwdViewController.m in Sources */,
+				5C2245D71D7196AF0085F8AE /* LikeResponse.m in Sources */,
 				5FA9F31B1B66096C00997BA8 /* HTAbstractDataSource.m in Sources */,
 				5FA9F2891B66096C00997BA8 /* NSString+Additions.m in Sources */,
 				5FA9F3141B66096C00997BA8 /* HTUserData.m in Sources */,
@@ -3092,6 +3128,7 @@
 				5F88BE341B7EDA75008C4901 /* BodyAgeViewController.m in Sources */,
 				5C48EFF01D60DB3600C3AF4E /* sum_listModel.m in Sources */,
 				5FE255761B7A0A520029BD4D /* CoursesViewController.m in Sources */,
+				5C2245E61D7348900085F8AE /* CommentModelHandler.m in Sources */,
 				5FA9F3211B66096C00997BA8 /* HTRegisterModel.m in Sources */,
 				B01A8E841B7CA6A10049D86D /* PNLineChartView.m in Sources */,
 				5C48EFED1D60DB1E00C3AF4E /* brisk_listModel.m in Sources */,
@@ -3099,6 +3136,7 @@
 				5C2B1F441D58B91E00032D3F /* DissolveCoachModel.m in Sources */,
 				B01A8E851B7CA6A10049D86D /* PNPlot.m in Sources */,
 				5FD5149F1B80B5050088C7E9 /* HTZouMaDengModel.m in Sources */,
+				5C2245DD1D7327C20085F8AE /* CommentViewController.m in Sources */,
 				5FA9F28E1B66096C00997BA8 /* UIView+Ext.m in Sources */,
 				5CEC2E611D53AD7B00CBA6BA /* CoachNewTypeViewController.m in Sources */,
 				5FA9F2C41B66096C00997BA8 /* HTTableModelHandler.m in Sources */,
@@ -3149,6 +3187,8 @@
 				522123B41BFC27F4006BCCC4 /* OnlineOrderData.m in Sources */,
 				5FA9F2BD1B66096C00997BA8 /* UncollectClickModelHandler.m in Sources */,
 				5C2B1F5C1D58E8AE00032D3F /* CoachDetailViewController.m in Sources */,
+				5C2245D41D7196650085F8AE /* LikeModel.m in Sources */,
+				5C2245E01D7348540085F8AE /* CommentModel.m in Sources */,
 				5FE255551B78BE550029BD4D /* UploadAvatarResponse.m in Sources */,
 				52964C571C195833003FA17A /* TrendResponse.m in Sources */,
 				5CE173171D4DFD130047E8B9 /* CoachObjModel.m in Sources */,
@@ -3186,6 +3226,7 @@
 				5C397AD91D637C49009B7951 /* TeamLineResponse.m in Sources */,
 				5CEC2E5B1D52565600CBA6BA /* CoachListCell.m in Sources */,
 				5FA9F30F1B66096C00997BA8 /* HTCollectClickModel.m in Sources */,
+				5C2245DA1D7196F80085F8AE /* LikeModelHandler.m in Sources */,
 				B01A8E881B7CC4B70049D86D /* DBHelper.m in Sources */,
 				5FA9F2901B66096C00997BA8 /* HTBaseCell.m in Sources */,
 				5C397AD31D63689B009B7951 /* PersonalListResponse.m in Sources */,
@@ -3207,6 +3248,7 @@
 				5FD514911B80675E0088C7E9 /* UploadInfo.m in Sources */,
 				522123BD1BFCABCA006BCCC4 /* OnlineListResponse.m in Sources */,
 				5C16AC2A1D5B849000C5B76C /* MutiLabel.m in Sources */,
+				5C2245E31D7348740085F8AE /* CommentResponse.m in Sources */,
 				524A917E1BA1845D00F36516 /* AddLookModel.m in Sources */,
 				5FA9F2971B66096C00997BA8 /* HTTextFieldDelegate.m in Sources */,
 				5FA9F28B1B66096C00997BA8 /* UIDevice-Hardware.m in Sources */,

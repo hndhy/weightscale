@@ -123,6 +123,7 @@
         [commentBtn setTitle:@"0" forState:UIControlStateNormal];
         commentBtn.titleLabel.textAlignment = NSTextAlignmentRight;
         [commentBtn setImageEdgeInsets:UIEdgeInsetsMake(commentBtn.titleLabel.intrinsicContentSize.height-15, -4, 0, commentBtn.titleLabel.intrinsicContentSize.width)];
+        [commentBtn addTarget:self action:@selector(commentDidClick) forControlEvents:UIControlEventTouchUpInside];
         [self.contentView addSubview:commentBtn];
         
         likeBtn = [[UIButton alloc] initWithFrame:CGRectMake(commentBtn.right+10, commentBtn.top, 44, 23)];
@@ -131,6 +132,7 @@
         [likeBtn setTitle:@"0" forState:UIControlStateNormal];
         [likeBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [likeBtn setImageEdgeInsets:UIEdgeInsetsMake(likeBtn.titleLabel.intrinsicContentSize.height-14, -5, 0, likeBtn.titleLabel.intrinsicContentSize.width)];
+        [likeBtn addTarget:self action:@selector(likeDidClick) forControlEvents:UIControlEventTouchUpInside];
         [self.contentView addSubview:likeBtn];
         
         favourArr = [[NSMutableArray alloc] init];
@@ -177,5 +179,20 @@
     [likeBtn setTitle:obj.favour forState:UIControlStateNormal];
 
 }
+
+- (void)likeDidClick
+{
+    [UIView animateWithDuration:0.2 animations:^{
+        likeBtn.imageView.transform = CGAffineTransformScale(likeBtn.imageView.transform, 3, 3);
+        
+    }];
+    [self.delegate likeDidClickWithDakaID:self.obj.dakatype];
+}
+
+- (void)commentDidClick
+{
+    [self.delegate commentDidClickWithDakaID:self.obj.dakatype author:self.obj.nick];
+}
+
 
 @end
