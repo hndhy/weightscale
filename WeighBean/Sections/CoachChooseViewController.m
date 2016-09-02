@@ -7,7 +7,8 @@
 //
 
 #import "CoachChooseViewController.h"
-#import "CoachNewTypeViewController.h"
+//#import "CoachNewTypeViewController.h"
+#import "CoachNewBuildViewController.h"
 
 @implementation CoachChooseViewController
 - (void)initNavbar
@@ -56,22 +57,28 @@
 #pragma mark action
 - (void)fatlossDidClick
 {
-    CoachNewTypeViewController *vc = [[CoachNewTypeViewController alloc] init];
-    [vc createType:1];
+    CoachNewBuildViewController *vc = [[CoachNewBuildViewController alloc] initWithType:1];
     [self.navigationController pushViewController:vc animated:YES];
+
+//    CoachNewTypeViewController *vc = [[CoachNewTypeViewController alloc] init];
+//    [vc createType:1];
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)muscleGainDidClick
 {
-    CoachNewTypeViewController *vc = [[CoachNewTypeViewController alloc] init];
-    [vc createType:2];
+    CoachNewBuildViewController *vc = [[CoachNewBuildViewController alloc] initWithType:2];
     [self.navigationController pushViewController:vc animated:YES];
+
+//    CoachNewTypeViewController *vc = [[CoachNewTypeViewController alloc] init];
+//    [vc createType:2];
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)goalSetDicClick
 {
-    CoachNewTypeViewController *vc = [[CoachNewTypeViewController alloc] init];
-    [vc createType:3];
-    [self.navigationController pushViewController:vc animated:YES];
+//    CoachNewTypeViewController *vc = [[CoachNewTypeViewController alloc] init];
+//    [vc createType:3];
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 @end

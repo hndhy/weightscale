@@ -19,7 +19,7 @@
 
 - (void)initSubViews
 {
-    self.timeLab = [[UILabel alloc]initWithFrame:CGRectMake(self.width-120, 0, 120, 30)];
+    self.timeLab = [[UILabel alloc]initWithFrame:CGRectMake(self.width-120, 0, 120, 20)];
     [self addSubview:self.timeLab];
     
     self.viewArray = [[NSMutableArray alloc]initWithCapacity:5];
@@ -38,14 +38,15 @@
     [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     
     self.timeLab.text = [formatter stringFromDate:confromTimesp];
-    self.timeLab.font = [UIFont systemFontOfSize:10.0f];
+    [self.timeLab setTextColor:[UIColor lightGrayColor]];
+    self.timeLab.font = [UIFont systemFontOfSize:11.0f];
     
-    NSString *item1 = [NSString stringWithFormat:@"%.1f公斤",model.W.floatValue];
-    NSString *item2 = [NSString stringWithFormat:@"%.1f%%",model.FAT.floatValue];
-    NSString *item3 = [NSString stringWithFormat:@"%.1f级",model.VAT.floatValue];
+    NSString *item1 = [NSString stringWithFormat:@"%.1f",model.W.floatValue];
+    NSString *item2 = [NSString stringWithFormat:@"%.1f",model.FAT.floatValue];
+    NSString *item3 = [NSString stringWithFormat:@"%.1f",model.VAT.floatValue];
 //    NSString *item4 = [NSString stringWithFormat:@"%.1f公斤",model.BMC.floatValue];
-    NSString *item4 = [NSString stringWithFormat:@"%.1f公斤",model.LBM.floatValue];
-    NSString *item5 = [NSString stringWithFormat:@"%@岁",model.BODY_AGE];
+    NSString *item4 = [NSString stringWithFormat:@"%.1f",model.LBM.floatValue];
+    NSString *item5 = [NSString stringWithFormat:@"%@",model.BODY_AGE];
     
     NSArray *itemValues = @[item1,item2,item3,item4,item5];
     for (int i=0; i<itemValues.count; i++) {

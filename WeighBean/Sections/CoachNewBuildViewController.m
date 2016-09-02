@@ -106,12 +106,15 @@
     introTextView.textColor = [UIColor blackColor];
     introTextView.font = [UIFont systemFontOfSize:13];
     introTextView.textAlignment = NSTextAlignmentLeft;
+    introTextView.returnKeyType = UIReturnKeyDone;
+    introTextView.delegate = self;
     if (teamdescription) {
         introTextView.text = teamdescription;
-    } else
-    {
-        introTextView.text = @"体育总局各个房间圣诞快fwqfweqfewqfsa乐福建省拉fsaf杜坎肌肤fdsafsdaver";
     }
+//    else
+//    {
+//        introTextView.text = @"体育总局各个房间圣诞快fwqfweqfewqfsa乐福建省拉fsaf杜坎肌肤fdsafsdaver";
+//    }
     [view3 addSubview:introTextView];
     
     
@@ -199,5 +202,14 @@
 //        ischat = 0;
 //    }
     [self.createCoachModel creatCoachWithUid:userData.uid teamType:teamType teamName:nameBtn.titleLabel.text isChat:1 description:introTextView.text target:nil];
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if ([text isEqualToString:@"\n"]) {
+        [introTextView resignFirstResponder];
+        return NO;
+    }
+    return YES;
 }
 @end

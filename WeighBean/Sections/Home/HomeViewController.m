@@ -129,7 +129,7 @@
     //    iconImageView.hidden = YES;
     [titleView addSubview:iconImageView];
     self.titleLabel = [UILabel createLabelWithFrame:CGRectMake(iconImageView.right, 0, titleView.width - iconImageView.right, 44.0f)
-                                           withSize:18.0f withColor:UIColorFromRGB(51.0f, 51.0f, 51.0f)];
+                                           withSize:16.0f withColor:UIColorFromRGB(51.0f, 51.0f, 51.0f)];
     self.titleLabel.textColor = [UIColor whiteColor];
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     [titleView addSubview:self.titleLabel];

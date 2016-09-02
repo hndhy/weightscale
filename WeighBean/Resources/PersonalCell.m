@@ -105,11 +105,11 @@
     self.obj = obj;
     self.path = path;
     
-    NSDate *createTime = [NSDate dateWithTimeIntervalSince1970:[obj.createTime intValue]/1000];
-    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateStyle:NSDateFormatterMediumStyle];
-    [formatter setTimeStyle:NSDateFormatterShortStyle];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+//    NSDate *createTime = [NSDate dateWithTimeIntervalSince1970:[obj.createTime longLongValue]/1000];
+//    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+//    [formatter setDateStyle:NSDateFormatterMediumStyle];
+//    [formatter setTimeStyle:NSDateFormatterShortStyle];
+//    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
 
     
     [avatar sd_setImageWithURL:[NSURL URLWithString:obj.avatar] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
@@ -119,7 +119,7 @@
     }];
     
     nickName.text = obj.nick;
-    timeLbl.text = [formatter stringFromDate:createTime];
+    timeLbl.text = obj.createTime;
     [picView sd_setImageWithURL:[NSURL URLWithString:obj.pics] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         picView.image = image;
     }];

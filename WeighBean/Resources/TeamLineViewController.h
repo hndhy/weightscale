@@ -14,11 +14,12 @@
 #import "TeamLineCell.h"
 #import "CommentViewController.h"
 
-@interface TeamLineViewController : HTBaseViewController <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,LikeDelegate>
+@interface TeamLineViewController : HTBaseViewController <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,LikeDelegate,UIScrollViewDelegate>
 {
     UICollectionView *collection;
     NSMutableArray *_dataArray;
     NSString *teamid;
+    int startFormCurrent;
 }
 
 @property (nonatomic,strong)TeamLineModelHandler *handle;

@@ -110,6 +110,12 @@
         coachTypeLbl.hidden = NO;
         coachTypeLbl.textColor = [UIColor colorWithRed:29/255.0 green:168/255.0 blue:225/255.0 alpha:1];
         coachTypeLbl.text = @"下级战队";
+    } else if (obj.flag == 3)
+    {
+        joinBtn.hidden = YES;
+        coachTypeLbl.hidden = NO;
+        coachTypeLbl.text = @"我是教练";
+        coachTypeLbl.textColor = [UIColor blackColor];
     } else
     {
         joinBtn.hidden = NO;

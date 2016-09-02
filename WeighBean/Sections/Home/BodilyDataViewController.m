@@ -128,7 +128,7 @@
 //    [self createTrendView];
     
     //曲线图
-    self.lineChartView=[[PNLineChartView alloc]initWithFrame:CGRectMake(0, 20, self.view.width, 268+60)];
+    self.lineChartView=[[PNLineChartView alloc]initWithFrame:CGRectMake(0, 20, self.view.width, self.trendView.height-20)];
     self.lineChartView.userInteractionEnabled=NO;
     self.lineChartView.backgroundColor=[UIColor clearColor];
     self.lineChartView.xAxisFontColor=self.lineChartView.horizontalLinesColor=[UIColor lightGrayColor]; //横，纵坐标的字体颜色
@@ -630,17 +630,93 @@
 
 -(void)createListView
 {
-    NSArray *itemValues = @[@"体重",@"体脂率",@"内脂",@"肌肉量",@"身体年龄"];
-    for (int i=0; i<5; i++) {
+//    NSArray *itemValues = @[@"体重公斤",@"体脂率",@"内脂",@"肌肉量",@"身体年龄"];
+//    for (int i=0; i<5; i++) {
+//        UILabel *itemLab = [[UILabel alloc]init];
+//        itemLab.frame = CGRectMake(60*i, 0, SCREEN_WIDTH/5.0, 30);
+//        itemLab.text = itemValues[i];
+//        itemLab.font = [UIFont systemFontOfSize:12.0f];
+//        itemLab.textColor = [UIColor blackColor];
+//        itemLab.textAlignment = NSTextAlignmentCenter;
+//        itemLab.backgroundColor = [UIColor clearColor];
+//        [self.valueListView addSubview:itemLab];
+//    }
+    {
+        NSString *str = @"体重公斤";
+        NSMutableAttributedString *muStr = [[NSMutableAttributedString alloc] initWithString:str];
+        [muStr addAttribute:NSFontAttributeName value:UIFontOfSize(12) range:NSMakeRange(0, 2)];
+        [muStr addAttribute:NSFontAttributeName value:UIFontOfSize(8) range:NSMakeRange(2, 2)];
         UILabel *itemLab = [[UILabel alloc]init];
-        itemLab.frame = CGRectMake(60*i, 0, SCREEN_WIDTH/5.0, 30);
-        itemLab.text = itemValues[i];
-        itemLab.font = [UIFont systemFontOfSize:14.0f];
+        itemLab.frame = CGRectMake(0, 0, SCREEN_WIDTH/5.0, 30);
+        itemLab.font = [UIFont systemFontOfSize:12.0f];
         itemLab.textColor = [UIColor blackColor];
+        itemLab.attributedText = muStr;
         itemLab.textAlignment = NSTextAlignmentCenter;
         itemLab.backgroundColor = [UIColor clearColor];
         [self.valueListView addSubview:itemLab];
     }
+    
+    {
+        NSString *str = @"体脂％";
+        NSMutableAttributedString *muStr = [[NSMutableAttributedString alloc] initWithString:str];
+        [muStr addAttribute:NSFontAttributeName value:UIFontOfSize(12) range:NSMakeRange(0, 2)];
+        [muStr addAttribute:NSFontAttributeName value:UIFontOfSize(8) range:NSMakeRange(2, 1)];
+        UILabel *itemLab = [[UILabel alloc]init];
+        itemLab.frame = CGRectMake(SCREEN_WIDTH/5.0, 0, SCREEN_WIDTH/5.0, 30);
+        itemLab.font = [UIFont systemFontOfSize:12.0f];
+        itemLab.textColor = [UIColor blackColor];
+        itemLab.attributedText = muStr;
+        itemLab.textAlignment = NSTextAlignmentCenter;
+        itemLab.backgroundColor = [UIColor clearColor];
+        [self.valueListView addSubview:itemLab];
+    }
+    
+    {
+        NSString *str = @"内酯级";
+        NSMutableAttributedString *muStr = [[NSMutableAttributedString alloc] initWithString:str];
+        [muStr addAttribute:NSFontAttributeName value:UIFontOfSize(12) range:NSMakeRange(0, 2)];
+        [muStr addAttribute:NSFontAttributeName value:UIFontOfSize(8) range:NSMakeRange(2, 1)];
+        UILabel *itemLab = [[UILabel alloc]init];
+        itemLab.frame = CGRectMake(2*SCREEN_WIDTH/5.0, 0, SCREEN_WIDTH/5.0, 30);
+        itemLab.font = [UIFont systemFontOfSize:12.0f];
+        itemLab.textColor = [UIColor blackColor];
+        itemLab.attributedText = muStr;
+        itemLab.textAlignment = NSTextAlignmentCenter;
+        itemLab.backgroundColor = [UIColor clearColor];
+        [self.valueListView addSubview:itemLab];
+    }
+    
+    {
+        NSString *str = @"肌肉量公斤";
+        NSMutableAttributedString *muStr = [[NSMutableAttributedString alloc] initWithString:str];
+        [muStr addAttribute:NSFontAttributeName value:UIFontOfSize(12) range:NSMakeRange(0, 3)];
+        [muStr addAttribute:NSFontAttributeName value:UIFontOfSize(8) range:NSMakeRange(3, 2)];
+        UILabel *itemLab = [[UILabel alloc]init];
+        itemLab.frame = CGRectMake(3*SCREEN_WIDTH/5.0, 0, SCREEN_WIDTH/5.0, 30);
+        itemLab.font = [UIFont systemFontOfSize:12.0f];
+        itemLab.textColor = [UIColor blackColor];
+        itemLab.attributedText = muStr;
+        itemLab.textAlignment = NSTextAlignmentCenter;
+        itemLab.backgroundColor = [UIColor clearColor];
+        [self.valueListView addSubview:itemLab];
+    }
+    
+    {
+        NSString *str = @"身体年龄岁";
+        NSMutableAttributedString *muStr = [[NSMutableAttributedString alloc] initWithString:str];
+        [muStr addAttribute:NSFontAttributeName value:UIFontOfSize(12) range:NSMakeRange(0, 4)];
+        [muStr addAttribute:NSFontAttributeName value:UIFontOfSize(8) range:NSMakeRange(4, 1)];
+        UILabel *itemLab = [[UILabel alloc]init];
+        itemLab.frame = CGRectMake(4*SCREEN_WIDTH/5.0, 0, SCREEN_WIDTH/5.0, 30);
+        itemLab.font = [UIFont systemFontOfSize:12.0f];
+        itemLab.textColor = [UIColor blackColor];
+        itemLab.attributedText = muStr;
+        itemLab.textAlignment = NSTextAlignmentCenter;
+        itemLab.backgroundColor = [UIColor clearColor];
+        [self.valueListView addSubview:itemLab];
+    }
+    
+    
 }
 
 //曲线图色块解释View
@@ -764,20 +840,23 @@
     self.lineChartView.min = 0.0f;
     if (index == 0)
     {
-        self.lineChartView.max = 180.0f;
+        self.lineChartView.max = [[plottingDataValues valueForKeyPath:@"@max.floatValue"] floatValue];
+        self.lineChartView.min = [[plottingDataValues valueForKeyPath:@"@min.floatValue"] floatValue];
     }
     else if (index == 1)
     {
-        self.lineChartView.max = 61.0f;
-        self.lineChartView.min = 6.0f;
+        self.lineChartView.max = [[plottingDataValues valueForKeyPath:@"@max.floatValue"] floatValue];
+        self.lineChartView.min = [[plottingDataValues valueForKeyPath:@"@min.floatValue"] floatValue];
     }
     else if (index == 2)
     {
-        self.lineChartView.max = 10.0f;
+        self.lineChartView.max = [[plottingDataValues valueForKeyPath:@"@max.floatValue"] floatValue];
+        self.lineChartView.min = [[plottingDataValues valueForKeyPath:@"@min.floatValue"] floatValue];
     }
     else if (index == 3)
     {
-        self.lineChartView.max = 150.0f;
+        self.lineChartView.max = [[plottingDataValues valueForKeyPath:@"@max.floatValue"] floatValue];
+        self.lineChartView.min = [[plottingDataValues valueForKeyPath:@"@min.floatValue"] floatValue];
     }
     
     //纵坐标间隔

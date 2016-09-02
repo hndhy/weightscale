@@ -453,8 +453,8 @@
             break;
     }
     
-    NSDate *startTimesp = [NSDate dateWithTimeIntervalSince1970:[response.data.startTime intValue]/1000];
-    NSDate *endTimesp = [NSDate dateWithTimeIntervalSince1970:[response.data.endTime intValue]/1000];
+    NSDate *startTimesp = [NSDate dateWithTimeIntervalSince1970:[response.data.startTime longLongValue]/1000];
+    NSDate *endTimesp = [NSDate dateWithTimeIntervalSince1970:[response.data.endTime longLongValue]/1000];
     
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterMediumStyle];

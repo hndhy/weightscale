@@ -111,8 +111,9 @@
         UIView *rightView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 88.0f, 44.0f)];
         rightView.backgroundColor = [UIColor clearColor];
         
-        self.editButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44.0f, 44.0f)];
+        self.editButton = [[UIButton alloc] initWithFrame:CGRectMake(15, 0, 44.0f, 44.0f)];
         [self.editButton setTitle:@"编辑" forState:UIControlStateNormal];
+        self.editButton.titleLabel.font = UIFontOfSize(16);
         [self.editButton addTarget:self action:@selector(onEditClick:) forControlEvents:UIControlEventTouchUpInside];
         
         UIButton *trendButton = [[UIButton alloc]initWithFrame:CGRectMake(rightView.width-34.0f, 0, 44.0f, 44.0f)];

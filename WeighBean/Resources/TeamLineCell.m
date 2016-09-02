@@ -147,11 +147,11 @@
     self.obj = obj;
     self.path = path;
     
-    NSDate *createTime = [NSDate dateWithTimeIntervalSince1970:[obj.createTime intValue]/1000];
-    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateStyle:NSDateFormatterMediumStyle];
-    [formatter setTimeStyle:NSDateFormatterShortStyle];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+//    NSDate *createTime = [NSDate dateWithTimeIntervalSince1970:[obj.createTime longLongValue]/1000];
+//    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+//    [formatter setDateStyle:NSDateFormatterMediumStyle];
+//    [formatter setTimeStyle:NSDateFormatterShortStyle];
+//    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
 
     
     if ([obj.dakatype isEqualToString:@"2"]) {
@@ -174,7 +174,7 @@
     }];
     
     nickName.text = obj.nick;
-    timeLbl.text = [formatter stringFromDate:createTime];
+    timeLbl.text = obj.createTime;
        [commentBtn setTitle:obj.comment_num forState:UIControlStateNormal];
     [likeBtn setTitle:obj.favour forState:UIControlStateNormal];
 

@@ -82,7 +82,8 @@
     self.listModel = [[CoachListModel alloc] initWithHandler:self.handle];
     _dataArray = [[NSMutableArray alloc] init];
     [self.listModel getCoachListPage:1];
-    
+    [self showHUDWithLabel:@"正在加载..."];
+
     
     self.dissolveCoachHandle = [[DissolveCoachModelHandler alloc] initWithController:self];
     self.dissolveCoachModel = [[DissolveCoachModel alloc] initWithHandler:self.dissolveCoachHandle];
@@ -301,6 +302,7 @@
     [_dataArray removeAllObjects];
     [_dataArray addObjectsFromArray:response.data];
     [_tableView reloadData];
+    [self hideHUD];
 }
 
 - (void)syncFailure

@@ -24,7 +24,7 @@
 - (void)initSubViews
 {
     //数字
-    self.weightNumLabel = [UILabel createLabelWithFrame:CGRectMake(0, 20, self.frame.size.width, 38.0f) withSize:40.0f withColor:[UIColor blackColor]];
+    self.weightNumLabel = [UILabel createLabelWithFrame:CGRectMake(0, 20, self.frame.size.width, 38.0f) withSize:25.0f withColor:[UIColor blackColor]];
     self.weightNumLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:self.weightNumLabel];
     

@@ -28,7 +28,7 @@
     self.timeLab = [[UILabel alloc]initWithFrame:CGRectMake(self.width-140, 5, 140, 12)];
     [self addSubview:self.timeLab];
     
-    UIImageView *lineIV = [[UIImageView alloc]initWithFrame:CGRectMake(15, self.timeLab.bottom+5, self.width-15, 1)];
+    UIImageView *lineIV = [[UIImageView alloc]initWithFrame:CGRectMake(15, self.timeLab.bottom+5, self.width-15, 0.5)];
     lineIV.backgroundColor = UIColorFromRGB(237, 237, 237);
     [self.itemView addSubview:lineIV];
     

@@ -9,5 +9,5 @@
 #import "HTAbstractDataSource.h"
 #import "TeamLineResponse.h"
 @interface TeamListModel : HTAbstractDataSource
-- (void)getTeamLisetInfoWithTeamID:(NSString *)teamID;
+- (void)getTeamLisetInfoWithTeamID:(NSString *)teamID offset:(NSString *)offset;
 @end

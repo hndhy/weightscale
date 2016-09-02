@@ -10,7 +10,7 @@
 #import "CreateCoachModelHandler.h"
 #import "CreateCoachModel.h"
 
-@interface CoachNewBuildViewController : HTBaseViewController<CreateCoachModelProtocol>
+@interface CoachNewBuildViewController : HTBaseViewController<CreateCoachModelProtocol,UITextViewDelegate>
 
 {
     UILabel *coachNameLabel;

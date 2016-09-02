@@ -31,9 +31,11 @@
     self.likeHandle = [[LikeModelHandler alloc] initWithController:self];
     self.likeModel = [[LikeModel alloc] initWithHandler:self.likeHandle];
 
+    startFormCurrent = 0;
     if (teamid) {
-        [self.listModel getTeamLisetInfoWithTeamID:teamid];
+        [self.listModel getTeamLisetInfoWithTeamID:teamid offset:[NSString stringWithFormat:@"%d",startFormCurrent]];
     }
+    [self showHUDWithLabel:@"正在加载..."];
 }
 
 - (void)initNavbar
@@ -113,12 +115,13 @@
 
 - (void)syncFinished:(TeamLineResponse *)response
 {
-    [_dataArray removeAllObjects];
+//    [_dataArray removeAllObjects];
     [_dataArray addObjectsFromArray:response.data];
     [collection reloadData];
-
-    
+    startFormCurrent = [_dataArray count];
+    [self hideHUD];
 }
+
 - (void)syncFailure
 {
     
@@ -161,6 +164,15 @@
     CommentViewController *vc = [[CommentViewController alloc] initWithDakaID:dakaID anthor:author];
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView   // called on finger up as we are moving
+{
+    if (scrollView.contentOffset.y>0 &&scrollView.contentOffset.y+CGRectGetHeight(scrollView.frame)>scrollView.contentSize.height) {
+        [self.listModel getTeamLisetInfoWithTeamID:teamid offset:[NSString stringWithFormat:@"%d",startFormCurrent]];
+        [self showHUDWithLabel:@"正在加载..."];
+    }
+}
+
 
 //- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 //{
