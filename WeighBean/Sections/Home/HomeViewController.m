@@ -165,7 +165,7 @@
     
     //年月日 uibutton 作 uilabel
     self.dateLabel = [[UIButton alloc] initWithFrame:CGRectMake(0, titleView.top+5, 150, 40)];
-    [self.dateLabel setImage:[UIImage imageNamed:@"time_iconv"] forState:UIControlStateNormal];
+    [self.dateLabel setImage:[UIImage imageNamed:@"time_icon.png"] forState:UIControlStateNormal];
     [self.dateLabel setImageEdgeInsets:UIEdgeInsetsMake(0, -8, 0, 0)];
     [self.dateLabel setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, -5)];
     [self.dateLabel setTitle:@"" forState:UIControlStateNormal];

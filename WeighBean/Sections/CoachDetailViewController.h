@@ -43,6 +43,9 @@
     UILabel *activeRatioLbl;
     UILabel *comPeopleLbl;
     
+    UIImageView *activeRatioImgView;
+    UIImageView *comPeopleImgView;
+
     UIScrollView *activeRatioScrollView;
     UIScrollView *comPeopleScrollView;
     

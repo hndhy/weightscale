@@ -87,7 +87,7 @@
     [endTimeLbl setTextColor:[UIColor grayColor]];
     [endTimeLbl setFont:[UIFont systemFontOfSize:11]];
     [endTimeLbl setText:@"结束时间：暂无"];
-    [scrollView addSubview:endTimeLbl];
+//    [scrollView addSubview:endTimeLbl];
    
     
     lineView1 = [[UIView alloc] initWithFrame:CGRectMake(15, 120, DEVICEW-40, 0.5f)];
@@ -171,12 +171,17 @@
     ingTitleLbl2.textAlignment = NSTextAlignmentLeft;
     [ingActiveRatioContainerView addSubview:ingTitleLbl2];
     
-    activeRatioLbl = [[UILabel alloc] initWithFrame:CGRectMake(DEVICEW-60, ingTitleLbl1.top, 60, 30)];
+    activeRatioLbl = [[UILabel alloc] initWithFrame:CGRectMake(DEVICEW-70, ingTitleLbl1.top, 40, 30)];
     activeRatioLbl.backgroundColor = [UIColor clearColor];
     [activeRatioLbl setTextColor:UIColorFromRGB(127, 168, 238)];
     [activeRatioLbl setFont:[UIFont systemFontOfSize:14]];
     [activeRatioLbl setText:@"3/6"];
     [ingActiveRatioContainerView addSubview:activeRatioLbl];
+    
+    activeRatioImgView = [[UIImageView alloc] initWithFrame:CGRectMake(activeRatioLbl.right, ingTitleLbl1.top+1, 15, 30)];
+    activeRatioImgView.image = [UIImage imageNamed:@"rightCategory"];
+    activeRatioImgView.contentMode = UIViewContentModeLeft;
+    [ingActiveRatioContainerView addSubview:activeRatioImgView];
     
     activeRatioScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 44, scrollView.frame.size.width, 70)];
     activeRatioScrollView.backgroundColor = [UIColor clearColor];
@@ -205,12 +210,17 @@
     [comPeopleContainerView addGestureRecognizer:tap2];
 
     
-    comPeopleLbl = [[UILabel alloc] initWithFrame:CGRectMake(DEVICEW-60, ingTitleLbl1.top, 60, 30)];
+    comPeopleLbl = [[UILabel alloc] initWithFrame:CGRectMake(DEVICEW-70, ingTitleLbl1.top, 40, 30)];
     comPeopleLbl.backgroundColor = [UIColor clearColor];
     [comPeopleLbl setTextColor:UIColorFromRGB(127, 168, 238)];
     [comPeopleLbl setFont:[UIFont systemFontOfSize:14]];
     [comPeopleLbl setText:@"3/6"];
     [comPeopleContainerView addSubview:comPeopleLbl];
+    
+    comPeopleImgView = [[UIImageView alloc] initWithFrame:CGRectMake(activeRatioLbl.right, ingTitleLbl1.top+1, 15, 30)];
+    comPeopleImgView.image = [UIImage imageNamed:@"rightCategory"];
+    comPeopleImgView.contentMode = UIViewContentModeLeft;
+    [comPeopleContainerView addSubview:comPeopleImgView];
     
     comPeopleScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 44, scrollView.frame.size.width, 70)];
     comPeopleScrollView.backgroundColor = [UIColor clearColor];
@@ -234,6 +244,11 @@
     [ingDataLbl setText:@"进行中数据统计"];
     [ingDataLbl addTapCallBack:self sel:@selector(changeIngDataDisplay)];
     [ingDataContainerView addSubview:ingDataLbl];
+    
+    UIImageView *ingDataImgView = [[UIImageView alloc] initWithFrame:CGRectMake(DEVICEW-30, 5, 15, 30)];
+    ingDataImgView.image = [UIImage imageNamed:@"rightCategory"];
+    ingDataImgView.contentMode = UIViewContentModeLeft;
+    [ingDataContainerView addSubview:ingDataImgView];
     
     UITapGestureRecognizer *tap3 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeIngDataDisplay)];
     [ingDataContainerView addGestureRecognizer:tap3];
@@ -349,6 +364,11 @@
     [completeDataLbl setText:@"已完成数据统计"];
     [completeDataLbl addTapCallBack:self sel:@selector(changeComDataDisplay)];
     [comDataContainerView addSubview:completeDataLbl];
+    
+    UIImageView *completeDataImgView = [[UIImageView alloc] initWithFrame:CGRectMake(DEVICEW-30, 5, 15, 30)];
+    completeDataImgView.image = [UIImage imageNamed:@"rightCategory"];
+    completeDataImgView.contentMode = UIViewContentModeLeft;
+    [comDataContainerView addSubview:completeDataImgView];
     
     UITapGestureRecognizer *tap4 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeComDataDisplay)];
     [comDataContainerView addGestureRecognizer:tap4];
